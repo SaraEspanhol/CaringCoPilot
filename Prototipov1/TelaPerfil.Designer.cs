@@ -41,22 +41,26 @@
             this.lbBemVindo = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestãoDeRecursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controleFinanceiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reembolsoDeDespesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planoDeContasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.voluntáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastrarVoluntárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.controleFinanceiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.doaçõesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroDoadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saídasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.doaçãoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.bazarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.gerarRebiboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controleDeEstoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.doaçõesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDoadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerarRebiboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizaçãoCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.beneficiáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gBoxPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -167,10 +171,11 @@
             this.gestãoDeRecursosToolStripMenuItem,
             this.voluntáriosToolStripMenuItem,
             this.doaçõesToolStripMenuItem,
-            this.doaçõesToolStripMenuItem1});
+            this.doaçõesToolStripMenuItem1,
+            this.beneficiáriosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(9, 6);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(456, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(542, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -183,6 +188,13 @@
             this.gestãoDeRecursosToolStripMenuItem.Name = "gestãoDeRecursosToolStripMenuItem";
             this.gestãoDeRecursosToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.gestãoDeRecursosToolStripMenuItem.Text = "Gestão de Recursos";
+            // 
+            // controleFinanceiroToolStripMenuItem
+            // 
+            this.controleFinanceiroToolStripMenuItem.Name = "controleFinanceiroToolStripMenuItem";
+            this.controleFinanceiroToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.controleFinanceiroToolStripMenuItem.Text = "Controle Financeiro";
+            this.controleFinanceiroToolStripMenuItem.Click += new System.EventHandler(this.controleFinanceiroToolStripMenuItem_Click_1);
             // 
             // reembolsoDeDespesasToolStripMenuItem
             // 
@@ -201,17 +213,12 @@
             // voluntáriosToolStripMenuItem
             // 
             this.voluntáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarVoluntárioToolStripMenuItem});
+            this.cadastroToolStripMenuItem,
+            this.atualizaçãoCadastroToolStripMenuItem,
+            this.relatóriosToolStripMenuItem});
             this.voluntáriosToolStripMenuItem.Name = "voluntáriosToolStripMenuItem";
             this.voluntáriosToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.voluntáriosToolStripMenuItem.Text = "Voluntários";
-            // 
-            // cadastrarVoluntárioToolStripMenuItem
-            // 
-            this.cadastrarVoluntárioToolStripMenuItem.Name = "cadastrarVoluntárioToolStripMenuItem";
-            this.cadastrarVoluntárioToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.cadastrarVoluntárioToolStripMenuItem.Text = "Gestão de Voluntários";
-            this.cadastrarVoluntárioToolStripMenuItem.Click += new System.EventHandler(this.cadastrarVoluntárioToolStripMenuItem_Click);
             // 
             // doaçõesToolStripMenuItem
             // 
@@ -222,29 +229,6 @@
             this.doaçõesToolStripMenuItem.Name = "doaçõesToolStripMenuItem";
             this.doaçõesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.doaçõesToolStripMenuItem.Text = "Estoque";
-            // 
-            // controleFinanceiroToolStripMenuItem
-            // 
-            this.controleFinanceiroToolStripMenuItem.Name = "controleFinanceiroToolStripMenuItem";
-            this.controleFinanceiroToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.controleFinanceiroToolStripMenuItem.Text = "Controle Financeiro";
-            this.controleFinanceiroToolStripMenuItem.Click += new System.EventHandler(this.controleFinanceiroToolStripMenuItem_Click_1);
-            // 
-            // doaçõesToolStripMenuItem1
-            // 
-            this.doaçõesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroDoadoresToolStripMenuItem,
-            this.gerarRebiboToolStripMenuItem});
-            this.doaçõesToolStripMenuItem1.Name = "doaçõesToolStripMenuItem1";
-            this.doaçõesToolStripMenuItem1.Size = new System.Drawing.Size(64, 20);
-            this.doaçõesToolStripMenuItem1.Text = "Doações";
-            // 
-            // cadastroDoadoresToolStripMenuItem
-            // 
-            this.cadastroDoadoresToolStripMenuItem.Name = "cadastroDoadoresToolStripMenuItem";
-            this.cadastroDoadoresToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.cadastroDoadoresToolStripMenuItem.Text = "Cadastro Doadores";
-            this.cadastroDoadoresToolStripMenuItem.Click += new System.EventHandler(this.cadastroDoadoresToolStripMenuItem_Click_1);
             // 
             // entradasToolStripMenuItem
             // 
@@ -258,14 +242,14 @@
             // doaçãoToolStripMenuItem
             // 
             this.doaçãoToolStripMenuItem.Name = "doaçãoToolStripMenuItem";
-            this.doaçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.doaçãoToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.doaçãoToolStripMenuItem.Text = "Doação";
             this.doaçãoToolStripMenuItem.Click += new System.EventHandler(this.doaçãoToolStripMenuItem_Click);
             // 
             // compraToolStripMenuItem
             // 
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            this.compraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.compraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.compraToolStripMenuItem.Text = "Compra";
             this.compraToolStripMenuItem.Click += new System.EventHandler(this.compraToolStripMenuItem_Click);
             // 
@@ -281,23 +265,16 @@
             // doaçãoToolStripMenuItem1
             // 
             this.doaçãoToolStripMenuItem1.Name = "doaçãoToolStripMenuItem1";
-            this.doaçãoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.doaçãoToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.doaçãoToolStripMenuItem1.Text = "Doação";
             this.doaçãoToolStripMenuItem1.Click += new System.EventHandler(this.doaçãoToolStripMenuItem1_Click);
             // 
             // bazarToolStripMenuItem1
             // 
             this.bazarToolStripMenuItem1.Name = "bazarToolStripMenuItem1";
-            this.bazarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.bazarToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.bazarToolStripMenuItem1.Text = "Bazar";
             this.bazarToolStripMenuItem1.Click += new System.EventHandler(this.bazarToolStripMenuItem1_Click);
-            // 
-            // gerarRebiboToolStripMenuItem
-            // 
-            this.gerarRebiboToolStripMenuItem.Name = "gerarRebiboToolStripMenuItem";
-            this.gerarRebiboToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.gerarRebiboToolStripMenuItem.Text = "Gerar Rebibo";
-            this.gerarRebiboToolStripMenuItem.Click += new System.EventHandler(this.gerarRebiboToolStripMenuItem_Click);
             // 
             // controleDeEstoqueToolStripMenuItem
             // 
@@ -305,6 +282,65 @@
             this.controleDeEstoqueToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.controleDeEstoqueToolStripMenuItem.Text = "Controle de Estoque";
             this.controleDeEstoqueToolStripMenuItem.Click += new System.EventHandler(this.controleDeEstoqueToolStripMenuItem_Click);
+            // 
+            // doaçõesToolStripMenuItem1
+            // 
+            this.doaçõesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastroDoadoresToolStripMenuItem,
+            this.gerarRebiboToolStripMenuItem});
+            this.doaçõesToolStripMenuItem1.Name = "doaçõesToolStripMenuItem1";
+            this.doaçõesToolStripMenuItem1.Size = new System.Drawing.Size(64, 20);
+            this.doaçõesToolStripMenuItem1.Text = "Doações";
+            // 
+            // cadastroDoadoresToolStripMenuItem
+            // 
+            this.cadastroDoadoresToolStripMenuItem.Name = "cadastroDoadoresToolStripMenuItem";
+            this.cadastroDoadoresToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.cadastroDoadoresToolStripMenuItem.Text = "Cadastro Doadores";
+            this.cadastroDoadoresToolStripMenuItem.Click += new System.EventHandler(this.cadastroDoadoresToolStripMenuItem_Click_1);
+            // 
+            // gerarRebiboToolStripMenuItem
+            // 
+            this.gerarRebiboToolStripMenuItem.Name = "gerarRebiboToolStripMenuItem";
+            this.gerarRebiboToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.gerarRebiboToolStripMenuItem.Text = "Gerar Rebibo";
+            this.gerarRebiboToolStripMenuItem.Click += new System.EventHandler(this.gerarRebiboToolStripMenuItem_Click);
+            // 
+            // cadastroToolStripMenuItem
+            // 
+            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.cadastroToolStripMenuItem.Text = "Cadastro";
+            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
+            // 
+            // atualizaçãoCadastroToolStripMenuItem
+            // 
+            this.atualizaçãoCadastroToolStripMenuItem.Name = "atualizaçãoCadastroToolStripMenuItem";
+            this.atualizaçãoCadastroToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.atualizaçãoCadastroToolStripMenuItem.Text = "Atualização Cadastro";
+            this.atualizaçãoCadastroToolStripMenuItem.Click += new System.EventHandler(this.atualizaçãoCadastroToolStripMenuItem_Click);
+            // 
+            // relatóriosToolStripMenuItem
+            // 
+            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.relatóriosToolStripMenuItem.Text = "Relatórios";
+            this.relatóriosToolStripMenuItem.Click += new System.EventHandler(this.relatóriosToolStripMenuItem_Click);
+            // 
+            // beneficiáriosToolStripMenuItem
+            // 
+            this.beneficiáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastroToolStripMenuItem1});
+            this.beneficiáriosToolStripMenuItem.Name = "beneficiáriosToolStripMenuItem";
+            this.beneficiáriosToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.beneficiáriosToolStripMenuItem.Text = "Beneficiários";
+            // 
+            // cadastroToolStripMenuItem1
+            // 
+            this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
+            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(196, 22);
+            this.cadastroToolStripMenuItem1.Text = "Gestão de Beneficiários";
+            this.cadastroToolStripMenuItem1.Click += new System.EventHandler(this.cadastroToolStripMenuItem1_Click);
             // 
             // TelaPerfil
             // 
@@ -343,7 +379,6 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button btEditarPerfil;
         private System.Windows.Forms.ToolStripMenuItem voluntáriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastrarVoluntárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planoDeContasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem controleFinanceiroToolStripMenuItem;
@@ -357,5 +392,10 @@
         private System.Windows.Forms.ToolStripMenuItem bazarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem gerarRebiboToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem controleDeEstoqueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atualizaçãoCadastroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem beneficiáriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem1;
     }
 }

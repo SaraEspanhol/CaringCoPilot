@@ -28,32 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gBoxRelatorio = new System.Windows.Forms.GroupBox();
+            this.lbIncluir = new System.Windows.Forms.Label();
             this.checkSaida = new System.Windows.Forms.CheckBox();
             this.checkEntrada = new System.Windows.Forms.CheckBox();
             this.btRelatorio = new System.Windows.Forms.Button();
-            this.lbDataFinal = new System.Windows.Forms.Label();
-            this.txtDataFinal = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtDataCadastroEntrada = new System.Windows.Forms.TextBox();
-            this.lbDataCadastroEntrada = new System.Windows.Forms.Label();
+            this.lbDatas = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
-            this.lbIncluir = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbAte = new System.Windows.Forms.Label();
+            this.lbContas = new System.Windows.Forms.Label();
+            this.comboBoxContas = new System.Windows.Forms.ComboBox();
+            this.lbDoadores = new System.Windows.Forms.Label();
+            this.comboBoxDoadores = new System.Windows.Forms.ComboBox();
+            this.lbBeneficiarios = new System.Windows.Forms.Label();
+            this.comboBoxBeneficiarios = new System.Windows.Forms.ComboBox();
             this.gBoxRelatorio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxRelatorio
             // 
+            this.gBoxRelatorio.Controls.Add(this.comboBoxBeneficiarios);
+            this.gBoxRelatorio.Controls.Add(this.lbBeneficiarios);
+            this.gBoxRelatorio.Controls.Add(this.comboBoxDoadores);
+            this.gBoxRelatorio.Controls.Add(this.lbDoadores);
+            this.gBoxRelatorio.Controls.Add(this.comboBoxContas);
+            this.gBoxRelatorio.Controls.Add(this.lbContas);
+            this.gBoxRelatorio.Controls.Add(this.lbAte);
+            this.gBoxRelatorio.Controls.Add(this.textBox1);
+            this.gBoxRelatorio.Controls.Add(this.chart1);
             this.gBoxRelatorio.Controls.Add(this.lbIncluir);
             this.gBoxRelatorio.Controls.Add(this.checkSaida);
             this.gBoxRelatorio.Controls.Add(this.checkEntrada);
             this.gBoxRelatorio.Controls.Add(this.btRelatorio);
-            this.gBoxRelatorio.Controls.Add(this.lbDataFinal);
-            this.gBoxRelatorio.Controls.Add(this.txtDataFinal);
-            this.gBoxRelatorio.Controls.Add(this.dataGridView1);
             this.gBoxRelatorio.Controls.Add(this.txtDataCadastroEntrada);
-            this.gBoxRelatorio.Controls.Add(this.lbDataCadastroEntrada);
+            this.gBoxRelatorio.Controls.Add(this.lbDatas);
             this.gBoxRelatorio.Controls.Add(this.btMenuInicial);
             this.gBoxRelatorio.Location = new System.Drawing.Point(12, 12);
             this.gBoxRelatorio.Name = "gBoxRelatorio";
@@ -62,10 +77,19 @@
             this.gBoxRelatorio.TabStop = false;
             this.gBoxRelatorio.Text = "Relatório";
             // 
+            // lbIncluir
+            // 
+            this.lbIncluir.AutoSize = true;
+            this.lbIncluir.Location = new System.Drawing.Point(306, 19);
+            this.lbIncluir.Name = "lbIncluir";
+            this.lbIncluir.Size = new System.Drawing.Size(98, 13);
+            this.lbIncluir.TabIndex = 21;
+            this.lbIncluir.Text = "Incluir no Relatório:";
+            // 
             // checkSaida
             // 
             this.checkSaida.AutoSize = true;
-            this.checkSaida.Location = new System.Drawing.Point(399, 65);
+            this.checkSaida.Location = new System.Drawing.Point(387, 45);
             this.checkSaida.Name = "checkSaida";
             this.checkSaida.Size = new System.Drawing.Size(55, 17);
             this.checkSaida.TabIndex = 20;
@@ -75,7 +99,7 @@
             // checkEntrada
             // 
             this.checkEntrada.AutoSize = true;
-            this.checkEntrada.Location = new System.Drawing.Point(313, 65);
+            this.checkEntrada.Location = new System.Drawing.Point(309, 45);
             this.checkEntrada.Name = "checkEntrada";
             this.checkEntrada.Size = new System.Drawing.Size(63, 17);
             this.checkEntrada.TabIndex = 19;
@@ -91,45 +115,21 @@
             this.btRelatorio.Text = "Extrair";
             this.btRelatorio.UseVisualStyleBackColor = true;
             // 
-            // lbDataFinal
-            // 
-            this.lbDataFinal.AutoSize = true;
-            this.lbDataFinal.Location = new System.Drawing.Point(310, 158);
-            this.lbDataFinal.Name = "lbDataFinal";
-            this.lbDataFinal.Size = new System.Drawing.Size(55, 13);
-            this.lbDataFinal.TabIndex = 15;
-            this.lbDataFinal.Text = "Data Final";
-            // 
-            // txtDataFinal
-            // 
-            this.txtDataFinal.Location = new System.Drawing.Point(376, 155);
-            this.txtDataFinal.Name = "txtDataFinal";
-            this.txtDataFinal.Size = new System.Drawing.Size(129, 20);
-            this.txtDataFinal.TabIndex = 14;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(294, 258);
-            this.dataGridView1.TabIndex = 13;
-            // 
             // txtDataCadastroEntrada
             // 
-            this.txtDataCadastroEntrada.Location = new System.Drawing.Point(376, 123);
+            this.txtDataCadastroEntrada.Location = new System.Drawing.Point(309, 91);
             this.txtDataCadastroEntrada.Name = "txtDataCadastroEntrada";
-            this.txtDataCadastroEntrada.Size = new System.Drawing.Size(129, 20);
+            this.txtDataCadastroEntrada.Size = new System.Drawing.Size(80, 20);
             this.txtDataCadastroEntrada.TabIndex = 7;
             // 
-            // lbDataCadastroEntrada
+            // lbDatas
             // 
-            this.lbDataCadastroEntrada.AutoSize = true;
-            this.lbDataCadastroEntrada.Location = new System.Drawing.Point(310, 126);
-            this.lbDataCadastroEntrada.Name = "lbDataCadastroEntrada";
-            this.lbDataCadastroEntrada.Size = new System.Drawing.Size(60, 13);
-            this.lbDataCadastroEntrada.TabIndex = 2;
-            this.lbDataCadastroEntrada.Text = "Data Inicial";
+            this.lbDatas.AutoSize = true;
+            this.lbDatas.Location = new System.Drawing.Point(306, 75);
+            this.lbDatas.Name = "lbDatas";
+            this.lbDatas.Size = new System.Drawing.Size(38, 13);
+            this.lbDatas.TabIndex = 2;
+            this.lbDatas.Text = "Datas:";
             // 
             // btMenuInicial
             // 
@@ -140,14 +140,88 @@
             this.btMenuInicial.Text = "Menu Inicial";
             this.btMenuInicial.UseVisualStyleBackColor = true;
             // 
-            // lbIncluir
+            // chart1
             // 
-            this.lbIncluir.AutoSize = true;
-            this.lbIncluir.Location = new System.Drawing.Point(310, 32);
-            this.lbIncluir.Name = "lbIncluir";
-            this.lbIncluir.Size = new System.Drawing.Size(98, 13);
-            this.lbIncluir.TabIndex = 21;
-            this.lbIncluir.Text = "Incluir no Relatório:";
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(7, 19);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(282, 248);
+            this.chart1.TabIndex = 22;
+            this.chart1.Text = "chart1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(425, 91);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(80, 20);
+            this.textBox1.TabIndex = 23;
+            // 
+            // lbAte
+            // 
+            this.lbAte.AutoSize = true;
+            this.lbAte.Location = new System.Drawing.Point(397, 94);
+            this.lbAte.Name = "lbAte";
+            this.lbAte.Size = new System.Drawing.Size(22, 13);
+            this.lbAte.TabIndex = 24;
+            this.lbAte.Text = "até";
+            // 
+            // lbContas
+            // 
+            this.lbContas.AutoSize = true;
+            this.lbContas.Location = new System.Drawing.Point(308, 118);
+            this.lbContas.Name = "lbContas";
+            this.lbContas.Size = new System.Drawing.Size(40, 13);
+            this.lbContas.TabIndex = 25;
+            this.lbContas.Text = "Contas";
+            // 
+            // comboBoxContas
+            // 
+            this.comboBoxContas.FormattingEnabled = true;
+            this.comboBoxContas.Location = new System.Drawing.Point(309, 134);
+            this.comboBoxContas.Name = "comboBoxContas";
+            this.comboBoxContas.Size = new System.Drawing.Size(196, 21);
+            this.comboBoxContas.TabIndex = 26;
+            // 
+            // lbDoadores
+            // 
+            this.lbDoadores.AutoSize = true;
+            this.lbDoadores.Location = new System.Drawing.Point(308, 158);
+            this.lbDoadores.Name = "lbDoadores";
+            this.lbDoadores.Size = new System.Drawing.Size(53, 13);
+            this.lbDoadores.TabIndex = 27;
+            this.lbDoadores.Text = "Doadores";
+            // 
+            // comboBoxDoadores
+            // 
+            this.comboBoxDoadores.FormattingEnabled = true;
+            this.comboBoxDoadores.Location = new System.Drawing.Point(309, 174);
+            this.comboBoxDoadores.Name = "comboBoxDoadores";
+            this.comboBoxDoadores.Size = new System.Drawing.Size(196, 21);
+            this.comboBoxDoadores.TabIndex = 28;
+            // 
+            // lbBeneficiarios
+            // 
+            this.lbBeneficiarios.AutoSize = true;
+            this.lbBeneficiarios.Location = new System.Drawing.Point(308, 198);
+            this.lbBeneficiarios.Name = "lbBeneficiarios";
+            this.lbBeneficiarios.Size = new System.Drawing.Size(67, 13);
+            this.lbBeneficiarios.TabIndex = 29;
+            this.lbBeneficiarios.Text = "Beneficiários";
+            // 
+            // comboBoxBeneficiarios
+            // 
+            this.comboBoxBeneficiarios.FormattingEnabled = true;
+            this.comboBoxBeneficiarios.Location = new System.Drawing.Point(309, 214);
+            this.comboBoxBeneficiarios.Name = "comboBoxBeneficiarios";
+            this.comboBoxBeneficiarios.Size = new System.Drawing.Size(196, 21);
+            this.comboBoxBeneficiarios.TabIndex = 30;
             // 
             // TelaRelatorioControleFinanceiro
             // 
@@ -159,7 +233,7 @@
             this.Text = "CaringCoPilot";
             this.gBoxRelatorio.ResumeLayout(false);
             this.gBoxRelatorio.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,12 +244,18 @@
         private System.Windows.Forms.CheckBox checkSaida;
         private System.Windows.Forms.CheckBox checkEntrada;
         private System.Windows.Forms.Button btRelatorio;
-        private System.Windows.Forms.Label lbDataFinal;
-        private System.Windows.Forms.TextBox txtDataFinal;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtDataCadastroEntrada;
-        private System.Windows.Forms.Label lbDataCadastroEntrada;
+        private System.Windows.Forms.Label lbDatas;
         private System.Windows.Forms.Button btMenuInicial;
         private System.Windows.Forms.Label lbIncluir;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label lbContas;
+        private System.Windows.Forms.Label lbAte;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBoxBeneficiarios;
+        private System.Windows.Forms.Label lbBeneficiarios;
+        private System.Windows.Forms.ComboBox comboBoxDoadores;
+        private System.Windows.Forms.Label lbDoadores;
+        private System.Windows.Forms.ComboBox comboBoxContas;
     }
 }

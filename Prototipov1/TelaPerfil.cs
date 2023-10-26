@@ -44,7 +44,7 @@ namespace Prototipov1
 
         private void cadastrarVoluntárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuVoluntáriosGestao menuVoluntários = new MenuVoluntáriosGestao();
+            MenuVoluntáriosAtualizarCadastro menuVoluntários = new MenuVoluntáriosAtualizarCadastro();
             menuVoluntários.ShowDialog();
         }
 
@@ -144,6 +144,30 @@ namespace Prototipov1
         {
             MenuGestaoRecursos menuGestaoRecursos = new MenuGestaoRecursos();   
             menuGestaoRecursos.ShowDialog();
+        }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuVoluntarioCadastro menuVoluntarioCadastro = new MenuVoluntarioCadastro();
+            menuVoluntarioCadastro.ShowDialog();
+        }
+
+        private void atualizaçãoCadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuVoluntáriosAtualizarCadastro menuVoluntáriosAtualizarCadastro = new MenuVoluntáriosAtualizarCadastro();
+            menuVoluntáriosAtualizarCadastro.ShowDialog();
+        }
+
+        private void relatóriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuVoluntarioRelatorio menuVoluntarioRelatorio = new MenuVoluntarioRelatorio();
+            menuVoluntarioRelatorio.ShowDialog();
+        }
+
+        private void cadastroToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MenuBeneficiarios menuBeneficiarios = new MenuBeneficiarios();
+            menuBeneficiarios.ShowDialog();
         }
     }
 }

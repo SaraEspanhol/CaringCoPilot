@@ -45,12 +45,16 @@
             this.lbDescricaoEstoque = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lbBeneficiario = new System.Windows.Forms.Label();
+            this.comboBeneficiario = new System.Windows.Forms.ComboBox();
             this.gBoxGestaoRecursos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxGestaoRecursos
             // 
+            this.gBoxGestaoRecursos.Controls.Add(this.comboBeneficiario);
+            this.gBoxGestaoRecursos.Controls.Add(this.lbBeneficiario);
             this.gBoxGestaoRecursos.Controls.Add(this.checkBox1);
             this.gBoxGestaoRecursos.Controls.Add(this.txtQtd);
             this.gBoxGestaoRecursos.Controls.Add(this.comboBox1);
@@ -77,7 +81,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(10, 190);
+            this.checkBox1.Location = new System.Drawing.Point(6, 224);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(83, 17);
             this.checkBox1.TabIndex = 22;
@@ -86,9 +90,9 @@
             // 
             // txtQtd
             // 
-            this.txtQtd.Location = new System.Drawing.Point(254, 188);
+            this.txtQtd.Location = new System.Drawing.Point(163, 222);
             this.txtQtd.Name = "txtQtd";
-            this.txtQtd.Size = new System.Drawing.Size(55, 20);
+            this.txtQtd.Size = new System.Drawing.Size(39, 20);
             this.txtQtd.TabIndex = 21;
             // 
             // comboBox1
@@ -129,7 +133,7 @@
             // lbQuantidadeEstoque
             // 
             this.lbQuantidadeEstoque.AutoSize = true;
-            this.lbQuantidadeEstoque.Location = new System.Drawing.Point(186, 191);
+            this.lbQuantidadeEstoque.Location = new System.Drawing.Point(95, 225);
             this.lbQuantidadeEstoque.Name = "lbQuantidadeEstoque";
             this.lbQuantidadeEstoque.Size = new System.Drawing.Size(62, 13);
             this.lbQuantidadeEstoque.TabIndex = 15;
@@ -145,21 +149,21 @@
             // 
             // txtValorCadastroEntrada
             // 
-            this.txtValorCadastroEntrada.Location = new System.Drawing.Point(408, 188);
+            this.txtValorCadastroEntrada.Location = new System.Drawing.Point(290, 224);
             this.txtValorCadastroEntrada.Name = "txtValorCadastroEntrada";
-            this.txtValorCadastroEntrada.Size = new System.Drawing.Size(93, 20);
+            this.txtValorCadastroEntrada.Size = new System.Drawing.Size(62, 20);
             this.txtValorCadastroEntrada.TabIndex = 12;
             // 
             // txtNomeCadastroEntrada
             // 
-            this.txtNomeCadastroEntrada.Location = new System.Drawing.Point(357, 225);
+            this.txtNomeCadastroEntrada.Location = new System.Drawing.Point(439, 222);
             this.txtNomeCadastroEntrada.Name = "txtNomeCadastroEntrada";
-            this.txtNomeCadastroEntrada.Size = new System.Drawing.Size(144, 20);
+            this.txtNomeCadastroEntrada.Size = new System.Drawing.Size(62, 20);
             this.txtNomeCadastroEntrada.TabIndex = 8;
             // 
             // txtDescricaoEstoque
             // 
-            this.txtDescricaoEstoque.Location = new System.Drawing.Point(73, 222);
+            this.txtDescricaoEstoque.Location = new System.Drawing.Point(76, 184);
             this.txtDescricaoEstoque.Name = "txtDescricaoEstoque";
             this.txtDescricaoEstoque.Size = new System.Drawing.Size(187, 20);
             this.txtDescricaoEstoque.TabIndex = 7;
@@ -167,7 +171,7 @@
             // lbValorUnitarioEstoque
             // 
             this.lbValorUnitarioEstoque.AutoSize = true;
-            this.lbValorUnitarioEstoque.Location = new System.Drawing.Point(317, 191);
+            this.lbValorUnitarioEstoque.Location = new System.Drawing.Point(205, 225);
             this.lbValorUnitarioEstoque.Name = "lbValorUnitarioEstoque";
             this.lbValorUnitarioEstoque.Size = new System.Drawing.Size(87, 13);
             this.lbValorUnitarioEstoque.TabIndex = 6;
@@ -176,7 +180,7 @@
             // lbValorTotalEstoque
             // 
             this.lbValorTotalEstoque.AutoSize = true;
-            this.lbValorTotalEstoque.Location = new System.Drawing.Point(267, 228);
+            this.lbValorTotalEstoque.Location = new System.Drawing.Point(358, 225);
             this.lbValorTotalEstoque.Name = "lbValorTotalEstoque";
             this.lbValorTotalEstoque.Size = new System.Drawing.Size(75, 13);
             this.lbValorTotalEstoque.TabIndex = 3;
@@ -185,7 +189,7 @@
             // lbDescricaoEstoque
             // 
             this.lbDescricaoEstoque.AutoSize = true;
-            this.lbDescricaoEstoque.Location = new System.Drawing.Point(7, 225);
+            this.lbDescricaoEstoque.Location = new System.Drawing.Point(7, 190);
             this.lbDescricaoEstoque.Name = "lbDescricaoEstoque";
             this.lbDescricaoEstoque.Size = new System.Drawing.Size(55, 13);
             this.lbDescricaoEstoque.TabIndex = 2;
@@ -209,6 +213,23 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lbBeneficiario
+            // 
+            this.lbBeneficiario.AutoSize = true;
+            this.lbBeneficiario.Location = new System.Drawing.Point(278, 190);
+            this.lbBeneficiario.Name = "lbBeneficiario";
+            this.lbBeneficiario.Size = new System.Drawing.Size(62, 13);
+            this.lbBeneficiario.TabIndex = 23;
+            this.lbBeneficiario.Text = "Beneficiário";
+            // 
+            // comboBeneficiario
+            // 
+            this.comboBeneficiario.FormattingEnabled = true;
+            this.comboBeneficiario.Location = new System.Drawing.Point(343, 184);
+            this.comboBeneficiario.Name = "comboBeneficiario";
+            this.comboBeneficiario.Size = new System.Drawing.Size(158, 21);
+            this.comboBeneficiario.TabIndex = 24;
             // 
             // MenuSaidaDoacoes
             // 
@@ -244,5 +265,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox txtQtd;
+        private System.Windows.Forms.ComboBox comboBeneficiario;
+        private System.Windows.Forms.Label lbBeneficiario;
     }
 }

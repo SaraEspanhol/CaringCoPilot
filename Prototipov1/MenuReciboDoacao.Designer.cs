@@ -30,7 +30,6 @@
         {
             this.gBoxReciboDoacoes = new System.Windows.Forms.GroupBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
-            this.txtDoadorRecibo = new System.Windows.Forms.TextBox();
             this.txtDataRecibo = new System.Windows.Forms.TextBox();
             this.lbDataRecibo = new System.Windows.Forms.Label();
             this.txtValorRecibo = new System.Windows.Forms.TextBox();
@@ -39,17 +38,22 @@
             this.btRecibo = new System.Windows.Forms.Button();
             this.txtDataVoluntario = new System.Windows.Forms.TextBox();
             this.lbValorRecibo = new System.Windows.Forms.Label();
-            this.lbCPF = new System.Windows.Forms.Label();
+            this.lbDocumento = new System.Windows.Forms.Label();
             this.lbOrganizacao = new System.Windows.Forms.Label();
             this.lbDoador = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
+            this.comboDoador = new System.Windows.Forms.ComboBox();
+            this.lbCodDoador = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gBoxReciboDoacoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // gBoxReciboDoacoes
             // 
+            this.gBoxReciboDoacoes.Controls.Add(this.comboBox1);
+            this.gBoxReciboDoacoes.Controls.Add(this.lbCodDoador);
+            this.gBoxReciboDoacoes.Controls.Add(this.comboDoador);
             this.gBoxReciboDoacoes.Controls.Add(this.txtCPF);
-            this.gBoxReciboDoacoes.Controls.Add(this.txtDoadorRecibo);
             this.gBoxReciboDoacoes.Controls.Add(this.txtDataRecibo);
             this.gBoxReciboDoacoes.Controls.Add(this.lbDataRecibo);
             this.gBoxReciboDoacoes.Controls.Add(this.txtValorRecibo);
@@ -58,7 +62,7 @@
             this.gBoxReciboDoacoes.Controls.Add(this.btRecibo);
             this.gBoxReciboDoacoes.Controls.Add(this.txtDataVoluntario);
             this.gBoxReciboDoacoes.Controls.Add(this.lbValorRecibo);
-            this.gBoxReciboDoacoes.Controls.Add(this.lbCPF);
+            this.gBoxReciboDoacoes.Controls.Add(this.lbDocumento);
             this.gBoxReciboDoacoes.Controls.Add(this.lbOrganizacao);
             this.gBoxReciboDoacoes.Controls.Add(this.lbDoador);
             this.gBoxReciboDoacoes.Controls.Add(this.btMenuInicial);
@@ -71,29 +75,22 @@
             // 
             // txtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(309, 118);
+            this.txtCPF.Location = new System.Drawing.Point(309, 159);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(191, 20);
             this.txtCPF.TabIndex = 37;
-            // 
-            // txtDoadorRecibo
-            // 
-            this.txtDoadorRecibo.Location = new System.Drawing.Point(66, 118);
-            this.txtDoadorRecibo.Name = "txtDoadorRecibo";
-            this.txtDoadorRecibo.Size = new System.Drawing.Size(191, 20);
-            this.txtDoadorRecibo.TabIndex = 36;
             // 
             // txtDataRecibo
             // 
             this.txtDataRecibo.Location = new System.Drawing.Point(66, 162);
             this.txtDataRecibo.Name = "txtDataRecibo";
-            this.txtDataRecibo.Size = new System.Drawing.Size(191, 20);
+            this.txtDataRecibo.Size = new System.Drawing.Size(167, 20);
             this.txtDataRecibo.TabIndex = 35;
             // 
             // lbDataRecibo
             // 
             this.lbDataRecibo.AutoSize = true;
-            this.lbDataRecibo.Location = new System.Drawing.Point(2, 165);
+            this.lbDataRecibo.Location = new System.Drawing.Point(6, 169);
             this.lbDataRecibo.Name = "lbDataRecibo";
             this.lbDataRecibo.Size = new System.Drawing.Size(30, 13);
             this.lbDataRecibo.TabIndex = 34;
@@ -101,7 +98,7 @@
             // 
             // txtValorRecibo
             // 
-            this.txtValorRecibo.Location = new System.Drawing.Point(309, 162);
+            this.txtValorRecibo.Location = new System.Drawing.Point(309, 210);
             this.txtValorRecibo.Name = "txtValorRecibo";
             this.txtValorRecibo.Size = new System.Drawing.Size(191, 20);
             this.txtValorRecibo.TabIndex = 33;
@@ -135,26 +132,26 @@
             // 
             this.txtDataVoluntario.Location = new System.Drawing.Point(66, 73);
             this.txtDataVoluntario.Name = "txtDataVoluntario";
-            this.txtDataVoluntario.Size = new System.Drawing.Size(191, 20);
+            this.txtDataVoluntario.Size = new System.Drawing.Size(167, 20);
             this.txtDataVoluntario.TabIndex = 7;
             // 
             // lbValorRecibo
             // 
             this.lbValorRecibo.AutoSize = true;
-            this.lbValorRecibo.Location = new System.Drawing.Point(263, 165);
+            this.lbValorRecibo.Location = new System.Drawing.Point(263, 213);
             this.lbValorRecibo.Name = "lbValorRecibo";
             this.lbValorRecibo.Size = new System.Drawing.Size(48, 13);
             this.lbValorRecibo.TabIndex = 5;
             this.lbValorRecibo.Text = "Valor R$";
             // 
-            // lbCPF
+            // lbDocumento
             // 
-            this.lbCPF.AutoSize = true;
-            this.lbCPF.Location = new System.Drawing.Point(271, 121);
-            this.lbCPF.Name = "lbCPF";
-            this.lbCPF.Size = new System.Drawing.Size(27, 13);
-            this.lbCPF.TabIndex = 4;
-            this.lbCPF.Text = "CPF";
+            this.lbDocumento.AutoSize = true;
+            this.lbDocumento.Location = new System.Drawing.Point(241, 162);
+            this.lbDocumento.Name = "lbDocumento";
+            this.lbDocumento.Size = new System.Drawing.Size(62, 13);
+            this.lbDocumento.TabIndex = 4;
+            this.lbDocumento.Text = "Documento";
             // 
             // lbOrganizacao
             // 
@@ -168,7 +165,7 @@
             // lbDoador
             // 
             this.lbDoador.AutoSize = true;
-            this.lbDoador.Location = new System.Drawing.Point(2, 118);
+            this.lbDoador.Location = new System.Drawing.Point(264, 119);
             this.lbDoador.Name = "lbDoador";
             this.lbDoador.Size = new System.Drawing.Size(42, 13);
             this.lbDoador.TabIndex = 2;
@@ -183,6 +180,31 @@
             this.btMenuInicial.Text = "Menu Inicial";
             this.btMenuInicial.UseVisualStyleBackColor = true;
             this.btMenuInicial.Click += new System.EventHandler(this.btMenuInicial_Click);
+            // 
+            // comboDoador
+            // 
+            this.comboDoador.FormattingEnabled = true;
+            this.comboDoador.Location = new System.Drawing.Point(309, 116);
+            this.comboDoador.Name = "comboDoador";
+            this.comboDoador.Size = new System.Drawing.Size(188, 21);
+            this.comboDoador.TabIndex = 38;
+            // 
+            // lbCodDoador
+            // 
+            this.lbCodDoador.AutoSize = true;
+            this.lbCodDoador.Location = new System.Drawing.Point(6, 119);
+            this.lbCodDoador.Name = "lbCodDoador";
+            this.lbCodDoador.Size = new System.Drawing.Size(40, 13);
+            this.lbCodDoador.TabIndex = 39;
+            this.lbCodDoador.Text = "Código";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(66, 116);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(167, 21);
+            this.comboBox1.TabIndex = 40;
             // 
             // MenuReciboDoacao
             // 
@@ -202,7 +224,6 @@
 
         private System.Windows.Forms.GroupBox gBoxReciboDoacoes;
         private System.Windows.Forms.TextBox txtCPF;
-        private System.Windows.Forms.TextBox txtDoadorRecibo;
         private System.Windows.Forms.TextBox txtDataRecibo;
         private System.Windows.Forms.Label lbDataRecibo;
         private System.Windows.Forms.TextBox txtValorRecibo;
@@ -211,9 +232,12 @@
         private System.Windows.Forms.Button btRecibo;
         private System.Windows.Forms.TextBox txtDataVoluntario;
         private System.Windows.Forms.Label lbValorRecibo;
-        private System.Windows.Forms.Label lbCPF;
+        private System.Windows.Forms.Label lbDocumento;
         private System.Windows.Forms.Label lbOrganizacao;
         private System.Windows.Forms.Label lbDoador;
         private System.Windows.Forms.Button btMenuInicial;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbCodDoador;
+        private System.Windows.Forms.ComboBox comboDoador;
     }
 }

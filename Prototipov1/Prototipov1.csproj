@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +53,12 @@
     </Compile>
     <Compile Include="MenuBazar.Designer.cs">
       <DependentUpon>MenuBazar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBeneficiarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBeneficiarios.Designer.cs">
+      <DependentUpon>MenuBeneficiarios.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuEntradaDoacoes.cs">
       <SubType>Form</SubType>
@@ -113,11 +120,23 @@
     <Compile Include="MenuReembolso.Designer.cs">
       <DependentUpon>MenuReembolso.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuVoluntáriosGestao.cs">
+    <Compile Include="MenuVoluntarioCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuVoluntáriosGestao.Designer.cs">
-      <DependentUpon>MenuVoluntáriosGestao.cs</DependentUpon>
+    <Compile Include="MenuVoluntarioCadastro.Designer.cs">
+      <DependentUpon>MenuVoluntarioCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuVoluntáriosAtualizarCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuVoluntáriosAtualizarCadastro.Designer.cs">
+      <DependentUpon>MenuVoluntáriosAtualizarCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuVoluntarioRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuVoluntarioRelatorio.Designer.cs">
+      <DependentUpon>MenuVoluntarioRelatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="TelaInicial.cs">
       <SubType>Form</SubType>
@@ -141,6 +160,9 @@
     </Compile>
     <EmbeddedResource Include="MenuBazar.resx">
       <DependentUpon>MenuBazar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBeneficiarios.resx">
+      <DependentUpon>MenuBeneficiarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuEntradaDoacoes.resx">
       <DependentUpon>MenuEntradaDoacoes.cs</DependentUpon>
@@ -172,8 +194,14 @@
     <EmbeddedResource Include="MenuReembolso.resx">
       <DependentUpon>MenuReembolso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuVoluntáriosGestao.resx">
-      <DependentUpon>MenuVoluntáriosGestao.cs</DependentUpon>
+    <EmbeddedResource Include="MenuVoluntarioCadastro.resx">
+      <DependentUpon>MenuVoluntarioCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuVoluntáriosAtualizarCadastro.resx">
+      <DependentUpon>MenuVoluntáriosAtualizarCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuVoluntarioRelatorio.resx">
+      <DependentUpon>MenuVoluntarioRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>

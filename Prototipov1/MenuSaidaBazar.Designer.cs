@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gBoxGestaoRecursos = new System.Windows.Forms.GroupBox();
+            this.btCriarBazar = new System.Windows.Forms.Button();
             this.comboBoxCodBazar = new System.Windows.Forms.ComboBox();
             this.lbCodBazar = new System.Windows.Forms.Label();
             this.checkAddCaixa = new System.Windows.Forms.CheckBox();
@@ -48,13 +49,16 @@
             this.lbDescricaoEstoque = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.btCadastrar = new System.Windows.Forms.Button();
-            this.btCriarBazar = new System.Windows.Forms.Button();
+            this.lbValorVenda = new System.Windows.Forms.Label();
+            this.txtValorVenda = new System.Windows.Forms.TextBox();
             this.gBoxGestaoRecursos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxGestaoRecursos
             // 
+            this.gBoxGestaoRecursos.Controls.Add(this.txtValorVenda);
+            this.gBoxGestaoRecursos.Controls.Add(this.lbValorVenda);
             this.gBoxGestaoRecursos.Controls.Add(this.btCriarBazar);
             this.gBoxGestaoRecursos.Controls.Add(this.comboBoxCodBazar);
             this.gBoxGestaoRecursos.Controls.Add(this.lbCodBazar);
@@ -81,6 +85,16 @@
             this.gBoxGestaoRecursos.TabIndex = 2;
             this.gBoxGestaoRecursos.TabStop = false;
             this.gBoxGestaoRecursos.Text = "Saídas - Bazar";
+            // 
+            // btCriarBazar
+            // 
+            this.btCriarBazar.Location = new System.Drawing.Point(309, 251);
+            this.btCriarBazar.Name = "btCriarBazar";
+            this.btCriarBazar.Size = new System.Drawing.Size(95, 26);
+            this.btCriarBazar.TabIndex = 26;
+            this.btCriarBazar.Text = "Criar Bazar";
+            this.btCriarBazar.UseVisualStyleBackColor = true;
+            this.btCriarBazar.Click += new System.EventHandler(this.btCriarBazar_Click);
             // 
             // comboBoxCodBazar
             // 
@@ -121,7 +135,7 @@
             // 
             // txtQtd
             // 
-            this.txtQtd.Location = new System.Drawing.Point(270, 188);
+            this.txtQtd.Location = new System.Drawing.Point(288, 188);
             this.txtQtd.Name = "txtQtd";
             this.txtQtd.Size = new System.Drawing.Size(55, 20);
             this.txtQtd.TabIndex = 21;
@@ -164,7 +178,7 @@
             // lbQuantidadeEstoque
             // 
             this.lbQuantidadeEstoque.AutoSize = true;
-            this.lbQuantidadeEstoque.Location = new System.Drawing.Point(205, 191);
+            this.lbQuantidadeEstoque.Location = new System.Drawing.Point(222, 191);
             this.lbQuantidadeEstoque.Name = "lbQuantidadeEstoque";
             this.lbQuantidadeEstoque.Size = new System.Drawing.Size(62, 13);
             this.lbQuantidadeEstoque.TabIndex = 15;
@@ -180,29 +194,29 @@
             // 
             // txtValorCadastroEntrada
             // 
-            this.txtValorCadastroEntrada.Location = new System.Drawing.Point(424, 188);
+            this.txtValorCadastroEntrada.Location = new System.Drawing.Point(442, 188);
             this.txtValorCadastroEntrada.Name = "txtValorCadastroEntrada";
-            this.txtValorCadastroEntrada.Size = new System.Drawing.Size(77, 20);
+            this.txtValorCadastroEntrada.Size = new System.Drawing.Size(59, 20);
             this.txtValorCadastroEntrada.TabIndex = 12;
             // 
             // txtNomeCadastroEntrada
             // 
-            this.txtNomeCadastroEntrada.Location = new System.Drawing.Point(357, 225);
+            this.txtNomeCadastroEntrada.Location = new System.Drawing.Point(442, 222);
             this.txtNomeCadastroEntrada.Name = "txtNomeCadastroEntrada";
-            this.txtNomeCadastroEntrada.Size = new System.Drawing.Size(144, 20);
+            this.txtNomeCadastroEntrada.Size = new System.Drawing.Size(59, 20);
             this.txtNomeCadastroEntrada.TabIndex = 8;
             // 
             // txtDescricaoEstoque
             // 
             this.txtDescricaoEstoque.Location = new System.Drawing.Point(73, 222);
             this.txtDescricaoEstoque.Name = "txtDescricaoEstoque";
-            this.txtDescricaoEstoque.Size = new System.Drawing.Size(187, 20);
+            this.txtDescricaoEstoque.Size = new System.Drawing.Size(108, 20);
             this.txtDescricaoEstoque.TabIndex = 7;
             // 
             // lbValorUnitarioEstoque
             // 
             this.lbValorUnitarioEstoque.AutoSize = true;
-            this.lbValorUnitarioEstoque.Location = new System.Drawing.Point(334, 191);
+            this.lbValorUnitarioEstoque.Location = new System.Drawing.Point(349, 191);
             this.lbValorUnitarioEstoque.Name = "lbValorUnitarioEstoque";
             this.lbValorUnitarioEstoque.Size = new System.Drawing.Size(87, 13);
             this.lbValorUnitarioEstoque.TabIndex = 6;
@@ -211,7 +225,7 @@
             // lbValorTotalEstoque
             // 
             this.lbValorTotalEstoque.AutoSize = true;
-            this.lbValorTotalEstoque.Location = new System.Drawing.Point(267, 228);
+            this.lbValorTotalEstoque.Location = new System.Drawing.Point(349, 225);
             this.lbValorTotalEstoque.Name = "lbValorTotalEstoque";
             this.lbValorTotalEstoque.Size = new System.Drawing.Size(75, 13);
             this.lbValorTotalEstoque.TabIndex = 3;
@@ -245,15 +259,21 @@
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
             // 
-            // btCriarBazar
+            // lbValorVenda
             // 
-            this.btCriarBazar.Location = new System.Drawing.Point(309, 251);
-            this.btCriarBazar.Name = "btCriarBazar";
-            this.btCriarBazar.Size = new System.Drawing.Size(95, 26);
-            this.btCriarBazar.TabIndex = 26;
-            this.btCriarBazar.Text = "Criar Bazar";
-            this.btCriarBazar.UseVisualStyleBackColor = true;
-            this.btCriarBazar.Click += new System.EventHandler(this.btCriarBazar_Click);
+            this.lbValorVenda.AutoSize = true;
+            this.lbValorVenda.Location = new System.Drawing.Point(187, 225);
+            this.lbValorVenda.Name = "lbValorVenda";
+            this.lbValorVenda.Size = new System.Drawing.Size(97, 13);
+            this.lbValorVenda.TabIndex = 27;
+            this.lbValorVenda.Text = "Valor de Venda R$";
+            // 
+            // txtValorVenda
+            // 
+            this.txtValorVenda.Location = new System.Drawing.Point(288, 222);
+            this.txtValorVenda.Name = "txtValorVenda";
+            this.txtValorVenda.Size = new System.Drawing.Size(55, 20);
+            this.txtValorVenda.TabIndex = 28;
             // 
             // MenuSaidaBazar
             // 
@@ -293,5 +313,7 @@
         private System.Windows.Forms.Button btMenuInicial;
         private System.Windows.Forms.Button btCadastrar;
         private System.Windows.Forms.Button btCriarBazar;
+        private System.Windows.Forms.TextBox txtValorVenda;
+        private System.Windows.Forms.Label lbValorVenda;
     }
 }

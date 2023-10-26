@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Prototipov1
 {
-    public partial class MenuVoluntáriosGestao : Form
+    public partial class MenuVoluntarioCadastro : Form
     {
-        public MenuVoluntáriosGestao()
+        public MenuVoluntarioCadastro()
         {
             InitializeComponent();
-        }
-
-        private void btMenuInicial_Click(object sender, EventArgs e)
-        {
-            TelaPerfil telaPerfil = new TelaPerfil();
-            telaPerfil.ShowDialog();
         }
     }
 }

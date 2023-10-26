@@ -1,6 +1,6 @@
 ﻿namespace Prototipov1
 {
-    partial class MenuDoadores
+    partial class MenuBeneficiarios
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,14 @@
         private void InitializeComponent()
         {
             this.gBoxDoacoes = new System.Windows.Forms.GroupBox();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.txtDDD = new System.Windows.Forms.TextBox();
+            this.lbTelefone = new System.Windows.Forms.Label();
             this.txtCodDoador = new System.Windows.Forms.TextBox();
             this.lbCodDoador = new System.Windows.Forms.Label();
-            this.txtOrigemDoador = new System.Windows.Forms.TextBox();
+            this.txtCPF = new System.Windows.Forms.TextBox();
             this.btRelatorio = new System.Windows.Forms.Button();
             this.btExcluir = new System.Windows.Forms.Button();
             this.btConsultar = new System.Windows.Forms.Button();
@@ -39,33 +44,34 @@
             this.txtDataDoacao = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtNomeDoador = new System.Windows.Forms.TextBox();
-            this.lbDocumento = new System.Windows.Forms.Label();
+            this.lbCPF = new System.Windows.Forms.Label();
             this.lbNomeDoador = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkPF = new System.Windows.Forms.CheckBox();
-            this.checkPJ = new System.Windows.Forms.CheckBox();
-            this.lbTelefone = new System.Windows.Forms.Label();
-            this.txtDDD = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbEmail = new System.Windows.Forms.Label();
+            this.txtRG = new System.Windows.Forms.TextBox();
+            this.lbRG = new System.Windows.Forms.Label();
+            this.lbEmissor1 = new System.Windows.Forms.Label();
+            this.lbEmissor2 = new System.Windows.Forms.Label();
+            this.txtOrgaoEmissor = new System.Windows.Forms.TextBox();
             this.gBoxDoacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxDoacoes
             // 
+            this.gBoxDoacoes.Controls.Add(this.txtOrgaoEmissor);
+            this.gBoxDoacoes.Controls.Add(this.lbEmissor2);
+            this.gBoxDoacoes.Controls.Add(this.lbEmissor1);
+            this.gBoxDoacoes.Controls.Add(this.lbRG);
+            this.gBoxDoacoes.Controls.Add(this.txtRG);
             this.gBoxDoacoes.Controls.Add(this.lbEmail);
             this.gBoxDoacoes.Controls.Add(this.textBox1);
             this.gBoxDoacoes.Controls.Add(this.txtTelefone);
             this.gBoxDoacoes.Controls.Add(this.txtDDD);
             this.gBoxDoacoes.Controls.Add(this.lbTelefone);
-            this.gBoxDoacoes.Controls.Add(this.checkPJ);
-            this.gBoxDoacoes.Controls.Add(this.checkPF);
             this.gBoxDoacoes.Controls.Add(this.txtCodDoador);
             this.gBoxDoacoes.Controls.Add(this.lbCodDoador);
-            this.gBoxDoacoes.Controls.Add(this.txtOrigemDoador);
+            this.gBoxDoacoes.Controls.Add(this.txtCPF);
             this.gBoxDoacoes.Controls.Add(this.btRelatorio);
             this.gBoxDoacoes.Controls.Add(this.btExcluir);
             this.gBoxDoacoes.Controls.Add(this.btConsultar);
@@ -73,39 +79,78 @@
             this.gBoxDoacoes.Controls.Add(this.txtDataDoacao);
             this.gBoxDoacoes.Controls.Add(this.dataGridView1);
             this.gBoxDoacoes.Controls.Add(this.txtNomeDoador);
-            this.gBoxDoacoes.Controls.Add(this.lbDocumento);
+            this.gBoxDoacoes.Controls.Add(this.lbCPF);
             this.gBoxDoacoes.Controls.Add(this.lbNomeDoador);
             this.gBoxDoacoes.Controls.Add(this.btMenuInicial);
             this.gBoxDoacoes.Controls.Add(this.button1);
             this.gBoxDoacoes.Location = new System.Drawing.Point(12, 12);
             this.gBoxDoacoes.Name = "gBoxDoacoes";
             this.gBoxDoacoes.Size = new System.Drawing.Size(515, 283);
-            this.gBoxDoacoes.TabIndex = 2;
+            this.gBoxDoacoes.TabIndex = 3;
             this.gBoxDoacoes.TabStop = false;
-            this.gBoxDoacoes.Text = "Doadores";
+            this.gBoxDoacoes.Text = "Beneficiários";
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(6, 214);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(35, 13);
+            this.lbEmail.TabIndex = 30;
+            this.lbEmail.Text = "E-mail";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(59, 211);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(222, 20);
+            this.textBox1.TabIndex = 29;
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(382, 211);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(127, 20);
+            this.txtTelefone.TabIndex = 28;
+            // 
+            // txtDDD
+            // 
+            this.txtDDD.Location = new System.Drawing.Point(342, 211);
+            this.txtDDD.Name = "txtDDD";
+            this.txtDDD.Size = new System.Drawing.Size(34, 20);
+            this.txtDDD.TabIndex = 27;
+            // 
+            // lbTelefone
+            // 
+            this.lbTelefone.AutoSize = true;
+            this.lbTelefone.Location = new System.Drawing.Point(287, 214);
+            this.lbTelefone.Name = "lbTelefone";
+            this.lbTelefone.Size = new System.Drawing.Size(49, 13);
+            this.lbTelefone.TabIndex = 26;
+            this.lbTelefone.Text = "Telefone";
             // 
             // txtCodDoador
             // 
-            this.txtCodDoador.Location = new System.Drawing.Point(59, 155);
+            this.txtCodDoador.Location = new System.Drawing.Point(52, 155);
             this.txtCodDoador.Name = "txtCodDoador";
-            this.txtCodDoador.Size = new System.Drawing.Size(59, 20);
+            this.txtCodDoador.Size = new System.Drawing.Size(42, 20);
             this.txtCodDoador.TabIndex = 23;
             // 
             // lbCodDoador
             // 
             this.lbCodDoador.AutoSize = true;
-            this.lbCodDoador.Location = new System.Drawing.Point(13, 158);
+            this.lbCodDoador.Location = new System.Drawing.Point(6, 158);
             this.lbCodDoador.Name = "lbCodDoador";
             this.lbCodDoador.Size = new System.Drawing.Size(40, 13);
             this.lbCodDoador.TabIndex = 22;
             this.lbCodDoador.Text = "Código";
             // 
-            // txtOrigemDoador
+            // txtCPF
             // 
-            this.txtOrigemDoador.Location = new System.Drawing.Point(388, 156);
-            this.txtOrigemDoador.Name = "txtOrigemDoador";
-            this.txtOrigemDoador.Size = new System.Drawing.Size(121, 20);
-            this.txtOrigemDoador.TabIndex = 21;
+            this.txtCPF.Location = new System.Drawing.Point(130, 155);
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(121, 20);
+            this.txtCPF.TabIndex = 21;
             // 
             // btRelatorio
             // 
@@ -165,19 +210,19 @@
             this.txtNomeDoador.Size = new System.Drawing.Size(222, 20);
             this.txtNomeDoador.TabIndex = 8;
             // 
-            // lbDocumento
+            // lbCPF
             // 
-            this.lbDocumento.AutoSize = true;
-            this.lbDocumento.Location = new System.Drawing.Point(327, 159);
-            this.lbDocumento.Name = "lbDocumento";
-            this.lbDocumento.Size = new System.Drawing.Size(62, 13);
-            this.lbDocumento.TabIndex = 5;
-            this.lbDocumento.Text = "Documento";
+            this.lbCPF.AutoSize = true;
+            this.lbCPF.Location = new System.Drawing.Point(100, 158);
+            this.lbCPF.Name = "lbCPF";
+            this.lbCPF.Size = new System.Drawing.Size(27, 13);
+            this.lbCPF.TabIndex = 5;
+            this.lbCPF.Text = "CPF";
             // 
             // lbNomeDoador
             // 
             this.lbNomeDoador.AutoSize = true;
-            this.lbNomeDoador.Location = new System.Drawing.Point(13, 185);
+            this.lbNomeDoador.Location = new System.Drawing.Point(6, 188);
             this.lbNomeDoador.Name = "lbNomeDoador";
             this.lbNomeDoador.Size = new System.Drawing.Size(35, 13);
             this.lbNomeDoador.TabIndex = 3;
@@ -191,7 +236,6 @@
             this.btMenuInicial.TabIndex = 1;
             this.btMenuInicial.Text = "Menu Inicial";
             this.btMenuInicial.UseVisualStyleBackColor = true;
-            this.btMenuInicial.Click += new System.EventHandler(this.btMenuInicial_Click);
             // 
             // button1
             // 
@@ -202,72 +246,54 @@
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // checkPF
+            // txtRG
             // 
-            this.checkPF.AutoSize = true;
-            this.checkPF.Location = new System.Drawing.Point(124, 157);
-            this.checkPF.Name = "checkPF";
-            this.checkPF.Size = new System.Drawing.Size(93, 17);
-            this.checkPF.TabIndex = 24;
-            this.checkPF.Text = "Pessoa Física";
-            this.checkPF.UseVisualStyleBackColor = true;
+            this.txtRG.Location = new System.Drawing.Point(279, 155);
+            this.txtRG.Name = "txtRG";
+            this.txtRG.Size = new System.Drawing.Size(121, 20);
+            this.txtRG.TabIndex = 31;
             // 
-            // checkPJ
+            // lbRG
             // 
-            this.checkPJ.AutoSize = true;
-            this.checkPJ.Location = new System.Drawing.Point(223, 157);
-            this.checkPJ.Name = "checkPJ";
-            this.checkPJ.Size = new System.Drawing.Size(102, 17);
-            this.checkPJ.TabIndex = 25;
-            this.checkPJ.Text = "Pessoa Jurídica";
-            this.checkPJ.UseVisualStyleBackColor = true;
+            this.lbRG.AutoSize = true;
+            this.lbRG.Location = new System.Drawing.Point(254, 158);
+            this.lbRG.Name = "lbRG";
+            this.lbRG.Size = new System.Drawing.Size(23, 13);
+            this.lbRG.TabIndex = 32;
+            this.lbRG.Text = "RG";
             // 
-            // lbTelefone
+            // lbEmissor1
             // 
-            this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(287, 214);
-            this.lbTelefone.Name = "lbTelefone";
-            this.lbTelefone.Size = new System.Drawing.Size(49, 13);
-            this.lbTelefone.TabIndex = 26;
-            this.lbTelefone.Text = "Telefone";
+            this.lbEmissor1.AutoSize = true;
+            this.lbEmissor1.Location = new System.Drawing.Point(409, 152);
+            this.lbEmissor1.Name = "lbEmissor1";
+            this.lbEmissor1.Size = new System.Drawing.Size(36, 13);
+            this.lbEmissor1.TabIndex = 33;
+            this.lbEmissor1.Text = "Orgão";
             // 
-            // txtDDD
+            // lbEmissor2
             // 
-            this.txtDDD.Location = new System.Drawing.Point(342, 211);
-            this.txtDDD.Name = "txtDDD";
-            this.txtDDD.Size = new System.Drawing.Size(34, 20);
-            this.txtDDD.TabIndex = 27;
+            this.lbEmissor2.AutoSize = true;
+            this.lbEmissor2.Location = new System.Drawing.Point(406, 166);
+            this.lbEmissor2.Name = "lbEmissor2";
+            this.lbEmissor2.Size = new System.Drawing.Size(43, 13);
+            this.lbEmissor2.TabIndex = 34;
+            this.lbEmissor2.Text = "Emissor";
             // 
-            // txtTelefone
+            // txtOrgaoEmissor
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(382, 211);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(127, 20);
-            this.txtTelefone.TabIndex = 28;
+            this.txtOrgaoEmissor.Location = new System.Drawing.Point(448, 155);
+            this.txtOrgaoEmissor.Name = "txtOrgaoEmissor";
+            this.txtOrgaoEmissor.Size = new System.Drawing.Size(61, 20);
+            this.txtOrgaoEmissor.TabIndex = 35;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(59, 211);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 20);
-            this.textBox1.TabIndex = 29;
-            // 
-            // lbEmail
-            // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(13, 214);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(35, 13);
-            this.lbEmail.TabIndex = 30;
-            this.lbEmail.Text = "E-mail";
-            // 
-            // MenuDoadores
+            // MenuBeneficiarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 307);
             this.Controls.Add(this.gBoxDoacoes);
-            this.Name = "MenuDoadores";
+            this.Name = "MenuBeneficiarios";
             this.Text = "CaringCoPilot";
             this.gBoxDoacoes.ResumeLayout(false);
             this.gBoxDoacoes.PerformLayout();
@@ -279,7 +305,19 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gBoxDoacoes;
-        private System.Windows.Forms.TextBox txtOrigemDoador;
+        private System.Windows.Forms.TextBox txtOrgaoEmissor;
+        private System.Windows.Forms.Label lbEmissor2;
+        private System.Windows.Forms.Label lbEmissor1;
+        private System.Windows.Forms.Label lbRG;
+        private System.Windows.Forms.TextBox txtRG;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.TextBox txtDDD;
+        private System.Windows.Forms.Label lbTelefone;
+        private System.Windows.Forms.TextBox txtCodDoador;
+        private System.Windows.Forms.Label lbCodDoador;
+        private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Button btRelatorio;
         private System.Windows.Forms.Button btExcluir;
         private System.Windows.Forms.Button btConsultar;
@@ -287,18 +325,9 @@
         private System.Windows.Forms.TextBox txtDataDoacao;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtNomeDoador;
-        private System.Windows.Forms.Label lbDocumento;
+        private System.Windows.Forms.Label lbCPF;
         private System.Windows.Forms.Label lbNomeDoador;
         private System.Windows.Forms.Button btMenuInicial;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtCodDoador;
-        private System.Windows.Forms.Label lbCodDoador;
-        private System.Windows.Forms.CheckBox checkPJ;
-        private System.Windows.Forms.CheckBox checkPF;
-        private System.Windows.Forms.Label lbEmail;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtTelefone;
-        private System.Windows.Forms.TextBox txtDDD;
-        private System.Windows.Forms.Label lbTelefone;
     }
 }
