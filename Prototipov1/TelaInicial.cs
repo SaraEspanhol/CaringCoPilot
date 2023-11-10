@@ -15,14 +15,27 @@ namespace Prototipov1
         public TelaInicial()
         {
             InitializeComponent();
-        }
 
-        private void btEntrar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            TelaPerfil telaPerfil = new TelaPerfil();
-            telaPerfil.ShowDialog();
-            
         }
+            private void btEntrar_Click(object sender, EventArgs e)
+            {
+                this.Hide();
+                TelaPerfil telaPerfil = new TelaPerfil();
+                telaPerfil.ShowDialog();
+
+            }
+
+            private void TelaInicial_Load(object sender, EventArgs e)
+            {
+
+            }
+
+            private void btCadastrar_Click(object sender, EventArgs e)
+            {
+                this.Hide();
+
+
+            }
+        
     }
 }

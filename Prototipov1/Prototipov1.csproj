@@ -138,6 +138,12 @@
     <Compile Include="MenuVoluntarioRelatorio.Designer.cs">
       <DependentUpon>MenuVoluntarioRelatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaCadastroLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaCadastroLogin.Designer.cs">
+      <DependentUpon>TelaCadastroLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,7 @@
     <Compile Include="TelaRelatorioControleFinanceiro.Designer.cs">
       <DependentUpon>TelaRelatorioControleFinanceiro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="MenuBazar.resx">
       <DependentUpon>MenuBazar.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuVoluntarioRelatorio.resx">
       <DependentUpon>MenuVoluntarioRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaCadastroLogin.resx">
+      <DependentUpon>TelaCadastroLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>
