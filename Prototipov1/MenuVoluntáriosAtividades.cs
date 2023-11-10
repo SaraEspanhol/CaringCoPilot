@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Prototipov1
 {
-    public partial class MenuVoluntáriosAtualizarCadastro : Form
+    public partial class MenuVoluntáriosAtividades : Form
     {
-        public MenuVoluntáriosAtualizarCadastro()
+        public MenuVoluntáriosAtividades()
         {
             InitializeComponent();
         }

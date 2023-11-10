@@ -45,6 +45,9 @@
             this.reembolsoDeDespesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planoDeContasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.voluntáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizaçãoCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,9 +59,6 @@
             this.doaçõesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDoadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerarRebiboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.atualizaçãoCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beneficiáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gBoxPerfil.SuspendLayout();
@@ -175,7 +175,7 @@
             this.beneficiáriosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(9, 6);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(542, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(422, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -219,6 +219,27 @@
             this.voluntáriosToolStripMenuItem.Name = "voluntáriosToolStripMenuItem";
             this.voluntáriosToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.voluntáriosToolStripMenuItem.Text = "Voluntários";
+            // 
+            // cadastroToolStripMenuItem
+            // 
+            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastroToolStripMenuItem.Text = "Cadastro";
+            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
+            // 
+            // atualizaçãoCadastroToolStripMenuItem
+            // 
+            this.atualizaçãoCadastroToolStripMenuItem.Name = "atualizaçãoCadastroToolStripMenuItem";
+            this.atualizaçãoCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.atualizaçãoCadastroToolStripMenuItem.Text = "Atividades";
+            this.atualizaçãoCadastroToolStripMenuItem.Click += new System.EventHandler(this.atualizaçãoCadastroToolStripMenuItem_Click);
+            // 
+            // relatóriosToolStripMenuItem
+            // 
+            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.relatóriosToolStripMenuItem.Text = "Relatórios";
+            this.relatóriosToolStripMenuItem.Click += new System.EventHandler(this.relatóriosToolStripMenuItem_Click);
             // 
             // doaçõesToolStripMenuItem
             // 
@@ -306,27 +327,6 @@
             this.gerarRebiboToolStripMenuItem.Text = "Gerar Rebibo";
             this.gerarRebiboToolStripMenuItem.Click += new System.EventHandler(this.gerarRebiboToolStripMenuItem_Click);
             // 
-            // cadastroToolStripMenuItem
-            // 
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.cadastroToolStripMenuItem.Text = "Cadastro";
-            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
-            // 
-            // atualizaçãoCadastroToolStripMenuItem
-            // 
-            this.atualizaçãoCadastroToolStripMenuItem.Name = "atualizaçãoCadastroToolStripMenuItem";
-            this.atualizaçãoCadastroToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.atualizaçãoCadastroToolStripMenuItem.Text = "Atualização Cadastro";
-            this.atualizaçãoCadastroToolStripMenuItem.Click += new System.EventHandler(this.atualizaçãoCadastroToolStripMenuItem_Click);
-            // 
-            // relatóriosToolStripMenuItem
-            // 
-            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.relatóriosToolStripMenuItem.Text = "Relatórios";
-            this.relatóriosToolStripMenuItem.Click += new System.EventHandler(this.relatóriosToolStripMenuItem_Click);
-            // 
             // beneficiáriosToolStripMenuItem
             // 
             this.beneficiáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -352,6 +352,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaPerfil";
             this.Text = "CaringCoPilot";
+            this.Load += new System.EventHandler(this.TelaPerfil_Load);
             this.gBoxPerfil.ResumeLayout(false);
             this.gBoxPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

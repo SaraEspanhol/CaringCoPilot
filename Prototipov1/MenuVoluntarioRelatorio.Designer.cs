@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gBoxVoluntarios = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboNome = new System.Windows.Forms.ComboBox();
             this.btPesquisar = new System.Windows.Forms.Button();
             this.comboCodigo = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -39,14 +41,14 @@
             this.lbNomeVoluntario = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.btRelatorio = new System.Windows.Forms.Button();
-            this.comboNome = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btTermo = new System.Windows.Forms.Button();
             this.gBoxVoluntarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxVoluntarios
             // 
+            this.gBoxVoluntarios.Controls.Add(this.btTermo);
             this.gBoxVoluntarios.Controls.Add(this.dataGridView1);
             this.gBoxVoluntarios.Controls.Add(this.comboNome);
             this.gBoxVoluntarios.Controls.Add(this.btPesquisar);
@@ -65,6 +67,22 @@
             this.gBoxVoluntarios.TabIndex = 4;
             this.gBoxVoluntarios.TabStop = false;
             this.gBoxVoluntarios.Text = "Voluntários - Relatórios";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(503, 122);
+            this.dataGridView1.TabIndex = 101;
+            // 
+            // comboNome
+            // 
+            this.comboNome.FormattingEnabled = true;
+            this.comboNome.Location = new System.Drawing.Point(59, 225);
+            this.comboNome.Name = "comboNome";
+            this.comboNome.Size = new System.Drawing.Size(126, 21);
+            this.comboNome.TabIndex = 100;
             // 
             // btPesquisar
             // 
@@ -144,36 +162,29 @@
             // 
             // btRelatorio
             // 
-            this.btRelatorio.Location = new System.Drawing.Point(114, 264);
+            this.btRelatorio.Location = new System.Drawing.Point(107, 266);
             this.btRelatorio.Name = "btRelatorio";
             this.btRelatorio.Size = new System.Drawing.Size(95, 26);
             this.btRelatorio.TabIndex = 0;
             this.btRelatorio.Text = "Relatório";
             this.btRelatorio.UseVisualStyleBackColor = true;
             // 
-            // comboNome
+            // btTermo
             // 
-            this.comboNome.FormattingEnabled = true;
-            this.comboNome.Location = new System.Drawing.Point(59, 225);
-            this.comboNome.Name = "comboNome";
-            this.comboNome.Size = new System.Drawing.Size(126, 21);
-            this.comboNome.TabIndex = 100;
+            this.btTermo.Location = new System.Drawing.Point(208, 266);
+            this.btTermo.Name = "btTermo";
+            this.btTermo.Size = new System.Drawing.Size(132, 26);
+            this.btTermo.TabIndex = 102;
+            this.btTermo.Text = "Termo de Voluntáriado";
+            this.btTermo.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(503, 122);
-            this.dataGridView1.TabIndex = 101;
-            // 
-            // TelaCadastroVoluntarioMenor
+            // MenuVoluntarioRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 307);
             this.Controls.Add(this.gBoxVoluntarios);
-            this.Name = "TelaCadastroVoluntarioMenor";
+            this.Name = "MenuVoluntarioRelatorio";
             this.Text = "CaringCoPilot";
             this.gBoxVoluntarios.ResumeLayout(false);
             this.gBoxVoluntarios.PerformLayout();
@@ -197,5 +208,6 @@
         private System.Windows.Forms.Button btMenuInicial;
         private System.Windows.Forms.Button btRelatorio;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btTermo;
     }
 }
