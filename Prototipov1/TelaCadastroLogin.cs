@@ -22,10 +22,6 @@ namespace Prototipov1
         private const string connectionString = "server=127.0.0.1:3306;User Id=root;password='@We071120';database=sakila";
         
 
-       
-        
-  
-        
         
         public TelaCadastroLogin()
         {
@@ -33,7 +29,7 @@ namespace Prototipov1
             
         }
 
-       
+      
 
         private void CaringCoPilot_Load(object sender, EventArgs e)
         {
@@ -44,20 +40,24 @@ namespace Prototipov1
 
         private void btCadastrar_Click(object sender, EventArgs e)
         {
-            string nomeUsuario = txtLogin.Text;
-            string senha = txtSenha.Text;
+            
+                string nomeUsuario = txtLogin.Text;
+                string senha = txtSenha.Text;
 
-            if (CadastrarUsuario(nomeUsuario, senha))
-            {
-                MessageBox.Show("Usuário cadastrado com sucesso!");
-            }
-            else
-            {
-                MessageBox.Show("Erro ao cadastrar usuário. Verifique os dados e tente novamente.");
-            }
-            this.Hide();
-            TelaInicial telaInicial = new TelaInicial();
-            telaInicial.ShowDialog();
+
+                if (CadastrarUsuario(nomeUsuario, senha))
+                {
+
+                    MessageBox.Show("Usuário cadastrado com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao cadastrar usuário. Verifique os dados e tente novamente.");
+                }
+                this.Hide();
+                TelaInicial telaInicial = new TelaInicial();
+                telaInicial.ShowDialog();
+            
         }
 
         private bool CadastrarUsuario(string nomeUsuario, string senha)
