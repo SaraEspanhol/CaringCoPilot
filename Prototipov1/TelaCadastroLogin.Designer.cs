@@ -1,6 +1,6 @@
 ﻿namespace Prototipov1
 {
-    partial class CaringCoPilot
+    partial class TelaCadastroLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastroLogin));
             this.btCadastrar = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.lbSenha = new System.Windows.Forms.Label();
             this.lbLogin = new System.Windows.Forms.Label();
-            this.lbCodAdm = new System.Windows.Forms.Label();
-            this.txtCodAdm = new System.Windows.Forms.TextBox();
+            this.btLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btCadastrar
             // 
-            this.btCadastrar.Location = new System.Drawing.Point(229, 233);
+            this.btCadastrar.Location = new System.Drawing.Point(229, 214);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(90, 28);
             this.btCadastrar.TabIndex = 11;
@@ -79,36 +79,31 @@
             this.lbLogin.TabIndex = 7;
             this.lbLogin.Text = "Login";
             // 
-            // lbCodAdm
+            // btLogin
             // 
-            this.lbCodAdm.AutoSize = true;
-            this.lbCodAdm.Location = new System.Drawing.Point(117, 178);
-            this.lbCodAdm.Name = "lbCodAdm";
-            this.lbCodAdm.Size = new System.Drawing.Size(106, 13);
-            this.lbCodAdm.TabIndex = 12;
-            this.lbCodAdm.Text = "Código Administrador";
+            this.btLogin.Location = new System.Drawing.Point(229, 257);
+            this.btLogin.Name = "btLogin";
+            this.btLogin.Size = new System.Drawing.Size(90, 28);
+            this.btLogin.TabIndex = 14;
+            this.btLogin.Text = "Fazer Login";
+            this.btLogin.UseVisualStyleBackColor = true;
+            this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
             // 
-            // txtCodAdm
-            // 
-            this.txtCodAdm.Location = new System.Drawing.Point(229, 175);
-            this.txtCodAdm.Name = "txtCodAdm";
-            this.txtCodAdm.Size = new System.Drawing.Size(120, 20);
-            this.txtCodAdm.TabIndex = 13;
-            // 
-            // CaringCoPilot
+            // TelaCadastroLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 307);
-            this.Controls.Add(this.txtCodAdm);
-            this.Controls.Add(this.lbCodAdm);
+            this.Controls.Add(this.btLogin);
             this.Controls.Add(this.btCadastrar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.lbSenha);
             this.Controls.Add(this.lbLogin);
-            this.Name = "CaringCoPilot";
-            this.Text = "TelaCadastroLogin";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "TelaCadastroLogin";
+            this.Text = "CaringCoPilot";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.CaringCoPilot_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -122,7 +117,6 @@
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Label lbSenha;
         private System.Windows.Forms.Label lbLogin;
-        private System.Windows.Forms.Label lbCodAdm;
-        private System.Windows.Forms.TextBox txtCodAdm;
+        private System.Windows.Forms.Button btLogin;
     }
 }

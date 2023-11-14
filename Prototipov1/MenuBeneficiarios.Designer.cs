@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuBeneficiarios));
             this.gBoxDoacoes = new System.Windows.Forms.GroupBox();
+            this.txtOrgaoEmissor = new System.Windows.Forms.TextBox();
+            this.lbEmissor2 = new System.Windows.Forms.Label();
+            this.lbEmissor1 = new System.Windows.Forms.Label();
+            this.lbRG = new System.Windows.Forms.Label();
+            this.txtRG = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.TextBox();
@@ -48,11 +54,6 @@
             this.lbNomeDoador = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtRG = new System.Windows.Forms.TextBox();
-            this.lbRG = new System.Windows.Forms.Label();
-            this.lbEmissor1 = new System.Windows.Forms.Label();
-            this.lbEmissor2 = new System.Windows.Forms.Label();
-            this.txtOrgaoEmissor = new System.Windows.Forms.TextBox();
             this.gBoxDoacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +90,47 @@
             this.gBoxDoacoes.TabIndex = 3;
             this.gBoxDoacoes.TabStop = false;
             this.gBoxDoacoes.Text = "Beneficiários";
+            // 
+            // txtOrgaoEmissor
+            // 
+            this.txtOrgaoEmissor.Location = new System.Drawing.Point(448, 155);
+            this.txtOrgaoEmissor.Name = "txtOrgaoEmissor";
+            this.txtOrgaoEmissor.Size = new System.Drawing.Size(61, 20);
+            this.txtOrgaoEmissor.TabIndex = 35;
+            // 
+            // lbEmissor2
+            // 
+            this.lbEmissor2.AutoSize = true;
+            this.lbEmissor2.Location = new System.Drawing.Point(406, 166);
+            this.lbEmissor2.Name = "lbEmissor2";
+            this.lbEmissor2.Size = new System.Drawing.Size(43, 13);
+            this.lbEmissor2.TabIndex = 34;
+            this.lbEmissor2.Text = "Emissor";
+            // 
+            // lbEmissor1
+            // 
+            this.lbEmissor1.AutoSize = true;
+            this.lbEmissor1.Location = new System.Drawing.Point(409, 152);
+            this.lbEmissor1.Name = "lbEmissor1";
+            this.lbEmissor1.Size = new System.Drawing.Size(36, 13);
+            this.lbEmissor1.TabIndex = 33;
+            this.lbEmissor1.Text = "Orgão";
+            // 
+            // lbRG
+            // 
+            this.lbRG.AutoSize = true;
+            this.lbRG.Location = new System.Drawing.Point(254, 158);
+            this.lbRG.Name = "lbRG";
+            this.lbRG.Size = new System.Drawing.Size(23, 13);
+            this.lbRG.TabIndex = 32;
+            this.lbRG.Text = "RG";
+            // 
+            // txtRG
+            // 
+            this.txtRG.Location = new System.Drawing.Point(279, 155);
+            this.txtRG.Name = "txtRG";
+            this.txtRG.Size = new System.Drawing.Size(121, 20);
+            this.txtRG.TabIndex = 31;
             // 
             // lbEmail
             // 
@@ -246,55 +288,17 @@
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // txtRG
-            // 
-            this.txtRG.Location = new System.Drawing.Point(279, 155);
-            this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(121, 20);
-            this.txtRG.TabIndex = 31;
-            // 
-            // lbRG
-            // 
-            this.lbRG.AutoSize = true;
-            this.lbRG.Location = new System.Drawing.Point(254, 158);
-            this.lbRG.Name = "lbRG";
-            this.lbRG.Size = new System.Drawing.Size(23, 13);
-            this.lbRG.TabIndex = 32;
-            this.lbRG.Text = "RG";
-            // 
-            // lbEmissor1
-            // 
-            this.lbEmissor1.AutoSize = true;
-            this.lbEmissor1.Location = new System.Drawing.Point(409, 152);
-            this.lbEmissor1.Name = "lbEmissor1";
-            this.lbEmissor1.Size = new System.Drawing.Size(36, 13);
-            this.lbEmissor1.TabIndex = 33;
-            this.lbEmissor1.Text = "Orgão";
-            // 
-            // lbEmissor2
-            // 
-            this.lbEmissor2.AutoSize = true;
-            this.lbEmissor2.Location = new System.Drawing.Point(406, 166);
-            this.lbEmissor2.Name = "lbEmissor2";
-            this.lbEmissor2.Size = new System.Drawing.Size(43, 13);
-            this.lbEmissor2.TabIndex = 34;
-            this.lbEmissor2.Text = "Emissor";
-            // 
-            // txtOrgaoEmissor
-            // 
-            this.txtOrgaoEmissor.Location = new System.Drawing.Point(448, 155);
-            this.txtOrgaoEmissor.Name = "txtOrgaoEmissor";
-            this.txtOrgaoEmissor.Size = new System.Drawing.Size(61, 20);
-            this.txtOrgaoEmissor.TabIndex = 35;
-            // 
             // MenuBeneficiarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 307);
             this.Controls.Add(this.gBoxDoacoes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MenuBeneficiarios";
             this.Text = "CaringCoPilot";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.gBoxDoacoes.ResumeLayout(false);
             this.gBoxDoacoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -1,24 +1,40 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Prototipov1
 {
-    public partial class CaringCoPilot : Form
+    public partial class TelaCadastroLogin : Form
     {
-        public CaringCoPilot()
+       
+        
+        
+        private const string connectionString = "server=127.0.0.1:3306;User Id=root;password='@We071120';database=sakila";
+        
+
+       
+        
+  
+        
+        
+        public TelaCadastroLogin()
         {
             InitializeComponent();
+            
         }
 
        
+
         private void CaringCoPilot_Load(object sender, EventArgs e)
         {
 
@@ -26,84 +42,56 @@ namespace Prototipov1
         }    
 
 
-        public void CadastrarUsuario()
+        private void btCadastrar_Click(object sender, EventArgs e)
         {
-            List<Usuario> usuarios = new List<Usuario>();
+            string nomeUsuario = txtLogin.Text;
+            string senha = txtSenha.Text;
 
-            string nomeUsuario, senha, codAdm;
-
-            nomeUsuario = txtLogin.Text;
-                
-           // Verifica se o nome de usuário já está em uso
-             if (usuarios.Exists(u => u.NomeUsuario == nomeUsuario))
-              {
-                  MessageBox.Show("Este nome de usuário já está em uso. Escolha outro.");
-                  return;
-              }
-
-            senha = txtSenha.Text;
-
-            if (VerificarSenha(senha) == true)
-            {
-                
-            }
-            else
-            {
-                MessageBox.Show("Senha inválida! A senha deve conter pelo menos um número, um caracter especial, uma letra maiúscula e 8 caracteres.");
-            }
-
-            codAdm = txtCodAdm.Text;
-
-            if (codAdm == "123456")
+            if (CadastrarUsuario(nomeUsuario, senha))
             {
                 MessageBox.Show("Usuário cadastrado com sucesso!");
             }
             else
             {
-                MessageBox.Show("Código do Administrador Incorreto! Favor fornecer o código correto para criação do login");
+                MessageBox.Show("Erro ao cadastrar usuário. Verifique os dados e tente novamente.");
             }
-
-           // Adiciona o usuário à lista
-             usuarios.Add(new Usuario { NomeUsuario = nomeUsuario, Senha = senha });
-
+            this.Hide();
+            TelaInicial telaInicial = new TelaInicial();
+            telaInicial.ShowDialog();
         }
 
-        static bool VerificarSenha(string senha)
+        private bool CadastrarUsuario(string nomeUsuario, string senha)
         {
-            // Verifica se a senha tem pelo menos uma letra maiúscula
-            if (!senha.Any(char.IsUpper))
+            try
             {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
 
+                    string query = "INSERT INTO usuarios (NomeUsuario, Senha) VALUES (@NomeUsuario, @Senha)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@NomeUsuario", nomeUsuario);
+                        cmd.Parameters.AddWithValue("@Senha", senha);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar usuário: " + ex.Message);
                 return false;
             }
-
-            // Verifica se a senha tem pelo menos um caractere especial
-            if (!senha.Any(c => char.IsPunctuation(c) || char.IsSymbol(c)))
-            {
-
-                return false;
-            }
-
-            // Verifica se a senha tem pelo menos um número
-            if (!senha.Any(char.IsDigit))
-            {
-
-                return false;
-            }
-
-            // Verifica se a senha tem pelo menos oito caracteres (ou outro comprimento desejado)
-            if (senha.Length < 8)
-            {
-
-                return false;
-            }
-
-            return true;
         }
-
-        private void btCadastrar_Click(object sender, EventArgs e)
+        void btLogin_Click(object sender, EventArgs e)
         {
-            CadastrarUsuario();
+                this.Hide();
+                TelaInicial telaInicial = new TelaInicial();
+                telaInicial.ShowDialog();
         }
+        
     }
 }

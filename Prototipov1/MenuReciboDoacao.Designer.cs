@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuReciboDoacao));
             this.gBoxReciboDoacoes = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbCodDoador = new System.Windows.Forms.Label();
+            this.comboDoador = new System.Windows.Forms.ComboBox();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.txtDataRecibo = new System.Windows.Forms.TextBox();
             this.lbDataRecibo = new System.Windows.Forms.Label();
@@ -42,9 +46,6 @@
             this.lbOrganizacao = new System.Windows.Forms.Label();
             this.lbDoador = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
-            this.comboDoador = new System.Windows.Forms.ComboBox();
-            this.lbCodDoador = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gBoxReciboDoacoes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +73,31 @@
             this.gBoxReciboDoacoes.TabIndex = 3;
             this.gBoxReciboDoacoes.TabStop = false;
             this.gBoxReciboDoacoes.Text = "Recibo Doações";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(66, 116);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(167, 21);
+            this.comboBox1.TabIndex = 40;
+            // 
+            // lbCodDoador
+            // 
+            this.lbCodDoador.AutoSize = true;
+            this.lbCodDoador.Location = new System.Drawing.Point(6, 119);
+            this.lbCodDoador.Name = "lbCodDoador";
+            this.lbCodDoador.Size = new System.Drawing.Size(40, 13);
+            this.lbCodDoador.TabIndex = 39;
+            this.lbCodDoador.Text = "Código";
+            // 
+            // comboDoador
+            // 
+            this.comboDoador.FormattingEnabled = true;
+            this.comboDoador.Location = new System.Drawing.Point(309, 116);
+            this.comboDoador.Name = "comboDoador";
+            this.comboDoador.Size = new System.Drawing.Size(188, 21);
+            this.comboDoador.TabIndex = 38;
             // 
             // txtCPF
             // 
@@ -181,39 +207,16 @@
             this.btMenuInicial.UseVisualStyleBackColor = true;
             this.btMenuInicial.Click += new System.EventHandler(this.btMenuInicial_Click);
             // 
-            // comboDoador
-            // 
-            this.comboDoador.FormattingEnabled = true;
-            this.comboDoador.Location = new System.Drawing.Point(309, 116);
-            this.comboDoador.Name = "comboDoador";
-            this.comboDoador.Size = new System.Drawing.Size(188, 21);
-            this.comboDoador.TabIndex = 38;
-            // 
-            // lbCodDoador
-            // 
-            this.lbCodDoador.AutoSize = true;
-            this.lbCodDoador.Location = new System.Drawing.Point(6, 119);
-            this.lbCodDoador.Name = "lbCodDoador";
-            this.lbCodDoador.Size = new System.Drawing.Size(40, 13);
-            this.lbCodDoador.TabIndex = 39;
-            this.lbCodDoador.Text = "Código";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(66, 116);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(167, 21);
-            this.comboBox1.TabIndex = 40;
-            // 
             // MenuReciboDoacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 307);
             this.Controls.Add(this.gBoxReciboDoacoes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuReciboDoacao";
             this.Text = "CaringCoPilot";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.gBoxReciboDoacoes.ResumeLayout(false);
             this.gBoxReciboDoacoes.PerformLayout();
             this.ResumeLayout(false);

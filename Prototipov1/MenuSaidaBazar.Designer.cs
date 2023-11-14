@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuSaidaBazar));
             this.gBoxGestaoRecursos = new System.Windows.Forms.GroupBox();
+            this.txtValorVenda = new System.Windows.Forms.TextBox();
+            this.lbValorVenda = new System.Windows.Forms.Label();
             this.btCriarBazar = new System.Windows.Forms.Button();
             this.comboBoxCodBazar = new System.Windows.Forms.ComboBox();
             this.lbCodBazar = new System.Windows.Forms.Label();
@@ -49,8 +52,6 @@
             this.lbDescricaoEstoque = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.btCadastrar = new System.Windows.Forms.Button();
-            this.lbValorVenda = new System.Windows.Forms.Label();
-            this.txtValorVenda = new System.Windows.Forms.TextBox();
             this.gBoxGestaoRecursos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,22 @@
             this.gBoxGestaoRecursos.TabIndex = 2;
             this.gBoxGestaoRecursos.TabStop = false;
             this.gBoxGestaoRecursos.Text = "Saídas - Bazar";
+            // 
+            // txtValorVenda
+            // 
+            this.txtValorVenda.Location = new System.Drawing.Point(288, 222);
+            this.txtValorVenda.Name = "txtValorVenda";
+            this.txtValorVenda.Size = new System.Drawing.Size(55, 20);
+            this.txtValorVenda.TabIndex = 28;
+            // 
+            // lbValorVenda
+            // 
+            this.lbValorVenda.AutoSize = true;
+            this.lbValorVenda.Location = new System.Drawing.Point(187, 225);
+            this.lbValorVenda.Name = "lbValorVenda";
+            this.lbValorVenda.Size = new System.Drawing.Size(97, 13);
+            this.lbValorVenda.TabIndex = 27;
+            this.lbValorVenda.Text = "Valor de Venda R$";
             // 
             // btCriarBazar
             // 
@@ -259,30 +276,16 @@
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
             // 
-            // lbValorVenda
-            // 
-            this.lbValorVenda.AutoSize = true;
-            this.lbValorVenda.Location = new System.Drawing.Point(187, 225);
-            this.lbValorVenda.Name = "lbValorVenda";
-            this.lbValorVenda.Size = new System.Drawing.Size(97, 13);
-            this.lbValorVenda.TabIndex = 27;
-            this.lbValorVenda.Text = "Valor de Venda R$";
-            // 
-            // txtValorVenda
-            // 
-            this.txtValorVenda.Location = new System.Drawing.Point(288, 222);
-            this.txtValorVenda.Name = "txtValorVenda";
-            this.txtValorVenda.Size = new System.Drawing.Size(55, 20);
-            this.txtValorVenda.TabIndex = 28;
-            // 
             // MenuSaidaBazar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 307);
             this.Controls.Add(this.gBoxGestaoRecursos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuSaidaBazar";
             this.Text = "CaringCoPilot";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.gBoxGestaoRecursos.ResumeLayout(false);
             this.gBoxGestaoRecursos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

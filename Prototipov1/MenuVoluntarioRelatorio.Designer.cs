@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuVoluntarioRelatorio));
             this.gBoxVoluntarios = new System.Windows.Forms.GroupBox();
+            this.btTermo = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboNome = new System.Windows.Forms.ComboBox();
             this.btPesquisar = new System.Windows.Forms.Button();
@@ -41,7 +43,6 @@
             this.lbNomeVoluntario = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.btRelatorio = new System.Windows.Forms.Button();
-            this.btTermo = new System.Windows.Forms.Button();
             this.gBoxVoluntarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +68,15 @@
             this.gBoxVoluntarios.TabIndex = 4;
             this.gBoxVoluntarios.TabStop = false;
             this.gBoxVoluntarios.Text = "Voluntários - Relatórios";
+            // 
+            // btTermo
+            // 
+            this.btTermo.Location = new System.Drawing.Point(208, 266);
+            this.btTermo.Name = "btTermo";
+            this.btTermo.Size = new System.Drawing.Size(132, 26);
+            this.btTermo.TabIndex = 102;
+            this.btTermo.Text = "Termo de Voluntáriado";
+            this.btTermo.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -169,23 +179,16 @@
             this.btRelatorio.Text = "Relatório";
             this.btRelatorio.UseVisualStyleBackColor = true;
             // 
-            // btTermo
-            // 
-            this.btTermo.Location = new System.Drawing.Point(208, 266);
-            this.btTermo.Name = "btTermo";
-            this.btTermo.Size = new System.Drawing.Size(132, 26);
-            this.btTermo.TabIndex = 102;
-            this.btTermo.Text = "Termo de Voluntáriado";
-            this.btTermo.UseVisualStyleBackColor = true;
-            // 
             // MenuVoluntarioRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 307);
             this.Controls.Add(this.gBoxVoluntarios);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuVoluntarioRelatorio";
             this.Text = "CaringCoPilot";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.gBoxVoluntarios.ResumeLayout(false);
             this.gBoxVoluntarios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

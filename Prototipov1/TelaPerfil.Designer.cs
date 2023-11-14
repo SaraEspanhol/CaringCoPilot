@@ -223,21 +223,21 @@
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
             // 
             // atualizaçãoCadastroToolStripMenuItem
             // 
             this.atualizaçãoCadastroToolStripMenuItem.Name = "atualizaçãoCadastroToolStripMenuItem";
-            this.atualizaçãoCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.atualizaçãoCadastroToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.atualizaçãoCadastroToolStripMenuItem.Text = "Atividades";
             this.atualizaçãoCadastroToolStripMenuItem.Click += new System.EventHandler(this.atualizaçãoCadastroToolStripMenuItem_Click);
             // 
             // relatóriosToolStripMenuItem
             // 
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
             this.relatóriosToolStripMenuItem.Click += new System.EventHandler(this.relatóriosToolStripMenuItem_Click);
             // 
@@ -349,9 +349,11 @@
             this.ClientSize = new System.Drawing.Size(539, 307);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.gBoxPerfil);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaPerfil";
             this.Text = "CaringCoPilot";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.TelaPerfil_Load);
             this.gBoxPerfil.ResumeLayout(false);
             this.gBoxPerfil.PerformLayout();

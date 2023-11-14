@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuGestaoRecursos));
             this.gBoxControleFinanceiro = new System.Windows.Forms.GroupBox();
             this.checkDoacao = new System.Windows.Forms.CheckBox();
             this.comboBoxNomeDoador = new System.Windows.Forms.ComboBox();
@@ -294,8 +295,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 307);
             this.Controls.Add(this.gBoxControleFinanceiro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuGestaoRecursos";
             this.Text = "CaringCoPilot";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.gBoxControleFinanceiro.ResumeLayout(false);
             this.gBoxControleFinanceiro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

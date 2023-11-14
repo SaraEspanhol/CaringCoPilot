@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuVoluntáriosAtividades));
             this.gBoxVoluntarios = new System.Windows.Forms.GroupBox();
             this.btPesquisar = new System.Windows.Forms.Button();
             this.comboCodigo = new System.Windows.Forms.ComboBox();
@@ -732,8 +733,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 407);
             this.Controls.Add(this.gBoxVoluntarios);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuVoluntáriosAtividades";
             this.Text = "CaringCoPilot";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.gBoxVoluntarios.ResumeLayout(false);
             this.gBoxVoluntarios.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuVoluntarioCadastro));
             this.gBoxVoluntarios = new System.Windows.Forms.GroupBox();
+            this.btAtualizar = new System.Windows.Forms.Button();
             this.txtData = new System.Windows.Forms.TextBox();
             this.lbDia = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -89,7 +91,6 @@
             this.lbDataNascimento = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.btCadastro = new System.Windows.Forms.Button();
-            this.btAtualizar = new System.Windows.Forms.Button();
             this.gBoxVoluntarios.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -142,6 +143,15 @@
             this.gBoxVoluntarios.TabIndex = 2;
             this.gBoxVoluntarios.TabStop = false;
             this.gBoxVoluntarios.Text = "Voluntários - Cadastro";
+            // 
+            // btAtualizar
+            // 
+            this.btAtualizar.Location = new System.Drawing.Point(101, 295);
+            this.btAtualizar.Name = "btAtualizar";
+            this.btAtualizar.Size = new System.Drawing.Size(95, 26);
+            this.btAtualizar.TabIndex = 98;
+            this.btAtualizar.Text = "Atualizar";
+            this.btAtualizar.UseVisualStyleBackColor = true;
             // 
             // txtData
             // 
@@ -645,23 +655,16 @@
             this.btCadastro.Text = "Cadastrar";
             this.btCadastro.UseVisualStyleBackColor = true;
             // 
-            // btAtualizar
-            // 
-            this.btAtualizar.Location = new System.Drawing.Point(101, 295);
-            this.btAtualizar.Name = "btAtualizar";
-            this.btAtualizar.Size = new System.Drawing.Size(95, 26);
-            this.btAtualizar.TabIndex = 98;
-            this.btAtualizar.Text = "Atualizar";
-            this.btAtualizar.UseVisualStyleBackColor = true;
-            // 
             // MenuVoluntarioCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 333);
             this.Controls.Add(this.gBoxVoluntarios);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuVoluntarioCadastro";
             this.Text = "CaringCoPilot";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.gBoxVoluntarios.ResumeLayout(false);
             this.gBoxVoluntarios.PerformLayout();
             this.panel1.ResumeLayout(false);

@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuEstoque));
             this.gBoxControleFinanceiro = new System.Windows.Forms.GroupBox();
+            this.btFiltrar = new System.Windows.Forms.Button();
             this.checkBazar = new System.Windows.Forms.CheckBox();
             this.checkDoacao = new System.Windows.Forms.CheckBox();
             this.comboBoxNomeDoador = new System.Windows.Forms.ComboBox();
@@ -44,7 +46,6 @@
             this.txtDataCadastroEntrada = new System.Windows.Forms.TextBox();
             this.lbDataCadastroEntrada = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
-            this.btFiltrar = new System.Windows.Forms.Button();
             this.gBoxControleFinanceiro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,15 @@
             this.gBoxControleFinanceiro.TabIndex = 1;
             this.gBoxControleFinanceiro.TabStop = false;
             this.gBoxControleFinanceiro.Text = "Controle de Estoque";
+            // 
+            // btFiltrar
+            // 
+            this.btFiltrar.Location = new System.Drawing.Point(208, 251);
+            this.btFiltrar.Name = "btFiltrar";
+            this.btFiltrar.Size = new System.Drawing.Size(95, 26);
+            this.btFiltrar.TabIndex = 31;
+            this.btFiltrar.Text = "Filtrar";
+            this.btFiltrar.UseVisualStyleBackColor = true;
             // 
             // checkBazar
             // 
@@ -206,23 +216,16 @@
             this.btMenuInicial.UseVisualStyleBackColor = true;
             this.btMenuInicial.Click += new System.EventHandler(this.btMenuInicial_Click);
             // 
-            // btFiltrar
-            // 
-            this.btFiltrar.Location = new System.Drawing.Point(208, 251);
-            this.btFiltrar.Name = "btFiltrar";
-            this.btFiltrar.Size = new System.Drawing.Size(95, 26);
-            this.btFiltrar.TabIndex = 31;
-            this.btFiltrar.Text = "Filtrar";
-            this.btFiltrar.UseVisualStyleBackColor = true;
-            // 
             // MenuEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 307);
             this.Controls.Add(this.gBoxControleFinanceiro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuEstoque";
             this.Text = "CaringCoPilot";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.gBoxControleFinanceiro.ResumeLayout(false);
             this.gBoxControleFinanceiro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

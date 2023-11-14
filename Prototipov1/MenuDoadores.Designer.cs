@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuDoadores));
             this.gBoxDoacoes = new System.Windows.Forms.GroupBox();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.txtDDD = new System.Windows.Forms.TextBox();
+            this.lbTelefone = new System.Windows.Forms.Label();
+            this.checkPJ = new System.Windows.Forms.CheckBox();
+            this.checkPF = new System.Windows.Forms.CheckBox();
             this.txtCodDoador = new System.Windows.Forms.TextBox();
             this.lbCodDoador = new System.Windows.Forms.Label();
             this.txtOrigemDoador = new System.Windows.Forms.TextBox();
@@ -43,13 +51,6 @@
             this.lbNomeDoador = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkPF = new System.Windows.Forms.CheckBox();
-            this.checkPJ = new System.Windows.Forms.CheckBox();
-            this.lbTelefone = new System.Windows.Forms.Label();
-            this.txtDDD = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbEmail = new System.Windows.Forms.Label();
             this.gBoxDoacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +84,65 @@
             this.gBoxDoacoes.TabIndex = 2;
             this.gBoxDoacoes.TabStop = false;
             this.gBoxDoacoes.Text = "Doadores";
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(13, 214);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(35, 13);
+            this.lbEmail.TabIndex = 30;
+            this.lbEmail.Text = "E-mail";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(59, 211);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(222, 20);
+            this.textBox1.TabIndex = 29;
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(382, 211);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(127, 20);
+            this.txtTelefone.TabIndex = 28;
+            // 
+            // txtDDD
+            // 
+            this.txtDDD.Location = new System.Drawing.Point(342, 211);
+            this.txtDDD.Name = "txtDDD";
+            this.txtDDD.Size = new System.Drawing.Size(34, 20);
+            this.txtDDD.TabIndex = 27;
+            // 
+            // lbTelefone
+            // 
+            this.lbTelefone.AutoSize = true;
+            this.lbTelefone.Location = new System.Drawing.Point(287, 214);
+            this.lbTelefone.Name = "lbTelefone";
+            this.lbTelefone.Size = new System.Drawing.Size(49, 13);
+            this.lbTelefone.TabIndex = 26;
+            this.lbTelefone.Text = "Telefone";
+            // 
+            // checkPJ
+            // 
+            this.checkPJ.AutoSize = true;
+            this.checkPJ.Location = new System.Drawing.Point(223, 157);
+            this.checkPJ.Name = "checkPJ";
+            this.checkPJ.Size = new System.Drawing.Size(102, 17);
+            this.checkPJ.TabIndex = 25;
+            this.checkPJ.Text = "Pessoa Jurídica";
+            this.checkPJ.UseVisualStyleBackColor = true;
+            // 
+            // checkPF
+            // 
+            this.checkPF.AutoSize = true;
+            this.checkPF.Location = new System.Drawing.Point(124, 157);
+            this.checkPF.Name = "checkPF";
+            this.checkPF.Size = new System.Drawing.Size(93, 17);
+            this.checkPF.TabIndex = 24;
+            this.checkPF.Text = "Pessoa Física";
+            this.checkPF.UseVisualStyleBackColor = true;
             // 
             // txtCodDoador
             // 
@@ -202,73 +262,16 @@
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // checkPF
-            // 
-            this.checkPF.AutoSize = true;
-            this.checkPF.Location = new System.Drawing.Point(124, 157);
-            this.checkPF.Name = "checkPF";
-            this.checkPF.Size = new System.Drawing.Size(93, 17);
-            this.checkPF.TabIndex = 24;
-            this.checkPF.Text = "Pessoa Física";
-            this.checkPF.UseVisualStyleBackColor = true;
-            // 
-            // checkPJ
-            // 
-            this.checkPJ.AutoSize = true;
-            this.checkPJ.Location = new System.Drawing.Point(223, 157);
-            this.checkPJ.Name = "checkPJ";
-            this.checkPJ.Size = new System.Drawing.Size(102, 17);
-            this.checkPJ.TabIndex = 25;
-            this.checkPJ.Text = "Pessoa Jurídica";
-            this.checkPJ.UseVisualStyleBackColor = true;
-            // 
-            // lbTelefone
-            // 
-            this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(287, 214);
-            this.lbTelefone.Name = "lbTelefone";
-            this.lbTelefone.Size = new System.Drawing.Size(49, 13);
-            this.lbTelefone.TabIndex = 26;
-            this.lbTelefone.Text = "Telefone";
-            // 
-            // txtDDD
-            // 
-            this.txtDDD.Location = new System.Drawing.Point(342, 211);
-            this.txtDDD.Name = "txtDDD";
-            this.txtDDD.Size = new System.Drawing.Size(34, 20);
-            this.txtDDD.TabIndex = 27;
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(382, 211);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(127, 20);
-            this.txtTelefone.TabIndex = 28;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(59, 211);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 20);
-            this.textBox1.TabIndex = 29;
-            // 
-            // lbEmail
-            // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(13, 214);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(35, 13);
-            this.lbEmail.TabIndex = 30;
-            this.lbEmail.Text = "E-mail";
-            // 
             // MenuDoadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 307);
             this.Controls.Add(this.gBoxDoacoes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuDoadores";
             this.Text = "CaringCoPilot";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.gBoxDoacoes.ResumeLayout(false);
             this.gBoxDoacoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

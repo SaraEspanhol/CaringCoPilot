@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuSaidaDoacoes));
             this.gBoxGestaoRecursos = new System.Windows.Forms.GroupBox();
+            this.comboBeneficiario = new System.Windows.Forms.ComboBox();
+            this.lbBeneficiario = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtQtd = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -45,8 +48,6 @@
             this.lbDescricaoEstoque = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.lbBeneficiario = new System.Windows.Forms.Label();
-            this.comboBeneficiario = new System.Windows.Forms.ComboBox();
             this.gBoxGestaoRecursos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +78,23 @@
             this.gBoxGestaoRecursos.TabIndex = 1;
             this.gBoxGestaoRecursos.TabStop = false;
             this.gBoxGestaoRecursos.Text = "Saídas - Doação";
+            // 
+            // comboBeneficiario
+            // 
+            this.comboBeneficiario.FormattingEnabled = true;
+            this.comboBeneficiario.Location = new System.Drawing.Point(343, 184);
+            this.comboBeneficiario.Name = "comboBeneficiario";
+            this.comboBeneficiario.Size = new System.Drawing.Size(158, 21);
+            this.comboBeneficiario.TabIndex = 24;
+            // 
+            // lbBeneficiario
+            // 
+            this.lbBeneficiario.AutoSize = true;
+            this.lbBeneficiario.Location = new System.Drawing.Point(278, 190);
+            this.lbBeneficiario.Name = "lbBeneficiario";
+            this.lbBeneficiario.Size = new System.Drawing.Size(62, 13);
+            this.lbBeneficiario.TabIndex = 23;
+            this.lbBeneficiario.Text = "Beneficiário";
             // 
             // checkBox1
             // 
@@ -214,31 +232,16 @@
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // lbBeneficiario
-            // 
-            this.lbBeneficiario.AutoSize = true;
-            this.lbBeneficiario.Location = new System.Drawing.Point(278, 190);
-            this.lbBeneficiario.Name = "lbBeneficiario";
-            this.lbBeneficiario.Size = new System.Drawing.Size(62, 13);
-            this.lbBeneficiario.TabIndex = 23;
-            this.lbBeneficiario.Text = "Beneficiário";
-            // 
-            // comboBeneficiario
-            // 
-            this.comboBeneficiario.FormattingEnabled = true;
-            this.comboBeneficiario.Location = new System.Drawing.Point(343, 184);
-            this.comboBeneficiario.Name = "comboBeneficiario";
-            this.comboBeneficiario.Size = new System.Drawing.Size(158, 21);
-            this.comboBeneficiario.TabIndex = 24;
-            // 
             // MenuSaidaDoacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 307);
             this.Controls.Add(this.gBoxGestaoRecursos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuSaidaDoacoes";
             this.Text = "CaringCoPilot";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.gBoxGestaoRecursos.ResumeLayout(false);
             this.gBoxGestaoRecursos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
