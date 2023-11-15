@@ -100,6 +100,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\dbs.cs" />
     <Compile Include="MenuBazar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +197,8 @@
     <Compile Include="MenuVoluntarioRelatorio.Designer.cs">
       <DependentUpon>MenuVoluntarioRelatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\PlanoDeContas.cs" />
+    <Compile Include="VO\PlanoDeContasVO.cs" />
     <Compile Include="TelaCadastroLogin.cs">
       <SubType>Form</SubType>
     </Compile>
