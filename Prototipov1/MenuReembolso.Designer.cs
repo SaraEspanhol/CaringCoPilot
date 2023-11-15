@@ -340,7 +340,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuReembolso";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gBoxGestaoRecursos.ResumeLayout(false);
             this.gBoxGestaoRecursos.PerformLayout();
             this.panel1.ResumeLayout(false);

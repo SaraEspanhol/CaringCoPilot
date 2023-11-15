@@ -233,7 +233,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaRelatorioControleFinanceiro";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gBoxRelatorio.ResumeLayout(false);
             this.gBoxRelatorio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

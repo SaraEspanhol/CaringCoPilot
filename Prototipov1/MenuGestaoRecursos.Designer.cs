@@ -39,8 +39,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbDescricao = new System.Windows.Forms.Label();
-            this.checkSaida = new System.Windows.Forms.CheckBox();
-            this.checkEntrada = new System.Windows.Forms.CheckBox();
             this.btRelatorio = new System.Windows.Forms.Button();
             this.btAtualizar = new System.Windows.Forms.Button();
             this.lbDataFinal = new System.Windows.Forms.Label();
@@ -53,12 +51,16 @@
             this.lbOnde = new System.Windows.Forms.Label();
             this.lbDataCadastroEntrada = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
+            this.rbEntrada = new System.Windows.Forms.RadioButton();
+            this.rbSaida = new System.Windows.Forms.RadioButton();
             this.gBoxControleFinanceiro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxControleFinanceiro
             // 
+            this.gBoxControleFinanceiro.Controls.Add(this.rbSaida);
+            this.gBoxControleFinanceiro.Controls.Add(this.rbEntrada);
             this.gBoxControleFinanceiro.Controls.Add(this.checkDoacao);
             this.gBoxControleFinanceiro.Controls.Add(this.comboBoxNomeDoador);
             this.gBoxControleFinanceiro.Controls.Add(this.lbNomeDoador);
@@ -68,8 +70,6 @@
             this.gBoxControleFinanceiro.Controls.Add(this.textBox2);
             this.gBoxControleFinanceiro.Controls.Add(this.textBox1);
             this.gBoxControleFinanceiro.Controls.Add(this.lbDescricao);
-            this.gBoxControleFinanceiro.Controls.Add(this.checkSaida);
-            this.gBoxControleFinanceiro.Controls.Add(this.checkEntrada);
             this.gBoxControleFinanceiro.Controls.Add(this.btRelatorio);
             this.gBoxControleFinanceiro.Controls.Add(this.btAtualizar);
             this.gBoxControleFinanceiro.Controls.Add(this.lbDataFinal);
@@ -92,7 +92,7 @@
             // checkDoacao
             // 
             this.checkDoacao.AutoSize = true;
-            this.checkDoacao.Location = new System.Drawing.Point(393, 156);
+            this.checkDoacao.Location = new System.Drawing.Point(394, 176);
             this.checkDoacao.Name = "checkDoacao";
             this.checkDoacao.Size = new System.Drawing.Size(101, 17);
             this.checkDoacao.TabIndex = 29;
@@ -102,7 +102,7 @@
             // comboBoxNomeDoador
             // 
             this.comboBoxNomeDoador.FormattingEnabled = true;
-            this.comboBoxNomeDoador.Location = new System.Drawing.Point(383, 220);
+            this.comboBoxNomeDoador.Location = new System.Drawing.Point(375, 224);
             this.comboBoxNomeDoador.Name = "comboBoxNomeDoador";
             this.comboBoxNomeDoador.Size = new System.Drawing.Size(126, 21);
             this.comboBoxNomeDoador.TabIndex = 28;
@@ -110,7 +110,7 @@
             // lbNomeDoador
             // 
             this.lbNomeDoador.AutoSize = true;
-            this.lbNomeDoador.Location = new System.Drawing.Point(407, 195);
+            this.lbNomeDoador.Location = new System.Drawing.Point(403, 203);
             this.lbNomeDoador.Name = "lbNomeDoador";
             this.lbNomeDoador.Size = new System.Drawing.Size(73, 13);
             this.lbNomeDoador.TabIndex = 27;
@@ -137,7 +137,7 @@
             // lbValor
             // 
             this.lbValor.AutoSize = true;
-            this.lbValor.Location = new System.Drawing.Point(9, 224);
+            this.lbValor.Location = new System.Drawing.Point(9, 216);
             this.lbValor.Name = "lbValor";
             this.lbValor.Size = new System.Drawing.Size(48, 13);
             this.lbValor.TabIndex = 24;
@@ -145,14 +145,14 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(75, 221);
+            this.textBox2.Location = new System.Drawing.Point(75, 213);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(81, 20);
             this.textBox2.TabIndex = 23;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(225, 156);
+            this.textBox1.Location = new System.Drawing.Point(225, 143);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(144, 20);
             this.textBox1.TabIndex = 22;
@@ -160,31 +160,11 @@
             // lbDescricao
             // 
             this.lbDescricao.AutoSize = true;
-            this.lbDescricao.Location = new System.Drawing.Point(169, 159);
+            this.lbDescricao.Location = new System.Drawing.Point(169, 146);
             this.lbDescricao.Name = "lbDescricao";
             this.lbDescricao.Size = new System.Drawing.Size(55, 13);
             this.lbDescricao.TabIndex = 21;
             this.lbDescricao.Text = "Descrição";
-            // 
-            // checkSaida
-            // 
-            this.checkSaida.AutoSize = true;
-            this.checkSaida.Location = new System.Drawing.Point(101, 136);
-            this.checkSaida.Name = "checkSaida";
-            this.checkSaida.Size = new System.Drawing.Size(55, 17);
-            this.checkSaida.TabIndex = 20;
-            this.checkSaida.Text = "Saída";
-            this.checkSaida.UseVisualStyleBackColor = true;
-            // 
-            // checkEntrada
-            // 
-            this.checkEntrada.AutoSize = true;
-            this.checkEntrada.Location = new System.Drawing.Point(24, 136);
-            this.checkEntrada.Name = "checkEntrada";
-            this.checkEntrada.Size = new System.Drawing.Size(63, 17);
-            this.checkEntrada.TabIndex = 19;
-            this.checkEntrada.Text = "Entrada";
-            this.checkEntrada.UseVisualStyleBackColor = true;
             // 
             // btRelatorio
             // 
@@ -208,7 +188,7 @@
             // lbDataFinal
             // 
             this.lbDataFinal.AutoSize = true;
-            this.lbDataFinal.Location = new System.Drawing.Point(9, 191);
+            this.lbDataFinal.Location = new System.Drawing.Point(9, 180);
             this.lbDataFinal.Name = "lbDataFinal";
             this.lbDataFinal.Size = new System.Drawing.Size(55, 13);
             this.lbDataFinal.TabIndex = 15;
@@ -216,7 +196,7 @@
             // 
             // txtDataFinal
             // 
-            this.txtDataFinal.Location = new System.Drawing.Point(75, 188);
+            this.txtDataFinal.Location = new System.Drawing.Point(75, 177);
             this.txtDataFinal.Name = "txtDataFinal";
             this.txtDataFinal.Size = new System.Drawing.Size(81, 20);
             this.txtDataFinal.TabIndex = 14;
@@ -232,7 +212,7 @@
             // cBoxLocalCadastroEntrada
             // 
             this.cBoxLocalCadastroEntrada.FormattingEnabled = true;
-            this.cBoxLocalCadastroEntrada.Location = new System.Drawing.Point(225, 187);
+            this.cBoxLocalCadastroEntrada.Location = new System.Drawing.Point(225, 176);
             this.cBoxLocalCadastroEntrada.Name = "cBoxLocalCadastroEntrada";
             this.cBoxLocalCadastroEntrada.Size = new System.Drawing.Size(144, 21);
             this.cBoxLocalCadastroEntrada.TabIndex = 11;
@@ -240,14 +220,14 @@
             // cBoxContaCadastroEntrada
             // 
             this.cBoxContaCadastroEntrada.FormattingEnabled = true;
-            this.cBoxContaCadastroEntrada.Location = new System.Drawing.Point(225, 220);
+            this.cBoxContaCadastroEntrada.Location = new System.Drawing.Point(225, 212);
             this.cBoxContaCadastroEntrada.Name = "cBoxContaCadastroEntrada";
             this.cBoxContaCadastroEntrada.Size = new System.Drawing.Size(144, 21);
             this.cBoxContaCadastroEntrada.TabIndex = 10;
             // 
             // txtDataCadastroEntrada
             // 
-            this.txtDataCadastroEntrada.Location = new System.Drawing.Point(75, 156);
+            this.txtDataCadastroEntrada.Location = new System.Drawing.Point(75, 143);
             this.txtDataCadastroEntrada.Name = "txtDataCadastroEntrada";
             this.txtDataCadastroEntrada.Size = new System.Drawing.Size(81, 20);
             this.txtDataCadastroEntrada.TabIndex = 7;
@@ -255,7 +235,7 @@
             // lbContaCadastroEntrada
             // 
             this.lbContaCadastroEntrada.AutoSize = true;
-            this.lbContaCadastroEntrada.Location = new System.Drawing.Point(169, 223);
+            this.lbContaCadastroEntrada.Location = new System.Drawing.Point(169, 215);
             this.lbContaCadastroEntrada.Name = "lbContaCadastroEntrada";
             this.lbContaCadastroEntrada.Size = new System.Drawing.Size(35, 13);
             this.lbContaCadastroEntrada.TabIndex = 5;
@@ -264,7 +244,7 @@
             // lbOnde
             // 
             this.lbOnde.AutoSize = true;
-            this.lbOnde.Location = new System.Drawing.Point(169, 191);
+            this.lbOnde.Location = new System.Drawing.Point(169, 180);
             this.lbOnde.Name = "lbOnde";
             this.lbOnde.Size = new System.Drawing.Size(33, 13);
             this.lbOnde.TabIndex = 4;
@@ -273,7 +253,7 @@
             // lbDataCadastroEntrada
             // 
             this.lbDataCadastroEntrada.AutoSize = true;
-            this.lbDataCadastroEntrada.Location = new System.Drawing.Point(9, 159);
+            this.lbDataCadastroEntrada.Location = new System.Drawing.Point(9, 146);
             this.lbDataCadastroEntrada.Name = "lbDataCadastroEntrada";
             this.lbDataCadastroEntrada.Size = new System.Drawing.Size(60, 13);
             this.lbDataCadastroEntrada.TabIndex = 2;
@@ -289,6 +269,28 @@
             this.btMenuInicial.UseVisualStyleBackColor = true;
             this.btMenuInicial.Click += new System.EventHandler(this.btMenuInicial_Click);
             // 
+            // rbEntrada
+            // 
+            this.rbEntrada.AutoSize = true;
+            this.rbEntrada.Location = new System.Drawing.Point(383, 142);
+            this.rbEntrada.Name = "rbEntrada";
+            this.rbEntrada.Size = new System.Drawing.Size(62, 17);
+            this.rbEntrada.TabIndex = 30;
+            this.rbEntrada.TabStop = true;
+            this.rbEntrada.Text = "Entrada";
+            this.rbEntrada.UseVisualStyleBackColor = true;
+            // 
+            // rbSaida
+            // 
+            this.rbSaida.AutoSize = true;
+            this.rbSaida.Location = new System.Drawing.Point(451, 143);
+            this.rbSaida.Name = "rbSaida";
+            this.rbSaida.Size = new System.Drawing.Size(54, 17);
+            this.rbSaida.TabIndex = 31;
+            this.rbSaida.TabStop = true;
+            this.rbSaida.Text = "Saída";
+            this.rbSaida.UseVisualStyleBackColor = true;
+            // 
             // MenuGestaoRecursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,7 +300,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuGestaoRecursos";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gBoxControleFinanceiro.ResumeLayout(false);
             this.gBoxControleFinanceiro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -321,8 +323,6 @@
         private System.Windows.Forms.Label lbDataFinal;
         private System.Windows.Forms.TextBox txtDataFinal;
         private System.Windows.Forms.Button btRelatorio;
-        private System.Windows.Forms.CheckBox checkSaida;
-        private System.Windows.Forms.CheckBox checkEntrada;
         private System.Windows.Forms.Label lbValor;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
@@ -332,5 +332,7 @@
         private System.Windows.Forms.CheckBox checkDoacao;
         private System.Windows.Forms.ComboBox comboBoxNomeDoador;
         private System.Windows.Forms.Label lbNomeDoador;
+        private System.Windows.Forms.RadioButton rbSaida;
+        private System.Windows.Forms.RadioButton rbEntrada;
     }
 }

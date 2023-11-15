@@ -73,39 +73,34 @@
             this.lbLocal = new System.Windows.Forms.Label();
             this.lbHorarios = new System.Windows.Forms.Label();
             this.lbDiaDaSemana = new System.Windows.Forms.Label();
-            this.txtDDD = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbEmissor = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lbRG = new System.Windows.Forms.Label();
             this.txtONG = new System.Windows.Forms.TextBox();
             this.lbONG = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtRG = new System.Windows.Forms.TextBox();
-            this.txtDataNascimento = new System.Windows.Forms.TextBox();
             this.lbQtdHoras = new System.Windows.Forms.Label();
             this.txtQrdHoras = new System.Windows.Forms.TextBox();
             this.txtValorTotalVoluntario = new System.Windows.Forms.TextBox();
             this.txtSalarioMercado = new System.Windows.Forms.TextBox();
             this.lbValorHoraVoluntario = new System.Windows.Forms.Label();
             this.txtValorHoraVoluntario = new System.Windows.Forms.TextBox();
-            this.txtCPF = new System.Windows.Forms.TextBox();
-            this.lbCPF = new System.Windows.Forms.Label();
             this.lbValorTotalVoluntario = new System.Windows.Forms.Label();
             this.lbSalarioMercado = new System.Windows.Forms.Label();
             this.lbNomeVoluntario = new System.Windows.Forms.Label();
-            this.lbDataNascimento = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.btAtualizar = new System.Windows.Forms.Button();
+            this.cBoxDiaSemana8 = new System.Windows.Forms.ComboBox();
+            this.txtServico8 = new System.Windows.Forms.TextBox();
+            this.txtLocal8 = new System.Windows.Forms.TextBox();
+            this.txtHorario8 = new System.Windows.Forms.TextBox();
+            this.lbAtividade = new System.Windows.Forms.Label();
+            this.txtAtividade = new System.Windows.Forms.TextBox();
             this.gBoxVoluntarios.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gBoxVoluntarios
             // 
+            this.gBoxVoluntarios.Controls.Add(this.txtAtividade);
+            this.gBoxVoluntarios.Controls.Add(this.lbAtividade);
             this.gBoxVoluntarios.Controls.Add(this.btPesquisar);
             this.gBoxVoluntarios.Controls.Add(this.comboCodigo);
             this.gBoxVoluntarios.Controls.Add(this.txtData);
@@ -116,36 +111,23 @@
             this.gBoxVoluntarios.Controls.Add(this.lbMes);
             this.gBoxVoluntarios.Controls.Add(this.lbCodigo);
             this.gBoxVoluntarios.Controls.Add(this.panel2);
-            this.gBoxVoluntarios.Controls.Add(this.txtDDD);
-            this.gBoxVoluntarios.Controls.Add(this.txtEmail);
-            this.gBoxVoluntarios.Controls.Add(this.label2);
-            this.gBoxVoluntarios.Controls.Add(this.txtTelefone);
-            this.gBoxVoluntarios.Controls.Add(this.label1);
-            this.gBoxVoluntarios.Controls.Add(this.lbEmissor);
-            this.gBoxVoluntarios.Controls.Add(this.textBox2);
-            this.gBoxVoluntarios.Controls.Add(this.lbRG);
             this.gBoxVoluntarios.Controls.Add(this.txtONG);
             this.gBoxVoluntarios.Controls.Add(this.lbONG);
             this.gBoxVoluntarios.Controls.Add(this.txtNome);
-            this.gBoxVoluntarios.Controls.Add(this.txtRG);
-            this.gBoxVoluntarios.Controls.Add(this.txtDataNascimento);
             this.gBoxVoluntarios.Controls.Add(this.lbQtdHoras);
             this.gBoxVoluntarios.Controls.Add(this.txtQrdHoras);
             this.gBoxVoluntarios.Controls.Add(this.txtValorTotalVoluntario);
             this.gBoxVoluntarios.Controls.Add(this.txtSalarioMercado);
             this.gBoxVoluntarios.Controls.Add(this.lbValorHoraVoluntario);
             this.gBoxVoluntarios.Controls.Add(this.txtValorHoraVoluntario);
-            this.gBoxVoluntarios.Controls.Add(this.txtCPF);
-            this.gBoxVoluntarios.Controls.Add(this.lbCPF);
             this.gBoxVoluntarios.Controls.Add(this.lbValorTotalVoluntario);
             this.gBoxVoluntarios.Controls.Add(this.lbSalarioMercado);
             this.gBoxVoluntarios.Controls.Add(this.lbNomeVoluntario);
-            this.gBoxVoluntarios.Controls.Add(this.lbDataNascimento);
             this.gBoxVoluntarios.Controls.Add(this.btMenuInicial);
             this.gBoxVoluntarios.Controls.Add(this.btAtualizar);
-            this.gBoxVoluntarios.Location = new System.Drawing.Point(12, 5);
+            this.gBoxVoluntarios.Location = new System.Drawing.Point(3, 5);
             this.gBoxVoluntarios.Name = "gBoxVoluntarios";
-            this.gBoxVoluntarios.Size = new System.Drawing.Size(515, 400);
+            this.gBoxVoluntarios.Size = new System.Drawing.Size(534, 400);
             this.gBoxVoluntarios.TabIndex = 3;
             this.gBoxVoluntarios.TabStop = false;
             this.gBoxVoluntarios.Text = "Voluntários - Atividades";
@@ -162,14 +144,14 @@
             // comboCodigo
             // 
             this.comboCodigo.FormattingEnabled = true;
-            this.comboCodigo.Location = new System.Drawing.Point(55, 36);
+            this.comboCodigo.Location = new System.Drawing.Point(182, 12);
             this.comboCodigo.Name = "comboCodigo";
             this.comboCodigo.Size = new System.Drawing.Size(96, 21);
             this.comboCodigo.TabIndex = 98;
             // 
             // txtData
             // 
-            this.txtData.Location = new System.Drawing.Point(280, 13);
+            this.txtData.Location = new System.Drawing.Point(313, 13);
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(31, 20);
             this.txtData.TabIndex = 97;
@@ -177,7 +159,7 @@
             // lbDia
             // 
             this.lbDia.AutoSize = true;
-            this.lbDia.Location = new System.Drawing.Point(248, 16);
+            this.lbDia.Location = new System.Drawing.Point(284, 16);
             this.lbDia.Name = "lbDia";
             this.lbDia.Size = new System.Drawing.Size(23, 13);
             this.lbDia.TabIndex = 96;
@@ -201,7 +183,7 @@
             // 
             // txtMes
             // 
-            this.txtMes.Location = new System.Drawing.Point(370, 13);
+            this.txtMes.Location = new System.Drawing.Point(384, 13);
             this.txtMes.Name = "txtMes";
             this.txtMes.Size = new System.Drawing.Size(31, 20);
             this.txtMes.TabIndex = 93;
@@ -209,7 +191,7 @@
             // lbMes
             // 
             this.lbMes.AutoSize = true;
-            this.lbMes.Location = new System.Drawing.Point(337, 16);
+            this.lbMes.Location = new System.Drawing.Point(351, 16);
             this.lbMes.Name = "lbMes";
             this.lbMes.Size = new System.Drawing.Size(27, 13);
             this.lbMes.TabIndex = 92;
@@ -218,7 +200,7 @@
             // lbCodigo
             // 
             this.lbCodigo.AutoSize = true;
-            this.lbCodigo.Location = new System.Drawing.Point(6, 39);
+            this.lbCodigo.Location = new System.Drawing.Point(141, 16);
             this.lbCodigo.Name = "lbCodigo";
             this.lbCodigo.Size = new System.Drawing.Size(40, 13);
             this.lbCodigo.TabIndex = 90;
@@ -226,6 +208,10 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.cBoxDiaSemana8);
+            this.panel2.Controls.Add(this.txtServico8);
+            this.panel2.Controls.Add(this.txtLocal8);
+            this.panel2.Controls.Add(this.txtHorario8);
             this.panel2.Controls.Add(this.cBoxDiaSemana7);
             this.panel2.Controls.Add(this.cBoxDiaSemana6);
             this.panel2.Controls.Add(this.cBoxDiaSemana5);
@@ -259,9 +245,9 @@
             this.panel2.Controls.Add(this.lbLocal);
             this.panel2.Controls.Add(this.lbHorarios);
             this.panel2.Controls.Add(this.lbDiaDaSemana);
-            this.panel2.Location = new System.Drawing.Point(4, 158);
+            this.panel2.Location = new System.Drawing.Point(12, 112);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(509, 203);
+            this.panel2.Size = new System.Drawing.Size(509, 237);
             this.panel2.TabIndex = 89;
             // 
             // cBoxDiaSemana7
@@ -408,7 +394,7 @@
             // 
             this.vScrollBar1.Location = new System.Drawing.Point(486, 22);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(20, 170);
+            this.vScrollBar1.Size = new System.Drawing.Size(20, 202);
             this.vScrollBar1.TabIndex = 89;
             // 
             // txtSerivo3
@@ -510,81 +496,17 @@
             this.lbDiaDaSemana.TabIndex = 74;
             this.lbDiaDaSemana.Text = "Dias da Semana";
             // 
-            // txtDDD
-            // 
-            this.txtDDD.Location = new System.Drawing.Point(208, 62);
-            this.txtDDD.Name = "txtDDD";
-            this.txtDDD.Size = new System.Drawing.Size(31, 20);
-            this.txtDDD.TabIndex = 49;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(390, 62);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(122, 20);
-            this.txtEmail.TabIndex = 48;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(349, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "E-mail";
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(245, 62);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(98, 20);
-            this.txtTelefone.TabIndex = 46;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(157, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "Telefone";
-            // 
-            // lbEmissor
-            // 
-            this.lbEmissor.AutoSize = true;
-            this.lbEmissor.Location = new System.Drawing.Point(376, 93);
-            this.lbEmissor.Name = "lbEmissor";
-            this.lbEmissor.Size = new System.Drawing.Size(75, 13);
-            this.lbEmissor.TabIndex = 34;
-            this.lbEmissor.Text = "Orgão Emissor";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(460, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(52, 20);
-            this.textBox2.TabIndex = 28;
-            // 
-            // lbRG
-            // 
-            this.lbRG.AutoSize = true;
-            this.lbRG.Location = new System.Drawing.Point(197, 93);
-            this.lbRG.Name = "lbRG";
-            this.lbRG.Size = new System.Drawing.Size(23, 13);
-            this.lbRG.TabIndex = 33;
-            this.lbRG.Text = "RG";
-            // 
             // txtONG
             // 
-            this.txtONG.Location = new System.Drawing.Point(55, 13);
+            this.txtONG.Location = new System.Drawing.Point(39, 13);
             this.txtONG.Name = "txtONG";
-            this.txtONG.Size = new System.Drawing.Size(144, 20);
+            this.txtONG.Size = new System.Drawing.Size(96, 20);
             this.txtONG.TabIndex = 32;
             // 
             // lbONG
             // 
             this.lbONG.AutoSize = true;
-            this.lbONG.Location = new System.Drawing.Point(10, 16);
+            this.lbONG.Location = new System.Drawing.Point(4, 16);
             this.lbONG.Name = "lbONG";
             this.lbONG.Size = new System.Drawing.Size(31, 13);
             this.lbONG.TabIndex = 31;
@@ -592,29 +514,15 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(251, 36);
+            this.txtNome.Location = new System.Drawing.Point(87, 36);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(261, 20);
+            this.txtNome.Size = new System.Drawing.Size(257, 20);
             this.txtNome.TabIndex = 30;
-            // 
-            // txtRG
-            // 
-            this.txtRG.Location = new System.Drawing.Point(226, 90);
-            this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(144, 20);
-            this.txtRG.TabIndex = 27;
-            // 
-            // txtDataNascimento
-            // 
-            this.txtDataNascimento.Location = new System.Drawing.Point(67, 62);
-            this.txtDataNascimento.Name = "txtDataNascimento";
-            this.txtDataNascimento.Size = new System.Drawing.Size(84, 20);
-            this.txtDataNascimento.TabIndex = 24;
             // 
             // lbQtdHoras
             // 
             this.lbQtdHoras.AutoSize = true;
-            this.lbQtdHoras.Location = new System.Drawing.Point(152, 121);
+            this.lbQtdHoras.Location = new System.Drawing.Point(175, 63);
             this.lbQtdHoras.Name = "lbQtdHoras";
             this.lbQtdHoras.Size = new System.Drawing.Size(93, 13);
             this.lbQtdHoras.TabIndex = 22;
@@ -622,29 +530,29 @@
             // 
             // txtQrdHoras
             // 
-            this.txtQrdHoras.Location = new System.Drawing.Point(245, 116);
+            this.txtQrdHoras.Location = new System.Drawing.Point(274, 60);
             this.txtQrdHoras.Name = "txtQrdHoras";
-            this.txtQrdHoras.Size = new System.Drawing.Size(33, 20);
+            this.txtQrdHoras.Size = new System.Drawing.Size(61, 20);
             this.txtQrdHoras.TabIndex = 21;
             // 
             // txtValorTotalVoluntario
             // 
-            this.txtValorTotalVoluntario.Location = new System.Drawing.Point(444, 118);
+            this.txtValorTotalVoluntario.Location = new System.Drawing.Point(447, 86);
             this.txtValorTotalVoluntario.Name = "txtValorTotalVoluntario";
             this.txtValorTotalVoluntario.Size = new System.Drawing.Size(66, 20);
             this.txtValorTotalVoluntario.TabIndex = 20;
             // 
             // txtSalarioMercado
             // 
-            this.txtSalarioMercado.Location = new System.Drawing.Point(94, 116);
+            this.txtSalarioMercado.Location = new System.Drawing.Point(87, 60);
             this.txtSalarioMercado.Name = "txtSalarioMercado";
-            this.txtSalarioMercado.Size = new System.Drawing.Size(52, 20);
+            this.txtSalarioMercado.Size = new System.Drawing.Size(82, 20);
             this.txtSalarioMercado.TabIndex = 19;
             // 
             // lbValorHoraVoluntario
             // 
             this.lbValorHoraVoluntario.AutoSize = true;
-            this.lbValorHoraVoluntario.Location = new System.Drawing.Point(284, 121);
+            this.lbValorHoraVoluntario.Location = new System.Drawing.Point(341, 63);
             this.lbValorHoraVoluntario.Name = "lbValorHoraVoluntario";
             this.lbValorHoraVoluntario.Size = new System.Drawing.Size(57, 13);
             this.lbValorHoraVoluntario.TabIndex = 15;
@@ -652,31 +560,15 @@
             // 
             // txtValorHoraVoluntario
             // 
-            this.txtValorHoraVoluntario.Location = new System.Drawing.Point(347, 118);
+            this.txtValorHoraVoluntario.Location = new System.Drawing.Point(404, 60);
             this.txtValorHoraVoluntario.Name = "txtValorHoraVoluntario";
-            this.txtValorHoraVoluntario.Size = new System.Drawing.Size(37, 20);
+            this.txtValorHoraVoluntario.Size = new System.Drawing.Size(108, 20);
             this.txtValorHoraVoluntario.TabIndex = 14;
-            // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new System.Drawing.Point(47, 90);
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(144, 20);
-            this.txtCPF.TabIndex = 12;
-            // 
-            // lbCPF
-            // 
-            this.lbCPF.AutoSize = true;
-            this.lbCPF.Location = new System.Drawing.Point(6, 93);
-            this.lbCPF.Name = "lbCPF";
-            this.lbCPF.Size = new System.Drawing.Size(27, 13);
-            this.lbCPF.TabIndex = 6;
-            this.lbCPF.Text = "CPF";
             // 
             // lbValorTotalVoluntario
             // 
             this.lbValorTotalVoluntario.AutoSize = true;
-            this.lbValorTotalVoluntario.Location = new System.Drawing.Point(387, 121);
+            this.lbValorTotalVoluntario.Location = new System.Drawing.Point(381, 89);
             this.lbValorTotalVoluntario.Name = "lbValorTotalVoluntario";
             this.lbValorTotalVoluntario.Size = new System.Drawing.Size(58, 13);
             this.lbValorTotalVoluntario.TabIndex = 5;
@@ -685,7 +577,7 @@
             // lbSalarioMercado
             // 
             this.lbSalarioMercado.AutoSize = true;
-            this.lbSalarioMercado.Location = new System.Drawing.Point(6, 121);
+            this.lbSalarioMercado.Location = new System.Drawing.Point(4, 63);
             this.lbSalarioMercado.Name = "lbSalarioMercado";
             this.lbSalarioMercado.Size = new System.Drawing.Size(84, 13);
             this.lbSalarioMercado.TabIndex = 4;
@@ -694,20 +586,11 @@
             // lbNomeVoluntario
             // 
             this.lbNomeVoluntario.AutoSize = true;
-            this.lbNomeVoluntario.Location = new System.Drawing.Point(160, 39);
+            this.lbNomeVoluntario.Location = new System.Drawing.Point(4, 38);
             this.lbNomeVoluntario.Name = "lbNomeVoluntario";
             this.lbNomeVoluntario.Size = new System.Drawing.Size(85, 13);
             this.lbNomeVoluntario.TabIndex = 3;
             this.lbNomeVoluntario.Text = "Nome Voluntário";
-            // 
-            // lbDataNascimento
-            // 
-            this.lbDataNascimento.AutoSize = true;
-            this.lbDataNascimento.Location = new System.Drawing.Point(4, 65);
-            this.lbDataNascimento.Name = "lbDataNascimento";
-            this.lbDataNascimento.Size = new System.Drawing.Size(63, 13);
-            this.lbDataNascimento.TabIndex = 2;
-            this.lbDataNascimento.Text = "Nascimento";
             // 
             // btMenuInicial
             // 
@@ -727,6 +610,51 @@
             this.btAtualizar.Text = "Atualizar";
             this.btAtualizar.UseVisualStyleBackColor = true;
             // 
+            // cBoxDiaSemana8
+            // 
+            this.cBoxDiaSemana8.FormattingEnabled = true;
+            this.cBoxDiaSemana8.Location = new System.Drawing.Point(3, 203);
+            this.cBoxDiaSemana8.Name = "cBoxDiaSemana8";
+            this.cBoxDiaSemana8.Size = new System.Drawing.Size(96, 21);
+            this.cBoxDiaSemana8.TabIndex = 111;
+            // 
+            // txtServico8
+            // 
+            this.txtServico8.Location = new System.Drawing.Point(296, 204);
+            this.txtServico8.Name = "txtServico8";
+            this.txtServico8.Size = new System.Drawing.Size(187, 20);
+            this.txtServico8.TabIndex = 110;
+            // 
+            // txtLocal8
+            // 
+            this.txtLocal8.Location = new System.Drawing.Point(194, 204);
+            this.txtLocal8.Name = "txtLocal8";
+            this.txtLocal8.Size = new System.Drawing.Size(96, 20);
+            this.txtLocal8.TabIndex = 109;
+            // 
+            // txtHorario8
+            // 
+            this.txtHorario8.Location = new System.Drawing.Point(102, 204);
+            this.txtHorario8.Name = "txtHorario8";
+            this.txtHorario8.Size = new System.Drawing.Size(86, 20);
+            this.txtHorario8.TabIndex = 108;
+            // 
+            // lbAtividade
+            // 
+            this.lbAtividade.AutoSize = true;
+            this.lbAtividade.Location = new System.Drawing.Point(350, 39);
+            this.lbAtividade.Name = "lbAtividade";
+            this.lbAtividade.Size = new System.Drawing.Size(51, 13);
+            this.lbAtividade.TabIndex = 100;
+            this.lbAtividade.Text = "Atividade";
+            // 
+            // txtAtividade
+            // 
+            this.txtAtividade.Location = new System.Drawing.Point(404, 36);
+            this.txtAtividade.Name = "txtAtividade";
+            this.txtAtividade.Size = new System.Drawing.Size(108, 20);
+            this.txtAtividade.TabIndex = 101;
+            // 
             // MenuVoluntáriosAtividades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -736,7 +664,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuVoluntáriosAtividades";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gBoxVoluntarios.ResumeLayout(false);
             this.gBoxVoluntarios.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -771,31 +699,18 @@
         private System.Windows.Forms.Label lbLocal;
         private System.Windows.Forms.Label lbHorarios;
         private System.Windows.Forms.Label lbDiaDaSemana;
-        private System.Windows.Forms.TextBox txtDDD;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTelefone;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbEmissor;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label lbRG;
         private System.Windows.Forms.TextBox txtONG;
         private System.Windows.Forms.Label lbONG;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtRG;
-        private System.Windows.Forms.TextBox txtDataNascimento;
         private System.Windows.Forms.Label lbQtdHoras;
         private System.Windows.Forms.TextBox txtQrdHoras;
         private System.Windows.Forms.TextBox txtValorTotalVoluntario;
         private System.Windows.Forms.TextBox txtSalarioMercado;
         private System.Windows.Forms.Label lbValorHoraVoluntario;
         private System.Windows.Forms.TextBox txtValorHoraVoluntario;
-        private System.Windows.Forms.TextBox txtCPF;
-        private System.Windows.Forms.Label lbCPF;
         private System.Windows.Forms.Label lbValorTotalVoluntario;
         private System.Windows.Forms.Label lbSalarioMercado;
         private System.Windows.Forms.Label lbNomeVoluntario;
-        private System.Windows.Forms.Label lbDataNascimento;
         private System.Windows.Forms.Button btMenuInicial;
         private System.Windows.Forms.Button btAtualizar;
         private System.Windows.Forms.Button btPesquisar;
@@ -818,5 +733,11 @@
         private System.Windows.Forms.ComboBox cBoxDiaSemana3;
         private System.Windows.Forms.ComboBox cBoxDiaSemana1;
         private System.Windows.Forms.ComboBox cBoxDiaSemana;
+        private System.Windows.Forms.ComboBox cBoxDiaSemana8;
+        private System.Windows.Forms.TextBox txtServico8;
+        private System.Windows.Forms.TextBox txtLocal8;
+        private System.Windows.Forms.TextBox txtHorario8;
+        private System.Windows.Forms.TextBox txtAtividade;
+        private System.Windows.Forms.Label lbAtividade;
     }
 }

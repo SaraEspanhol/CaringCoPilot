@@ -216,7 +216,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuReciboDoacao";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gBoxReciboDoacoes.ResumeLayout(false);
             this.gBoxReciboDoacoes.PerformLayout();
             this.ResumeLayout(false);

@@ -22,5 +22,12 @@ namespace Prototipov1
             TelaPerfil telaPerfil = new TelaPerfil();
             telaPerfil.ShowDialog();
         }
+
+        private void MenuPlanoDeContasCadastrar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -34,8 +34,6 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.btEditarPerfil = new System.Windows.Forms.Button();
             this.lbNome = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbCargo = new System.Windows.Forms.Label();
             this.btSair = new System.Windows.Forms.Button();
             this.lbNomePerfil = new System.Windows.Forms.Label();
             this.lbBemVindo = new System.Windows.Forms.Label();
@@ -63,7 +61,6 @@
             this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gBoxPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,14 +70,12 @@
             this.gBoxPerfil.Controls.Add(this.monthCalendar1);
             this.gBoxPerfil.Controls.Add(this.btEditarPerfil);
             this.gBoxPerfil.Controls.Add(this.lbNome);
-            this.gBoxPerfil.Controls.Add(this.pictureBox1);
-            this.gBoxPerfil.Controls.Add(this.lbCargo);
             this.gBoxPerfil.Controls.Add(this.btSair);
             this.gBoxPerfil.Controls.Add(this.lbNomePerfil);
             this.gBoxPerfil.Controls.Add(this.lbBemVindo);
             this.gBoxPerfil.Location = new System.Drawing.Point(12, 36);
             this.gBoxPerfil.Name = "gBoxPerfil";
-            this.gBoxPerfil.Size = new System.Drawing.Size(515, 259);
+            this.gBoxPerfil.Size = new System.Drawing.Size(490, 259);
             this.gBoxPerfil.TabIndex = 0;
             this.gBoxPerfil.TabStop = false;
             this.gBoxPerfil.Text = "Perfil";
@@ -89,56 +84,39 @@
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(398, 40);
+            this.dataGridView1.Location = new System.Drawing.Point(251, 48);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(111, 162);
+            this.dataGridView1.Size = new System.Drawing.Size(233, 162);
             this.dataGridView1.TabIndex = 6;
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(139, 40);
+            this.monthCalendar1.Location = new System.Drawing.Point(12, 48);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 5;
             // 
             // btEditarPerfil
             // 
-            this.btEditarPerfil.Location = new System.Drawing.Point(346, 231);
+            this.btEditarPerfil.Location = new System.Drawing.Point(321, 231);
             this.btEditarPerfil.Name = "btEditarPerfil";
             this.btEditarPerfil.Size = new System.Drawing.Size(92, 22);
             this.btEditarPerfil.TabIndex = 4;
             this.btEditarPerfil.Text = "Editar Perfil";
             this.btEditarPerfil.UseVisualStyleBackColor = true;
+            this.btEditarPerfil.Click += new System.EventHandler(this.btEditarPerfil_Click);
             // 
             // lbNome
             // 
             this.lbNome.AutoSize = true;
-            this.lbNome.Location = new System.Drawing.Point(6, 160);
+            this.lbNome.Location = new System.Drawing.Point(85, 26);
             this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(38, 13);
+            this.lbNome.Size = new System.Drawing.Size(35, 13);
             this.lbNome.TabIndex = 3;
-            this.lbNome.Text = "Nome:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 102);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lbCargo
-            // 
-            this.lbCargo.AutoSize = true;
-            this.lbCargo.Location = new System.Drawing.Point(6, 189);
-            this.lbCargo.Name = "lbCargo";
-            this.lbCargo.Size = new System.Drawing.Size(38, 13);
-            this.lbCargo.TabIndex = 1;
-            this.lbCargo.Text = "Cargo:";
+            this.lbNome.Text = "Nome";
             // 
             // btSair
             // 
-            this.btSair.Location = new System.Drawing.Point(444, 231);
+            this.btSair.Location = new System.Drawing.Point(419, 231);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(65, 22);
             this.btSair.TabIndex = 1;
@@ -346,19 +324,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 307);
+            this.ClientSize = new System.Drawing.Size(514, 307);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.gBoxPerfil);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaPerfil";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.Load += new System.EventHandler(this.TelaPerfil_Load);
             this.gBoxPerfil.ResumeLayout(false);
             this.gBoxPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -370,11 +347,9 @@
 
         private System.Windows.Forms.GroupBox gBoxPerfil;
         private System.Windows.Forms.Label lbBemVindo;
-        private System.Windows.Forms.Label lbCargo;
         private System.Windows.Forms.Button btSair;
         private System.Windows.Forms.Label lbNomePerfil;
         private System.Windows.Forms.Label lbNome;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gestãoDeRecursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reembolsoDeDespesasToolStripMenuItem;

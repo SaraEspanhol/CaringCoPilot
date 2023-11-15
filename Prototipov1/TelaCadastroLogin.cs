@@ -19,7 +19,7 @@ namespace Prototipov1
        
         
         
-        private const string connectionString = "server=127.0.0.1:3306;User Id=root;password='@We071120';database=sakila";
+        //private const string connectionString = "server=127.0.0.1:3306;User Id=root;password='@We071120';database=sakila";
         
 
         
@@ -41,7 +41,7 @@ namespace Prototipov1
         private void btCadastrar_Click(object sender, EventArgs e)
         {
             
-                string nomeUsuario = txtLogin.Text;
+                /*string nomeUsuario = txtLogin.Text;
                 string senha = txtSenha.Text;
 
 
@@ -54,12 +54,13 @@ namespace Prototipov1
                 {
                     MessageBox.Show("Erro ao cadastrar usuário. Verifique os dados e tente novamente.");
                 }
+                */
                 this.Hide();
                 TelaInicial telaInicial = new TelaInicial();
                 telaInicial.ShowDialog();
             
         }
-
+        /*
         private bool CadastrarUsuario(string nomeUsuario, string senha)
         {
             try
@@ -85,7 +86,7 @@ namespace Prototipov1
                 MessageBox.Show("Erro ao cadastrar usuário: " + ex.Message);
                 return false;
             }
-        }
+        } */
         void btLogin_Click(object sender, EventArgs e)
         {
                 this.Hide();

@@ -77,7 +77,7 @@ namespace Prototipov1
 
         private void btSair_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void doadoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -173,6 +173,12 @@ namespace Prototipov1
         private void TelaPerfil_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btEditarPerfil_Click(object sender, EventArgs e)
+        {
+            MenuEditarPerfil menuEditarPerfil = new MenuEditarPerfil();
+            menuEditarPerfil.ShowDialog();
         }
     }
 }

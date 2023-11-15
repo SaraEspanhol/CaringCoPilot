@@ -15,6 +15,19 @@ namespace Prototipov1
         public MenuVoluntarioCadastro()
         {
             InitializeComponent();
+            panelResponsavel.Enabled = false;
+        }
+
+        private void checkMenorIdade_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkMenorIdade.Checked)
+            {
+                panelResponsavel.Enabled = true;
+            }else
+            {
+                panelResponsavel.Enabled = false;
+            }
+            
         }
     }
 }

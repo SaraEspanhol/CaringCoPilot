@@ -39,8 +39,8 @@
             this.lbMes = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.lbCodigo = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.checkMenorIdade = new System.Windows.Forms.CheckBox();
+            this.panelResponsavel = new System.Windows.Forms.Panel();
             this.lbUFResponsavel = new System.Windows.Forms.Label();
             this.txtUFResponsavel = new System.Windows.Forms.TextBox();
             this.txtBairroResponsavel = new System.Windows.Forms.TextBox();
@@ -92,7 +92,7 @@
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.btCadastro = new System.Windows.Forms.Button();
             this.gBoxVoluntarios.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelResponsavel.SuspendLayout();
             this.SuspendLayout();
             // 
             // gBoxVoluntarios
@@ -106,8 +106,8 @@
             this.gBoxVoluntarios.Controls.Add(this.lbMes);
             this.gBoxVoluntarios.Controls.Add(this.textBox5);
             this.gBoxVoluntarios.Controls.Add(this.lbCodigo);
-            this.gBoxVoluntarios.Controls.Add(this.checkBox1);
-            this.gBoxVoluntarios.Controls.Add(this.panel1);
+            this.gBoxVoluntarios.Controls.Add(this.checkMenorIdade);
+            this.gBoxVoluntarios.Controls.Add(this.panelResponsavel);
             this.gBoxVoluntarios.Controls.Add(this.txtDDD);
             this.gBoxVoluntarios.Controls.Add(this.txtEmail);
             this.gBoxVoluntarios.Controls.Add(this.label2);
@@ -217,43 +217,44 @@
             this.lbCodigo.TabIndex = 90;
             this.lbCodigo.Text = "Código";
             // 
-            // checkBox1
+            // checkMenorIdade
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 165);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(164, 17);
-            this.checkBox1.TabIndex = 72;
-            this.checkBox1.Text = "Voluntário é menor de idade?";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkMenorIdade.AutoSize = true;
+            this.checkMenorIdade.Location = new System.Drawing.Point(6, 165);
+            this.checkMenorIdade.Name = "checkMenorIdade";
+            this.checkMenorIdade.Size = new System.Drawing.Size(164, 17);
+            this.checkMenorIdade.TabIndex = 72;
+            this.checkMenorIdade.Text = "Voluntário é menor de idade?";
+            this.checkMenorIdade.UseVisualStyleBackColor = true;
+            this.checkMenorIdade.CheckedChanged += new System.EventHandler(this.checkMenorIdade_CheckedChanged);
             // 
-            // panel1
+            // panelResponsavel
             // 
-            this.panel1.Controls.Add(this.lbUFResponsavel);
-            this.panel1.Controls.Add(this.txtUFResponsavel);
-            this.panel1.Controls.Add(this.txtBairroResponsavel);
-            this.panel1.Controls.Add(this.txtCEPResponsavel);
-            this.panel1.Controls.Add(this.lbBairroResponsavel);
-            this.panel1.Controls.Add(this.txtEnderecoResponsavel);
-            this.panel1.Controls.Add(this.lbCEPResponsavel);
-            this.panel1.Controls.Add(this.lbEnderecoResponsavel);
-            this.panel1.Controls.Add(this.txtDDDResponsavel);
-            this.panel1.Controls.Add(this.txtEmissorResponsavel);
-            this.panel1.Controls.Add(this.txtEmailResponsavel);
-            this.panel1.Controls.Add(this.lbNomeResponsavel);
-            this.panel1.Controls.Add(this.lbEmailResponsável);
-            this.panel1.Controls.Add(this.txtTelefoneResponsável);
-            this.panel1.Controls.Add(this.lbTelefoneResponsavel);
-            this.panel1.Controls.Add(this.lbEmissorResponsavel);
-            this.panel1.Controls.Add(this.lbRGResponsavel);
-            this.panel1.Controls.Add(this.txtRGResponsavel);
-            this.panel1.Controls.Add(this.txtCPFResponsavel);
-            this.panel1.Controls.Add(this.lbCPFResponsavel);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Location = new System.Drawing.Point(3, 183);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(509, 106);
-            this.panel1.TabIndex = 71;
+            this.panelResponsavel.Controls.Add(this.lbUFResponsavel);
+            this.panelResponsavel.Controls.Add(this.txtUFResponsavel);
+            this.panelResponsavel.Controls.Add(this.txtBairroResponsavel);
+            this.panelResponsavel.Controls.Add(this.txtCEPResponsavel);
+            this.panelResponsavel.Controls.Add(this.lbBairroResponsavel);
+            this.panelResponsavel.Controls.Add(this.txtEnderecoResponsavel);
+            this.panelResponsavel.Controls.Add(this.lbCEPResponsavel);
+            this.panelResponsavel.Controls.Add(this.lbEnderecoResponsavel);
+            this.panelResponsavel.Controls.Add(this.txtDDDResponsavel);
+            this.panelResponsavel.Controls.Add(this.txtEmissorResponsavel);
+            this.panelResponsavel.Controls.Add(this.txtEmailResponsavel);
+            this.panelResponsavel.Controls.Add(this.lbNomeResponsavel);
+            this.panelResponsavel.Controls.Add(this.lbEmailResponsável);
+            this.panelResponsavel.Controls.Add(this.txtTelefoneResponsável);
+            this.panelResponsavel.Controls.Add(this.lbTelefoneResponsavel);
+            this.panelResponsavel.Controls.Add(this.lbEmissorResponsavel);
+            this.panelResponsavel.Controls.Add(this.lbRGResponsavel);
+            this.panelResponsavel.Controls.Add(this.txtRGResponsavel);
+            this.panelResponsavel.Controls.Add(this.txtCPFResponsavel);
+            this.panelResponsavel.Controls.Add(this.lbCPFResponsavel);
+            this.panelResponsavel.Controls.Add(this.textBox4);
+            this.panelResponsavel.Location = new System.Drawing.Point(3, 183);
+            this.panelResponsavel.Name = "panelResponsavel";
+            this.panelResponsavel.Size = new System.Drawing.Size(509, 106);
+            this.panelResponsavel.TabIndex = 71;
             // 
             // lbUFResponsavel
             // 
@@ -664,11 +665,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuVoluntarioCadastro";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gBoxVoluntarios.ResumeLayout(false);
             this.gBoxVoluntarios.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelResponsavel.ResumeLayout(false);
+            this.panelResponsavel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -726,8 +727,8 @@
         private System.Windows.Forms.Label lbEmailResponsável;
         private System.Windows.Forms.TextBox txtTelefoneResponsável;
         private System.Windows.Forms.Label lbTelefoneResponsavel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Panel panelResponsavel;
+        private System.Windows.Forms.CheckBox checkMenorIdade;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label lbAno;
         private System.Windows.Forms.TextBox txtMes;

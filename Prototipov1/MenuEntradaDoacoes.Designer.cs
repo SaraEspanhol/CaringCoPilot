@@ -34,8 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.lbQtd = new System.Windows.Forms.Label();
-            this.checkCadastrado = new System.Windows.Forms.CheckBox();
-            this.checkNovo = new System.Windows.Forms.CheckBox();
             this.btExcluir = new System.Windows.Forms.Button();
             this.btConsultar = new System.Windows.Forms.Button();
             this.lbDataDoacao = new System.Windows.Forms.Label();
@@ -48,18 +46,20 @@
             this.lbTipoDoacao = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.rbCadastrado = new System.Windows.Forms.RadioButton();
+            this.rbNovo = new System.Windows.Forms.RadioButton();
             this.gBoxDoacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxDoacoes
             // 
+            this.gBoxDoacoes.Controls.Add(this.rbCadastrado);
+            this.gBoxDoacoes.Controls.Add(this.rbNovo);
             this.gBoxDoacoes.Controls.Add(this.comboBoxNomeDoador);
             this.gBoxDoacoes.Controls.Add(this.label1);
             this.gBoxDoacoes.Controls.Add(this.txtQuantidade);
             this.gBoxDoacoes.Controls.Add(this.lbQtd);
-            this.gBoxDoacoes.Controls.Add(this.checkCadastrado);
-            this.gBoxDoacoes.Controls.Add(this.checkNovo);
             this.gBoxDoacoes.Controls.Add(this.btExcluir);
             this.gBoxDoacoes.Controls.Add(this.btConsultar);
             this.gBoxDoacoes.Controls.Add(this.lbDataDoacao);
@@ -111,26 +111,6 @@
             this.lbQtd.Size = new System.Drawing.Size(62, 13);
             this.lbQtd.TabIndex = 22;
             this.lbQtd.Text = "Quantidade";
-            // 
-            // checkCadastrado
-            // 
-            this.checkCadastrado.AutoSize = true;
-            this.checkCadastrado.Location = new System.Drawing.Point(149, 151);
-            this.checkCadastrado.Name = "checkCadastrado";
-            this.checkCadastrado.Size = new System.Drawing.Size(80, 17);
-            this.checkCadastrado.TabIndex = 20;
-            this.checkCadastrado.Text = "Cadastrado";
-            this.checkCadastrado.UseVisualStyleBackColor = true;
-            // 
-            // checkNovo
-            // 
-            this.checkNovo.AutoSize = true;
-            this.checkNovo.Location = new System.Drawing.Point(95, 151);
-            this.checkNovo.Name = "checkNovo";
-            this.checkNovo.Size = new System.Drawing.Size(52, 17);
-            this.checkNovo.TabIndex = 19;
-            this.checkNovo.Text = "Novo";
-            this.checkNovo.UseVisualStyleBackColor = true;
             // 
             // btExcluir
             // 
@@ -233,6 +213,28 @@
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // rbCadastrado
+            // 
+            this.rbCadastrado.AutoSize = true;
+            this.rbCadastrado.Location = new System.Drawing.Point(172, 151);
+            this.rbCadastrado.Name = "rbCadastrado";
+            this.rbCadastrado.Size = new System.Drawing.Size(79, 17);
+            this.rbCadastrado.TabIndex = 29;
+            this.rbCadastrado.TabStop = true;
+            this.rbCadastrado.Text = "Cadastrado";
+            this.rbCadastrado.UseVisualStyleBackColor = true;
+            // 
+            // rbNovo
+            // 
+            this.rbNovo.AutoSize = true;
+            this.rbNovo.Location = new System.Drawing.Point(96, 151);
+            this.rbNovo.Name = "rbNovo";
+            this.rbNovo.Size = new System.Drawing.Size(51, 17);
+            this.rbNovo.TabIndex = 28;
+            this.rbNovo.TabStop = true;
+            this.rbNovo.Text = "Novo";
+            this.rbNovo.UseVisualStyleBackColor = true;
+            // 
             // MenuEntradaDoacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,7 +244,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuEntradaDoacoes";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gBoxDoacoes.ResumeLayout(false);
             this.gBoxDoacoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -257,8 +259,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label lbQtd;
-        private System.Windows.Forms.CheckBox checkCadastrado;
-        private System.Windows.Forms.CheckBox checkNovo;
         private System.Windows.Forms.Button btExcluir;
         private System.Windows.Forms.Button btConsultar;
         private System.Windows.Forms.Label lbDataDoacao;
@@ -271,5 +271,7 @@
         private System.Windows.Forms.Label lbTipoDoacao;
         private System.Windows.Forms.Button btMenuInicial;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton rbCadastrado;
+        private System.Windows.Forms.RadioButton rbNovo;
     }
 }

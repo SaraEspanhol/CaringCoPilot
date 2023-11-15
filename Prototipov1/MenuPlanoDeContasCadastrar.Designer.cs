@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPlanoDeContasCadastrar));
             this.gBoxGestaoRecursos = new System.Windows.Forms.GroupBox();
-            this.cBoxTipo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btRelatorio = new System.Windows.Forms.Button();
+            this.rbAtivo = new System.Windows.Forms.RadioButton();
+            this.rbSaida = new System.Windows.Forms.RadioButton();
+            this.rbEntrada = new System.Windows.Forms.RadioButton();
             this.btExcluir = new System.Windows.Forms.Button();
-            this.btConsultar = new System.Windows.Forms.Button();
+            this.btAtualizar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbNomeCadastroEntrada = new System.Windows.Forms.Label();
@@ -46,11 +46,11 @@
             // 
             // gBoxGestaoRecursos
             // 
-            this.gBoxGestaoRecursos.Controls.Add(this.cBoxTipo);
-            this.gBoxGestaoRecursos.Controls.Add(this.label1);
-            this.gBoxGestaoRecursos.Controls.Add(this.btRelatorio);
+            this.gBoxGestaoRecursos.Controls.Add(this.rbAtivo);
+            this.gBoxGestaoRecursos.Controls.Add(this.rbSaida);
+            this.gBoxGestaoRecursos.Controls.Add(this.rbEntrada);
             this.gBoxGestaoRecursos.Controls.Add(this.btExcluir);
-            this.gBoxGestaoRecursos.Controls.Add(this.btConsultar);
+            this.gBoxGestaoRecursos.Controls.Add(this.btAtualizar);
             this.gBoxGestaoRecursos.Controls.Add(this.dataGridView1);
             this.gBoxGestaoRecursos.Controls.Add(this.txtNome);
             this.gBoxGestaoRecursos.Controls.Add(this.lbNomeCadastroEntrada);
@@ -63,31 +63,38 @@
             this.gBoxGestaoRecursos.TabStop = false;
             this.gBoxGestaoRecursos.Text = "Plano de Contas";
             // 
-            // cBoxTipo
+            // rbAtivo
             // 
-            this.cBoxTipo.FormattingEnabled = true;
-            this.cBoxTipo.Location = new System.Drawing.Point(89, 164);
-            this.cBoxTipo.Name = "cBoxTipo";
-            this.cBoxTipo.Size = new System.Drawing.Size(144, 21);
-            this.cBoxTipo.TabIndex = 20;
+            this.rbAtivo.AutoSize = true;
+            this.rbAtivo.Location = new System.Drawing.Point(456, 90);
+            this.rbAtivo.Name = "rbAtivo";
+            this.rbAtivo.Size = new System.Drawing.Size(49, 17);
+            this.rbAtivo.TabIndex = 21;
+            this.rbAtivo.TabStop = true;
+            this.rbAtivo.Text = "Ativo";
+            this.rbAtivo.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // rbSaida
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 168);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Tipo";
+            this.rbSaida.AutoSize = true;
+            this.rbSaida.Location = new System.Drawing.Point(389, 90);
+            this.rbSaida.Name = "rbSaida";
+            this.rbSaida.Size = new System.Drawing.Size(54, 17);
+            this.rbSaida.TabIndex = 20;
+            this.rbSaida.TabStop = true;
+            this.rbSaida.Text = "Saída";
+            this.rbSaida.UseVisualStyleBackColor = true;
             // 
-            // btRelatorio
+            // rbEntrada
             // 
-            this.btRelatorio.Location = new System.Drawing.Point(309, 251);
-            this.btRelatorio.Name = "btRelatorio";
-            this.btRelatorio.Size = new System.Drawing.Size(95, 26);
-            this.btRelatorio.TabIndex = 18;
-            this.btRelatorio.Text = "Relatório";
-            this.btRelatorio.UseVisualStyleBackColor = true;
+            this.rbEntrada.AutoSize = true;
+            this.rbEntrada.Location = new System.Drawing.Point(312, 90);
+            this.rbEntrada.Name = "rbEntrada";
+            this.rbEntrada.Size = new System.Drawing.Size(62, 17);
+            this.rbEntrada.TabIndex = 19;
+            this.rbEntrada.TabStop = true;
+            this.rbEntrada.Text = "Entrada";
+            this.rbEntrada.UseVisualStyleBackColor = true;
             // 
             // btExcluir
             // 
@@ -98,26 +105,26 @@
             this.btExcluir.Text = "Excluir";
             this.btExcluir.UseVisualStyleBackColor = true;
             // 
-            // btConsultar
+            // btAtualizar
             // 
-            this.btConsultar.Location = new System.Drawing.Point(107, 251);
-            this.btConsultar.Name = "btConsultar";
-            this.btConsultar.Size = new System.Drawing.Size(95, 26);
-            this.btConsultar.TabIndex = 16;
-            this.btConsultar.Text = "Consultar";
-            this.btConsultar.UseVisualStyleBackColor = true;
+            this.btAtualizar.Location = new System.Drawing.Point(107, 251);
+            this.btAtualizar.Name = "btAtualizar";
+            this.btAtualizar.Size = new System.Drawing.Size(95, 26);
+            this.btAtualizar.TabIndex = 16;
+            this.btAtualizar.Text = "Atualizar";
+            this.btAtualizar.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(495, 126);
+            this.dataGridView1.Size = new System.Drawing.Size(297, 226);
             this.dataGridView1.TabIndex = 13;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(333, 165);
+            this.txtNome.Location = new System.Drawing.Point(361, 135);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(144, 20);
             this.txtNome.TabIndex = 8;
@@ -125,7 +132,7 @@
             // lbNomeCadastroEntrada
             // 
             this.lbNomeCadastroEntrada.AutoSize = true;
-            this.lbNomeCadastroEntrada.Location = new System.Drawing.Point(281, 168);
+            this.lbNomeCadastroEntrada.Location = new System.Drawing.Point(309, 138);
             this.lbNomeCadastroEntrada.Name = "lbNomeCadastroEntrada";
             this.lbNomeCadastroEntrada.Size = new System.Drawing.Size(35, 13);
             this.lbNomeCadastroEntrada.TabIndex = 3;
@@ -159,7 +166,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuPlanoDeContasCadastrar";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Load += new System.EventHandler(this.MenuPlanoDeContasCadastrar_Load);
             this.gBoxGestaoRecursos.ResumeLayout(false);
             this.gBoxGestaoRecursos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -170,15 +178,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gBoxGestaoRecursos;
-        private System.Windows.Forms.ComboBox cBoxTipo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btRelatorio;
         private System.Windows.Forms.Button btExcluir;
-        private System.Windows.Forms.Button btConsultar;
+        private System.Windows.Forms.Button btAtualizar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbNomeCadastroEntrada;
         private System.Windows.Forms.Button btMenuInicial;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton rbAtivo;
+        private System.Windows.Forms.RadioButton rbSaida;
+        private System.Windows.Forms.RadioButton rbEntrada;
     }
 }

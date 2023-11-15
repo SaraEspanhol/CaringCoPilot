@@ -298,7 +298,7 @@
             this.MaximizeBox = false;
             this.Name = "MenuBeneficiarios";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gBoxDoacoes.ResumeLayout(false);
             this.gBoxDoacoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

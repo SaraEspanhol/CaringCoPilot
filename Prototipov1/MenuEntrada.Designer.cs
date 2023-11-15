@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuEntrada));
             this.gBoxDoacoes = new System.Windows.Forms.GroupBox();
+            this.rbCadastrado = new System.Windows.Forms.RadioButton();
+            this.rbNovo = new System.Windows.Forms.RadioButton();
             this.checkCompra = new System.Windows.Forms.CheckBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.lbQtd = new System.Windows.Forms.Label();
-            this.checkCadastrado = new System.Windows.Forms.CheckBox();
-            this.checkNovo = new System.Windows.Forms.CheckBox();
             this.btExcluir = new System.Windows.Forms.Button();
             this.btConsultar = new System.Windows.Forms.Button();
             this.lbDataDoacao = new System.Windows.Forms.Label();
@@ -53,11 +53,11 @@
             // 
             // gBoxDoacoes
             // 
+            this.gBoxDoacoes.Controls.Add(this.rbCadastrado);
+            this.gBoxDoacoes.Controls.Add(this.rbNovo);
             this.gBoxDoacoes.Controls.Add(this.checkCompra);
             this.gBoxDoacoes.Controls.Add(this.txtQuantidade);
             this.gBoxDoacoes.Controls.Add(this.lbQtd);
-            this.gBoxDoacoes.Controls.Add(this.checkCadastrado);
-            this.gBoxDoacoes.Controls.Add(this.checkNovo);
             this.gBoxDoacoes.Controls.Add(this.btExcluir);
             this.gBoxDoacoes.Controls.Add(this.btConsultar);
             this.gBoxDoacoes.Controls.Add(this.lbDataDoacao);
@@ -77,6 +77,28 @@
             this.gBoxDoacoes.TabStop = false;
             this.gBoxDoacoes.Text = "Entrada - Compra";
             // 
+            // rbCadastrado
+            // 
+            this.rbCadastrado.AutoSize = true;
+            this.rbCadastrado.Location = new System.Drawing.Point(151, 152);
+            this.rbCadastrado.Name = "rbCadastrado";
+            this.rbCadastrado.Size = new System.Drawing.Size(79, 17);
+            this.rbCadastrado.TabIndex = 27;
+            this.rbCadastrado.TabStop = true;
+            this.rbCadastrado.Text = "Cadastrado";
+            this.rbCadastrado.UseVisualStyleBackColor = true;
+            // 
+            // rbNovo
+            // 
+            this.rbNovo.AutoSize = true;
+            this.rbNovo.Location = new System.Drawing.Point(75, 152);
+            this.rbNovo.Name = "rbNovo";
+            this.rbNovo.Size = new System.Drawing.Size(51, 17);
+            this.rbNovo.TabIndex = 26;
+            this.rbNovo.TabStop = true;
+            this.rbNovo.Text = "Novo";
+            this.rbNovo.UseVisualStyleBackColor = true;
+            // 
             // checkCompra
             // 
             this.checkCompra.AutoSize = true;
@@ -89,7 +111,7 @@
             // 
             // txtQuantidade
             // 
-            this.txtQuantidade.Location = new System.Drawing.Point(309, 221);
+            this.txtQuantidade.Location = new System.Drawing.Point(324, 218);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(144, 20);
             this.txtQuantidade.TabIndex = 23;
@@ -97,31 +119,11 @@
             // lbQtd
             // 
             this.lbQtd.AutoSize = true;
-            this.lbQtd.Location = new System.Drawing.Point(237, 224);
+            this.lbQtd.Location = new System.Drawing.Point(228, 221);
             this.lbQtd.Name = "lbQtd";
             this.lbQtd.Size = new System.Drawing.Size(62, 13);
             this.lbQtd.TabIndex = 22;
             this.lbQtd.Text = "Quantidade";
-            // 
-            // checkCadastrado
-            // 
-            this.checkCadastrado.AutoSize = true;
-            this.checkCadastrado.Location = new System.Drawing.Point(107, 152);
-            this.checkCadastrado.Name = "checkCadastrado";
-            this.checkCadastrado.Size = new System.Drawing.Size(80, 17);
-            this.checkCadastrado.TabIndex = 20;
-            this.checkCadastrado.Text = "Cadastrado";
-            this.checkCadastrado.UseVisualStyleBackColor = true;
-            // 
-            // checkNovo
-            // 
-            this.checkNovo.AutoSize = true;
-            this.checkNovo.Location = new System.Drawing.Point(53, 152);
-            this.checkNovo.Name = "checkNovo";
-            this.checkNovo.Size = new System.Drawing.Size(52, 17);
-            this.checkNovo.TabIndex = 19;
-            this.checkNovo.Text = "Novo";
-            this.checkNovo.UseVisualStyleBackColor = true;
             // 
             // btExcluir
             // 
@@ -174,7 +176,7 @@
             // 
             // txtNomeDoacao
             // 
-            this.txtNomeDoacao.Location = new System.Drawing.Point(309, 184);
+            this.txtNomeDoacao.Location = new System.Drawing.Point(324, 184);
             this.txtNomeDoacao.Name = "txtNomeDoacao";
             this.txtNomeDoacao.Size = new System.Drawing.Size(144, 20);
             this.txtNomeDoacao.TabIndex = 8;
@@ -191,11 +193,11 @@
             // lbNomeDoacao
             // 
             this.lbNomeDoacao.AutoSize = true;
-            this.lbNomeDoacao.Location = new System.Drawing.Point(237, 187);
+            this.lbNomeDoacao.Location = new System.Drawing.Point(228, 187);
             this.lbNomeDoacao.Name = "lbNomeDoacao";
-            this.lbNomeDoacao.Size = new System.Drawing.Size(35, 13);
+            this.lbNomeDoacao.Size = new System.Drawing.Size(90, 13);
             this.lbNomeDoacao.TabIndex = 3;
-            this.lbNomeDoacao.Text = "Nome";
+            this.lbNomeDoacao.Text = "Nome do Produto";
             // 
             // lbTipoDoacao
             // 
@@ -234,7 +236,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuEntrada";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gBoxDoacoes.ResumeLayout(false);
             this.gBoxDoacoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -245,8 +247,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gBoxDoacoes;
-        private System.Windows.Forms.CheckBox checkCadastrado;
-        private System.Windows.Forms.CheckBox checkNovo;
         private System.Windows.Forms.Button btExcluir;
         private System.Windows.Forms.Button btConsultar;
         private System.Windows.Forms.Label lbDataDoacao;
@@ -262,5 +262,7 @@
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label lbQtd;
         private System.Windows.Forms.CheckBox checkCompra;
+        private System.Windows.Forms.RadioButton rbCadastrado;
+        private System.Windows.Forms.RadioButton rbNovo;
     }
 }

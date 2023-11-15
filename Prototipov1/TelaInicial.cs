@@ -26,7 +26,11 @@ namespace Prototipov1
 
         private void btEntrar_Click(object sender, EventArgs e)
         {
-            string nomeUsuario = txtLogin.Text;
+            this.Hide();
+            TelaPerfil telaPerfil = new TelaPerfil();
+            telaPerfil.ShowDialog();
+        }
+            /*string nomeUsuario = txtLogin.Text;
             string senha = txtSenha.Text;
 
             if (EfetuarLogin(nomeUsuario, senha))
@@ -37,9 +41,7 @@ namespace Prototipov1
             {
                 MessageBox.Show("Nome de usuário ou senha incorretos. Tente novamente.");
             }
-            this.Hide();
-            TelaPerfil telaPerfil = new TelaPerfil();
-            telaPerfil.ShowDialog();
+            
         }
         private bool EfetuarLogin(string nomeUsuario, string senha)
         {
@@ -67,16 +69,16 @@ namespace Prototipov1
                 MessageBox.Show("Erro ao efetuar login: " + ex.Message);
                 return false;
             }
-        }
-        private void btCadastrar_Click(object sender, EventArgs e)
-       {
+        }*/
+        void btCadastrar_Click(object sender, EventArgs e)
+        {
                 this.Hide();
                 TelaCadastroLogin cadastroLogin = new TelaCadastroLogin();
                 cadastroLogin.ShowDialog();
 
-      }
+        }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

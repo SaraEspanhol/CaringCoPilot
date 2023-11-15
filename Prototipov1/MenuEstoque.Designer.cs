@@ -31,14 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuEstoque));
             this.gBoxControleFinanceiro = new System.Windows.Forms.GroupBox();
             this.btFiltrar = new System.Windows.Forms.Button();
-            this.checkBazar = new System.Windows.Forms.CheckBox();
-            this.checkDoacao = new System.Windows.Forms.CheckBox();
             this.comboBoxNomeDoador = new System.Windows.Forms.ComboBox();
             this.lbNomeDoador = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbNomeProduto = new System.Windows.Forms.Label();
-            this.checkSaida = new System.Windows.Forms.CheckBox();
-            this.checkEntrada = new System.Windows.Forms.CheckBox();
             this.btRelatorio = new System.Windows.Forms.Button();
             this.lbDataFinal = new System.Windows.Forms.Label();
             this.txtDataFinal = new System.Windows.Forms.TextBox();
@@ -46,21 +42,27 @@
             this.txtDataCadastroEntrada = new System.Windows.Forms.TextBox();
             this.lbDataCadastroEntrada = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
+            this.rbEntrada = new System.Windows.Forms.RadioButton();
+            this.rbSaida = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.rbBazar = new System.Windows.Forms.RadioButton();
+            this.rbDoacao = new System.Windows.Forms.RadioButton();
             this.gBoxControleFinanceiro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gBoxControleFinanceiro
             // 
+            this.gBoxControleFinanceiro.Controls.Add(this.panel2);
+            this.gBoxControleFinanceiro.Controls.Add(this.panel1);
             this.gBoxControleFinanceiro.Controls.Add(this.btFiltrar);
-            this.gBoxControleFinanceiro.Controls.Add(this.checkBazar);
-            this.gBoxControleFinanceiro.Controls.Add(this.checkDoacao);
             this.gBoxControleFinanceiro.Controls.Add(this.comboBoxNomeDoador);
             this.gBoxControleFinanceiro.Controls.Add(this.lbNomeDoador);
             this.gBoxControleFinanceiro.Controls.Add(this.textBox1);
             this.gBoxControleFinanceiro.Controls.Add(this.lbNomeProduto);
-            this.gBoxControleFinanceiro.Controls.Add(this.checkSaida);
-            this.gBoxControleFinanceiro.Controls.Add(this.checkEntrada);
             this.gBoxControleFinanceiro.Controls.Add(this.btRelatorio);
             this.gBoxControleFinanceiro.Controls.Add(this.lbDataFinal);
             this.gBoxControleFinanceiro.Controls.Add(this.txtDataFinal);
@@ -84,30 +86,10 @@
             this.btFiltrar.Text = "Filtrar";
             this.btFiltrar.UseVisualStyleBackColor = true;
             // 
-            // checkBazar
-            // 
-            this.checkBazar.AutoSize = true;
-            this.checkBazar.Location = new System.Drawing.Point(389, 136);
-            this.checkBazar.Name = "checkBazar";
-            this.checkBazar.Size = new System.Drawing.Size(53, 17);
-            this.checkBazar.TabIndex = 30;
-            this.checkBazar.Text = "Bazar";
-            this.checkBazar.UseVisualStyleBackColor = true;
-            // 
-            // checkDoacao
-            // 
-            this.checkDoacao.AutoSize = true;
-            this.checkDoacao.Location = new System.Drawing.Point(312, 136);
-            this.checkDoacao.Name = "checkDoacao";
-            this.checkDoacao.Size = new System.Drawing.Size(64, 17);
-            this.checkDoacao.TabIndex = 29;
-            this.checkDoacao.Text = "Doação";
-            this.checkDoacao.UseVisualStyleBackColor = true;
-            // 
             // comboBoxNomeDoador
             // 
             this.comboBoxNomeDoador.FormattingEnabled = true;
-            this.comboBoxNomeDoador.Location = new System.Drawing.Point(309, 205);
+            this.comboBoxNomeDoador.Location = new System.Drawing.Point(312, 208);
             this.comboBoxNomeDoador.Name = "comboBoxNomeDoador";
             this.comboBoxNomeDoador.Size = new System.Drawing.Size(144, 21);
             this.comboBoxNomeDoador.TabIndex = 28;
@@ -123,7 +105,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(309, 174);
+            this.textBox1.Location = new System.Drawing.Point(312, 177);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(144, 20);
             this.textBox1.TabIndex = 22;
@@ -137,26 +119,6 @@
             this.lbNomeProduto.TabIndex = 21;
             this.lbNomeProduto.Text = "Nome Produto";
             // 
-            // checkSaida
-            // 
-            this.checkSaida.AutoSize = true;
-            this.checkSaida.Location = new System.Drawing.Point(150, 136);
-            this.checkSaida.Name = "checkSaida";
-            this.checkSaida.Size = new System.Drawing.Size(55, 17);
-            this.checkSaida.TabIndex = 20;
-            this.checkSaida.Text = "Saída";
-            this.checkSaida.UseVisualStyleBackColor = true;
-            // 
-            // checkEntrada
-            // 
-            this.checkEntrada.AutoSize = true;
-            this.checkEntrada.Location = new System.Drawing.Point(73, 136);
-            this.checkEntrada.Name = "checkEntrada";
-            this.checkEntrada.Size = new System.Drawing.Size(63, 17);
-            this.checkEntrada.TabIndex = 19;
-            this.checkEntrada.Text = "Entrada";
-            this.checkEntrada.UseVisualStyleBackColor = true;
-            // 
             // btRelatorio
             // 
             this.btRelatorio.Location = new System.Drawing.Point(309, 251);
@@ -169,7 +131,7 @@
             // lbDataFinal
             // 
             this.lbDataFinal.AutoSize = true;
-            this.lbDataFinal.Location = new System.Drawing.Point(58, 208);
+            this.lbDataFinal.Location = new System.Drawing.Point(37, 209);
             this.lbDataFinal.Name = "lbDataFinal";
             this.lbDataFinal.Size = new System.Drawing.Size(55, 13);
             this.lbDataFinal.TabIndex = 15;
@@ -177,7 +139,7 @@
             // 
             // txtDataFinal
             // 
-            this.txtDataFinal.Location = new System.Drawing.Point(124, 205);
+            this.txtDataFinal.Location = new System.Drawing.Point(124, 209);
             this.txtDataFinal.Name = "txtDataFinal";
             this.txtDataFinal.Size = new System.Drawing.Size(81, 20);
             this.txtDataFinal.TabIndex = 14;
@@ -192,7 +154,7 @@
             // 
             // txtDataCadastroEntrada
             // 
-            this.txtDataCadastroEntrada.Location = new System.Drawing.Point(124, 174);
+            this.txtDataCadastroEntrada.Location = new System.Drawing.Point(124, 177);
             this.txtDataCadastroEntrada.Name = "txtDataCadastroEntrada";
             this.txtDataCadastroEntrada.Size = new System.Drawing.Size(81, 20);
             this.txtDataCadastroEntrada.TabIndex = 7;
@@ -200,7 +162,7 @@
             // lbDataCadastroEntrada
             // 
             this.lbDataCadastroEntrada.AutoSize = true;
-            this.lbDataCadastroEntrada.Location = new System.Drawing.Point(58, 177);
+            this.lbDataCadastroEntrada.Location = new System.Drawing.Point(37, 177);
             this.lbDataCadastroEntrada.Name = "lbDataCadastroEntrada";
             this.lbDataCadastroEntrada.Size = new System.Drawing.Size(60, 13);
             this.lbDataCadastroEntrada.TabIndex = 2;
@@ -216,6 +178,68 @@
             this.btMenuInicial.UseVisualStyleBackColor = true;
             this.btMenuInicial.Click += new System.EventHandler(this.btMenuInicial_Click);
             // 
+            // rbEntrada
+            // 
+            this.rbEntrada.AutoSize = true;
+            this.rbEntrada.Location = new System.Drawing.Point(9, 8);
+            this.rbEntrada.Name = "rbEntrada";
+            this.rbEntrada.Size = new System.Drawing.Size(62, 17);
+            this.rbEntrada.TabIndex = 32;
+            this.rbEntrada.TabStop = true;
+            this.rbEntrada.Text = "Entrada";
+            this.rbEntrada.UseVisualStyleBackColor = true;
+            // 
+            // rbSaida
+            // 
+            this.rbSaida.AutoSize = true;
+            this.rbSaida.Location = new System.Drawing.Point(104, 8);
+            this.rbSaida.Name = "rbSaida";
+            this.rbSaida.Size = new System.Drawing.Size(54, 17);
+            this.rbSaida.TabIndex = 33;
+            this.rbSaida.TabStop = true;
+            this.rbSaida.Text = "Saída";
+            this.rbSaida.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rbSaida);
+            this.panel1.Controls.Add(this.rbEntrada);
+            this.panel1.Location = new System.Drawing.Point(31, 136);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(174, 35);
+            this.panel1.TabIndex = 34;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.rbBazar);
+            this.panel2.Controls.Add(this.rbDoacao);
+            this.panel2.Location = new System.Drawing.Point(282, 136);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(174, 35);
+            this.panel2.TabIndex = 35;
+            // 
+            // rbBazar
+            // 
+            this.rbBazar.AutoSize = true;
+            this.rbBazar.Location = new System.Drawing.Point(104, 8);
+            this.rbBazar.Name = "rbBazar";
+            this.rbBazar.Size = new System.Drawing.Size(52, 17);
+            this.rbBazar.TabIndex = 33;
+            this.rbBazar.TabStop = true;
+            this.rbBazar.Text = "Bazar";
+            this.rbBazar.UseVisualStyleBackColor = true;
+            // 
+            // rbDoacao
+            // 
+            this.rbDoacao.AutoSize = true;
+            this.rbDoacao.Location = new System.Drawing.Point(9, 8);
+            this.rbDoacao.Name = "rbDoacao";
+            this.rbDoacao.Size = new System.Drawing.Size(63, 17);
+            this.rbDoacao.TabIndex = 32;
+            this.rbDoacao.TabStop = true;
+            this.rbDoacao.Text = "Doação";
+            this.rbDoacao.UseVisualStyleBackColor = true;
+            // 
             // MenuEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,10 +249,14 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuEstoque";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gBoxControleFinanceiro.ResumeLayout(false);
             this.gBoxControleFinanceiro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -236,14 +264,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gBoxControleFinanceiro;
-        private System.Windows.Forms.CheckBox checkBazar;
-        private System.Windows.Forms.CheckBox checkDoacao;
         private System.Windows.Forms.ComboBox comboBoxNomeDoador;
         private System.Windows.Forms.Label lbNomeDoador;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbNomeProduto;
-        private System.Windows.Forms.CheckBox checkSaida;
-        private System.Windows.Forms.CheckBox checkEntrada;
         private System.Windows.Forms.Button btRelatorio;
         private System.Windows.Forms.Label lbDataFinal;
         private System.Windows.Forms.TextBox txtDataFinal;
@@ -252,5 +276,11 @@
         private System.Windows.Forms.Label lbDataCadastroEntrada;
         private System.Windows.Forms.Button btMenuInicial;
         private System.Windows.Forms.Button btFiltrar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton rbBazar;
+        private System.Windows.Forms.RadioButton rbDoacao;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton rbSaida;
+        private System.Windows.Forms.RadioButton rbEntrada;
     }
 }

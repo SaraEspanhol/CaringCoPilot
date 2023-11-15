@@ -35,8 +35,6 @@
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.txtDDD = new System.Windows.Forms.TextBox();
             this.lbTelefone = new System.Windows.Forms.Label();
-            this.checkPJ = new System.Windows.Forms.CheckBox();
-            this.checkPF = new System.Windows.Forms.CheckBox();
             this.txtCodDoador = new System.Windows.Forms.TextBox();
             this.lbCodDoador = new System.Windows.Forms.Label();
             this.txtOrigemDoador = new System.Windows.Forms.TextBox();
@@ -51,19 +49,21 @@
             this.lbNomeDoador = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.rbPF = new System.Windows.Forms.RadioButton();
+            this.rbPJ = new System.Windows.Forms.RadioButton();
             this.gBoxDoacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxDoacoes
             // 
+            this.gBoxDoacoes.Controls.Add(this.rbPJ);
+            this.gBoxDoacoes.Controls.Add(this.rbPF);
             this.gBoxDoacoes.Controls.Add(this.lbEmail);
             this.gBoxDoacoes.Controls.Add(this.textBox1);
             this.gBoxDoacoes.Controls.Add(this.txtTelefone);
             this.gBoxDoacoes.Controls.Add(this.txtDDD);
             this.gBoxDoacoes.Controls.Add(this.lbTelefone);
-            this.gBoxDoacoes.Controls.Add(this.checkPJ);
-            this.gBoxDoacoes.Controls.Add(this.checkPF);
             this.gBoxDoacoes.Controls.Add(this.txtCodDoador);
             this.gBoxDoacoes.Controls.Add(this.lbCodDoador);
             this.gBoxDoacoes.Controls.Add(this.txtOrigemDoador);
@@ -123,26 +123,6 @@
             this.lbTelefone.Size = new System.Drawing.Size(49, 13);
             this.lbTelefone.TabIndex = 26;
             this.lbTelefone.Text = "Telefone";
-            // 
-            // checkPJ
-            // 
-            this.checkPJ.AutoSize = true;
-            this.checkPJ.Location = new System.Drawing.Point(223, 157);
-            this.checkPJ.Name = "checkPJ";
-            this.checkPJ.Size = new System.Drawing.Size(102, 17);
-            this.checkPJ.TabIndex = 25;
-            this.checkPJ.Text = "Pessoa Jurídica";
-            this.checkPJ.UseVisualStyleBackColor = true;
-            // 
-            // checkPF
-            // 
-            this.checkPF.AutoSize = true;
-            this.checkPF.Location = new System.Drawing.Point(124, 157);
-            this.checkPF.Name = "checkPF";
-            this.checkPF.Size = new System.Drawing.Size(93, 17);
-            this.checkPF.TabIndex = 24;
-            this.checkPF.Text = "Pessoa Física";
-            this.checkPF.UseVisualStyleBackColor = true;
             // 
             // txtCodDoador
             // 
@@ -262,6 +242,28 @@
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // rbPF
+            // 
+            this.rbPF.AutoSize = true;
+            this.rbPF.Location = new System.Drawing.Point(124, 156);
+            this.rbPF.Name = "rbPF";
+            this.rbPF.Size = new System.Drawing.Size(92, 17);
+            this.rbPF.TabIndex = 31;
+            this.rbPF.TabStop = true;
+            this.rbPF.Text = "Pessoa Física";
+            this.rbPF.UseVisualStyleBackColor = true;
+            // 
+            // rbPJ
+            // 
+            this.rbPJ.AutoSize = true;
+            this.rbPJ.Location = new System.Drawing.Point(218, 156);
+            this.rbPJ.Name = "rbPJ";
+            this.rbPJ.Size = new System.Drawing.Size(101, 17);
+            this.rbPJ.TabIndex = 32;
+            this.rbPJ.TabStop = true;
+            this.rbPJ.Text = "Pessoa Jurídica";
+            this.rbPJ.UseVisualStyleBackColor = true;
+            // 
             // MenuDoadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,7 +273,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuDoadores";
             this.Text = "CaringCoPilot";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gBoxDoacoes.ResumeLayout(false);
             this.gBoxDoacoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -296,12 +298,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtCodDoador;
         private System.Windows.Forms.Label lbCodDoador;
-        private System.Windows.Forms.CheckBox checkPJ;
-        private System.Windows.Forms.CheckBox checkPF;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.TextBox txtDDD;
         private System.Windows.Forms.Label lbTelefone;
+        private System.Windows.Forms.RadioButton rbPJ;
+        private System.Windows.Forms.RadioButton rbPF;
     }
 }
