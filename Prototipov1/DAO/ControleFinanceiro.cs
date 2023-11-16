@@ -23,8 +23,8 @@ namespace Prototipov1
             con = new MySqlConnection();
             db = new dbs();
             con.ConnectionString = db.getConnectionString();
-            String query = "INSERT INTO mov_financeira (ong_id, data_mov, descricao, nome_conta, nome_ativo, valor, nome_doador) VALUES";
-            query += "(?ong_id, ?data_mov, ?descricao, ?nome_conta, ?nome_ativo, ?valor, ?nome_doador)";
+            String query = "INSERT INTO mov_financeira (data_mov, descricao, nome_conta, nome_ativo, valor, nome_doador) VALUES";
+            query += "(?data_mov, ?descricao, ?nome_conta, ?nome_ativo, ?valor, ?nome_doador)";
             try
             {
                 con.Open();
@@ -44,18 +44,17 @@ namespace Prototipov1
                 con.Close();
             }
         }
-        public void AtualizarDados(int ong_id, string data_mov, string descricao, string nome_conta, string nome_ativo, double valor, string nome_doador)
+        public void AtualizarDados(string data_mov, string descricao, string nome_conta, string nome_ativo, double valor, string nome_doador)
         {
             con = new MySqlConnection();
             db = new dbs();
             con.ConnectionString = db.getConnectionString();
-            String query = "UPDATE mov_financeira SET ong_id = ?ong_id, data_mov = ?data_mov, descricao = ?descricao, nome_conta = ?nome_conta, nome_ativo = ?nome_ativo, valor = ?valor, nome_doador = ?nome_doador";
-            query += " WHERE ong_id = ?ong_id";
+            String query = "UPDATE mov_financeira SET data_mov = ?data_mov, descricao = ?descricao, nome_conta = ?nome_conta, nome_ativo = ?nome_ativo, valor = ?valor, nome_doador = ?nome_doador";
+            query += " WHERE id = ?id";
             try
             {
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(query, con);
-                cmd.Parameters.AddWithValue("?ong_id", ong_id);
                 cmd.Parameters.AddWithValue("?data_mov", data_mov);
                 cmd.Parameters.AddWithValue("?descricao", descricao);
                 cmd.Parameters.AddWithValue("?nome_conta", nome_conta);
@@ -70,18 +69,17 @@ namespace Prototipov1
                 con.Close();
             }
         }
-        public void RemoverDados(int ong_id, string data_mov, string descricao, string nome_conta, string nome_ativo, double valor, string nome_doador)
+        public void RemoverDados(string data_mov, string descricao, string nome_conta, string nome_ativo, double valor, string nome_doador)
         {
             con = new MySqlConnection();
             db = new dbs();
             con.ConnectionString = db.getConnectionString();
-            String query = "DELETE FROM mov_financeira ong_id = ?ong_id, data_mov = ?data_mov, descricao = ?descricao, nome_conta = ?nome_conta, nome_ativo = ?nome_ativo, valor = ?valor, nome_doador = ?nome_doador\"";
+            String query = "DELETE FROM mov_financeira data_mov = ?data_mov, descricao = ?descricao, nome_conta = ?nome_conta, nome_ativo = ?nome_ativo, valor = ?valor, nome_doador = ?nome_doador\"";
             query += "WHERE ong_id = ?ong_id";
             try
             {
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(query, con);
-                cmd.Parameters.AddWithValue("?ong_id", ong_id);
                 cmd.Parameters.AddWithValue("?data_mov", data_mov);
                 cmd.Parameters.AddWithValue("?descricao", descricao);
                 cmd.Parameters.AddWithValue("?nome_conta", nome_conta);

@@ -10,7 +10,6 @@ namespace Prototipov1
     {
 
         private ControleFinanceiro cdao;
-        private int _ong_id;
         private string _data_mov, _descricao, _nome_conta, _nome_ativo, _nome_doador;
         private double _valor;
 
@@ -20,11 +19,6 @@ namespace Prototipov1
 
         }
 
-        public int ong_id
-        {
-            get { return _ong_id; }
-            set { _ong_id = value; }
-        }
         public string data_mov
         {
             get { return _data_mov; }
@@ -71,12 +65,12 @@ namespace Prototipov1
         public void Atualizar()
         {
             cdao = new ControleFinanceiro();
-            cdao.AtualizarDados(ong_id, data_mov, descricao, nome_conta, nome_ativo, valor, nome_doador);
+            cdao.AtualizarDados(data_mov, descricao, nome_conta, nome_ativo, valor, nome_doador);
         }
         public void Remover()
         {
             cdao = new ControleFinanceiro();
-            cdao.RemoverDados(ong_id, data_mov, descricao, nome_conta, nome_ativo, valor, nome_doador);
+            cdao.RemoverDados(data_mov, descricao, nome_conta, nome_ativo, valor, nome_doador);
         }
     }
 }

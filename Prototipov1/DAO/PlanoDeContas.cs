@@ -18,7 +18,7 @@ namespace Prototipov1
 
         }
 
-
+        // CONTAS //
         public void InserirDados(string tipo_conta, string descr_conta)
         {
             con = new MySqlConnection();
@@ -75,6 +75,70 @@ namespace Prototipov1
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 cmd.Parameters.AddWithValue("?tipo_conta", tipo_conta);
                 cmd.Parameters.AddWithValue("?id", id);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        // ATIVOS //
+        public void InserirDadosAtivos(string descr_ativo)
+        {
+            con = new MySqlConnection();
+            db = new dbs();
+            con.ConnectionString = db.getConnectionString();
+            String query = "INSERT INTO ativos (descr_ativo) VALUES";
+            query += "(?descr_ativo)";
+            try
+            {
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("?descr_ativo", descr_ativo);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void AtualizarDadosAtivos(int idAtivos, string descr_ativo)
+        {
+            con = new MySqlConnection();
+            db = new dbs();
+            con.ConnectionString = db.getConnectionString();
+            String query = "UPDATE ativos SET descr_ativo = ?descr_ativo";
+            query += " WHERE idAtivos = ?idAtivos";
+            try
+            {
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("?idAtivos", idAtivos);
+                cmd.Parameters.AddWithValue("?descr_ativo", descr_ativo);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void RemoverDadosAtivos(int idAtivos, string descr_ativo)
+        {
+            con = new MySqlConnection();
+            db = new dbs();
+            con.ConnectionString = db.getConnectionString();
+            String query = "DELETE FROM ativos ";
+            query += "WHERE descr_ativo = ?descr_ativo AND idAtivos = ?idAtivos";
+            try
+            {
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("?idAtivos", idAtivos);
+                cmd.Parameters.AddWithValue("?descr_ativo", descr_ativo);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
             }

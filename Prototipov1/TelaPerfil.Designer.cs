@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPerfil));
             this.gBoxPerfil = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.btEditarPerfil = new System.Windows.Forms.Button();
             this.lbNome = new System.Windows.Forms.Label();
@@ -59,14 +61,15 @@
             this.gerarRebiboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beneficiáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gBoxPerfil.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxPerfil
             // 
-            this.gBoxPerfil.Controls.Add(this.dataGridView1);
+            this.gBoxPerfil.Controls.Add(this.chart1);
             this.gBoxPerfil.Controls.Add(this.monthCalendar1);
             this.gBoxPerfil.Controls.Add(this.btEditarPerfil);
             this.gBoxPerfil.Controls.Add(this.lbNome);
@@ -79,15 +82,6 @@
             this.gBoxPerfil.TabIndex = 0;
             this.gBoxPerfil.TabStop = false;
             this.gBoxPerfil.Text = "Perfil";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(251, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(233, 162);
-            this.dataGridView1.TabIndex = 6;
             // 
             // monthCalendar1
             // 
@@ -201,21 +195,21 @@
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
             // 
             // atualizaçãoCadastroToolStripMenuItem
             // 
             this.atualizaçãoCadastroToolStripMenuItem.Name = "atualizaçãoCadastroToolStripMenuItem";
-            this.atualizaçãoCadastroToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.atualizaçãoCadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.atualizaçãoCadastroToolStripMenuItem.Text = "Atividades";
             this.atualizaçãoCadastroToolStripMenuItem.Click += new System.EventHandler(this.atualizaçãoCadastroToolStripMenuItem_Click);
             // 
             // relatóriosToolStripMenuItem
             // 
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
             this.relatóriosToolStripMenuItem.Click += new System.EventHandler(this.relatóriosToolStripMenuItem_Click);
             // 
@@ -241,14 +235,14 @@
             // doaçãoToolStripMenuItem
             // 
             this.doaçãoToolStripMenuItem.Name = "doaçãoToolStripMenuItem";
-            this.doaçãoToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.doaçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.doaçãoToolStripMenuItem.Text = "Doação";
             this.doaçãoToolStripMenuItem.Click += new System.EventHandler(this.doaçãoToolStripMenuItem_Click);
             // 
             // compraToolStripMenuItem
             // 
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            this.compraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.compraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.compraToolStripMenuItem.Text = "Compra";
             this.compraToolStripMenuItem.Click += new System.EventHandler(this.compraToolStripMenuItem_Click);
             // 
@@ -294,14 +288,14 @@
             // cadastroDoadoresToolStripMenuItem
             // 
             this.cadastroDoadoresToolStripMenuItem.Name = "cadastroDoadoresToolStripMenuItem";
-            this.cadastroDoadoresToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.cadastroDoadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastroDoadoresToolStripMenuItem.Text = "Cadastro Doadores";
             this.cadastroDoadoresToolStripMenuItem.Click += new System.EventHandler(this.cadastroDoadoresToolStripMenuItem_Click_1);
             // 
             // gerarRebiboToolStripMenuItem
             // 
             this.gerarRebiboToolStripMenuItem.Name = "gerarRebiboToolStripMenuItem";
-            this.gerarRebiboToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.gerarRebiboToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gerarRebiboToolStripMenuItem.Text = "Gerar Rebibo";
             this.gerarRebiboToolStripMenuItem.Click += new System.EventHandler(this.gerarRebiboToolStripMenuItem_Click);
             // 
@@ -320,6 +314,22 @@
             this.cadastroToolStripMenuItem1.Text = "Gestão de Beneficiários";
             this.cadastroToolStripMenuItem1.Click += new System.EventHandler(this.cadastroToolStripMenuItem1_Click);
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(251, 48);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(221, 161);
+            this.chart1.TabIndex = 6;
+            this.chart1.Text = "chart1";
+            // 
             // TelaPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,9 +345,9 @@
             this.Load += new System.EventHandler(this.TelaPerfil_Load);
             this.gBoxPerfil.ResumeLayout(false);
             this.gBoxPerfil.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,7 +363,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gestãoDeRecursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reembolsoDeDespesasToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button btEditarPerfil;
         private System.Windows.Forms.ToolStripMenuItem voluntáriosToolStripMenuItem;
@@ -375,5 +384,6 @@
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem beneficiáriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
