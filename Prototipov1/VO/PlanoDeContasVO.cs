@@ -12,9 +12,9 @@ namespace Prototipov1
     {
        
         private PlanoDeContas cdao;
-        private int _id;
+        private int _id, _idAtivos;
         private string _tipo_conta;
-        private string _descr_conta;
+        private string _descr_conta, _descr_ativo;
 
 
         public PlanoDeContasVO()
@@ -37,8 +37,20 @@ namespace Prototipov1
             get { return _descr_conta; }
             set { _descr_conta = value; }
         }
+
+        public int idAtivos
+        {
+            get { return _idAtivos; }
+            set { _idAtivos = value; }
+        }
+        public string descr_ativo
+        {
+            get { return _descr_ativo; }
+            set { _descr_ativo = value; }
+        }
         
-        
+
+
         public void Inserir()
         {
             cdao = new PlanoDeContas();
@@ -54,6 +66,23 @@ namespace Prototipov1
             cdao = new PlanoDeContas();
             cdao.RemoverDados(tipo_conta, id);
         }
+
+        public void InserirAtivos()
+        {
+            cdao = new PlanoDeContas();
+            cdao.InserirDadosAtivos(descr_ativo);
+        }
+        public void AtualizarAtivos()
+        {
+            cdao = new PlanoDeContas();
+            cdao.AtualizarDadosAtivos (idAtivos, descr_ativo);
+        }
+        public void RemoverAtivos()
+        {
+            cdao = new PlanoDeContas();
+            cdao.RemoverDadosAtivos(idAtivos, descr_ativo);
+        }
+
     }
 }
 

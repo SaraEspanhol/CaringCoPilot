@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Prototipov1
 {
-    internal class ControleFinanceiroVO
+    class ControleFinanceiroVO
     {
 
         private ControleFinanceiro cdao;
-        private int _ong_id;
-        private string _data_mov, _descricao, _nome_conta, _nome_ativo, _nome_doador;
-        private double _valor;
+        private String _data_mov, _descricao, _descr_conta, _descr_ativo, _doador, _doador_id;
+        private Double _valor;
 
 
         public ControleFinanceiroVO()
@@ -20,41 +19,42 @@ namespace Prototipov1
 
         }
 
-        public int ong_id
-        {
-            get { return _ong_id; }
-            set { _ong_id = value; }
-        }
-        public string data_mov
+        
+        public String data_mov
         {
             get { return _data_mov; }
             set { _data_mov = value; }
         }
-        public string descricao
+        public String descricao
         {
             get { return _descricao; }
             set { _descricao = value; }
         }
 
-        public string nome_conta
+        public String descr_conta
         {
-            get { return _nome_conta; }
-            set { _nome_conta = value; }
+            get { return _descr_conta; }
+            set { _descr_conta = value; }
         }
 
-        public string nome_ativo
+        public String descr_ativo
         {
-            get { return _nome_ativo; }
-            set { _nome_ativo = value; }
+            get { return _descr_ativo; }
+            set { _descr_ativo = value; }
         }
 
-        public string nome_doador
+        public String doador_id
         {
-            get { return _nome_doador; }
-            set { _nome_doador = value; }
+            get { return _doador_id; }
+            set { _doador_id = value; }
+        }
+        public String doador
+        {
+            get { return _doador; }
+            set { _doador = value; }
         }
 
-        public double valor
+        public Double valor
         {
             get { return _valor; }
             set { _valor = value; }
@@ -63,20 +63,20 @@ namespace Prototipov1
 
 
 
-        public void Inserir()
+        public void InserirFinanceiro()
         {
             cdao = new ControleFinanceiro();
-            cdao.InserirDados(data_mov, descricao, nome_conta, nome_ativo, valor, nome_doador);
+            cdao.InserirDados(data_mov, descricao, valor, doador, descr_conta, descr_ativo);
         }
-        public void Atualizar()
+        public void AtualizarFinanceiro()
         {
             cdao = new ControleFinanceiro();
-            cdao.AtualizarDados(ong_id, data_mov, descricao, nome_conta, nome_ativo, valor, nome_doador);
+            cdao.AtualizarDados(data_mov, descricao, valor, doador, descr_conta, descr_ativo);
         }
-        public void Remover()
+        public void RemoverFinanceiro()
         {
             cdao = new ControleFinanceiro();
-            cdao.RemoverDados(ong_id, data_mov, descricao, nome_conta, nome_ativo, valor, nome_doador);
+            cdao.RemoverDados(data_mov, descricao, valor, doador, descr_conta, descr_ativo);
         }
     }
 }

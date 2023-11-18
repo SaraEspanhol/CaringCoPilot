@@ -34,18 +34,19 @@
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.lbSenha = new System.Windows.Forms.Label();
             this.lbLogin = new System.Windows.Forms.Label();
-            this.btLogin = new System.Windows.Forms.Button();
             this.lbNome = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.groupCadastro = new System.Windows.Forms.GroupBox();
-            this.lbTelefone = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lbCelular = new System.Windows.Forms.Label();
-            this.txtCelular = new System.Windows.Forms.TextBox();
-            this.lbEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtCPF = new System.Windows.Forms.TextBox();
             this.lbCPF = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.lbCelular = new System.Windows.Forms.Label();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.lbTelefone = new System.Windows.Forms.Label();
+            this.txtSenha2 = new System.Windows.Forms.TextBox();
+            this.lbConfirmaSenha = new System.Windows.Forms.Label();
             this.groupCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@
             // 
             this.txtSenha.Location = new System.Drawing.Point(214, 182);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(120, 20);
             this.txtSenha.TabIndex = 10;
             // 
@@ -91,16 +93,6 @@
             this.lbLogin.TabIndex = 7;
             this.lbLogin.Text = "Login";
             // 
-            // btLogin
-            // 
-            this.btLogin.Location = new System.Drawing.Point(432, 258);
-            this.btLogin.Name = "btLogin";
-            this.btLogin.Size = new System.Drawing.Size(90, 28);
-            this.btLogin.TabIndex = 14;
-            this.btLogin.Text = "Fazer Login";
-            this.btLogin.UseVisualStyleBackColor = true;
-            this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
-            // 
             // lbNome
             // 
             this.lbNome.AutoSize = true;
@@ -110,26 +102,27 @@
             this.lbNome.TabIndex = 15;
             this.lbNome.Text = "Nome";
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(59, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(462, 20);
-            this.textBox1.TabIndex = 16;
+            this.txtNome.Location = new System.Drawing.Point(59, 28);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(462, 20);
+            this.txtNome.TabIndex = 16;
             // 
             // groupCadastro
             // 
-            this.groupCadastro.Controls.Add(this.textBox3);
+            this.groupCadastro.Controls.Add(this.lbConfirmaSenha);
+            this.groupCadastro.Controls.Add(this.txtSenha2);
+            this.groupCadastro.Controls.Add(this.txtCPF);
             this.groupCadastro.Controls.Add(this.lbCPF);
             this.groupCadastro.Controls.Add(this.txtEmail);
             this.groupCadastro.Controls.Add(this.lbEmail);
             this.groupCadastro.Controls.Add(this.txtCelular);
             this.groupCadastro.Controls.Add(this.lbCelular);
-            this.groupCadastro.Controls.Add(this.textBox2);
+            this.groupCadastro.Controls.Add(this.txtTelefone);
             this.groupCadastro.Controls.Add(this.lbTelefone);
-            this.groupCadastro.Controls.Add(this.textBox1);
+            this.groupCadastro.Controls.Add(this.txtNome);
             this.groupCadastro.Controls.Add(this.lbNome);
-            this.groupCadastro.Controls.Add(this.btLogin);
             this.groupCadastro.Controls.Add(this.btCadastrar);
             this.groupCadastro.Controls.Add(this.txtSenha);
             this.groupCadastro.Controls.Add(this.txtLogin);
@@ -142,53 +135,12 @@
             this.groupCadastro.TabStop = false;
             this.groupCadastro.Text = "Cadastro";
             // 
-            // lbTelefone
+            // txtCPF
             // 
-            this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(6, 61);
-            this.lbTelefone.Name = "lbTelefone";
-            this.lbTelefone.Size = new System.Drawing.Size(49, 13);
-            this.lbTelefone.TabIndex = 17;
-            this.lbTelefone.Text = "Telefone";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(59, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(113, 20);
-            this.textBox2.TabIndex = 18;
-            // 
-            // lbCelular
-            // 
-            this.lbCelular.AutoSize = true;
-            this.lbCelular.Location = new System.Drawing.Point(178, 61);
-            this.lbCelular.Name = "lbCelular";
-            this.lbCelular.Size = new System.Drawing.Size(39, 13);
-            this.lbCelular.TabIndex = 19;
-            this.lbCelular.Text = "Celular";
-            // 
-            // txtCelular
-            // 
-            this.txtCelular.Location = new System.Drawing.Point(223, 58);
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(120, 20);
-            this.txtCelular.TabIndex = 20;
-            // 
-            // lbEmail
-            // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(20, 90);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(35, 13);
-            this.lbEmail.TabIndex = 21;
-            this.lbEmail.Text = "E-mail";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(59, 90);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(462, 20);
-            this.txtEmail.TabIndex = 22;
+            this.txtCPF.Location = new System.Drawing.Point(382, 58);
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(139, 20);
+            this.txtCPF.TabIndex = 24;
             // 
             // lbCPF
             // 
@@ -199,12 +151,70 @@
             this.lbCPF.TabIndex = 23;
             this.lbCPF.Text = "CPF";
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(382, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(139, 20);
-            this.textBox3.TabIndex = 24;
+            this.txtEmail.Location = new System.Drawing.Point(59, 90);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(462, 20);
+            this.txtEmail.TabIndex = 22;
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(20, 90);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(35, 13);
+            this.lbEmail.TabIndex = 21;
+            this.lbEmail.Text = "E-mail";
+            // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(223, 58);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(120, 20);
+            this.txtCelular.TabIndex = 20;
+            // 
+            // lbCelular
+            // 
+            this.lbCelular.AutoSize = true;
+            this.lbCelular.Location = new System.Drawing.Point(178, 61);
+            this.lbCelular.Name = "lbCelular";
+            this.lbCelular.Size = new System.Drawing.Size(39, 13);
+            this.lbCelular.TabIndex = 19;
+            this.lbCelular.Text = "Celular";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(59, 58);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(113, 20);
+            this.txtTelefone.TabIndex = 18;
+            // 
+            // lbTelefone
+            // 
+            this.lbTelefone.AutoSize = true;
+            this.lbTelefone.Location = new System.Drawing.Point(6, 61);
+            this.lbTelefone.Name = "lbTelefone";
+            this.lbTelefone.Size = new System.Drawing.Size(49, 13);
+            this.lbTelefone.TabIndex = 17;
+            this.lbTelefone.Text = "Telefone";
+            // 
+            // txtSenha2
+            // 
+            this.txtSenha2.Location = new System.Drawing.Point(214, 218);
+            this.txtSenha2.Name = "txtSenha2";
+            this.txtSenha2.PasswordChar = '*';
+            this.txtSenha2.Size = new System.Drawing.Size(120, 20);
+            this.txtSenha2.TabIndex = 25;
+            // 
+            // lbConfirmaSenha
+            // 
+            this.lbConfirmaSenha.AutoSize = true;
+            this.lbConfirmaSenha.Location = new System.Drawing.Point(119, 221);
+            this.lbConfirmaSenha.Name = "lbConfirmaSenha";
+            this.lbConfirmaSenha.Size = new System.Drawing.Size(89, 13);
+            this.lbConfirmaSenha.TabIndex = 26;
+            this.lbConfirmaSenha.Text = "Confirme a senha";
             // 
             // TelaCadastroLogin
             // 
@@ -230,17 +240,18 @@
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Label lbSenha;
         private System.Windows.Forms.Label lbLogin;
-        private System.Windows.Forms.Button btLogin;
         private System.Windows.Forms.Label lbNome;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.GroupBox groupCadastro;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Label lbCPF;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.Label lbCelular;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label lbTelefone;
+        private System.Windows.Forms.Label lbConfirmaSenha;
+        private System.Windows.Forms.TextBox txtSenha2;
     }
 }

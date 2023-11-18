@@ -53,7 +53,7 @@
             this.txtONG = new System.Windows.Forms.TextBox();
             this.lbONG = new System.Windows.Forms.Label();
             this.btRelatorio = new System.Windows.Forms.Button();
-            this.txtDataVoluntario = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.lbValorTotalVoluntario = new System.Windows.Forms.Label();
             this.lbValorPago = new System.Windows.Forms.Label();
             this.lbNomeVoluntario = new System.Windows.Forms.Label();
@@ -73,7 +73,7 @@
             this.gBoxGestaoRecursos.Controls.Add(this.txtONG);
             this.gBoxGestaoRecursos.Controls.Add(this.lbONG);
             this.gBoxGestaoRecursos.Controls.Add(this.btRelatorio);
-            this.gBoxGestaoRecursos.Controls.Add(this.txtDataVoluntario);
+            this.gBoxGestaoRecursos.Controls.Add(this.txtNome);
             this.gBoxGestaoRecursos.Controls.Add(this.lbValorTotalVoluntario);
             this.gBoxGestaoRecursos.Controls.Add(this.lbValorPago);
             this.gBoxGestaoRecursos.Controls.Add(this.lbNomeVoluntario);
@@ -277,13 +277,14 @@
             this.btRelatorio.TabIndex = 18;
             this.btRelatorio.Text = "Relatório";
             this.btRelatorio.UseVisualStyleBackColor = true;
+            this.btRelatorio.Click += new System.EventHandler(this.btRelatorio_Click);
             // 
-            // txtDataVoluntario
+            // txtNome
             // 
-            this.txtDataVoluntario.Location = new System.Drawing.Point(48, 22);
-            this.txtDataVoluntario.Name = "txtDataVoluntario";
-            this.txtDataVoluntario.Size = new System.Drawing.Size(191, 20);
-            this.txtDataVoluntario.TabIndex = 7;
+            this.txtNome.Location = new System.Drawing.Point(48, 22);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(191, 20);
+            this.txtNome.TabIndex = 7;
             // 
             // lbValorTotalVoluntario
             // 
@@ -355,7 +356,7 @@
         private System.Windows.Forms.Button btRelatorio;
         private System.Windows.Forms.TextBox txtValorPago1;
         private System.Windows.Forms.TextBox txtDescricaoReembolso;
-        private System.Windows.Forms.TextBox txtDataVoluntario;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbRS;
         private System.Windows.Forms.Label lbValorTotalVoluntario;
         private System.Windows.Forms.Label lbValorPago;

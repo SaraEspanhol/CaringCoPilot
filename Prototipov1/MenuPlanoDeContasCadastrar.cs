@@ -160,6 +160,127 @@ namespace Prototipov1
             this.Refresh();
 
         }
+
+        // ATIVOS
+        private void carregaDadosAtivos()
+        {
+            db = new dbs();
+            dataGridView2.DataSource = null;
+            dataGridView2.Rows.Clear();
+            dataGridView2.Refresh();
+
+            string connectionString = db.getConnectionString();
+            string query = "SELECT * FROM ativos";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
+                {
+                    try
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        for (int i = 0; i < dataTable.Rows.Count; i++)
+                        {
+                            dataGridView2.Rows.Add(dataTable.Rows[i][0], dataTable.Rows[i][1]);
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error" + ex);
+                    }
+                }
+            } // end using
+        }
+        
+
+ 
+
+        private void btCadastrarAtivos_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                cruds = new PlanoDeContasVO();
+                cruds.descr_ativo = txtNomeAtivos.Text;
+                cruds.InserirAtivos();
+                dataGridView2.Rows.Add(null, txtNomeAtivos.Text);
+                txtNomeAtivos.Clear();
+                MessageBox.Show("Cadastro realizado com sucesso!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao realizar a operação", "Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btAtualizarAtivos_Click_1(object sender, EventArgs e)
+        {
+            cruds = new PlanoDeContasVO();
+            try
+            {
+
+                cruds.descr_ativo = txtNomeAtivos.Text;
+                cruds.idAtivos = Convert.ToInt32(txtIdAtivos.Text);
+                cruds.AtualizarAtivos();
+                dataGridView2[0, catchRowIndex].Value = txtIdAtivos.Text;
+                dataGridView2[1, catchRowIndex].Value = txtNomeAtivos.Text;
+                btAtualizarAtivos.Enabled = false;
+                btExcluirAtivos.Enabled = false;
+                txtIdAtivos.Clear();
+                txtNomeAtivos.Clear();
+
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao realizar a operação", "Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btExcluirAtivos_Click_1(object sender, EventArgs e)
+        {
+            cruds = new PlanoDeContasVO();
+            try
+            {
+
+                cruds.descr_ativo = txtNomeAtivos.Text;
+                cruds.idAtivos = Convert.ToInt32(txtIdAtivos.Text);
+                cruds.RemoverAtivos();
+                dataGridView2.Rows.RemoveAt(catchRowIndex);
+                btAtualizarAtivos.Enabled = false;
+                btExcluirAtivos.Enabled = false;
+                txtIdAtivos.Clear();
+                txtNomeAtivos.Clear();
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao realizar a operação", "Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btRefreshAtivos_Click_1(object sender, EventArgs e)
+        {
+            carregaDadosAtivos();
+            this.Refresh();
+        }
+
+        private void dataGridView2_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            catchRowIndex = dataGridView2.SelectedCells[0].RowIndex;
+            foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+            {
+                txtIdAtivos.Text = Convert.ToString(row.Cells[0].Value);
+                txtNomeAtivos.Text = row.Cells[1].Value.ToString();
+
+            }
+            btAtualizarAtivos.Enabled = true;
+            btExcluirAtivos.Enabled = true;
+        }
     }
     
 }

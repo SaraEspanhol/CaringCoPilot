@@ -11,23 +11,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using Xceed.Document.NET;
 
 namespace Prototipov1
 {
+
     public partial class TelaCadastroLogin : Form
     {
-       
-        
-        
-        //private const string connectionString = "server=127.0.0.1:3306;User Id=root;password='@We071120';database=sakila";
-        
+        string usuario;
+        string senha;
+        string senha2;
+        string nome;
+        string email;
+        string telefone;
+        string cpf;
+        string celular;
 
-        
+        private dbs db;
+        private MySqlConnection con;
+
+
         public TelaCadastroLogin()
         {
             InitializeComponent();
             
         }
+
 
       
 
@@ -35,64 +45,81 @@ namespace Prototipov1
         {
 
 
-        }    
+        }
 
+        
 
         private void btCadastrar_Click(object sender, EventArgs e)
         {
-            
-                /*string nomeUsuario = txtLogin.Text;
-                string senha = txtSenha.Text;
+            con = new MySqlConnection();
+            db = new dbs();
+            con.ConnectionString = db.getConnectionString();
 
+            usuario = txtLogin.Text;
+            senha = txtSenha.Text;
+            senha2 = txtSenha2.Text;
+            nome = txtNome.Text;
+            email = txtEmail.Text;
+            telefone = txtTelefone.Text;
+            cpf = txtCPF.Text;
+            celular = txtCelular.Text;
 
-                if (CadastrarUsuario(nomeUsuario, senha))
-                {
+            /*if (senha == senha2)
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("Senha inválida! Digite a senha conforme o campo 'Senha'", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSenha.Clear();
+                txtSenha2.Clear();
 
-                    MessageBox.Show("Usuário cadastrado com sucesso!");
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao cadastrar usuário. Verifique os dados e tente novamente.");
-                }
-                */
-                this.Hide();
-                TelaInicial telaInicial = new TelaInicial();
-                telaInicial.ShowDialog();
-            
-        }
-        /*
-        private bool CadastrarUsuario(string nomeUsuario, string senha)
-        {
+            }*/ 
+
             try
             {
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
-                {
-                    connection.Open();
+                con.Open();
 
-                    string query = "INSERT INTO usuarios (NomeUsuario, Senha) VALUES (@NomeUsuario, @Senha)";
-                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@NomeUsuario", nomeUsuario);
-                        cmd.Parameters.AddWithValue("@Senha", senha);
+                string query = "INSERT INTO ong_responsavel (nome, email, telefone, cpf, celular, usuario, senha) " +
+                               "VALUES  (@nome, @email, @telefone, @cpf, @celular, @usuario, @senha)";
 
-                        cmd.ExecuteNonQuery();
-                    }
-                }
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@telefone", telefone);
+                cmd.Parameters.AddWithValue("@cpf", cpf);
+                cmd.Parameters.AddWithValue("@celular", celular);
+                cmd.Parameters.AddWithValue("@usuario", usuario);
+                cmd.Parameters.AddWithValue("@senha", senha);
 
-                return true;
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                TelaPerfil telaPerfil = new TelaPerfil();
+                telaPerfil.ShowDialog();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao cadastrar usuário: " + ex.Message);
-                return false;
+                MessageBox.Show("Erro ao cadastrar usuário: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        } */
-        void btLogin_Click(object sender, EventArgs e)
-        {
-                this.Hide();
-                TelaInicial telaInicial = new TelaInicial();
-                telaInicial.ShowDialog();
+            finally
+            {
+                con.Close();
+            }
+
+
         }
-        
+
+        private void btLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
+
+
+   
+        
 }

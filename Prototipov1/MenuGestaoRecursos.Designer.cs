@@ -30,16 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuGestaoRecursos));
             this.gBoxControleFinanceiro = new System.Windows.Forms.GroupBox();
-            this.rbSaida = new System.Windows.Forms.RadioButton();
-            this.rbEntrada = new System.Windows.Forms.RadioButton();
+            this.lbIdDoador = new System.Windows.Forms.Label();
+            this.txtIdDoador = new System.Windows.Forms.TextBox();
+            this.lbConta = new System.Windows.Forms.Label();
+            this.txtIdConta = new System.Windows.Forms.TextBox();
+            this.txtIdAtivo = new System.Windows.Forms.TextBox();
+            this.lbAtivo = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.btRefresh = new System.Windows.Forms.Button();
+            this.lbAte = new System.Windows.Forms.Label();
             this.checkDoacao = new System.Windows.Forms.CheckBox();
             this.comboBoxNomeDoador = new System.Windows.Forms.ComboBox();
             this.lbNomeDoador = new System.Windows.Forms.Label();
             this.btExcluir = new System.Windows.Forms.Button();
             this.btCadastrar = new System.Windows.Forms.Button();
             this.lbValor = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lbDescricao = new System.Windows.Forms.Label();
             this.btRelatorio = new System.Windows.Forms.Button();
             this.btAtualizar = new System.Windows.Forms.Button();
@@ -55,28 +63,37 @@
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_mov = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_conta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.conta_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descr_conta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ativo_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descr_ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome_doador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbAte = new System.Windows.Forms.Label();
+            this.doador_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxControleFinanceiro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxControleFinanceiro
             // 
+            this.gBoxControleFinanceiro.Controls.Add(this.lbIdDoador);
+            this.gBoxControleFinanceiro.Controls.Add(this.txtIdDoador);
+            this.gBoxControleFinanceiro.Controls.Add(this.lbConta);
+            this.gBoxControleFinanceiro.Controls.Add(this.txtIdConta);
+            this.gBoxControleFinanceiro.Controls.Add(this.txtIdAtivo);
+            this.gBoxControleFinanceiro.Controls.Add(this.lbAtivo);
+            this.gBoxControleFinanceiro.Controls.Add(this.lbID);
+            this.gBoxControleFinanceiro.Controls.Add(this.txtId);
+            this.gBoxControleFinanceiro.Controls.Add(this.btRefresh);
             this.gBoxControleFinanceiro.Controls.Add(this.lbAte);
-            this.gBoxControleFinanceiro.Controls.Add(this.rbSaida);
-            this.gBoxControleFinanceiro.Controls.Add(this.rbEntrada);
             this.gBoxControleFinanceiro.Controls.Add(this.checkDoacao);
             this.gBoxControleFinanceiro.Controls.Add(this.comboBoxNomeDoador);
             this.gBoxControleFinanceiro.Controls.Add(this.lbNomeDoador);
             this.gBoxControleFinanceiro.Controls.Add(this.btExcluir);
             this.gBoxControleFinanceiro.Controls.Add(this.btCadastrar);
             this.gBoxControleFinanceiro.Controls.Add(this.lbValor);
-            this.gBoxControleFinanceiro.Controls.Add(this.textBox2);
-            this.gBoxControleFinanceiro.Controls.Add(this.textBox1);
+            this.gBoxControleFinanceiro.Controls.Add(this.txtValor);
+            this.gBoxControleFinanceiro.Controls.Add(this.txtDescricao);
             this.gBoxControleFinanceiro.Controls.Add(this.lbDescricao);
             this.gBoxControleFinanceiro.Controls.Add(this.btRelatorio);
             this.gBoxControleFinanceiro.Controls.Add(this.btAtualizar);
@@ -91,47 +108,113 @@
             this.gBoxControleFinanceiro.Controls.Add(this.btMenuInicial);
             this.gBoxControleFinanceiro.Location = new System.Drawing.Point(12, 12);
             this.gBoxControleFinanceiro.Name = "gBoxControleFinanceiro";
-            this.gBoxControleFinanceiro.Size = new System.Drawing.Size(717, 283);
+            this.gBoxControleFinanceiro.Size = new System.Drawing.Size(804, 283);
             this.gBoxControleFinanceiro.TabIndex = 0;
             this.gBoxControleFinanceiro.TabStop = false;
             this.gBoxControleFinanceiro.Text = "Controle Financeiro";
             // 
-            // rbSaida
+            // lbIdDoador
             // 
-            this.rbSaida.AutoSize = true;
-            this.rbSaida.Location = new System.Drawing.Point(377, 145);
-            this.rbSaida.Name = "rbSaida";
-            this.rbSaida.Size = new System.Drawing.Size(54, 17);
-            this.rbSaida.TabIndex = 31;
-            this.rbSaida.TabStop = true;
-            this.rbSaida.Text = "Saída";
-            this.rbSaida.UseVisualStyleBackColor = true;
+            this.lbIdDoador.AutoSize = true;
+            this.lbIdDoador.Location = new System.Drawing.Point(453, 180);
+            this.lbIdDoador.Name = "lbIdDoador";
+            this.lbIdDoador.Size = new System.Drawing.Size(56, 13);
+            this.lbIdDoador.TabIndex = 41;
+            this.lbIdDoador.Text = "ID Doador";
             // 
-            // rbEntrada
+            // txtIdDoador
             // 
-            this.rbEntrada.AutoSize = true;
-            this.rbEntrada.Location = new System.Drawing.Point(309, 144);
-            this.rbEntrada.Name = "rbEntrada";
-            this.rbEntrada.Size = new System.Drawing.Size(62, 17);
-            this.rbEntrada.TabIndex = 30;
-            this.rbEntrada.TabStop = true;
-            this.rbEntrada.Text = "Entrada";
-            this.rbEntrada.UseVisualStyleBackColor = true;
+            this.txtIdDoador.Enabled = false;
+            this.txtIdDoador.Location = new System.Drawing.Point(515, 176);
+            this.txtIdDoador.Name = "txtIdDoador";
+            this.txtIdDoador.Size = new System.Drawing.Size(36, 20);
+            this.txtIdDoador.TabIndex = 40;
+            // 
+            // lbConta
+            // 
+            this.lbConta.AutoSize = true;
+            this.lbConta.Location = new System.Drawing.Point(502, 216);
+            this.lbConta.Name = "lbConta";
+            this.lbConta.Size = new System.Drawing.Size(49, 13);
+            this.lbConta.TabIndex = 39;
+            this.lbConta.Text = "ID Conta";
+            // 
+            // txtIdConta
+            // 
+            this.txtIdConta.Enabled = false;
+            this.txtIdConta.Location = new System.Drawing.Point(557, 212);
+            this.txtIdConta.Name = "txtIdConta";
+            this.txtIdConta.Size = new System.Drawing.Size(36, 20);
+            this.txtIdConta.TabIndex = 38;
+            // 
+            // txtIdAtivo
+            // 
+            this.txtIdAtivo.Enabled = false;
+            this.txtIdAtivo.Location = new System.Drawing.Point(248, 213);
+            this.txtIdAtivo.Name = "txtIdAtivo";
+            this.txtIdAtivo.Size = new System.Drawing.Size(38, 20);
+            this.txtIdAtivo.TabIndex = 37;
+            // 
+            // lbAtivo
+            // 
+            this.lbAtivo.AutoSize = true;
+            this.lbAtivo.Location = new System.Drawing.Point(200, 212);
+            this.lbAtivo.Name = "lbAtivo";
+            this.lbAtivo.Size = new System.Drawing.Size(45, 13);
+            this.lbAtivo.TabIndex = 36;
+            this.lbAtivo.Text = "ID Ativo";
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Location = new System.Drawing.Point(296, 148);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(54, 13);
+            this.lbID.TabIndex = 35;
+            this.lbID.Text = "Código ID";
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(356, 145);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(81, 20);
+            this.txtId.TabIndex = 34;
+            // 
+            // btRefresh
+            // 
+            this.btRefresh.Location = new System.Drawing.Point(309, 251);
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(95, 26);
+            this.btRefresh.TabIndex = 33;
+            this.btRefresh.Text = "Refresh";
+            this.btRefresh.UseVisualStyleBackColor = true;
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
+            // 
+            // lbAte
+            // 
+            this.lbAte.AutoSize = true;
+            this.lbAte.Location = new System.Drawing.Point(157, 147);
+            this.lbAte.Name = "lbAte";
+            this.lbAte.Size = new System.Drawing.Size(22, 13);
+            this.lbAte.TabIndex = 32;
+            this.lbAte.Text = "até";
             // 
             // checkDoacao
             // 
             this.checkDoacao.AutoSize = true;
-            this.checkDoacao.Location = new System.Drawing.Point(447, 148);
+            this.checkDoacao.Location = new System.Drawing.Point(547, 145);
             this.checkDoacao.Name = "checkDoacao";
             this.checkDoacao.Size = new System.Drawing.Size(101, 17);
             this.checkDoacao.TabIndex = 29;
             this.checkDoacao.Text = "É uma doação?";
             this.checkDoacao.UseVisualStyleBackColor = true;
+            this.checkDoacao.CheckedChanged += new System.EventHandler(this.checkDoacao_CheckedChanged);
             // 
             // comboBoxNomeDoador
             // 
             this.comboBoxNomeDoador.FormattingEnabled = true;
-            this.comboBoxNomeDoador.Location = new System.Drawing.Point(545, 174);
+            this.comboBoxNomeDoador.Location = new System.Drawing.Point(636, 174);
             this.comboBoxNomeDoador.Name = "comboBoxNomeDoador";
             this.comboBoxNomeDoador.Size = new System.Drawing.Size(162, 21);
             this.comboBoxNomeDoador.TabIndex = 28;
@@ -139,7 +222,7 @@
             // lbNomeDoador
             // 
             this.lbNomeDoador.AutoSize = true;
-            this.lbNomeDoador.Location = new System.Drawing.Point(444, 177);
+            this.lbNomeDoador.Location = new System.Drawing.Point(557, 179);
             this.lbNomeDoador.Name = "lbNomeDoador";
             this.lbNomeDoador.Size = new System.Drawing.Size(73, 13);
             this.lbNomeDoador.TabIndex = 27;
@@ -153,6 +236,7 @@
             this.btExcluir.TabIndex = 26;
             this.btExcluir.Text = "Excluir";
             this.btExcluir.UseVisualStyleBackColor = true;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
             // btCadastrar
             // 
@@ -162,6 +246,7 @@
             this.btCadastrar.TabIndex = 25;
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
+            this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
             // 
             // lbValor
             // 
@@ -172,19 +257,19 @@
             this.lbValor.TabIndex = 24;
             this.lbValor.Text = "Valor R$";
             // 
-            // textBox2
+            // txtValor
             // 
-            this.textBox2.Location = new System.Drawing.Point(70, 208);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(81, 20);
-            this.textBox2.TabIndex = 23;
+            this.txtValor.Location = new System.Drawing.Point(70, 213);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(81, 20);
+            this.txtValor.TabIndex = 23;
             // 
-            // textBox1
+            // txtDescricao
             // 
-            this.textBox1.Location = new System.Drawing.Point(70, 177);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(345, 20);
-            this.textBox1.TabIndex = 22;
+            this.txtDescricao.Location = new System.Drawing.Point(70, 177);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(345, 20);
+            this.txtDescricao.TabIndex = 22;
             // 
             // lbDescricao
             // 
@@ -197,7 +282,7 @@
             // 
             // btRelatorio
             // 
-            this.btRelatorio.Location = new System.Drawing.Point(309, 251);
+            this.btRelatorio.Location = new System.Drawing.Point(602, 251);
             this.btRelatorio.Name = "btRelatorio";
             this.btRelatorio.Size = new System.Drawing.Size(95, 26);
             this.btRelatorio.TabIndex = 18;
@@ -213,6 +298,7 @@
             this.btAtualizar.TabIndex = 16;
             this.btAtualizar.Text = "Atualizar";
             this.btAtualizar.UseVisualStyleBackColor = true;
+            this.btAtualizar.Click += new System.EventHandler(this.btAtualizar_Click);
             // 
             // txtDataFinal
             // 
@@ -228,19 +314,23 @@
             this.id,
             this.data_mov,
             this.descricao,
-            this.nome_conta,
-            this.nome_ativo,
+            this.conta_id,
+            this.descr_conta,
+            this.ativo_id,
+            this.descr_ativo,
             this.valor,
-            this.nome_doador});
+            this.doador_id,
+            this.doador});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(701, 111);
+            this.dataGridView1.Size = new System.Drawing.Size(792, 111);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // cBoxLocalCadastroEntrada
             // 
             this.cBoxLocalCadastroEntrada.FormattingEnabled = true;
-            this.cBoxLocalCadastroEntrada.Location = new System.Drawing.Point(208, 205);
+            this.cBoxLocalCadastroEntrada.Location = new System.Drawing.Point(332, 212);
             this.cBoxLocalCadastroEntrada.Name = "cBoxLocalCadastroEntrada";
             this.cBoxLocalCadastroEntrada.Size = new System.Drawing.Size(144, 21);
             this.cBoxLocalCadastroEntrada.TabIndex = 11;
@@ -248,9 +338,9 @@
             // cBoxContaCadastroEntrada
             // 
             this.cBoxContaCadastroEntrada.FormattingEnabled = true;
-            this.cBoxContaCadastroEntrada.Location = new System.Drawing.Point(427, 205);
+            this.cBoxContaCadastroEntrada.Location = new System.Drawing.Point(636, 212);
             this.cBoxContaCadastroEntrada.Name = "cBoxContaCadastroEntrada";
-            this.cBoxContaCadastroEntrada.Size = new System.Drawing.Size(144, 21);
+            this.cBoxContaCadastroEntrada.Size = new System.Drawing.Size(162, 21);
             this.cBoxContaCadastroEntrada.TabIndex = 10;
             // 
             // txtDataCadastroEntrada
@@ -263,7 +353,7 @@
             // lbContaCadastroEntrada
             // 
             this.lbContaCadastroEntrada.AutoSize = true;
-            this.lbContaCadastroEntrada.Location = new System.Drawing.Point(369, 208);
+            this.lbContaCadastroEntrada.Location = new System.Drawing.Point(602, 215);
             this.lbContaCadastroEntrada.Name = "lbContaCadastroEntrada";
             this.lbContaCadastroEntrada.Size = new System.Drawing.Size(35, 13);
             this.lbContaCadastroEntrada.TabIndex = 5;
@@ -272,7 +362,7 @@
             // lbOnde
             // 
             this.lbOnde.AutoSize = true;
-            this.lbOnde.Location = new System.Drawing.Point(169, 210);
+            this.lbOnde.Location = new System.Drawing.Point(292, 211);
             this.lbOnde.Name = "lbOnde";
             this.lbOnde.Size = new System.Drawing.Size(33, 13);
             this.lbOnde.TabIndex = 4;
@@ -289,7 +379,7 @@
             // 
             // btMenuInicial
             // 
-            this.btMenuInicial.Location = new System.Drawing.Point(616, 251);
+            this.btMenuInicial.Location = new System.Drawing.Point(703, 251);
             this.btMenuInicial.Name = "btMenuInicial";
             this.btMenuInicial.Size = new System.Drawing.Size(95, 26);
             this.btMenuInicial.TabIndex = 1;
@@ -307,51 +397,62 @@
             // 
             this.data_mov.HeaderText = "Data";
             this.data_mov.Name = "data_mov";
+            this.data_mov.Width = 80;
             // 
             // descricao
             // 
             this.descricao.HeaderText = "Descrição";
             this.descricao.Name = "descricao";
             // 
-            // nome_conta
+            // conta_id
             // 
-            this.nome_conta.HeaderText = "Conta";
-            this.nome_conta.Name = "nome_conta";
+            this.conta_id.HeaderText = "ID Conta";
+            this.conta_id.Name = "conta_id";
+            this.conta_id.Width = 50;
             // 
-            // nome_ativo
+            // descr_conta
             // 
-            this.nome_ativo.HeaderText = "Ativo";
-            this.nome_ativo.Name = "nome_ativo";
+            this.descr_conta.HeaderText = "Conta";
+            this.descr_conta.Name = "descr_conta";
+            // 
+            // ativo_id
+            // 
+            this.ativo_id.HeaderText = "ID Ativo";
+            this.ativo_id.Name = "ativo_id";
+            this.ativo_id.Width = 50;
+            // 
+            // descr_ativo
+            // 
+            this.descr_ativo.HeaderText = "Ativo";
+            this.descr_ativo.Name = "descr_ativo";
             // 
             // valor
             // 
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             // 
-            // nome_doador
+            // doador_id
             // 
-            this.nome_doador.HeaderText = "Doador";
-            this.nome_doador.Name = "nome_doador";
+            this.doador_id.HeaderText = "ID Doador";
+            this.doador_id.Name = "doador_id";
+            this.doador_id.Width = 50;
             // 
-            // lbAte
+            // doador
             // 
-            this.lbAte.AutoSize = true;
-            this.lbAte.Location = new System.Drawing.Point(157, 147);
-            this.lbAte.Name = "lbAte";
-            this.lbAte.Size = new System.Drawing.Size(22, 13);
-            this.lbAte.TabIndex = 32;
-            this.lbAte.Text = "até";
+            this.doador.HeaderText = "Doador";
+            this.doador.Name = "doador";
             // 
             // MenuGestaoRecursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 307);
+            this.ClientSize = new System.Drawing.Size(828, 307);
             this.Controls.Add(this.gBoxControleFinanceiro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuGestaoRecursos";
             this.Text = "CaringCoPilot";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Load += new System.EventHandler(this.MenuGestaoRecursos_Load);
             this.gBoxControleFinanceiro.ResumeLayout(false);
             this.gBoxControleFinanceiro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -374,23 +475,33 @@
         private System.Windows.Forms.TextBox txtDataFinal;
         private System.Windows.Forms.Button btRelatorio;
         private System.Windows.Forms.Label lbValor;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lbDescricao;
         private System.Windows.Forms.Button btExcluir;
         private System.Windows.Forms.Button btCadastrar;
         private System.Windows.Forms.CheckBox checkDoacao;
         private System.Windows.Forms.ComboBox comboBoxNomeDoador;
         private System.Windows.Forms.Label lbNomeDoador;
-        private System.Windows.Forms.RadioButton rbSaida;
-        private System.Windows.Forms.RadioButton rbEntrada;
         private System.Windows.Forms.Label lbAte;
+        private System.Windows.Forms.Button btRefresh;
+        private System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label lbConta;
+        private System.Windows.Forms.TextBox txtIdConta;
+        private System.Windows.Forms.TextBox txtIdAtivo;
+        private System.Windows.Forms.Label lbAtivo;
+        private System.Windows.Forms.Label lbIdDoador;
+        private System.Windows.Forms.TextBox txtIdDoador;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_mov;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome_conta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome_ativo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn conta_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descr_conta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ativo_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descr_ativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome_doador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doador_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doador;
     }
 }
