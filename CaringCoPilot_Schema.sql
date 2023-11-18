@@ -84,29 +84,15 @@ INSERT INTO doadores (tipo_doador, documento, nome) VALUES (0, 1, 'Anonimo');
 # CRIACAO DAS CONTAS E MOV FIN
 # ****************************************
 
-CREATE TABLE tipo_contas (
-	id BOOL PRIMARY KEY NOT NULL UNIQUE,
-    tipo VARCHAR (7) NOT NULL
-);
-
-# Insere na tabela tipo_contas os tipos "ENTRADA" e "SAIDA"
-
-INSERT INTO tipo_contas (id, tipo) VALUES (1, 'Entrada');
-INSERT INTO tipo_contas (id, tipo) VALUES (0, 'Saída');
-
-
 CREATE TABLE contas (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    tipo_conta BOOL NOT NULL,
-	descr_conta VARCHAR (20) NOT NULL UNIQUE,
-    FOREIGN KEY (tipo_conta) REFERENCES tipo_contas(id)
-		ON UPDATE CASCADE
-        ON DELETE RESTRICT
+    tipo_conta VARCHAR (20) NOT NULL,
+	descr_conta VARCHAR (20) NOT NULL UNIQUE
 );
 
 CREATE TABLE ativos (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descr_ativo VARCHAR (20) NOT NULL UNIQUE
+	idAtivos INT PRIMARY KEY AUTO_INCREMENT,
+    descr_ativo VARCHAR (20) NOT NULL UNIQUE
 );
 
 CREATE TABLE mov_financeira (
@@ -121,7 +107,7 @@ CREATE TABLE mov_financeira (
     FOREIGN KEY (conta_id) REFERENCES contas(id)
 		ON UPDATE CASCADE
         ON DELETE RESTRICT,
-    FOREIGN KEY (ativo_id) REFERENCES ativos(id)
+    FOREIGN KEY (ativo_id) REFERENCES ativos(idAtivos)
 		ON UPDATE CASCADE
         ON DELETE RESTRICT,
     FOREIGN KEY (doador_id) REFERENCES doadores(id)
@@ -132,4 +118,179 @@ CREATE TABLE mov_financeira (
         ON DELETE RESTRICT
 );
 
+# ****************************************
+# CRIACAO DOS VOLUNTARIOS 
+# ****************************************
 
+CREATE TABLE pessoa (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR (100) NOT NULL,
+    data_nasc DATE NOT NULL,
+    cpf CHAR (14) NOT NULL UNIQUE
+    );
+
+CREATE TABLE voluntario (
+	pessoa_id INT PRIMARY KEY NOT NULL,
+    profissao VARCHAR (50),
+    menor BOOL NOT NULL,
+    FOREIGN KEY (pessoa_id) REFERENCES pessoa(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE responsavel (
+	pessoa_id INT PRIMARY KEY NOT NULL,
+    FOREIGN KEY (pessoa_id) REFERENCES pessoa(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE telefone (
+	pessoa_id INT PRIMARY KEY NOT NULL,
+	telefone VARCHAR (14) NOT NULL,
+    FOREIGN KEY (pessoa_id) REFERENCES pessoa(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE email (
+	pessoa_id INT PRIMARY KEY NOT NULL,
+	email VARCHAR (100) NOT NULL,
+    FOREIGN KEY (pessoa_id) REFERENCES pessoa(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE rg (
+	pessoa_id INT PRIMARY KEY NOT NULL,
+	rg VARCHAR (20) NOT NULL,
+    digito VARCHAR (2),
+    orgao_emissor VARCHAR (20) NOT NULL,
+    FOREIGN KEY (pessoa_id) REFERENCES pessoa(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE endereco (
+	pessoa_id INT PRIMARY KEY NOT NULL,
+	cep VARCHAR(10) NOT NULL,
+    logradouro varchar(150) NOT NULL,
+    numero VARCHAR (20) NOT NULL,
+    bairro VARCHAR (50) NOT NULL,
+    cidade VARCHAR (50) NOT NULL,
+    UF CHAR(2) NOT NULL,
+    FOREIGN KEY (pessoa_id) REFERENCES pessoa(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE voluntario_responsavel (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    voluntario_id INT NOT NULL UNIQUE,
+    responsavel_id INT NOT NULL,
+    FOREIGN KEY (voluntario_id) REFERENCES pessoa(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE,
+	FOREIGN KEY (responsavel_id) REFERENCES pessoa(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+
+CREATE TABLE atividade (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    voluntario_id INT NOT NULL,
+	mes_ano DATE NOT NULL,
+    descricao VARCHAR (150) NOT NULL,
+    salario_mercado DOUBLE NOT NULL,
+    qtde_horas DOUBLE NOT NULL,
+    FOREIGN KEY (voluntario_id) REFERENCES pessoa(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE servico_termo (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    voluntario_id INT NOT NULL,
+    mes_ano DATE NOT NULL,
+    dia_semana VARCHAR(30) NOT NULL,
+    horario TIME NOT NULL,
+    local_servico VARCHAR(100) NOT NULL,
+    caracteristicas VARCHAR(150) NOT NULL,
+    FOREIGN KEY (voluntario_id) REFERENCES pessoa(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+# ****************************************
+# CRIACAO DO ESTOQUE
+# ****************************************
+
+CREATE TABLE produto (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    descricao VARCHAR (100) NOT NULL,
+    valor_unitario DOUBLE NOT NULL
+);
+
+CREATE TABLE bazar (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    data_bazar DATE NOT NULL,
+    descricao VARCHAR (100) NOT NULL
+);
+
+CREATE TABLE mov_estoque (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    data_mov DATE NOT NULL,
+    produto_id INT NOT NULL,
+    qtde INT NOT NULL,
+    entrada_saida BOOL NOT NULL,
+    FOREIGN KEY (produto_id) REFERENCES produto(id)
+		ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE beneficiarios (
+	pessoa_id INT PRIMARY KEY AUTO_INCREMENT,
+	rg VARCHAR (20) NOT NULL,
+    digito VARCHAR (2),
+    orgao_emissor VARCHAR (20) NOT NULL,
+    telefone VARCHAR (14),
+    email VARCHAR (100),
+	FOREIGN KEY (pessoa_id) REFERENCES pessoa(id)
+		ON UPDATE CASCADE
+        ON DELETE RESTRICT
+);
+
+CREATE TABLE doacao_recebida (
+	mov_id INT PRIMARY KEY NOT NULL,
+    doador_id INT NOT NULL,
+    data_doacao DATE NOT NULL,
+    descricao VARCHAR (150),
+    FOREIGN KEY (mov_id) REFERENCES mov_estoque(id)
+		ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+	FOREIGN KEY (doador_id) REFERENCES doadores(id)
+		ON UPDATE CASCADE
+        ON DELETE RESTRICT
+);
+    
+CREATE TABLE doacao_efetuada (
+	mov_id INT PRIMARY KEY NOT NULL,
+    data_doacao DATE NOT NULL,
+    beneficiario_id INT NOT NULL,
+    descricao VARCHAR (150),
+    FOREIGN KEY (mov_id) REFERENCES mov_estoque(id)
+		ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+	FOREIGN KEY (beneficiario_id) REFERENCES beneficiarios(pessoa_id)
+		ON UPDATE CASCADE
+        ON DELETE RESTRICT
+);
+
+CREATE TABLE mov_bazar (
+	mov_id INT PRIMARY KEY NOT NULL,
+    bazar_id INT NOT NULL,
+	FOREIGN KEY (bazar_id) REFERENCES bazar(id)
+		ON UPDATE CASCADE
+        ON DELETE RESTRICT
+)
