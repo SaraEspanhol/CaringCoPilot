@@ -51,17 +51,10 @@ CREATE TABLE ong_endereco (
 # CRIACAO DOS DOADORES
 # ****************************************
 
-CREATE TABLE tipo_doador (
-	id BOOL PRIMARY KEY NOT NULL UNIQUE,
-    tipo CHAR (2) NOT NULL
-);
-
-INSERT INTO tipo_doador (id, tipo) VALUES (1, 'PF');
-INSERT INTO tipo_doador (id, tipo) VALUES (0, 'PJ');
 
 CREATE TABLE doadores (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    tipo_doador BOOL NOT NULL,
+    tipo_doador VARCHAR (20) NOT NULL,
     documento CHAR (18) NOT NULL UNIQUE,
     nome VARCHAR (100) NOT NULL,
     data_nasc DATE,
@@ -72,8 +65,8 @@ CREATE TABLE doadores (
         ON DELETE RESTRICT
 );
 
-INSERT INTO doadores (tipo_doador, documento, nome) VALUES (1, 0, 'Anonimo');
-INSERT INTO doadores (tipo_doador, documento, nome) VALUES (0, 1, 'Anonimo');
+INSERT INTO doadores (tipo_doador, documento, nome) VALUES ('Pessoa Física', 0, 'Anonimo');
+INSERT INTO doadores (tipo_doador, documento, nome) VALUES ('Pessoa Jurídica', 1, 'Anonimo');
 
 # ****************************************
 # CRIACAO DAS CONTAS E MOV FIN
