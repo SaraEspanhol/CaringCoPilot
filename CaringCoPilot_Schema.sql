@@ -60,9 +60,7 @@ CREATE TABLE doadores (
     data_nasc DATE,
     telefone VARCHAR (14),
     email VARCHAR (100),
-	FOREIGN KEY (tipo_doador) REFERENCES tipo_doador(id)
-		ON UPDATE CASCADE
-        ON DELETE RESTRICT
+	
 );
 
 INSERT INTO doadores (tipo_doador, documento, nome) VALUES ('Pessoa Física', 0, 'Anonimo');
