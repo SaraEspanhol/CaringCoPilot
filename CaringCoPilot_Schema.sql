@@ -13,7 +13,9 @@ CREATE TABLE ong_responsavel (
     telefone VARCHAR (14) NOT NULL,
     celular VARCHAR (14) NOT NULL, 
     email VARCHAR (100) NOT NULL,
-    cpf CHAR (14) NOT NULL UNIQUE
+    cpf CHAR (14) NOT NULL UNIQUE,
+    usuario VARCHAR (30) NOT NULL UNIQUE,
+    senha VARCHAR (30) NOT NULL
 );
 
 CREATE TABLE ong (
@@ -43,14 +45,7 @@ CREATE TABLE ong_endereco (
 );
 
 
-CREATE TABLE acesso (
-	responsavel_id INT PRIMARY KEY NOT NULL,
-    usuario VARCHAR (30) NOT NULL UNIQUE,
-    senha VARCHAR (30) NOT NULL,
-    FOREIGN KEY (responsavel_id) REFERENCES ong_responsavel(id)
-		ON UPDATE CASCADE
-        ON DELETE RESTRICT
-);
+
 
 # ****************************************
 # CRIACAO DOS DOADORES
