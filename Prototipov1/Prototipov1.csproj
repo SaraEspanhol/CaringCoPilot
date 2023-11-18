@@ -230,12 +230,6 @@
     <Compile Include="TelaPerfil.Designer.cs">
       <DependentUpon>TelaPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaRelatorioControleFinanceiro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TelaRelatorioControleFinanceiro.Designer.cs">
-      <DependentUpon>TelaRelatorioControleFinanceiro.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="MenuBazar.resx">
       <DependentUpon>MenuBazar.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,9 +296,6 @@
     </Compile>
     <EmbeddedResource Include="TelaPerfil.resx">
       <DependentUpon>TelaPerfil.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TelaRelatorioControleFinanceiro.resx">
-      <DependentUpon>TelaRelatorioControleFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

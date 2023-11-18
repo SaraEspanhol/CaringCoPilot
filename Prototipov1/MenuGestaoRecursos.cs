@@ -35,8 +35,7 @@ namespace Prototipov1
 
         private void btRelatorio_Click(object sender, EventArgs e)
         {
-            TelaRelatorioControleFinanceiro telaRelatorioControleFinanceiro = new TelaRelatorioControleFinanceiro();
-            telaRelatorioControleFinanceiro.ShowDialog();
+            
         }
 
         private void PreencherComboBoxDoadores()
