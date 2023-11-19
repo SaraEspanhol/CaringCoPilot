@@ -237,8 +237,8 @@ CREATE TABLE mov_estoque (
 
 CREATE TABLE beneficiarios (
 	pessoa_id INT PRIMARY KEY AUTO_INCREMENT,
+	nome_beneficiario VARCHAR (100) NOT NULL,
 	rg VARCHAR (20) NOT NULL,
-    digito VARCHAR (2),
     orgao_emissor VARCHAR (20) NOT NULL,
     telefone VARCHAR (14),
     email VARCHAR (100),
