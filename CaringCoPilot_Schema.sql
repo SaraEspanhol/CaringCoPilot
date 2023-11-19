@@ -59,7 +59,7 @@ CREATE TABLE doadores (
     nome VARCHAR (100) NOT NULL,
     data_nasc DATE,
     telefone VARCHAR (14),
-    email VARCHAR (100),
+    email VARCHAR (100)
 	
 );
 
@@ -242,6 +242,7 @@ CREATE TABLE beneficiarios (
     orgao_emissor VARCHAR (20) NOT NULL,
     telefone VARCHAR (14),
     email VARCHAR (100),
+    data_nasc VARCHAR (14),
 	FOREIGN KEY (pessoa_id) REFERENCES pessoa(id)
 		ON UPDATE CASCADE
         ON DELETE RESTRICT
