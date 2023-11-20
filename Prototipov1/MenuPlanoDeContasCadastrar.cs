@@ -282,7 +282,7 @@ namespace Prototipov1
             btExcluirAtivos.Enabled = true;
         }
 
-        // ATIVOS
+        /* ATIVOS
         private void carregaDadosAtivos()
         {
             db = new dbs();
@@ -401,7 +401,7 @@ namespace Prototipov1
             }
             btAtualizarAtivos.Enabled = true;
             btExcluirAtivos.Enabled = true;
-        }
+        }*/
     }
     
 }

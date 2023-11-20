@@ -106,8 +106,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\CadastroBeneficiarios.cs" />
     <Compile Include="DAO\CadastroDoadores.cs" />
     <Compile Include="ReembolsoDespesas.cs" />
+    <Compile Include="VO\CadastroBeneficiariosVO.cs" />
     <Compile Include="VO\CadastroDoadoresVO.cs" />
     <Compile Include="VO\ControleFinanceiroVO.cs" />
     <Compile Include="DAO\ControleFinanceiro.cs" />
