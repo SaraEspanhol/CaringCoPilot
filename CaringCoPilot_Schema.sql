@@ -243,9 +243,7 @@ CREATE TABLE beneficiarios (
     telefone VARCHAR (14),
     email VARCHAR (100),
     data_nasc VARCHAR (14),
-	FOREIGN KEY (pessoa_id) REFERENCES pessoa(id)
-		ON UPDATE CASCADE
-        ON DELETE RESTRICT
+	
 );
 
 CREATE TABLE doacao_recebida (
