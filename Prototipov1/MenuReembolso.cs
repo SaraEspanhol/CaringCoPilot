@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using Xceed.Words.NET;
+using Word = Microsoft.Office.Interop.Word;
+using Aspose.Words;
+using Aspose.Words.Saving;
+
 
 namespace Prototipov1
 {
@@ -33,7 +38,7 @@ namespace Prototipov1
             telaPerfil.ShowDialog();
         }
 
-       /*
+       
         public void New()
         {
 
@@ -52,21 +57,27 @@ namespace Prototipov1
             Valor_Gasto5 = Convert.ToDouble(txtValorPago5.Text);
             Valor_total = Convert.ToDouble(txtValorPagoTotal.Text);
         }
-       */
+       
         private void btRelatorio_Click(object sender, EventArgs e)
         {
-            
+            CriarDocumentoWord();
 
         }
-        /*
-        public void PreencherDocs()
-        {
-            caminho = C:\Users\jpesp\Downloads\doc
 
-            using DocX = DocX.Load(caminho + REEMBOLSO.docx)
-            doc.ReplaceText("#Nome", txtNome.Text);
-            doc.ReplaceText("#Ong", txtONG.Text);
-        }*/
+        static void CriarDocumentoWord()
+        {
+            // Carregar documento
+            Document doc = new Document("Document.docx");
+            DocumentBuilder builder = new DocumentBuilder(doc);
+
+            // Acesse o parágrafo
+            var paragraph = doc.Sections[0].Body.Paragraphs[0].Runs[0];
+            paragraph.Text = "This is updated text";
+            // Salve o documento
+
+            doc.Save("Document_updated.docx");
+            Console.WriteLine("Documento Word gerado com sucesso.");
+        }
 
 
 

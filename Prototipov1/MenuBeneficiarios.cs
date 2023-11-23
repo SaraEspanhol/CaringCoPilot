@@ -1,9 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
+using OfficeOpenXml;
 using Prototipov1.VO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration.Provider;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -190,6 +193,49 @@ namespace Prototipov1
         {
             carregaDadosBeneficiarios();
             this.Refresh();
+        }
+
+        private void btRelatorio_Click(object sender, EventArgs e)
+        {
+            void ExportarParaExcel()
+            {
+                string connectionString = "server=localhost;User Id=root;password='@We071120';database=caring_copilot";
+                string query = "SELECT * FROM beneficiarios";
+
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command))
+                            {
+                                DataTable dataTable = new DataTable();
+                                dataAdapter.Fill(dataTable);
+
+                                using (ExcelPackage excelPackage = new ExcelPackage())
+                                {
+                                    ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Dados");
+                                    worksheet.Cells["A1"].LoadFromDataTable(dataTable, true);
+
+                                    excelPackage.SaveAs(new System.IO.FileInfo("C:/Users/jpesp/source/repos/relatorio"));
+                                }
+                            }
+                        }
+                    }
+
+                    Console.WriteLine("Exportação concluída com sucesso!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro durante a exportação: " + ex.Message);
+                    Console.WriteLine(ex.StackTrace);
+                }
+            }
+            
+            ExportarParaExcel();
         }
     }
 }

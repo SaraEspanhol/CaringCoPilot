@@ -1,10 +1,14 @@
 ﻿using MySql.Data.MySqlClient;
+using OfficeOpenXml;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,10 +37,7 @@ namespace Prototipov1
             telaPerfil.ShowDialog();
         }
 
-        private void btRelatorio_Click(object sender, EventArgs e)
-        {
-            
-        }
+
 
         private void PreencherComboBoxDoadores()
         {
@@ -46,34 +47,35 @@ namespace Prototipov1
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
 
-                    try
+                try
+                {
+                    conn.Open();
+
+                    string query = "SELECT nome FROM doadores";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        conn.Open();
-
-                        string query = "SELECT nome FROM doadores";
-
-                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            using (MySqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                
-                                comboBoxNomeDoador.Items.Clear();
 
-                                
-                                while (reader.Read())
-                                {
-                                    comboBoxNomeDoador.Items.Add(reader["nome"].ToString());
-                                }
+                            comboBoxNomeDoador.Items.Clear();
+
+
+                            while (reader.Read())
+                            {
+                                comboBoxNomeDoador.Items.Add(reader["nome"].ToString());
                             }
                         }
-                    }catch (Exception ex)
-                    {
-                        MessageBox.Show("Erro ao preencher ComboBox Doadores: " + ex.Message);
                     }
-                    finally
-                    {
-                        conn.Close();
-                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao preencher ComboBox Doadores: " + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
 
             }
         }
@@ -83,7 +85,7 @@ namespace Prototipov1
             PreencherComboBoxDoadores();
         }
 
-     
+
 
         private void PreencherComboBoxConta()
         {
@@ -243,7 +245,7 @@ namespace Prototipov1
                 cruds.valor = Convert.ToDouble(txtValor.Text);
                 cruds.doador = comboBoxNomeDoador.Text;
                 cruds.InserirFinanceiro();
-                dataGridView1.Rows.Add(null, txtDataCadastroEntrada.Text, txtDescricao.Text,null , cBoxContaCadastroEntrada.Text, null,
+                dataGridView1.Rows.Add(null, txtDataCadastroEntrada.Text, txtDescricao.Text, null, cBoxContaCadastroEntrada.Text, null,
                     cBoxLocalCadastroEntrada.Text, txtValor.Text, null, comboBoxNomeDoador.Text);
                 txtId.Clear();
                 txtDataCadastroEntrada.Clear();
@@ -361,10 +363,57 @@ namespace Prototipov1
             if (checkDoacao.Checked)
             {
                 comboBoxNomeDoador.Enabled = true;
-            }else
+            }
+            else
             {
                 comboBoxNomeDoador.Enabled = false;
             }
         }
+
+        private void btRelatorio_Click(object sender, EventArgs e)
+        {
+            void ExportarParaExcel()
+            {
+                db = new dbs();
+                
+
+                string connectionString = db.getConnectionString();
+                string query = "SELECT * FROM mov_financeira";
+
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command))
+                            {
+                                DataTable dataTable = new DataTable();
+                                dataAdapter.Fill(dataTable);
+
+                                using (ExcelPackage excelPackage = new ExcelPackage())
+                                {
+                                    ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Dados");
+                                    worksheet.Cells["A1"].LoadFromDataTable(dataTable, true);
+
+                                    excelPackage.SaveAs(new System.IO.FileInfo("C:\\Users\\jpesp\\Downloads\\relatorio"));
+                                }
+                            }
+                        }
+                    }
+
+                    Console.WriteLine("Exportação concluída com sucesso!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro durante a exportação: " + ex.Message);
+                }
+            }
+
+            ExportarParaExcel();
+        }
+
     }
 }

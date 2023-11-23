@@ -1,21 +1,26 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Prototipov1
 {
     public partial class TelaPerfil : Form
     {
+        private dbs db;
+
         public TelaPerfil()
         {
             InitializeComponent();
-            
+
         }
 
         private void cadastrarEntradaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,7 +43,7 @@ namespace Prototipov1
 
         private void gerarReciboToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MenuReciboDoacao menuReciboDoacao = new MenuReciboDoacao(); 
+            MenuReciboDoacao menuReciboDoacao = new MenuReciboDoacao();
             menuReciboDoacao.ShowDialog();
         }
 
@@ -54,7 +59,7 @@ namespace Prototipov1
             menuEntrada.ShowDialog();
         }
 
-        
+
 
         private void lançarDoaçõesRealizadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -106,7 +111,7 @@ namespace Prototipov1
 
         private void doaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuEntradaDoacoes menuEntradaDoacoes = new MenuEntradaDoacoes();   
+            MenuEntradaDoacoes menuEntradaDoacoes = new MenuEntradaDoacoes();
             menuEntradaDoacoes.ShowDialog();
         }
 
@@ -142,7 +147,7 @@ namespace Prototipov1
 
         private void controleFinanceiroToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            MenuGestaoRecursos menuGestaoRecursos = new MenuGestaoRecursos();   
+            MenuGestaoRecursos menuGestaoRecursos = new MenuGestaoRecursos();
             menuGestaoRecursos.ShowDialog();
         }
 
@@ -172,7 +177,34 @@ namespace Prototipov1
 
         private void TelaPerfil_Load(object sender, EventArgs e)
         {
+            // Configurar o gráfico
+            chart1.ChartAreas.Add(new ChartArea("Area 1"));
+            chart1.Series.Add(new Series("MinhaSerie"));
 
+            // Conectar ao banco de dados
+            db = new dbs();
+            string connectionString = db.getConnectionString();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Recuperar dados do banco de dados
+                string query = "SELECT conta_id, valor FROM mov_financeira";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Preencher o gráfico com os dados do banco de dados
+                        while (reader.Read())
+                        {
+                            int conta_id = Convert.ToInt32(reader["conta_id"]);
+                            int valor = Convert.ToInt32(reader["valor"]);
+
+                            chart1.Series["MinhaSerie"].Points.AddXY(conta_id, valor);
+                        }
+                    }
+                }
+            }
         }
 
         private void btEditarPerfil_Click(object sender, EventArgs e)
@@ -180,5 +212,9 @@ namespace Prototipov1
             MenuEditarPerfil menuEditarPerfil = new MenuEditarPerfil();
             menuEditarPerfil.ShowDialog();
         }
-    }
+
+
+
+    }        
+    
 }

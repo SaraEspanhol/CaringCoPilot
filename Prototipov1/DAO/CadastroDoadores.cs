@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Prototipov1.DAO
 {
@@ -18,13 +19,13 @@ namespace Prototipov1.DAO
         }
 
         public void InserirDadosDoadores(String tipo_doador, String documento, String nome,
-            String data_nasc, String telefone, String email)
+            String data_nasc, String email, String telefone)
         {
             con = new MySqlConnection();
             db = new dbs();
             con.ConnectionString = db.getConnectionString();
-            String query = "INSERT INTO doadores (tipo_doador, documento, nome, data_nasc, telefone, email) VALUES";
-            query += "(?tipo_doador, ?documento, ?nome, ?data_nasc, ?telefone, ?email)";
+            String query = "INSERT INTO doadores (tipo_doador, documento, nome, data_nasc, email, telefone) VALUES";
+            query += "(?tipo_doador, ?documento, ?nome, ?data_nasc, ?email, ?telefone)";
             try
             {
                 con.Open();
@@ -33,35 +34,41 @@ namespace Prototipov1.DAO
                 cmd.Parameters.AddWithValue("?documento", documento);
                 cmd.Parameters.AddWithValue("?nome", nome);
                 cmd.Parameters.AddWithValue("?data_nasc", data_nasc);
-                cmd.Parameters.AddWithValue("?telefone", telefone);
                 cmd.Parameters.AddWithValue("?email", email);
+                cmd.Parameters.AddWithValue("?telefone", telefone);
+                
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
             }
             finally
             {
                 con.Close();
             }
         }
-        public void AtualizarDadosDoadores(String tipo_doador, String documento, String nome,
+        public void AtualizarDadosDoadores(Int32 id, String tipo_doador, String documento, String nome,
             String data_nasc, String telefone, String email)
         {
             con = new MySqlConnection();
             db = new dbs();
             con.ConnectionString = db.getConnectionString();
-            String query = "UPDATE doadores SET tipo_doador = ?tipo_doador, documento = ?documento, " +
-                "nome = ?nome, data_nasc = ?data_nasc, telefone = ?telefone, email =  ?email";
+            String query = "UPDATE doadores SET id = ?id, tipo_doador = ?tipo_doador, documento = ?documento, " +
+                "nome = ?nome, data_nasc = ?data_nasc, email =  ?email, telefone = ?telefone";
             query += " WHERE id = ?id";
             try
             {
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("?id", id);
                 cmd.Parameters.AddWithValue("?tipo_doador", tipo_doador);
                 cmd.Parameters.AddWithValue("?documento", documento);
                 cmd.Parameters.AddWithValue("?nome", nome);
                 cmd.Parameters.AddWithValue("?data_nasc", data_nasc);
-                cmd.Parameters.AddWithValue("?telefone", telefone);
                 cmd.Parameters.AddWithValue("?email", email);
+                cmd.Parameters.AddWithValue("?telefone", telefone);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
             }
@@ -70,7 +77,7 @@ namespace Prototipov1.DAO
                 con.Close();
             }
         }
-        public void RemoverDadosDoadores(String tipo_doador, String documento, String nome,
+        public void RemoverDadosDoadores(Int32 id, String tipo_doador, String documento, String nome,
             String data_nasc, String telefone, String email)
         {
             con = new MySqlConnection();
@@ -82,12 +89,13 @@ namespace Prototipov1.DAO
             {
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("?id", id);
                 cmd.Parameters.AddWithValue("?tipo_doador", tipo_doador);
                 cmd.Parameters.AddWithValue("?documento", documento);
                 cmd.Parameters.AddWithValue("?nome", nome);
                 cmd.Parameters.AddWithValue("?data_nasc", data_nasc);
-                cmd.Parameters.AddWithValue("?telefone", telefone);
                 cmd.Parameters.AddWithValue("?email", email);
+                cmd.Parameters.AddWithValue("?telefone", telefone);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
             }
