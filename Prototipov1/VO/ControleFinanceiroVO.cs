@@ -10,8 +10,9 @@ namespace Prototipov1
     {
 
         private ControleFinanceiro cdao;
-        private String _data_mov, _descricao, _descr_conta, _descr_ativo, _doador, _doador_id;
+        private String _data_mov, _descricao, _descr_conta, _descr_ativo, _nome;
         private Double _valor;
+        private Int32 _ong_id, _doador_id, _conta_id, _ativo_id, _id;
 
 
         public ControleFinanceiroVO()
@@ -19,7 +20,12 @@ namespace Prototipov1
 
         }
 
-        
+        public Int32 id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
         public String data_mov
         {
             get { return _data_mov; }
@@ -30,11 +36,21 @@ namespace Prototipov1
             get { return _descricao; }
             set { _descricao = value; }
         }
-
+        public Int32 conta_id
+        {
+            get { return _conta_id; }
+            set { _conta_id = value; }
+        }
         public String descr_conta
         {
             get { return _descr_conta; }
             set { _descr_conta = value; }
+        }
+
+        public Int32 ativo_id
+        {
+            get { return _ativo_id; }
+            set { _ativo_id = value; }
         }
 
         public String descr_ativo
@@ -43,15 +59,15 @@ namespace Prototipov1
             set { _descr_ativo = value; }
         }
 
-        public String doador_id
+        public Int32 doador_id
         {
             get { return _doador_id; }
             set { _doador_id = value; }
         }
-        public String doador
+        public String nome
         {
-            get { return _doador; }
-            set { _doador = value; }
+            get { return _nome; }
+            set { _nome = value; }
         }
 
         public Double valor
@@ -60,23 +76,31 @@ namespace Prototipov1
             set { _valor = value; }
         }
 
+        public Int32 ong_id
+        {
+            get { return _ong_id; }
+            set { _ong_id = value; }
+        }
+
 
 
 
         public void InserirFinanceiro()
         {
             cdao = new ControleFinanceiro();
-            cdao.InserirDados(data_mov, descricao, valor, doador, descr_conta, descr_ativo);
+            cdao.InserirDados(ong_id, data_mov, descricao, valor, nome, descr_conta, descr_ativo);
         }
         public void AtualizarFinanceiro()
         {
             cdao = new ControleFinanceiro();
-            cdao.AtualizarDados(data_mov, descricao, valor, doador, descr_conta, descr_ativo);
+            cdao.AtualizarDados(id, ong_id, data_mov, descricao, conta_id, descr_conta, ativo_id, 
+                                descr_ativo, valor, doador_id, nome);
         }
         public void RemoverFinanceiro()
         {
             cdao = new ControleFinanceiro();
-            cdao.RemoverDados(data_mov, descricao, valor, doador, descr_conta, descr_ativo);
+            cdao.RemoverDados(id, ong_id, data_mov, descricao, conta_id, descr_conta, ativo_id,
+                                descr_ativo, valor, doador_id, nome);
         }
     }
 }

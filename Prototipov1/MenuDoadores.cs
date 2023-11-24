@@ -6,9 +6,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Prototipov1
 {
@@ -21,12 +23,58 @@ namespace Prototipov1
         public MenuDoadores()
         {
             InitializeComponent();
+            ComboBoxDoadores();
         }
 
         private void btMenuInicial_Click(object sender, EventArgs e)
         {
             TelaPerfil telaPerfil = new TelaPerfil();
             telaPerfil.ShowDialog();
+        }
+        private void PreencherComboBoxDoadores()
+        {
+            db = new dbs();
+            string connectionString = db.getConnectionString();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+
+                try
+                {
+                    conn.Open();
+
+                    string query = "SELECT tipo_doador FROM doadores";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+
+                            cBoxPFPJ.Items.Clear();
+
+
+                            while (reader.Read())
+                            {
+                                cBoxPFPJ.Items.Add(reader["tipo_doador"].ToString());
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao preencher ComboBox Doadores: " + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
+        }
+
+        private void ComboBoxDoadores()
+        {
+            PreencherComboBoxDoadores();
         }
 
         private void carregaDadosDoadores()
@@ -94,6 +142,7 @@ namespace Prototipov1
                 txtTelefone.Clear();
                 txtEmail.Clear();
                 MessageBox.Show("Cadastro realizado com sucesso!");
+                ComboBoxDoadores();
             }
             catch (Exception)
             {
@@ -130,6 +179,7 @@ namespace Prototipov1
                 txtDataNasc.Clear();
                 txtTelefone.Clear();
                 txtEmail.Clear();
+                ComboBoxDoadores();
 
             }
             catch (Exception)
@@ -162,6 +212,7 @@ namespace Prototipov1
                 txtDataNasc.Clear();
                 txtTelefone.Clear();
                 txtEmail.Clear();
+                ComboBoxDoadores();
 
             }
             catch (Exception)
@@ -191,7 +242,70 @@ namespace Prototipov1
         private void btRefresh_Click(object sender, EventArgs e)
         {
             carregaDadosDoadores();
+            ComboBoxDoadores();
             this.Refresh();
+        }
+
+        private void btRelatorio_Click(object sender, EventArgs e)
+        {
+            void ExportarParaExcel(DataGridView dataGridView1)
+            {
+                if (dataGridView1.Rows.Count == 0)
+                {
+                    MessageBox.Show("Não há dados para exportar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                Excel.Application excelApp = new Excel.Application();
+                Excel.Workbook workbook = excelApp.Workbooks.Add();
+                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1];
+
+                // Adiciona cabeçalhos ao Excel a partir das colunas do DataGridView
+                for (int col = 1; col <= dataGridView1.Columns.Count; col++)
+                {
+                    worksheet.Cells[1, col] = dataGridView1.Columns[col - 1].HeaderText;
+                }
+
+                // Adiciona os dados ao Excel
+                for (int row = 0; row < dataGridView1.Rows.Count; row++)
+                {
+                    for (int col = 0; col < dataGridView1.Columns.Count; col++)
+                    {
+                        worksheet.Cells[row + 2, col + 1] = dataGridView1.Rows[row].Cells[col].Value;
+                    }
+                }
+
+                // Salva o arquivo e limpa os recursos
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "Arquivo Excel (*.xlsx)|*.xlsx|Todos os Arquivos (*.*)|*.*",
+                    FileName = "dados_excel"
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    workbook.SaveAs(saveFileDialog.FileName);
+                    workbook.Close();
+                    excelApp.Quit();
+
+                    Marshal.ReleaseComObject(worksheet);
+                    Marshal.ReleaseComObject(workbook);
+                    Marshal.ReleaseComObject(excelApp);
+
+                    MessageBox.Show("Dados exportados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    workbook.Close(false);
+                    excelApp.Quit();
+
+                    Marshal.ReleaseComObject(worksheet);
+                    Marshal.ReleaseComObject(workbook);
+                    Marshal.ReleaseComObject(excelApp);
+                }
+            }
+            ExportarParaExcel(dataGridView1);
         }
     }
 }
+

@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using OfficeOpenXml;
 using Prototipov1.VO;
 using System;
 using System.Collections.Generic;
@@ -9,9 +8,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Prototipov1
 {
@@ -197,45 +198,63 @@ namespace Prototipov1
 
         private void btRelatorio_Click(object sender, EventArgs e)
         {
-            void ExportarParaExcel()
+            void ExportarParaExcel(DataGridView dataGridView1)
             {
-                string connectionString = "server=localhost;User Id=root;password='@We071120';database=caring_copilot";
-                string query = "SELECT * FROM beneficiarios";
-
-                try
+                if (dataGridView1.Rows.Count == 0)
                 {
-                    using (SqlConnection connection = new SqlConnection(connectionString))
-                    {
-                        connection.Open();
-
-                        using (SqlCommand command = new SqlCommand(query, connection))
-                        {
-                            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command))
-                            {
-                                DataTable dataTable = new DataTable();
-                                dataAdapter.Fill(dataTable);
-
-                                using (ExcelPackage excelPackage = new ExcelPackage())
-                                {
-                                    ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Dados");
-                                    worksheet.Cells["A1"].LoadFromDataTable(dataTable, true);
-
-                                    excelPackage.SaveAs(new System.IO.FileInfo("C:/Users/jpesp/source/repos/relatorio"));
-                                }
-                            }
-                        }
-                    }
-
-                    Console.WriteLine("Exportação concluída com sucesso!");
+                    MessageBox.Show("Não há dados para exportar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
-                catch (Exception ex)
+
+                Excel.Application excelApp = new Excel.Application();
+                Excel.Workbook workbook = excelApp.Workbooks.Add();
+                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1];
+
+                // Adiciona cabeçalhos ao Excel a partir das colunas do DataGridView
+                for (int col = 1; col <= dataGridView1.Columns.Count; col++)
                 {
-                    Console.WriteLine("Erro durante a exportação: " + ex.Message);
-                    Console.WriteLine(ex.StackTrace);
+                    worksheet.Cells[1, col] = dataGridView1.Columns[col - 1].HeaderText;
+                }
+
+                // Adiciona os dados ao Excel
+                for (int row = 0; row < dataGridView1.Rows.Count; row++)
+                {
+                    for (int col = 0; col < dataGridView1.Columns.Count; col++)
+                    {
+                        worksheet.Cells[row + 2, col + 1] = dataGridView1.Rows[row].Cells[col].Value;
+                    }
+                }
+
+                // Salva o arquivo e limpa os recursos
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "Arquivo Excel (*.xlsx)|*.xlsx|Todos os Arquivos (*.*)|*.*",
+                    FileName = "dados_excel"
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    workbook.SaveAs(saveFileDialog.FileName);
+                    workbook.Close();
+                    excelApp.Quit();
+
+                    Marshal.ReleaseComObject(worksheet);
+                    Marshal.ReleaseComObject(workbook);
+                    Marshal.ReleaseComObject(excelApp);
+
+                    MessageBox.Show("Dados exportados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    workbook.Close(false);
+                    excelApp.Quit();
+
+                    Marshal.ReleaseComObject(worksheet);
+                    Marshal.ReleaseComObject(workbook);
+                    Marshal.ReleaseComObject(excelApp);
                 }
             }
-            
-            ExportarParaExcel();
+            ExportarParaExcel(dataGridView1);
         }
     }
 }

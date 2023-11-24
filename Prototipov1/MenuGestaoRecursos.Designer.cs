@@ -61,6 +61,7 @@
             this.lbDataCadastroEntrada = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ong_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_mov = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.conta_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,13 +70,17 @@
             this.descr_ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doador_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtOngId = new System.Windows.Forms.TextBox();
+            this.lbOngId = new System.Windows.Forms.Label();
             this.gBoxControleFinanceiro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxControleFinanceiro
             // 
+            this.gBoxControleFinanceiro.Controls.Add(this.lbOngId);
+            this.gBoxControleFinanceiro.Controls.Add(this.txtOngId);
             this.gBoxControleFinanceiro.Controls.Add(this.lbIdDoador);
             this.gBoxControleFinanceiro.Controls.Add(this.txtIdDoador);
             this.gBoxControleFinanceiro.Controls.Add(this.lbConta);
@@ -178,7 +183,7 @@
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(356, 145);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(81, 20);
+            this.txtId.Size = new System.Drawing.Size(59, 20);
             this.txtId.TabIndex = 34;
             // 
             // btRefresh
@@ -203,7 +208,7 @@
             // checkDoacao
             // 
             this.checkDoacao.AutoSize = true;
-            this.checkDoacao.Location = new System.Drawing.Point(547, 145);
+            this.checkDoacao.Location = new System.Drawing.Point(602, 144);
             this.checkDoacao.Name = "checkDoacao";
             this.checkDoacao.Size = new System.Drawing.Size(101, 17);
             this.checkDoacao.TabIndex = 29;
@@ -312,6 +317,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
+            this.ong_id,
             this.data_mov,
             this.descricao,
             this.conta_id,
@@ -320,7 +326,7 @@
             this.descr_ativo,
             this.valor,
             this.doador_id,
-            this.doador});
+            this.nome});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(792, 111);
@@ -393,6 +399,12 @@
             this.id.Name = "id";
             this.id.Width = 50;
             // 
+            // ong_id
+            // 
+            this.ong_id.HeaderText = "ID Ong";
+            this.ong_id.Name = "ong_id";
+            this.ong_id.Visible = false;
+            // 
             // data_mov
             // 
             this.data_mov.HeaderText = "Data";
@@ -408,6 +420,7 @@
             // 
             this.conta_id.HeaderText = "ID Conta";
             this.conta_id.Name = "conta_id";
+            this.conta_id.Visible = false;
             this.conta_id.Width = 50;
             // 
             // descr_conta
@@ -419,6 +432,7 @@
             // 
             this.ativo_id.HeaderText = "ID Ativo";
             this.ativo_id.Name = "ativo_id";
+            this.ativo_id.Visible = false;
             this.ativo_id.Width = 50;
             // 
             // descr_ativo
@@ -435,12 +449,30 @@
             // 
             this.doador_id.HeaderText = "ID Doador";
             this.doador_id.Name = "doador_id";
+            this.doador_id.Visible = false;
             this.doador_id.Width = 50;
             // 
-            // doador
+            // nome
             // 
-            this.doador.HeaderText = "Doador";
-            this.doador.Name = "doador";
+            this.nome.HeaderText = "Doador";
+            this.nome.Name = "nome";
+            // 
+            // txtOngId
+            // 
+            this.txtOngId.Enabled = false;
+            this.txtOngId.Location = new System.Drawing.Point(482, 143);
+            this.txtOngId.Name = "txtOngId";
+            this.txtOngId.Size = new System.Drawing.Size(59, 20);
+            this.txtOngId.TabIndex = 42;
+            // 
+            // lbOngId
+            // 
+            this.lbOngId.AutoSize = true;
+            this.lbOngId.Location = new System.Drawing.Point(422, 148);
+            this.lbOngId.Name = "lbOngId";
+            this.lbOngId.Size = new System.Drawing.Size(41, 13);
+            this.lbOngId.TabIndex = 43;
+            this.lbOngId.Text = "Ong ID";
             // 
             // MenuGestaoRecursos
             // 
@@ -494,6 +526,7 @@
         private System.Windows.Forms.Label lbIdDoador;
         private System.Windows.Forms.TextBox txtIdDoador;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ong_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_mov;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn conta_id;
@@ -502,6 +535,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descr_ativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn doador_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.Label lbOngId;
+        private System.Windows.Forms.TextBox txtOngId;
     }
 }

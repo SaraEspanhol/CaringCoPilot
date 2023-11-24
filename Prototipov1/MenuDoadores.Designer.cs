@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuDoadores));
             this.gBoxDoacoes = new System.Windows.Forms.GroupBox();
+            this.btRefresh = new System.Windows.Forms.Button();
             this.cBoxPFPJ = new System.Windows.Forms.ComboBox();
             this.lbTipoDoador = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@
             this.lbNomeDoador = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
             this.btCadastrar = new System.Windows.Forms.Button();
-            this.btRefresh = new System.Windows.Forms.Button();
             this.gBoxDoacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +91,16 @@
             this.gBoxDoacoes.TabIndex = 2;
             this.gBoxDoacoes.TabStop = false;
             this.gBoxDoacoes.Text = "Doadores";
+            // 
+            // btRefresh
+            // 
+            this.btRefresh.Location = new System.Drawing.Point(309, 251);
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(95, 26);
+            this.btRefresh.TabIndex = 33;
+            this.btRefresh.Text = "Refresh";
+            this.btRefresh.UseVisualStyleBackColor = true;
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
             // cBoxPFPJ
             // 
@@ -176,6 +186,7 @@
             this.btRelatorio.TabIndex = 18;
             this.btRelatorio.Text = "Relatório";
             this.btRelatorio.UseVisualStyleBackColor = true;
+            this.btRelatorio.Click += new System.EventHandler(this.btRelatorio_Click);
             // 
             // btExcluir
             // 
@@ -311,16 +322,6 @@
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
             this.btCadastrar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btRefresh
-            // 
-            this.btRefresh.Location = new System.Drawing.Point(309, 251);
-            this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(95, 26);
-            this.btRefresh.TabIndex = 33;
-            this.btRefresh.Text = "Refresh";
-            this.btRefresh.UseVisualStyleBackColor = true;
-            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
             // MenuDoadores
             // 

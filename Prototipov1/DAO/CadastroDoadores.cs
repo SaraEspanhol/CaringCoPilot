@@ -50,7 +50,7 @@ namespace Prototipov1.DAO
             }
         }
         public void AtualizarDadosDoadores(Int32 id, String tipo_doador, String documento, String nome,
-            String data_nasc, String telefone, String email)
+            String data_nasc, String email, String telefone)
         {
             con = new MySqlConnection();
             db = new dbs();

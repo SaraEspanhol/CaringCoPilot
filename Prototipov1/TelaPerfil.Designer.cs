@@ -33,9 +33,9 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPerfil));
             this.gBoxPerfil = new System.Windows.Forms.GroupBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.btEditarPerfil = new System.Windows.Forms.Button();
-            this.lbNome = new System.Windows.Forms.Label();
             this.btSair = new System.Windows.Forms.Button();
             this.lbNomePerfil = new System.Windows.Forms.Label();
             this.lbBemVindo = new System.Windows.Forms.Label();
@@ -61,10 +61,9 @@
             this.gerarRebiboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beneficiáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gBoxPerfil.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gBoxPerfil
@@ -72,7 +71,6 @@
             this.gBoxPerfil.Controls.Add(this.chart1);
             this.gBoxPerfil.Controls.Add(this.monthCalendar1);
             this.gBoxPerfil.Controls.Add(this.btEditarPerfil);
-            this.gBoxPerfil.Controls.Add(this.lbNome);
             this.gBoxPerfil.Controls.Add(this.btSair);
             this.gBoxPerfil.Controls.Add(this.lbNomePerfil);
             this.gBoxPerfil.Controls.Add(this.lbBemVindo);
@@ -82,6 +80,22 @@
             this.gBoxPerfil.TabIndex = 0;
             this.gBoxPerfil.TabStop = false;
             this.gBoxPerfil.Text = "Perfil";
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(251, 48);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(221, 161);
+            this.chart1.TabIndex = 6;
+            this.chart1.Text = "chart1";
             // 
             // monthCalendar1
             // 
@@ -98,15 +112,6 @@
             this.btEditarPerfil.Text = "Editar Perfil";
             this.btEditarPerfil.UseVisualStyleBackColor = true;
             this.btEditarPerfil.Click += new System.EventHandler(this.btEditarPerfil_Click);
-            // 
-            // lbNome
-            // 
-            this.lbNome.AutoSize = true;
-            this.lbNome.Location = new System.Drawing.Point(85, 26);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(35, 13);
-            this.lbNome.TabIndex = 3;
-            this.lbNome.Text = "Nome";
             // 
             // btSair
             // 
@@ -147,7 +152,7 @@
             this.beneficiáriosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(9, 6);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(422, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(283, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -191,6 +196,7 @@
             this.voluntáriosToolStripMenuItem.Name = "voluntáriosToolStripMenuItem";
             this.voluntáriosToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.voluntáriosToolStripMenuItem.Text = "Voluntários";
+            this.voluntáriosToolStripMenuItem.Visible = false;
             // 
             // cadastroToolStripMenuItem
             // 
@@ -222,6 +228,7 @@
             this.doaçõesToolStripMenuItem.Name = "doaçõesToolStripMenuItem";
             this.doaçõesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.doaçõesToolStripMenuItem.Text = "Estoque";
+            this.doaçõesToolStripMenuItem.Visible = false;
             // 
             // entradasToolStripMenuItem
             // 
@@ -235,14 +242,14 @@
             // doaçãoToolStripMenuItem
             // 
             this.doaçãoToolStripMenuItem.Name = "doaçãoToolStripMenuItem";
-            this.doaçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.doaçãoToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.doaçãoToolStripMenuItem.Text = "Doação";
             this.doaçãoToolStripMenuItem.Click += new System.EventHandler(this.doaçãoToolStripMenuItem_Click);
             // 
             // compraToolStripMenuItem
             // 
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            this.compraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.compraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.compraToolStripMenuItem.Text = "Compra";
             this.compraToolStripMenuItem.Click += new System.EventHandler(this.compraToolStripMenuItem_Click);
             // 
@@ -314,22 +321,6 @@
             this.cadastroToolStripMenuItem1.Text = "Gestão de Beneficiários";
             this.cadastroToolStripMenuItem1.Click += new System.EventHandler(this.cadastroToolStripMenuItem1_Click);
             // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(251, 48);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(221, 161);
-            this.chart1.TabIndex = 6;
-            this.chart1.Text = "chart1";
-            // 
             // TelaPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,9 +336,9 @@
             this.Load += new System.EventHandler(this.TelaPerfil_Load);
             this.gBoxPerfil.ResumeLayout(false);
             this.gBoxPerfil.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,7 +350,6 @@
         private System.Windows.Forms.Label lbBemVindo;
         private System.Windows.Forms.Button btSair;
         private System.Windows.Forms.Label lbNomePerfil;
-        private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gestãoDeRecursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reembolsoDeDespesasToolStripMenuItem;
