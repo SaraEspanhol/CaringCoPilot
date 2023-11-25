@@ -157,6 +157,7 @@
             // 
             // txtCodDoador
             // 
+            this.txtCodDoador.Enabled = false;
             this.txtCodDoador.Location = new System.Drawing.Point(59, 155);
             this.txtCodDoador.Name = "txtCodDoador";
             this.txtCodDoador.Size = new System.Drawing.Size(59, 20);

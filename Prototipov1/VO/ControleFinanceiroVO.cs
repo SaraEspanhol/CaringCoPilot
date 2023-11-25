@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prototipov1.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,11 @@ namespace Prototipov1
 
         public String data_mov
         {
-            get { return _data_mov; }
+            get
+            {
+                _data_mov = Validacoes.ValidaData(_data_mov);
+                return _data_mov;
+            }
             set { _data_mov = value; }
         }
         public String descricao
@@ -74,9 +79,14 @@ namespace Prototipov1
 
 
 
-
         public void InserirFinanceiro()
         {
+            if (descricao == "" || descr_ativo == "" || descr_conta == "")
+            {
+                string textoErro = String.Format("Preencha os campos obrigatórios!");
+                throw new ArgumentException(textoErro);
+            }
+
             cdao = new ControleFinanceiro();
             cdao.InserirDados(ong_id, data_mov, descricao, valor, descr_conta, descr_ativo);
         }

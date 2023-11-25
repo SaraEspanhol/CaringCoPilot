@@ -312,15 +312,16 @@ namespace Prototipov1
             {
                 txtId.Text = Convert.ToString(row.Cells[0].Value);
                 txtOngId.Text = row.Cells[1].Value.ToString();
-                txtDataCadastroEntrada.Text = row.Cells[2].Value.ToString();
+
+                // Converte diretamente para DateTime e formata
+                DateTime data = (DateTime)row.Cells[2].Value;
+                txtDataCadastroEntrada.Text = data.ToString("dd/MM/yyyy");
                 txtDescricao.Text = row.Cells[3].Value.ToString();
                 txtIdConta.Text = Convert.ToString(row.Cells[4].Value);
                 cBoxContaCadastroEntrada.Text = row.Cells[5].Value.ToString();
                 txtIdAtivo.Text = Convert.ToString(row.Cells[6].Value);
                 cBoxLocalCadastroEntrada.Text = row.Cells[7].Value.ToString();
                 txtValor.Text = row.Cells[8].Value.ToString();
-
-
             }
             btAtualizar.Enabled = true;
             btExcluir.Enabled = true;

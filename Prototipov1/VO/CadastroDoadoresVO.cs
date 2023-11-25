@@ -1,4 +1,5 @@
 ﻿using Prototipov1.DAO;
+using Prototipov1.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +46,11 @@ namespace Prototipov1.VO
 
         public String data_nasc
         {
-            get { return _data_nasc; }
+            get
+            {
+                _data_nasc = Validacoes.ValidaData(_data_nasc);
+                return _data_nasc;
+            }
             set { _data_nasc = value; }
         }
 
@@ -63,7 +68,35 @@ namespace Prototipov1.VO
 
         public void InserirDoadores()
         {
-            cdao = new CadastroDoadores();
+            bool v;
+
+            v = Validacoes.IsValidEmail(email);
+            if (!(v))
+            {
+                string textoErro = String.Format("Insira um e-mail válido!");
+                throw new ArgumentException(textoErro);
+            }
+
+            v = Validacoes.IsValidTelefone(telefone);
+            if (!(v))
+            {
+                string textoErro = String.Format("Insira um telefone válido!");
+                throw new ArgumentException(textoErro);
+            }
+
+            if (nome == "" || documento == "")
+            {
+                string textoErro = String.Format("Preencha os campos obrigatórios!");
+                throw new ArgumentException(textoErro);
+            }
+
+            if (tipo_doador != "Pessoa Física" || tipo_doador != "Pessoa Jurídica")
+            {
+                string textoErro = String.Format("Insira um Tipo de Doador Válido!");
+                throw new ArgumentException(textoErro);
+            }
+
+                cdao = new CadastroDoadores();
             cdao.InserirDadosDoadores(tipo_doador,  documento,  nome, data_nasc, email, telefone);
         }
         public void AtualizarDoadores()

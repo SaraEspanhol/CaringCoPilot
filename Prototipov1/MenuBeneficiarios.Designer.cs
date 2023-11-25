@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuBeneficiarios));
             this.gBoxDoacoes = new System.Windows.Forms.GroupBox();
             this.btRefresh = new System.Windows.Forms.Button();
@@ -48,6 +49,10 @@
             this.lbDataNascimento = new System.Windows.Forms.Label();
             this.txtDataNasc = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lbNomeDoador = new System.Windows.Forms.Label();
+            this.btMenuInicial = new System.Windows.Forms.Button();
+            this.btCadastrar = new System.Windows.Forms.Button();
             this.pessoa_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome_beneficiario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_nasc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +60,6 @@
             this.orgao_emissor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.lbNomeDoador = new System.Windows.Forms.Label();
-            this.btMenuInicial = new System.Windows.Forms.Button();
-            this.btCadastrar = new System.Windows.Forms.Button();
             this.gBoxDoacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -167,6 +168,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(127, 20);
             this.txtTelefone.TabIndex = 28;
+            this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
             // 
             // lbTelefone
             // 
@@ -179,6 +181,7 @@
             // 
             // txtCod
             // 
+            this.txtCod.Enabled = false;
             this.txtCod.Location = new System.Drawing.Point(59, 155);
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(117, 20);
@@ -238,6 +241,7 @@
             this.txtDataNasc.Name = "txtDataNasc";
             this.txtDataNasc.Size = new System.Drawing.Size(127, 20);
             this.txtDataNasc.TabIndex = 14;
+            this.txtDataNasc.TextChanged += new System.EventHandler(this.txtDataNasc_TextChanged);
             // 
             // dataGridView1
             // 
@@ -255,45 +259,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(711, 126);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // pessoa_id
-            // 
-            this.pessoa_id.HeaderText = "Item No";
-            this.pessoa_id.Name = "pessoa_id";
-            this.pessoa_id.Width = 50;
-            // 
-            // nome_beneficiario
-            // 
-            this.nome_beneficiario.HeaderText = "Nome";
-            this.nome_beneficiario.Name = "nome_beneficiario";
-            this.nome_beneficiario.Width = 150;
-            // 
-            // data_nasc
-            // 
-            this.data_nasc.HeaderText = "Data de Nascimento";
-            this.data_nasc.Name = "data_nasc";
-            // 
-            // rg
-            // 
-            this.rg.HeaderText = "RG";
-            this.rg.Name = "rg";
-            // 
-            // orgao_emissor
-            // 
-            this.orgao_emissor.HeaderText = "Orgão Emissor";
-            this.orgao_emissor.Name = "orgao_emissor";
-            this.orgao_emissor.Width = 50;
-            // 
-            // telefone
-            // 
-            this.telefone.HeaderText = "Telefone";
-            this.telefone.Name = "telefone";
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            this.email.Width = 120;
             // 
             // txtNome
             // 
@@ -330,6 +295,48 @@
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
             this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
+            // 
+            // pessoa_id
+            // 
+            this.pessoa_id.HeaderText = "Item No";
+            this.pessoa_id.Name = "pessoa_id";
+            this.pessoa_id.Width = 50;
+            // 
+            // nome_beneficiario
+            // 
+            this.nome_beneficiario.HeaderText = "Nome";
+            this.nome_beneficiario.Name = "nome_beneficiario";
+            this.nome_beneficiario.Width = 150;
+            // 
+            // data_nasc
+            // 
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.data_nasc.DefaultCellStyle = dataGridViewCellStyle1;
+            this.data_nasc.HeaderText = "Data de Nascimento";
+            this.data_nasc.Name = "data_nasc";
+            // 
+            // rg
+            // 
+            this.rg.HeaderText = "RG";
+            this.rg.Name = "rg";
+            // 
+            // orgao_emissor
+            // 
+            this.orgao_emissor.HeaderText = "Orgão Emissor";
+            this.orgao_emissor.Name = "orgao_emissor";
+            this.orgao_emissor.Width = 50;
+            // 
+            // telefone
+            // 
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.Width = 120;
             // 
             // MenuBeneficiarios
             // 
@@ -374,6 +381,7 @@
         private System.Windows.Forms.Label lbNomeDoador;
         private System.Windows.Forms.Button btMenuInicial;
         private System.Windows.Forms.Button btCadastrar;
+        private System.Windows.Forms.Button btRefresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn pessoa_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome_beneficiario;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_nasc;
@@ -381,6 +389,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orgao_emissor;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.Button btRefresh;
     }
 }

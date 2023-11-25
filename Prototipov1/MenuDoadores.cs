@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Office.Interop.Excel;
+using MySql.Data.MySqlClient;
 using Prototipov1.VO;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,7 @@ namespace Prototipov1
                 {
                     try
                     {
-                        DataTable dataTable = new DataTable();
+                        System.Data.DataTable dataTable = new System.Data.DataTable();
                         adapter.Fill(dataTable);
                         for (int i = 0; i < dataTable.Rows.Count; i++)
                         {
@@ -78,6 +79,7 @@ namespace Prototipov1
             carregaDadosDoadores();
         }
 
+        //Cadastrar
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -100,6 +102,10 @@ namespace Prototipov1
                 txtEmail.Clear();
                 MessageBox.Show("Cadastro realizado com sucesso!");
                 
+            }
+            catch (ArgumentException erro)
+            {
+                MessageBox.Show(erro.Message, "Erro!");
             }
             catch (Exception)
             {
@@ -138,6 +144,10 @@ namespace Prototipov1
                 txtEmail.Clear();
                 
 
+            }
+            catch (ArgumentException erro)
+            {
+                MessageBox.Show(erro.Message, "Erro!");
             }
             catch (Exception)
             {
@@ -187,7 +197,9 @@ namespace Prototipov1
                 cBoxPFPJ.Text = row.Cells[1].Value.ToString();
                 txtDocDoador.Text = row.Cells[2].Value.ToString();
                 txtNomeDoador.Text = row.Cells[3].Value.ToString();
-                txtDataNasc.Text = row.Cells[4].Value.ToString();
+                // Converte diretamente para DateTime e formata
+                DateTime data = (DateTime)row.Cells[4].Value;
+                txtDataNasc.Text = data.ToString("dd/MM/yyyy");
                 txtEmail.Text = row.Cells[5].Value.ToString();
                 txtTelefone.Text = row.Cells[6].Value.ToString();
                 

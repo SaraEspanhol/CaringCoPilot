@@ -1,4 +1,5 @@
 ﻿using Prototipov1.DAO;
+using Prototipov1.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,17 +55,67 @@ namespace Prototipov1.VO
 
         public String data_nasc
         {
-            get { return _data_nasc; }
+            get 
+            {
+                _data_nasc = Validacoes.ValidaData(_data_nasc);
+                return _data_nasc;
+            }
             set { _data_nasc = value; }
         }
 
         public void InserirBeneficiarios()
         {
+            bool v;
+
+            v = Validacoes.IsValidEmail(email);
+            if (!(v))
+            {
+                string textoErro = String.Format("Insira um e-mail válido!");
+                throw new ArgumentException(textoErro);
+            }
+
+            v = Validacoes.IsValidTelefone(telefone);
+            if (!(v))
+            {
+                string textoErro = String.Format("Insira um telefone válido!");
+                throw new ArgumentException(textoErro);
+            }
+            
+
+            if (nome_beneficiario == "" || rg == "" || orgao_emissor == "")
+            {
+                string textoErro = String.Format("Preencha os campos obrigatórios!");
+                throw new ArgumentException(textoErro);
+            }
             cdao = new CadastroBeneficiarios();
             cdao.InserirDadosBeneficiarios(nome_beneficiario, data_nasc, rg, orgao_emissor, telefone, email);
+            
+
         }
         public void AtualizarBeneficiarios()
         {
+            bool v;
+
+            v = Validacoes.IsValidEmail(email);
+            if (!(v))
+            {
+                string textoErro = String.Format("Insira um e-mail válido!");
+                throw new ArgumentException(textoErro);
+            }
+
+            v = Validacoes.IsValidTelefone(telefone);
+            if (!(v))
+            {
+                string textoErro = String.Format("Insira um telefone válido!");
+                throw new ArgumentException(textoErro);
+            }
+
+
+            if (nome_beneficiario == "" || rg == "" || orgao_emissor == "")
+            {
+                string textoErro = String.Format("Preencha os campos obrigatórios!");
+                throw new ArgumentException(textoErro);
+            }
             cdao = new CadastroBeneficiarios();
             cdao.AtualizarDadosBeneficiarios(pessoa_id, nome_beneficiario, data_nasc, rg, orgao_emissor, telefone, email);
         }
