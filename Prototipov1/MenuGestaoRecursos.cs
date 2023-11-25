@@ -274,15 +274,19 @@ namespace Prototipov1
 
         private void btAtualizar_Click(object sender, EventArgs e)
         {
-            cruds = new ControleFinanceiroVO();
+            
             try
             {
-
+                cruds = new ControleFinanceiroVO();
+                cruds.id = Convert.ToInt32(txtId.Text);
                 cruds.data_mov = txtDataCadastroEntrada.Text;
                 cruds.descricao = txtDescricao.Text;
+                cruds.conta_id = Convert.ToInt32(txtIdConta.Text);
                 cruds.descr_conta = cBoxContaCadastroEntrada.Text;
+                cruds.ativo_id = Convert.ToInt32(txtIdAtivo.Text);
                 cruds.descr_ativo = cBoxLocalCadastroEntrada.Text;
                 cruds.valor = Convert.ToDouble(txtValor.Text);
+                cruds.doador_id = Convert.ToInt32(txtIdDoador.Text);
                 cruds.nome = comboBoxNomeDoador.Text;
                 cruds.AtualizarFinanceiro();
                 dataGridView1[0, catchRowIndex].Value = txtId.Text;
@@ -324,14 +328,19 @@ namespace Prototipov1
 
         private void btExcluir_Click(object sender, EventArgs e)
         {
-            cruds = new ControleFinanceiroVO();
+            
             try
             {
+                cruds = new ControleFinanceiroVO();
+                cruds.id = Convert.ToInt32(txtId.Text);
                 cruds.data_mov = txtDataCadastroEntrada.Text;
                 cruds.descricao = txtDescricao.Text;
+                cruds.conta_id = Convert.ToInt32(txtIdConta.Text);
                 cruds.descr_conta = cBoxContaCadastroEntrada.Text;
+                cruds.ativo_id = Convert.ToInt32(txtIdAtivo.Text);
                 cruds.descr_ativo = cBoxLocalCadastroEntrada.Text;
                 cruds.valor = Convert.ToDouble(txtValor.Text);
+                cruds.doador_id = Convert.ToInt32(txtIdDoador.Text);
                 cruds.nome = comboBoxNomeDoador.Text;
                 cruds.RemoverFinanceiro();
                 dataGridView1.Rows.RemoveAt(catchRowIndex);
@@ -400,7 +409,7 @@ namespace Prototipov1
             ComboBoxDoadores();
             ComboBoxConta();
             ComboBoxAtivo();
-            this.Refresh();
+            
         }
 
         private void checkDoacao_CheckedChanged(object sender, EventArgs e)

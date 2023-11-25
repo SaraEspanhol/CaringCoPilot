@@ -23,7 +23,7 @@ namespace Prototipov1
         public MenuDoadores()
         {
             InitializeComponent();
-            ComboBoxDoadores();
+            
         }
 
         private void btMenuInicial_Click(object sender, EventArgs e)
@@ -31,51 +31,8 @@ namespace Prototipov1
             TelaPerfil telaPerfil = new TelaPerfil();
             telaPerfil.ShowDialog();
         }
-        private void PreencherComboBoxDoadores()
-        {
-            db = new dbs();
-            string connectionString = db.getConnectionString();
+        
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-
-                try
-                {
-                    conn.Open();
-
-                    string query = "SELECT tipo_doador FROM doadores";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-
-                            cBoxPFPJ.Items.Clear();
-
-
-                            while (reader.Read())
-                            {
-                                cBoxPFPJ.Items.Add(reader["tipo_doador"].ToString());
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao preencher ComboBox Doadores: " + ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
-
-            }
-        }
-
-        private void ComboBoxDoadores()
-        {
-            PreencherComboBoxDoadores();
-        }
 
         private void carregaDadosDoadores()
         {
@@ -142,7 +99,7 @@ namespace Prototipov1
                 txtTelefone.Clear();
                 txtEmail.Clear();
                 MessageBox.Show("Cadastro realizado com sucesso!");
-                ComboBoxDoadores();
+                
             }
             catch (Exception)
             {
@@ -179,7 +136,7 @@ namespace Prototipov1
                 txtDataNasc.Clear();
                 txtTelefone.Clear();
                 txtEmail.Clear();
-                ComboBoxDoadores();
+                
 
             }
             catch (Exception)
@@ -212,7 +169,7 @@ namespace Prototipov1
                 txtDataNasc.Clear();
                 txtTelefone.Clear();
                 txtEmail.Clear();
-                ComboBoxDoadores();
+                
 
             }
             catch (Exception)
@@ -242,7 +199,7 @@ namespace Prototipov1
         private void btRefresh_Click(object sender, EventArgs e)
         {
             carregaDadosDoadores();
-            ComboBoxDoadores();
+           
             this.Refresh();
         }
 

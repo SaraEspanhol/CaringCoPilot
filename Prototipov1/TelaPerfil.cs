@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -177,34 +178,8 @@ namespace Prototipov1
 
         private void TelaPerfil_Load(object sender, EventArgs e)
         {
-            // Configurar o gráfico
-            chart1.ChartAreas.Add(new ChartArea("Area 1"));
-            chart1.Series.Add(new Series("MinhaSerie"));
-
-            // Conectar ao banco de dados
-            db = new dbs();
-            string connectionString = db.getConnectionString();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                // Recuperar dados do banco de dados
-                string query = "SELECT conta_id, valor FROM mov_financeira";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        // Preencher o gráfico com os dados do banco de dados
-                        while (reader.Read())
-                        {
-                            int conta_id = Convert.ToInt32(reader["conta_id"]);
-                            int valor = Convert.ToInt32(reader["valor"]);
-
-                            chart1.Series["MinhaSerie"].Points.AddXY(conta_id, valor);
-                        }
-                    }
-                }
-            }
+            carregaDadosFinanceiro();
+            PreencherGrafico();
         }
 
         private void btEditarPerfil_Click(object sender, EventArgs e)
@@ -213,8 +188,84 @@ namespace Prototipov1
             menuEditarPerfil.ShowDialog();
         }
 
+        private void chart1_Click(object sender, EventArgs e)
+        {
+            MenuGestaoRecursos menuGestaoRecursos = new MenuGestaoRecursos();  
+            menuGestaoRecursos.ShowDialog();
+        }
+        private void PreencherGrafico()
+        {
+            // Limpar dados existentes no gráfico
+            Chart1.Series.Clear();
+
+            // Adicionar uma série ao gráfico
+            Series serie = new Series("Entradas");
+            serie.ChartType = SeriesChartType.Column; // Ou outro tipo de gráfico desejado
+
+            // Preencher dados da série com dados do DataGridView
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                // Certifique-se de que a célula não está vazia
+                if (row.Cells[0].Value != null && row.Cells[2].Value != null)
+                {
+                    // Adicionar ponto de dados à série
+                    string xValue = row.Cells[2].Value.ToString();
+                    string yValue = row.Cells[0].Value.ToString();
+                    serie.Points.AddXY(xValue, yValue);
+                }
+            }
+
+            // Adicionar a série ao gráfico
+            Chart1.Series.Add(serie);
+
+            // Personalizar o gráfico conforme necessário
+            Chart1.ChartAreas[0].AxisX.Title = "Valores";
+            Chart1.ChartAreas[0].AxisY.Title = "Data";
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void carregaDadosFinanceiro()
+        {
+            db = new dbs();
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+
+            string connectionString = db.getConnectionString();
+            string query = "SELECT mf.data_mov, mf.descricao, mf.valor, SUM(mf.valor) OVER(ORDER BY mf.data_mov) AS saldo_acumulado " +
+                "FROM mov_financeira mf WHERE mf.ong_id = 1";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
+                {
+                    try
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        for (int i = 0; i < dataTable.Rows.Count; i++)
+                        {
+                            dataGridView1.Rows.Add(
+                                dataTable.Rows[i]["data_mov"],
+                                dataTable.Rows[i]["descricao"],
+                                dataTable.Rows[i]["valor"],
+                                dataTable.Rows[i]["saldo_acumulado"]
+                                
+                            );
+                        }
 
 
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error" + ex);
+                    }
+                }
+            } // end using
+        }
     }        
     
 }

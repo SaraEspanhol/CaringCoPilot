@@ -51,12 +51,12 @@
             this.btExcluirAtivos = new System.Windows.Forms.Button();
             this.btAtualizarAtivos = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idAtivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descr_ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNomeAtivos = new System.Windows.Forms.TextBox();
             this.lbNomeAtivo = new System.Windows.Forms.Label();
             this.btMenu = new System.Windows.Forms.Button();
             this.btCadastrarAtivos = new System.Windows.Forms.Button();
-            this.idAtivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descr_ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxGestaoRecursos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -232,7 +232,7 @@
             this.btRefreshAtivos.TabIndex = 26;
             this.btRefreshAtivos.Text = "Refresh";
             this.btRefreshAtivos.UseVisualStyleBackColor = true;
-            //this.btRefreshAtivos.Click += new System.EventHandler(this.btRefreshAtivos_Click_1);
+            this.btRefreshAtivos.Click += new System.EventHandler(this.btRefreshAtivos_Click_1);
             // 
             // txtIdAtivos
             // 
@@ -259,7 +259,7 @@
             this.btExcluirAtivos.TabIndex = 17;
             this.btExcluirAtivos.Text = "Excluir";
             this.btExcluirAtivos.UseVisualStyleBackColor = true;
-            //this.btExcluirAtivos.Click += new System.EventHandler(this.btExcluirAtivos_Click_1);
+            this.btExcluirAtivos.Click += new System.EventHandler(this.btExcluirAtivos_Click_1);
             // 
             // btAtualizarAtivos
             // 
@@ -269,7 +269,7 @@
             this.btAtualizarAtivos.TabIndex = 16;
             this.btAtualizarAtivos.Text = "Atualizar";
             this.btAtualizarAtivos.UseVisualStyleBackColor = true;
-            //this.btAtualizarAtivos.Click += new System.EventHandler(this.btAtualizarAtivos_Click_1);
+            this.btAtualizarAtivos.Click += new System.EventHandler(this.btAtualizarAtivos_Click_1);
             // 
             // dataGridView2
             // 
@@ -281,7 +281,17 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(499, 107);
             this.dataGridView2.TabIndex = 13;
-            //this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick_1);
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick_1);
+            // 
+            // idAtivos
+            // 
+            this.idAtivos.HeaderText = "Item No";
+            this.idAtivos.Name = "idAtivos";
+            // 
+            // descr_ativo
+            // 
+            this.descr_ativo.HeaderText = "Nome";
+            this.descr_ativo.Name = "descr_ativo";
             // 
             // txtNomeAtivos
             // 
@@ -316,17 +326,7 @@
             this.btCadastrarAtivos.TabIndex = 0;
             this.btCadastrarAtivos.Text = "Cadastrar";
             this.btCadastrarAtivos.UseVisualStyleBackColor = true;
-            //this.btCadastrarAtivos.Click += new System.EventHandler(this.btCadastrarAtivos_Click_1);
-            // 
-            // idAtivos
-            // 
-            this.idAtivos.HeaderText = "Item No";
-            this.idAtivos.Name = "idAtivos";
-            // 
-            // descr_ativo
-            // 
-            this.descr_ativo.HeaderText = "Nome";
-            this.descr_ativo.Name = "descr_ativo";
+            this.btCadastrarAtivos.Click += new System.EventHandler(this.btCadastrarAtivos_Click_1);
             // 
             // MenuPlanoDeContasCadastrar
             // 

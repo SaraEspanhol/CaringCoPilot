@@ -57,10 +57,9 @@ namespace Prototipov1
             db = new dbs();
             con.ConnectionString = db.getConnectionString();
             String query = "UPDATE mov_financeira SET data_mov = ?data_mov, descricao = ?descricao, " +
-                "valor = ?valor WHERE id = ?id" +
-                "UPDATE contas SET descr_conta = ?descr_conta WHERE id = ?id" +
-                "UPDATE ativos SET descr_ativo = ?descr_ativo WHERE idAtivos = ?idAtivos" +
-                "UPDATE doadores SET nome = ?nome WHERE id = ?id";
+                "valor = ?valor, ativo_id = (SELECT idAtivos FROM ativos WHERE descr_ativo = ?descr_ativo)," +
+                "conta_id = (SELECT id FROM contas WHERE descr_conta = ?descr_conta)," +
+                "doador_id = (SELECT id FROM doadores WHERE nome = ?nome) WHERE id = ?id";
             try
             {
                 con.Open();
@@ -90,11 +89,7 @@ namespace Prototipov1
             con = new MySqlConnection();
             db = new dbs();
             con.ConnectionString = db.getConnectionString();
-            String query = "DELETE mov_financeira SET data_mov = ?data_mov, descricao = ?descricao, " +
-                "valor = ?valor WHERE id = ?id" +
-                "DELETE contas SET tipo_conta = ?tipo_conta WHERE id = ?id" +
-                "DELETE ativos SET descr_ativo = ?descr_ativo WHERE idAtivos = ?idAtivos" +
-                "DELETE doadores SET nome = ?nome WHERE id = ?id";
+            String query = "DELETE FROM mov_financeira WHERE id = ?id";
             try
             {
                 con.Open();

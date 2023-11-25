@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuGestaoRecursos));
             this.gBoxControleFinanceiro = new System.Windows.Forms.GroupBox();
+            this.lbOngId = new System.Windows.Forms.Label();
+            this.txtOngId = new System.Windows.Forms.TextBox();
             this.lbIdDoador = new System.Windows.Forms.Label();
             this.txtIdDoador = new System.Windows.Forms.TextBox();
             this.lbConta = new System.Windows.Forms.Label();
@@ -71,8 +73,6 @@
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doador_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtOngId = new System.Windows.Forms.TextBox();
-            this.lbOngId = new System.Windows.Forms.Label();
             this.gBoxControleFinanceiro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +117,23 @@
             this.gBoxControleFinanceiro.TabIndex = 0;
             this.gBoxControleFinanceiro.TabStop = false;
             this.gBoxControleFinanceiro.Text = "Controle Financeiro";
+            // 
+            // lbOngId
+            // 
+            this.lbOngId.AutoSize = true;
+            this.lbOngId.Location = new System.Drawing.Point(422, 148);
+            this.lbOngId.Name = "lbOngId";
+            this.lbOngId.Size = new System.Drawing.Size(41, 13);
+            this.lbOngId.TabIndex = 43;
+            this.lbOngId.Text = "Ong ID";
+            // 
+            // txtOngId
+            // 
+            this.txtOngId.Enabled = false;
+            this.txtOngId.Location = new System.Drawing.Point(482, 143);
+            this.txtOngId.Name = "txtOngId";
+            this.txtOngId.Size = new System.Drawing.Size(59, 20);
+            this.txtOngId.TabIndex = 42;
             // 
             // lbIdDoador
             // 
@@ -420,7 +437,6 @@
             // 
             this.conta_id.HeaderText = "ID Conta";
             this.conta_id.Name = "conta_id";
-            this.conta_id.Visible = false;
             this.conta_id.Width = 50;
             // 
             // descr_conta
@@ -432,7 +448,6 @@
             // 
             this.ativo_id.HeaderText = "ID Ativo";
             this.ativo_id.Name = "ativo_id";
-            this.ativo_id.Visible = false;
             this.ativo_id.Width = 50;
             // 
             // descr_ativo
@@ -456,23 +471,6 @@
             // 
             this.nome.HeaderText = "Doador";
             this.nome.Name = "nome";
-            // 
-            // txtOngId
-            // 
-            this.txtOngId.Enabled = false;
-            this.txtOngId.Location = new System.Drawing.Point(482, 143);
-            this.txtOngId.Name = "txtOngId";
-            this.txtOngId.Size = new System.Drawing.Size(59, 20);
-            this.txtOngId.TabIndex = 42;
-            // 
-            // lbOngId
-            // 
-            this.lbOngId.AutoSize = true;
-            this.lbOngId.Location = new System.Drawing.Point(422, 148);
-            this.lbOngId.Name = "lbOngId";
-            this.lbOngId.Size = new System.Drawing.Size(41, 13);
-            this.lbOngId.TabIndex = 43;
-            this.lbOngId.Text = "Ong ID";
             // 
             // MenuGestaoRecursos
             // 
@@ -525,6 +523,8 @@
         private System.Windows.Forms.Label lbAtivo;
         private System.Windows.Forms.Label lbIdDoador;
         private System.Windows.Forms.TextBox txtIdDoador;
+        private System.Windows.Forms.Label lbOngId;
+        private System.Windows.Forms.TextBox txtOngId;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ong_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_mov;
@@ -536,7 +536,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn doador_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
-        private System.Windows.Forms.Label lbOngId;
-        private System.Windows.Forms.TextBox txtOngId;
     }
 }
