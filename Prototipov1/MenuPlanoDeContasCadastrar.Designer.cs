@@ -76,18 +76,19 @@
             this.gBoxGestaoRecursos.Controls.Add(this.txtNome);
             this.gBoxGestaoRecursos.Controls.Add(this.lbNomeCadastroEntrada);
             this.gBoxGestaoRecursos.Controls.Add(this.btCadastrar);
-            this.gBoxGestaoRecursos.Location = new System.Drawing.Point(12, 12);
+            this.gBoxGestaoRecursos.Location = new System.Drawing.Point(12, 3);
             this.gBoxGestaoRecursos.Name = "gBoxGestaoRecursos";
-            this.gBoxGestaoRecursos.Size = new System.Drawing.Size(515, 192);
+            this.gBoxGestaoRecursos.Size = new System.Drawing.Size(466, 207);
             this.gBoxGestaoRecursos.TabIndex = 1;
             this.gBoxGestaoRecursos.TabStop = false;
             this.gBoxGestaoRecursos.Text = "Contas";
             // 
             // btRefresh
             // 
-            this.btRefresh.Location = new System.Drawing.Point(310, 156);
+            this.btRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRefresh.Location = new System.Drawing.Point(310, 168);
             this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(95, 26);
+            this.btRefresh.Size = new System.Drawing.Size(95, 28);
             this.btRefresh.TabIndex = 26;
             this.btRefresh.Text = "Refresh";
             this.btRefresh.UseVisualStyleBackColor = true;
@@ -96,17 +97,17 @@
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(28, 130);
+            this.txtId.Location = new System.Drawing.Point(28, 140);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(73, 20);
+            this.txtId.Size = new System.Drawing.Size(42, 25);
             this.txtId.TabIndex = 25;
             // 
             // lbId
             // 
             this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(6, 133);
+            this.lbId.Location = new System.Drawing.Point(6, 143);
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(16, 13);
+            this.lbId.Size = new System.Drawing.Size(16, 14);
             this.lbId.TabIndex = 24;
             this.lbId.Text = "Id";
             // 
@@ -117,25 +118,26 @@
             this.comboBoxTipo.Items.AddRange(new object[] {
             "Entrada",
             "Saída"});
-            this.comboBoxTipo.Location = new System.Drawing.Point(158, 130);
+            this.comboBoxTipo.Location = new System.Drawing.Point(108, 139);
             this.comboBoxTipo.Name = "comboBoxTipo";
-            this.comboBoxTipo.Size = new System.Drawing.Size(124, 21);
+            this.comboBoxTipo.Size = new System.Drawing.Size(124, 22);
             this.comboBoxTipo.TabIndex = 23;
             // 
             // lbTipo
             // 
             this.lbTipo.AutoSize = true;
-            this.lbTipo.Location = new System.Drawing.Point(124, 133);
+            this.lbTipo.Location = new System.Drawing.Point(76, 143);
             this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(28, 13);
+            this.lbTipo.Size = new System.Drawing.Size(29, 14);
             this.lbTipo.TabIndex = 22;
             this.lbTipo.Text = "Tipo";
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(209, 156);
+            this.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btExcluir.Location = new System.Drawing.Point(209, 168);
             this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(95, 26);
+            this.btExcluir.Size = new System.Drawing.Size(95, 28);
             this.btExcluir.TabIndex = 17;
             this.btExcluir.Text = "Excluir";
             this.btExcluir.UseVisualStyleBackColor = true;
@@ -143,9 +145,10 @@
             // 
             // btAtualizar
             // 
-            this.btAtualizar.Location = new System.Drawing.Point(108, 156);
+            this.btAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAtualizar.Location = new System.Drawing.Point(108, 168);
             this.btAtualizar.Name = "btAtualizar";
-            this.btAtualizar.Size = new System.Drawing.Size(95, 26);
+            this.btAtualizar.Size = new System.Drawing.Size(95, 28);
             this.btAtualizar.TabIndex = 16;
             this.btAtualizar.Text = "Atualizar";
             this.btAtualizar.UseVisualStyleBackColor = true;
@@ -158,9 +161,9 @@
             this.id,
             this.tipo_conta,
             this.descr_conta});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 20);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(499, 107);
+            this.dataGridView1.Size = new System.Drawing.Size(449, 115);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -181,25 +184,26 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(329, 130);
+            this.txtNome.Location = new System.Drawing.Point(279, 140);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(176, 20);
+            this.txtNome.Size = new System.Drawing.Size(176, 25);
             this.txtNome.TabIndex = 8;
             // 
             // lbNomeCadastroEntrada
             // 
             this.lbNomeCadastroEntrada.AutoSize = true;
-            this.lbNomeCadastroEntrada.Location = new System.Drawing.Point(288, 133);
+            this.lbNomeCadastroEntrada.Location = new System.Drawing.Point(238, 143);
             this.lbNomeCadastroEntrada.Name = "lbNomeCadastroEntrada";
-            this.lbNomeCadastroEntrada.Size = new System.Drawing.Size(35, 13);
+            this.lbNomeCadastroEntrada.Size = new System.Drawing.Size(36, 14);
             this.lbNomeCadastroEntrada.TabIndex = 3;
             this.lbNomeCadastroEntrada.Text = "Nome";
             // 
             // btCadastrar
             // 
-            this.btCadastrar.Location = new System.Drawing.Point(7, 156);
+            this.btCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCadastrar.Location = new System.Drawing.Point(7, 168);
             this.btCadastrar.Name = "btCadastrar";
-            this.btCadastrar.Size = new System.Drawing.Size(95, 26);
+            this.btCadastrar.Size = new System.Drawing.Size(95, 28);
             this.btCadastrar.TabIndex = 0;
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
@@ -215,20 +219,20 @@
             this.groupBox1.Controls.Add(this.dataGridView2);
             this.groupBox1.Controls.Add(this.txtNomeAtivos);
             this.groupBox1.Controls.Add(this.lbNomeAtivo);
-            this.groupBox1.Controls.Add(this.btMenu);
             this.groupBox1.Controls.Add(this.btCadastrarAtivos);
-            this.groupBox1.Location = new System.Drawing.Point(12, 210);
+            this.groupBox1.Location = new System.Drawing.Point(12, 226);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(515, 192);
+            this.groupBox1.Size = new System.Drawing.Size(466, 207);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ativos";
             // 
             // btRefreshAtivos
             // 
-            this.btRefreshAtivos.Location = new System.Drawing.Point(310, 156);
+            this.btRefreshAtivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRefreshAtivos.Location = new System.Drawing.Point(310, 168);
             this.btRefreshAtivos.Name = "btRefreshAtivos";
-            this.btRefreshAtivos.Size = new System.Drawing.Size(95, 26);
+            this.btRefreshAtivos.Size = new System.Drawing.Size(95, 28);
             this.btRefreshAtivos.TabIndex = 26;
             this.btRefreshAtivos.Text = "Refresh";
             this.btRefreshAtivos.UseVisualStyleBackColor = true;
@@ -237,25 +241,26 @@
             // txtIdAtivos
             // 
             this.txtIdAtivos.Enabled = false;
-            this.txtIdAtivos.Location = new System.Drawing.Point(28, 130);
+            this.txtIdAtivos.Location = new System.Drawing.Point(28, 140);
             this.txtIdAtivos.Name = "txtIdAtivos";
-            this.txtIdAtivos.Size = new System.Drawing.Size(73, 20);
+            this.txtIdAtivos.Size = new System.Drawing.Size(42, 25);
             this.txtIdAtivos.TabIndex = 25;
             // 
             // lbIdAtivos
             // 
             this.lbIdAtivos.AutoSize = true;
-            this.lbIdAtivos.Location = new System.Drawing.Point(6, 133);
+            this.lbIdAtivos.Location = new System.Drawing.Point(6, 143);
             this.lbIdAtivos.Name = "lbIdAtivos";
-            this.lbIdAtivos.Size = new System.Drawing.Size(16, 13);
+            this.lbIdAtivos.Size = new System.Drawing.Size(16, 14);
             this.lbIdAtivos.TabIndex = 24;
             this.lbIdAtivos.Text = "Id";
             // 
             // btExcluirAtivos
             // 
-            this.btExcluirAtivos.Location = new System.Drawing.Point(209, 156);
+            this.btExcluirAtivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btExcluirAtivos.Location = new System.Drawing.Point(209, 168);
             this.btExcluirAtivos.Name = "btExcluirAtivos";
-            this.btExcluirAtivos.Size = new System.Drawing.Size(95, 26);
+            this.btExcluirAtivos.Size = new System.Drawing.Size(95, 28);
             this.btExcluirAtivos.TabIndex = 17;
             this.btExcluirAtivos.Text = "Excluir";
             this.btExcluirAtivos.UseVisualStyleBackColor = true;
@@ -263,9 +268,10 @@
             // 
             // btAtualizarAtivos
             // 
-            this.btAtualizarAtivos.Location = new System.Drawing.Point(108, 156);
+            this.btAtualizarAtivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAtualizarAtivos.Location = new System.Drawing.Point(108, 168);
             this.btAtualizarAtivos.Name = "btAtualizarAtivos";
-            this.btAtualizarAtivos.Size = new System.Drawing.Size(95, 26);
+            this.btAtualizarAtivos.Size = new System.Drawing.Size(95, 28);
             this.btAtualizarAtivos.TabIndex = 16;
             this.btAtualizarAtivos.Text = "Atualizar";
             this.btAtualizarAtivos.UseVisualStyleBackColor = true;
@@ -277,9 +283,9 @@
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idAtivos,
             this.descr_ativo});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 20);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(499, 107);
+            this.dataGridView2.Size = new System.Drawing.Size(449, 115);
             this.dataGridView2.TabIndex = 13;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick_1);
             // 
@@ -295,34 +301,36 @@
             // 
             // txtNomeAtivos
             // 
-            this.txtNomeAtivos.Location = new System.Drawing.Point(329, 130);
+            this.txtNomeAtivos.Location = new System.Drawing.Point(279, 140);
             this.txtNomeAtivos.Name = "txtNomeAtivos";
-            this.txtNomeAtivos.Size = new System.Drawing.Size(176, 20);
+            this.txtNomeAtivos.Size = new System.Drawing.Size(176, 25);
             this.txtNomeAtivos.TabIndex = 8;
             // 
             // lbNomeAtivo
             // 
             this.lbNomeAtivo.AutoSize = true;
-            this.lbNomeAtivo.Location = new System.Drawing.Point(288, 133);
+            this.lbNomeAtivo.Location = new System.Drawing.Point(238, 143);
             this.lbNomeAtivo.Name = "lbNomeAtivo";
-            this.lbNomeAtivo.Size = new System.Drawing.Size(35, 13);
+            this.lbNomeAtivo.Size = new System.Drawing.Size(36, 14);
             this.lbNomeAtivo.TabIndex = 3;
             this.lbNomeAtivo.Text = "Nome";
             // 
             // btMenu
             // 
-            this.btMenu.Location = new System.Drawing.Point(411, 156);
+            this.btMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btMenu.Location = new System.Drawing.Point(377, 440);
             this.btMenu.Name = "btMenu";
-            this.btMenu.Size = new System.Drawing.Size(95, 26);
+            this.btMenu.Size = new System.Drawing.Size(95, 28);
             this.btMenu.TabIndex = 1;
             this.btMenu.Text = "Menu Inicial";
             this.btMenu.UseVisualStyleBackColor = true;
             // 
             // btCadastrarAtivos
             // 
-            this.btCadastrarAtivos.Location = new System.Drawing.Point(7, 156);
+            this.btCadastrarAtivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCadastrarAtivos.Location = new System.Drawing.Point(7, 168);
             this.btCadastrarAtivos.Name = "btCadastrarAtivos";
-            this.btCadastrarAtivos.Size = new System.Drawing.Size(95, 26);
+            this.btCadastrarAtivos.Size = new System.Drawing.Size(95, 28);
             this.btCadastrarAtivos.TabIndex = 0;
             this.btCadastrarAtivos.Text = "Cadastrar";
             this.btCadastrarAtivos.UseVisualStyleBackColor = true;
@@ -330,12 +338,16 @@
             // 
             // MenuPlanoDeContasCadastrar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 408);
+            this.ClientSize = new System.Drawing.Size(484, 472);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gBoxGestaoRecursos);
+            this.Controls.Add(this.btMenu);
+            this.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MenuPlanoDeContasCadastrar";
             this.Text = "CaringCoPilot";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));

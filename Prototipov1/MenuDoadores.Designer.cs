@@ -85,18 +85,19 @@
             this.gBoxDoacoes.Controls.Add(this.lbNomeDoador);
             this.gBoxDoacoes.Controls.Add(this.btMenuInicial);
             this.gBoxDoacoes.Controls.Add(this.btCadastrar);
-            this.gBoxDoacoes.Location = new System.Drawing.Point(12, 12);
+            this.gBoxDoacoes.Location = new System.Drawing.Point(12, 3);
             this.gBoxDoacoes.Name = "gBoxDoacoes";
-            this.gBoxDoacoes.Size = new System.Drawing.Size(763, 283);
+            this.gBoxDoacoes.Size = new System.Drawing.Size(763, 435);
             this.gBoxDoacoes.TabIndex = 2;
             this.gBoxDoacoes.TabStop = false;
             this.gBoxDoacoes.Text = "Doadores";
             // 
             // btRefresh
             // 
-            this.btRefresh.Location = new System.Drawing.Point(309, 251);
+            this.btRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRefresh.Location = new System.Drawing.Point(308, 401);
             this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(95, 26);
+            this.btRefresh.Size = new System.Drawing.Size(95, 28);
             this.btRefresh.TabIndex = 33;
             this.btRefresh.Text = "Refresh";
             this.btRefresh.UseVisualStyleBackColor = true;
@@ -109,80 +110,81 @@
             this.cBoxPFPJ.Items.AddRange(new object[] {
             "Pessoa Física",
             "Pessoa Jurídica"});
-            this.cBoxPFPJ.Location = new System.Drawing.Point(217, 154);
+            this.cBoxPFPJ.Location = new System.Drawing.Point(220, 300);
             this.cBoxPFPJ.Name = "cBoxPFPJ";
-            this.cBoxPFPJ.Size = new System.Drawing.Size(130, 21);
+            this.cBoxPFPJ.Size = new System.Drawing.Size(130, 22);
             this.cBoxPFPJ.TabIndex = 32;
             // 
             // lbTipoDoador
             // 
             this.lbTipoDoador.AutoSize = true;
-            this.lbTipoDoador.Location = new System.Drawing.Point(174, 158);
+            this.lbTipoDoador.Location = new System.Drawing.Point(186, 305);
             this.lbTipoDoador.Name = "lbTipoDoador";
-            this.lbTipoDoador.Size = new System.Drawing.Size(28, 13);
+            this.lbTipoDoador.Size = new System.Drawing.Size(29, 14);
             this.lbTipoDoador.TabIndex = 31;
             this.lbTipoDoador.Text = "Tipo";
             // 
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(13, 214);
+            this.lbEmail.Location = new System.Drawing.Point(16, 365);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(35, 13);
+            this.lbEmail.Size = new System.Drawing.Size(40, 14);
             this.lbEmail.TabIndex = 30;
             this.lbEmail.Text = "E-mail";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(59, 211);
+            this.txtEmail.Location = new System.Drawing.Point(62, 362);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(450, 20);
+            this.txtEmail.Size = new System.Drawing.Size(450, 25);
             this.txtEmail.TabIndex = 29;
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(622, 214);
+            this.txtTelefone.Location = new System.Drawing.Point(625, 365);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(127, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(127, 25);
             this.txtTelefone.TabIndex = 28;
             // 
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(527, 217);
+            this.lbTelefone.Location = new System.Drawing.Point(530, 368);
             this.lbTelefone.Name = "lbTelefone";
-            this.lbTelefone.Size = new System.Drawing.Size(49, 13);
+            this.lbTelefone.Size = new System.Drawing.Size(50, 14);
             this.lbTelefone.TabIndex = 26;
             this.lbTelefone.Text = "Telefone";
             // 
             // txtCodDoador
             // 
-            this.txtCodDoador.Location = new System.Drawing.Point(59, 155);
+            this.txtCodDoador.Location = new System.Drawing.Point(62, 302);
             this.txtCodDoador.Name = "txtCodDoador";
-            this.txtCodDoador.Size = new System.Drawing.Size(59, 20);
+            this.txtCodDoador.Size = new System.Drawing.Size(59, 25);
             this.txtCodDoador.TabIndex = 23;
             // 
             // lbCodDoador
             // 
             this.lbCodDoador.AutoSize = true;
-            this.lbCodDoador.Location = new System.Drawing.Point(13, 158);
+            this.lbCodDoador.Location = new System.Drawing.Point(16, 305);
             this.lbCodDoador.Name = "lbCodDoador";
-            this.lbCodDoador.Size = new System.Drawing.Size(40, 13);
+            this.lbCodDoador.Size = new System.Drawing.Size(42, 14);
             this.lbCodDoador.TabIndex = 22;
             this.lbCodDoador.Text = "Código";
             // 
             // txtDocDoador
             // 
-            this.txtDocDoador.Location = new System.Drawing.Point(521, 155);
+            this.txtDocDoador.Location = new System.Drawing.Point(524, 302);
             this.txtDocDoador.Name = "txtDocDoador";
-            this.txtDocDoador.Size = new System.Drawing.Size(228, 20);
+            this.txtDocDoador.Size = new System.Drawing.Size(228, 25);
             this.txtDocDoador.TabIndex = 21;
             // 
             // btRelatorio
             // 
-            this.btRelatorio.Location = new System.Drawing.Point(561, 251);
+            this.btRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRelatorio.Location = new System.Drawing.Point(560, 401);
             this.btRelatorio.Name = "btRelatorio";
-            this.btRelatorio.Size = new System.Drawing.Size(95, 26);
+            this.btRelatorio.Size = new System.Drawing.Size(95, 28);
             this.btRelatorio.TabIndex = 18;
             this.btRelatorio.Text = "Relatório";
             this.btRelatorio.UseVisualStyleBackColor = true;
@@ -190,9 +192,10 @@
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(208, 251);
+            this.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btExcluir.Location = new System.Drawing.Point(207, 401);
             this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(95, 26);
+            this.btExcluir.Size = new System.Drawing.Size(95, 28);
             this.btExcluir.TabIndex = 17;
             this.btExcluir.Text = "Excluir";
             this.btExcluir.UseVisualStyleBackColor = true;
@@ -200,9 +203,10 @@
             // 
             // btAtualizar
             // 
-            this.btAtualizar.Location = new System.Drawing.Point(107, 251);
+            this.btAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAtualizar.Location = new System.Drawing.Point(106, 401);
             this.btAtualizar.Name = "btAtualizar";
-            this.btAtualizar.Size = new System.Drawing.Size(95, 26);
+            this.btAtualizar.Size = new System.Drawing.Size(95, 28);
             this.btAtualizar.TabIndex = 16;
             this.btAtualizar.Text = "Atualizar";
             this.btAtualizar.UseVisualStyleBackColor = true;
@@ -211,17 +215,17 @@
             // lbDataNascimento
             // 
             this.lbDataNascimento.AutoSize = true;
-            this.lbDataNascimento.Location = new System.Drawing.Point(527, 191);
+            this.lbDataNascimento.Location = new System.Drawing.Point(530, 340);
             this.lbDataNascimento.Name = "lbDataNascimento";
-            this.lbDataNascimento.Size = new System.Drawing.Size(89, 13);
+            this.lbDataNascimento.Size = new System.Drawing.Size(94, 14);
             this.lbDataNascimento.TabIndex = 15;
             this.lbDataNascimento.Text = "Data Nascimento";
             // 
             // txtDataNasc
             // 
-            this.txtDataNasc.Location = new System.Drawing.Point(622, 188);
+            this.txtDataNasc.Location = new System.Drawing.Point(625, 337);
             this.txtDataNasc.Name = "txtDataNasc";
-            this.txtDataNasc.Size = new System.Drawing.Size(127, 20);
+            this.txtDataNasc.Size = new System.Drawing.Size(127, 25);
             this.txtDataNasc.TabIndex = 14;
             // 
             // dataGridView1
@@ -235,9 +239,9 @@
             this.data_nasc,
             this.email,
             this.telefone});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 20);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(743, 126);
+            this.dataGridView1.Size = new System.Drawing.Size(743, 260);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -280,34 +284,35 @@
             // 
             // txtNomeDoador
             // 
-            this.txtNomeDoador.Location = new System.Drawing.Point(59, 185);
+            this.txtNomeDoador.Location = new System.Drawing.Point(62, 334);
             this.txtNomeDoador.Name = "txtNomeDoador";
-            this.txtNomeDoador.Size = new System.Drawing.Size(450, 20);
+            this.txtNomeDoador.Size = new System.Drawing.Size(450, 25);
             this.txtNomeDoador.TabIndex = 8;
             // 
             // lbDocumento
             // 
             this.lbDocumento.AutoSize = true;
-            this.lbDocumento.Location = new System.Drawing.Point(447, 160);
+            this.lbDocumento.Location = new System.Drawing.Point(450, 307);
             this.lbDocumento.Name = "lbDocumento";
-            this.lbDocumento.Size = new System.Drawing.Size(62, 13);
+            this.lbDocumento.Size = new System.Drawing.Size(64, 14);
             this.lbDocumento.TabIndex = 5;
             this.lbDocumento.Text = "Documento";
             // 
             // lbNomeDoador
             // 
             this.lbNomeDoador.AutoSize = true;
-            this.lbNomeDoador.Location = new System.Drawing.Point(13, 185);
+            this.lbNomeDoador.Location = new System.Drawing.Point(16, 334);
             this.lbNomeDoador.Name = "lbNomeDoador";
-            this.lbNomeDoador.Size = new System.Drawing.Size(35, 13);
+            this.lbNomeDoador.Size = new System.Drawing.Size(36, 14);
             this.lbNomeDoador.TabIndex = 3;
             this.lbNomeDoador.Text = "Nome";
             // 
             // btMenuInicial
             // 
-            this.btMenuInicial.Location = new System.Drawing.Point(662, 251);
+            this.btMenuInicial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btMenuInicial.Location = new System.Drawing.Point(661, 401);
             this.btMenuInicial.Name = "btMenuInicial";
-            this.btMenuInicial.Size = new System.Drawing.Size(95, 26);
+            this.btMenuInicial.Size = new System.Drawing.Size(95, 28);
             this.btMenuInicial.TabIndex = 1;
             this.btMenuInicial.Text = "Menu Inicial";
             this.btMenuInicial.UseVisualStyleBackColor = true;
@@ -315,9 +320,10 @@
             // 
             // btCadastrar
             // 
-            this.btCadastrar.Location = new System.Drawing.Point(6, 251);
+            this.btCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCadastrar.Location = new System.Drawing.Point(5, 401);
             this.btCadastrar.Name = "btCadastrar";
-            this.btCadastrar.Size = new System.Drawing.Size(95, 26);
+            this.btCadastrar.Size = new System.Drawing.Size(95, 28);
             this.btCadastrar.TabIndex = 0;
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
@@ -325,11 +331,14 @@
             // 
             // MenuDoadores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 307);
+            this.ClientSize = new System.Drawing.Size(781, 441);
             this.Controls.Add(this.gBoxDoacoes);
+            this.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MenuDoadores";
             this.Text = "CaringCoPilot";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));

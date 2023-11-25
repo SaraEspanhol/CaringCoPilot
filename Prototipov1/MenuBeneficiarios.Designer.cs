@@ -87,18 +87,19 @@
             this.gBoxDoacoes.Controls.Add(this.lbNomeDoador);
             this.gBoxDoacoes.Controls.Add(this.btMenuInicial);
             this.gBoxDoacoes.Controls.Add(this.btCadastrar);
-            this.gBoxDoacoes.Location = new System.Drawing.Point(12, 12);
+            this.gBoxDoacoes.Location = new System.Drawing.Point(12, 2);
             this.gBoxDoacoes.Name = "gBoxDoacoes";
-            this.gBoxDoacoes.Size = new System.Drawing.Size(723, 283);
+            this.gBoxDoacoes.Size = new System.Drawing.Size(723, 428);
             this.gBoxDoacoes.TabIndex = 3;
             this.gBoxDoacoes.TabStop = false;
             this.gBoxDoacoes.Text = "Beneficiários";
             // 
             // btRefresh
             // 
-            this.btRefresh.Location = new System.Drawing.Point(309, 251);
+            this.btRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRefresh.Location = new System.Drawing.Point(310, 394);
             this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(95, 26);
+            this.btRefresh.Size = new System.Drawing.Size(95, 28);
             this.btRefresh.TabIndex = 36;
             this.btRefresh.Text = "Refresh";
             this.btRefresh.UseVisualStyleBackColor = true;
@@ -106,98 +107,99 @@
             // 
             // txtOrgaoEmissor
             // 
-            this.txtOrgaoEmissor.Location = new System.Drawing.Point(656, 155);
+            this.txtOrgaoEmissor.Location = new System.Drawing.Point(655, 290);
             this.txtOrgaoEmissor.Name = "txtOrgaoEmissor";
-            this.txtOrgaoEmissor.Size = new System.Drawing.Size(61, 20);
+            this.txtOrgaoEmissor.Size = new System.Drawing.Size(61, 25);
             this.txtOrgaoEmissor.TabIndex = 35;
             // 
             // lbEmissor2
             // 
             this.lbEmissor2.AutoSize = true;
-            this.lbEmissor2.Location = new System.Drawing.Point(597, 162);
+            this.lbEmissor2.Location = new System.Drawing.Point(596, 297);
             this.lbEmissor2.Name = "lbEmissor2";
-            this.lbEmissor2.Size = new System.Drawing.Size(43, 13);
+            this.lbEmissor2.Size = new System.Drawing.Size(48, 14);
             this.lbEmissor2.TabIndex = 34;
             this.lbEmissor2.Text = "Emissor";
             // 
             // lbEmissor1
             // 
             this.lbEmissor1.AutoSize = true;
-            this.lbEmissor1.Location = new System.Drawing.Point(600, 148);
+            this.lbEmissor1.Location = new System.Drawing.Point(599, 282);
             this.lbEmissor1.Name = "lbEmissor1";
-            this.lbEmissor1.Size = new System.Drawing.Size(36, 13);
+            this.lbEmissor1.Size = new System.Drawing.Size(37, 14);
             this.lbEmissor1.TabIndex = 33;
             this.lbEmissor1.Text = "Orgão";
             // 
             // lbRG
             // 
             this.lbRG.AutoSize = true;
-            this.lbRG.Location = new System.Drawing.Point(383, 158);
+            this.lbRG.Location = new System.Drawing.Point(382, 293);
             this.lbRG.Name = "lbRG";
-            this.lbRG.Size = new System.Drawing.Size(23, 13);
+            this.lbRG.Size = new System.Drawing.Size(22, 14);
             this.lbRG.TabIndex = 32;
             this.lbRG.Text = "RG";
             // 
             // txtRG
             // 
-            this.txtRG.Location = new System.Drawing.Point(412, 155);
+            this.txtRG.Location = new System.Drawing.Point(411, 290);
             this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(179, 20);
+            this.txtRG.Size = new System.Drawing.Size(179, 25);
             this.txtRG.TabIndex = 31;
             // 
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(11, 217);
+            this.lbEmail.Location = new System.Drawing.Point(10, 356);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(35, 13);
+            this.lbEmail.Size = new System.Drawing.Size(40, 14);
             this.lbEmail.TabIndex = 30;
             this.lbEmail.Text = "E-mail";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(59, 214);
+            this.txtEmail.Location = new System.Drawing.Point(58, 353);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(430, 20);
+            this.txtEmail.Size = new System.Drawing.Size(430, 25);
             this.txtEmail.TabIndex = 29;
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(590, 214);
+            this.txtTelefone.Location = new System.Drawing.Point(589, 353);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(127, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(127, 25);
             this.txtTelefone.TabIndex = 28;
             // 
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(535, 217);
+            this.lbTelefone.Location = new System.Drawing.Point(534, 356);
             this.lbTelefone.Name = "lbTelefone";
-            this.lbTelefone.Size = new System.Drawing.Size(49, 13);
+            this.lbTelefone.Size = new System.Drawing.Size(50, 14);
             this.lbTelefone.TabIndex = 26;
             this.lbTelefone.Text = "Telefone";
             // 
             // txtCod
             // 
-            this.txtCod.Location = new System.Drawing.Point(59, 155);
+            this.txtCod.Location = new System.Drawing.Point(58, 290);
             this.txtCod.Name = "txtCod";
-            this.txtCod.Size = new System.Drawing.Size(117, 20);
+            this.txtCod.Size = new System.Drawing.Size(117, 25);
             this.txtCod.TabIndex = 23;
             // 
             // lbCodDoador
             // 
             this.lbCodDoador.AutoSize = true;
-            this.lbCodDoador.Location = new System.Drawing.Point(13, 158);
+            this.lbCodDoador.Location = new System.Drawing.Point(12, 293);
             this.lbCodDoador.Name = "lbCodDoador";
-            this.lbCodDoador.Size = new System.Drawing.Size(40, 13);
+            this.lbCodDoador.Size = new System.Drawing.Size(42, 14);
             this.lbCodDoador.TabIndex = 22;
             this.lbCodDoador.Text = "Código";
             // 
             // btRelatorio
             // 
-            this.btRelatorio.Location = new System.Drawing.Point(521, 251);
+            this.btRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRelatorio.Location = new System.Drawing.Point(521, 394);
             this.btRelatorio.Name = "btRelatorio";
-            this.btRelatorio.Size = new System.Drawing.Size(95, 26);
+            this.btRelatorio.Size = new System.Drawing.Size(95, 28);
             this.btRelatorio.TabIndex = 18;
             this.btRelatorio.Text = "Relatório";
             this.btRelatorio.UseVisualStyleBackColor = true;
@@ -205,9 +207,10 @@
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(208, 251);
+            this.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btExcluir.Location = new System.Drawing.Point(209, 394);
             this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(95, 26);
+            this.btExcluir.Size = new System.Drawing.Size(95, 28);
             this.btExcluir.TabIndex = 17;
             this.btExcluir.Text = "Excluir";
             this.btExcluir.UseVisualStyleBackColor = true;
@@ -215,9 +218,10 @@
             // 
             // btAtualizar
             // 
-            this.btAtualizar.Location = new System.Drawing.Point(107, 251);
+            this.btAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAtualizar.Location = new System.Drawing.Point(108, 394);
             this.btAtualizar.Name = "btAtualizar";
-            this.btAtualizar.Size = new System.Drawing.Size(95, 26);
+            this.btAtualizar.Size = new System.Drawing.Size(95, 28);
             this.btAtualizar.TabIndex = 16;
             this.btAtualizar.Text = "Atualizar";
             this.btAtualizar.UseVisualStyleBackColor = true;
@@ -226,17 +230,17 @@
             // lbDataNascimento
             // 
             this.lbDataNascimento.AutoSize = true;
-            this.lbDataNascimento.Location = new System.Drawing.Point(495, 188);
+            this.lbDataNascimento.Location = new System.Drawing.Point(494, 325);
             this.lbDataNascimento.Name = "lbDataNascimento";
-            this.lbDataNascimento.Size = new System.Drawing.Size(89, 13);
+            this.lbDataNascimento.Size = new System.Drawing.Size(94, 14);
             this.lbDataNascimento.TabIndex = 15;
             this.lbDataNascimento.Text = "Data Nascimento";
             // 
             // txtDataNasc
             // 
-            this.txtDataNasc.Location = new System.Drawing.Point(590, 185);
+            this.txtDataNasc.Location = new System.Drawing.Point(589, 322);
             this.txtDataNasc.Name = "txtDataNasc";
-            this.txtDataNasc.Size = new System.Drawing.Size(127, 20);
+            this.txtDataNasc.Size = new System.Drawing.Size(127, 25);
             this.txtDataNasc.TabIndex = 14;
             // 
             // dataGridView1
@@ -250,9 +254,9 @@
             this.orgao_emissor,
             this.telefone,
             this.email});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 20);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(711, 126);
+            this.dataGridView1.Size = new System.Drawing.Size(711, 258);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -297,25 +301,26 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(59, 185);
+            this.txtNome.Location = new System.Drawing.Point(58, 322);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(430, 20);
+            this.txtNome.Size = new System.Drawing.Size(430, 25);
             this.txtNome.TabIndex = 8;
             // 
             // lbNomeDoador
             // 
             this.lbNomeDoador.AutoSize = true;
-            this.lbNomeDoador.Location = new System.Drawing.Point(11, 188);
+            this.lbNomeDoador.Location = new System.Drawing.Point(10, 325);
             this.lbNomeDoador.Name = "lbNomeDoador";
-            this.lbNomeDoador.Size = new System.Drawing.Size(35, 13);
+            this.lbNomeDoador.Size = new System.Drawing.Size(36, 14);
             this.lbNomeDoador.TabIndex = 3;
             this.lbNomeDoador.Text = "Nome";
             // 
             // btMenuInicial
             // 
-            this.btMenuInicial.Location = new System.Drawing.Point(622, 251);
+            this.btMenuInicial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btMenuInicial.Location = new System.Drawing.Point(622, 394);
             this.btMenuInicial.Name = "btMenuInicial";
-            this.btMenuInicial.Size = new System.Drawing.Size(95, 26);
+            this.btMenuInicial.Size = new System.Drawing.Size(95, 28);
             this.btMenuInicial.TabIndex = 1;
             this.btMenuInicial.Text = "Menu Inicial";
             this.btMenuInicial.UseVisualStyleBackColor = true;
@@ -323,9 +328,10 @@
             // 
             // btCadastrar
             // 
-            this.btCadastrar.Location = new System.Drawing.Point(6, 251);
+            this.btCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCadastrar.Location = new System.Drawing.Point(7, 394);
             this.btCadastrar.Name = "btCadastrar";
-            this.btCadastrar.Size = new System.Drawing.Size(95, 26);
+            this.btCadastrar.Size = new System.Drawing.Size(95, 28);
             this.btCadastrar.TabIndex = 0;
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
@@ -333,10 +339,12 @@
             // 
             // MenuBeneficiarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 307);
+            this.ClientSize = new System.Drawing.Size(747, 442);
             this.Controls.Add(this.gBoxDoacoes);
+            this.Font = new System.Drawing.Font("Yu Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MenuBeneficiarios";
