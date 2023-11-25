@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuBeneficiarios));
             this.gBoxDoacoes = new System.Windows.Forms.GroupBox();
             this.btRefresh = new System.Windows.Forms.Button();
@@ -48,6 +49,10 @@
             this.lbDataNascimento = new System.Windows.Forms.Label();
             this.txtDataNasc = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lbNomeDoador = new System.Windows.Forms.Label();
+            this.btMenuInicial = new System.Windows.Forms.Button();
+            this.btCadastrar = new System.Windows.Forms.Button();
             this.pessoa_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome_beneficiario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_nasc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +60,6 @@
             this.orgao_emissor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.lbNomeDoador = new System.Windows.Forms.Label();
-            this.btMenuInicial = new System.Windows.Forms.Button();
-            this.btCadastrar = new System.Windows.Forms.Button();
             this.gBoxDoacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -168,6 +169,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(127, 25);
             this.txtTelefone.TabIndex = 28;
+            this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
             // 
             // lbTelefone
             // 
@@ -180,6 +182,9 @@
             // 
             // txtCod
             // 
+
+            this.txtCod.Enabled = false;
+
             this.txtCod.Location = new System.Drawing.Point(58, 290);
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(117, 25);
@@ -242,6 +247,7 @@
             this.txtDataNasc.Name = "txtDataNasc";
             this.txtDataNasc.Size = new System.Drawing.Size(127, 25);
             this.txtDataNasc.TabIndex = 14;
+            this.txtDataNasc.TextChanged += new System.EventHandler(this.txtDataNasc_TextChanged);
             // 
             // dataGridView1
             // 
@@ -260,6 +266,42 @@
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(59, 185);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(430, 20);
+            this.txtNome.TabIndex = 8;
+            // 
+            // lbNomeDoador
+            // 
+            this.lbNomeDoador.AutoSize = true;
+            this.lbNomeDoador.Location = new System.Drawing.Point(11, 188);
+            this.lbNomeDoador.Name = "lbNomeDoador";
+            this.lbNomeDoador.Size = new System.Drawing.Size(35, 13);
+            this.lbNomeDoador.TabIndex = 3;
+            this.lbNomeDoador.Text = "Nome";
+            // 
+            // btMenuInicial
+            // 
+            this.btMenuInicial.Location = new System.Drawing.Point(622, 251);
+            this.btMenuInicial.Name = "btMenuInicial";
+            this.btMenuInicial.Size = new System.Drawing.Size(95, 26);
+            this.btMenuInicial.TabIndex = 1;
+            this.btMenuInicial.Text = "Menu Inicial";
+            this.btMenuInicial.UseVisualStyleBackColor = true;
+            this.btMenuInicial.Click += new System.EventHandler(this.btMenuInicial_Click);
+            // 
+            // btCadastrar
+            // 
+            this.btCadastrar.Location = new System.Drawing.Point(6, 251);
+            this.btCadastrar.Name = "btCadastrar";
+            this.btCadastrar.Size = new System.Drawing.Size(95, 26);
+            this.btCadastrar.TabIndex = 0;
+            this.btCadastrar.Text = "Cadastrar";
+            this.btCadastrar.UseVisualStyleBackColor = true;
+            this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
+            // 
             // pessoa_id
             // 
             this.pessoa_id.HeaderText = "Item No";
@@ -274,6 +316,9 @@
             // 
             // data_nasc
             // 
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.data_nasc.DefaultCellStyle = dataGridViewCellStyle1;
             this.data_nasc.HeaderText = "Data de Nascimento";
             this.data_nasc.Name = "data_nasc";
             // 
@@ -299,6 +344,7 @@
             this.email.Name = "email";
             this.email.Width = 120;
             // 
+
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(58, 322);
@@ -382,6 +428,7 @@
         private System.Windows.Forms.Label lbNomeDoador;
         private System.Windows.Forms.Button btMenuInicial;
         private System.Windows.Forms.Button btCadastrar;
+        private System.Windows.Forms.Button btRefresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn pessoa_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome_beneficiario;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_nasc;
@@ -389,6 +436,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orgao_emissor;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.Button btRefresh;
     }
 }

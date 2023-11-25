@@ -69,7 +69,7 @@ namespace Prototipov1
                         MessageBox.Show("Error" + ex);
                     }
                 }
-            } // end using
+            } 
         }
 
         private void MenuBeneficiarios_Load(object sender, EventArgs e)
@@ -88,6 +88,8 @@ namespace Prototipov1
                 cruds.orgao_emissor = txtOrgaoEmissor.Text;
                 cruds.telefone = txtTelefone.Text;
                 cruds.email = txtEmail.Text;
+
+
                 cruds.InserirBeneficiarios();
                 dataGridView1.Rows.Add(null, txtNome.Text, txtDataNasc.Text, txtRG.Text,
                     txtOrgaoEmissor.Text, txtTelefone.Text, txtEmail.Text);
@@ -98,6 +100,10 @@ namespace Prototipov1
                 txtTelefone.Clear();
                 txtEmail.Clear();
                 MessageBox.Show("Cadastro realizado com sucesso!");
+            }
+            catch (ArgumentException erro)
+            {
+                MessageBox.Show(erro.Message, "Erro!");
             }
             catch (Exception)
             {
@@ -136,6 +142,10 @@ namespace Prototipov1
                 txtEmail.Clear();
 
             }
+            catch (ArgumentException erro)
+            {
+                MessageBox.Show(erro.Message, "Erro!");
+            }
             catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao realizar a operação", "Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -167,6 +177,10 @@ namespace Prototipov1
                 txtEmail.Clear();
 
             }
+            catch (ArgumentException erro)
+            {
+                MessageBox.Show(erro.Message, "Erro!");
+            }
             catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao realizar a operação", "Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -180,7 +194,9 @@ namespace Prototipov1
             {
                 txtCod.Text = Convert.ToString(row.Cells[0].Value);
                 txtNome.Text = row.Cells[1].Value.ToString();
-                txtDataNasc.Text = row.Cells[2].Value.ToString();
+                // Converte diretamente para DateTime e formata
+                DateTime data = (DateTime)row.Cells[2].Value;
+                txtDataNasc.Text = data.ToString("dd/MM/yyyy");
                 txtRG.Text = row.Cells[3].Value.ToString();
                 txtOrgaoEmissor.Text = row.Cells[4].Value.ToString();
                 txtTelefone.Text = row.Cells[5].Value.ToString();
@@ -255,6 +271,34 @@ namespace Prototipov1
                 }
             }
             ExportarParaExcel(dataGridView1);
+        }
+
+        private void txtTelefone_TextChanged(object sender, EventArgs e)
+        {
+            string numerosApenas = new string(txtTelefone.Text.Where(char.IsDigit).ToArray());
+
+            if (numerosApenas.Length > 0)
+            {
+                if (numerosApenas.Length <= 2)
+                {
+                    txtTelefone.Text = $"({numerosApenas}";
+                }
+                else if (numerosApenas.Length <= 6)
+                {
+                    txtTelefone.Text = $"({numerosApenas.Substring(0, 2)}) {numerosApenas.Substring(2)}";
+                }
+                else
+                {
+                    txtTelefone.Text = $"({numerosApenas.Substring(0, 2)}) {numerosApenas.Substring(2, 4)}-{numerosApenas.Substring(6)}";
+                }
+            }
+
+            txtTelefone.SelectionStart = txtTelefone.Text.Length;
+        }
+
+        private void txtDataNasc_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
