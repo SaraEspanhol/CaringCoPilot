@@ -178,7 +178,8 @@ namespace Prototipov1
 
         private void TelaPerfil_Load(object sender, EventArgs e)
         {
-            carregaDadosFinanceiro();
+            carregaDados();
+            carregaDados2();
             PreencherGrafico();
         }
 
@@ -195,32 +196,53 @@ namespace Prototipov1
         }
         private void PreencherGrafico()
         {
-            // Limpar dados existentes no gráfico
-            Chart1.Series.Clear();
+                // Limpar dados existentes no gráfico
+                Chart1.Series.Clear();
 
-            // Adicionar uma série ao gráfico
-            Series serie = new Series("Entradas");
-            serie.ChartType = SeriesChartType.Column; // Ou outro tipo de gráfico desejado
+                // Adicionar uma série ao gráfico
+                Series serie = new Series("Entradas");
+                serie.ChartType = SeriesChartType.Column; // Ou outro tipo de gráfico desejado
 
-            // Preencher dados da série com dados do DataGridView
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                // Certifique-se de que a célula não está vazia
-                if (row.Cells[0].Value != null && row.Cells[2].Value != null)
+                // Preencher dados da série com dados do DataGridView
+                foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    // Adicionar ponto de dados à série
-                    string xValue = row.Cells[2].Value.ToString();
-                    string yValue = row.Cells[0].Value.ToString();
-                    serie.Points.AddXY(xValue, yValue);
+                    // Certifique-se de que a célula não está vazia
+                    if (row.Cells[0].Value != null)
+                    {
+                        // Adicionar ponto de dados à série
+                        string xValue = row.Cells[0].Value.ToString();
+                        string yValue = row.Cells[2].Value.ToString();
+                        serie.Points.AddXY(xValue, yValue);
+                    }
                 }
-            }
 
-            // Adicionar a série ao gráfico
-            Chart1.Series.Add(serie);
+                // Adicionar a série ao gráfico
+                Chart1.Series.Add(serie);
 
-            // Personalizar o gráfico conforme necessário
-            Chart1.ChartAreas[0].AxisX.Title = "Valores";
-            Chart1.ChartAreas[0].AxisY.Title = "Data";
+                // Personalizar o gráfico conforme necessário
+                    Chart1.ChartAreas[0].AxisX.Title = "Data";
+                    Chart1.ChartAreas[0].AxisY.Title = "Valores";
+
+                // Adicionar uma série ao gráfico
+                Series serie2 = new Series("Saidas");
+                serie2.ChartType = SeriesChartType.Column; // Ou outro tipo de gráfico desejado
+
+                // Preencher dados da série com dados do DataGridView
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    // Certifique-se de que a célula não está vazia
+                    if (row.Cells[0].Value != null)
+                    {
+                        // Adicionar ponto de dados à série
+                        string xValue = row.Cells[0].Value.ToString();
+                        string yValue = row.Cells[2].Value.ToString();
+                        serie2.Points.AddXY(xValue, yValue);
+                    }
+                }
+
+                // Adicionar a série ao gráfico
+                Chart1.Series.Add(serie2);
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -228,7 +250,7 @@ namespace Prototipov1
 
         }
 
-        private void carregaDadosFinanceiro()
+        private void carregaDados()
         {
             db = new dbs();
             dataGridView1.DataSource = null;
@@ -236,8 +258,10 @@ namespace Prototipov1
             dataGridView1.Refresh();
 
             string connectionString = db.getConnectionString();
-            string query = "SELECT mf.data_mov, mf.descricao, mf.valor, SUM(mf.valor) OVER(ORDER BY mf.data_mov) AS saldo_acumulado " +
-                "FROM mov_financeira mf WHERE mf.ong_id = 1";
+            string query = "SELECT DATE_FORMAT(data_mov, '%m/%Y') AS mesAno, " +
+                "COUNT(*) AS Contagem, SUM(mov_financeira.valor) AS valor_total " +
+                "FROM mov_financeira JOIN contas ON mov_financeira.conta_id = contas.id " +
+                "WHERE tipo_conta = 'Entrada' GROUP BY DATE_FORMAT(data_mov, '%m/%Y'); ";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
@@ -249,11 +273,53 @@ namespace Prototipov1
                         for (int i = 0; i < dataTable.Rows.Count; i++)
                         {
                             dataGridView1.Rows.Add(
-                                dataTable.Rows[i]["data_mov"],
-                                dataTable.Rows[i]["descricao"],
-                                dataTable.Rows[i]["valor"],
-                                dataTable.Rows[i]["saldo_acumulado"]
+                                dataTable.Rows[i]["mesAno"],
+                                dataTable.Rows[i]["Contagem"],
+                                dataTable.Rows[i]["valor_total"]
                                 
+                                
+                                
+                            );
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error" + ex);
+                    }
+                }
+            } // end using
+        }
+
+        private void carregaDados2()
+        {
+            db = new dbs();
+            dataGridView2.DataSource = null;
+            dataGridView2.Rows.Clear();
+            dataGridView2.Refresh();
+
+            string connectionString = db.getConnectionString();
+            string query = "SELECT DATE_FORMAT(data_mov, '%m/%Y') AS mes_Ano, " +
+                "COUNT(*) AS contagem_, SUM(mov_financeira.valor) AS valor_total " +
+                "FROM mov_financeira JOIN contas ON mov_financeira.conta_id = contas.id " +
+                "WHERE tipo_conta = 'Saida' GROUP BY DATE_FORMAT(data_mov, '%m/%Y'); ";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
+                {
+                    try
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        for (int i = 0; i < dataTable.Rows.Count; i++)
+                        {
+                            dataGridView2.Rows.Add(
+                                dataTable.Rows[i]["mes_Ano"],
+                                dataTable.Rows[i]["contagem_"],
+                                dataTable.Rows[i]["valor_total"]
+
+
                             );
                         }
 

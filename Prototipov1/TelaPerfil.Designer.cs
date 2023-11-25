@@ -31,11 +31,11 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPerfil));
             this.gBoxPerfil = new System.Windows.Forms.GroupBox();
             this.Chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btEditarPerfil = new System.Windows.Forms.Button();
             this.btSair = new System.Windows.Forms.Button();
             this.lbNomePerfil = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -61,64 +61,64 @@
             this.beneficiáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.data_mov = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saldo_acumulado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.mesAno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mes_Ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contagem_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Chart1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxPerfil
             // 
+            this.gBoxPerfil.Controls.Add(this.dataGridView2);
             this.gBoxPerfil.Controls.Add(this.dataGridView1);
             this.gBoxPerfil.Controls.Add(this.Chart1);
-            this.gBoxPerfil.Controls.Add(this.btEditarPerfil);
             this.gBoxPerfil.Controls.Add(this.btSair);
             this.gBoxPerfil.Controls.Add(this.lbNomePerfil);
             this.gBoxPerfil.Location = new System.Drawing.Point(12, 36);
             this.gBoxPerfil.Name = "gBoxPerfil";
-            this.gBoxPerfil.Size = new System.Drawing.Size(711, 276);
+            this.gBoxPerfil.Size = new System.Drawing.Size(485, 332);
             this.gBoxPerfil.TabIndex = 0;
             this.gBoxPerfil.TabStop = false;
             this.gBoxPerfil.Text = "Perfil";
             // 
             // Chart1
             // 
+            chartArea1.Area3DStyle.Inclination = 45;
             chartArea1.Name = "ChartArea1";
             this.Chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.Chart1.Legends.Add(legend1);
             this.Chart1.Location = new System.Drawing.Point(6, 19);
             this.Chart1.Name = "Chart1";
-            this.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Entradas";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Saidas";
             this.Chart1.Series.Add(series1);
-            this.Chart1.Size = new System.Drawing.Size(348, 220);
+            this.Chart1.Series.Add(series2);
+            this.Chart1.Size = new System.Drawing.Size(457, 279);
             this.Chart1.TabIndex = 6;
+            this.Chart1.TabStop = false;
             this.Chart1.Text = "Movimentações";
             title1.Name = "Title01";
             title1.Text = "Movimentações";
             this.Chart1.Titles.Add(title1);
             this.Chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
-            // btEditarPerfil
-            // 
-            this.btEditarPerfil.Location = new System.Drawing.Point(533, 245);
-            this.btEditarPerfil.Name = "btEditarPerfil";
-            this.btEditarPerfil.Size = new System.Drawing.Size(92, 22);
-            this.btEditarPerfil.TabIndex = 4;
-            this.btEditarPerfil.Text = "Editar Perfil";
-            this.btEditarPerfil.UseVisualStyleBackColor = true;
-            this.btEditarPerfil.Click += new System.EventHandler(this.btEditarPerfil_Click);
-            // 
             // btSair
             // 
-            this.btSair.Location = new System.Drawing.Point(640, 245);
+            this.btSair.Location = new System.Drawing.Point(398, 304);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(65, 22);
             this.btSair.TabIndex = 1;
@@ -319,45 +319,71 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.data_mov,
-            this.descricao,
-            this.valor,
-            this.saldo_acumulado});
-            this.dataGridView1.Location = new System.Drawing.Point(360, 19);
+            this.mesAno,
+            this.Contagem,
+            this.valor_total});
+            this.dataGridView1.Location = new System.Drawing.Point(227, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(345, 220);
+            this.dataGridView1.Size = new System.Drawing.Size(236, 128);
             this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.Visible = false;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // data_mov
+            // dataGridView2
             // 
-            this.data_mov.HeaderText = "Data";
-            this.data_mov.Name = "data_mov";
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mes_Ano,
+            this.contagem_,
+            this.dataGridViewTextBoxColumn2});
+            this.dataGridView2.Location = new System.Drawing.Point(227, 170);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(236, 128);
+            this.dataGridView2.TabIndex = 8;
+            this.dataGridView2.Visible = false;
             // 
-            // descricao
+            // mesAno
             // 
-            this.descricao.HeaderText = "Descrição";
-            this.descricao.Name = "descricao";
+            this.mesAno.HeaderText = "Mês/Ano";
+            this.mesAno.Name = "mesAno";
             // 
-            // valor
+            // Contagem
             // 
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
+            this.Contagem.HeaderText = "Contagem";
+            this.Contagem.Name = "Contagem";
             // 
-            // saldo_acumulado
+            // valor_total
             // 
-            this.saldo_acumulado.HeaderText = "Valor Total";
-            this.saldo_acumulado.Name = "saldo_acumulado";
+            this.valor_total.HeaderText = "Valor";
+            this.valor_total.Name = "valor_total";
+            // 
+            // mes_Ano
+            // 
+            this.mes_Ano.HeaderText = "Mês/Ano";
+            this.mes_Ano.Name = "mes_Ano";
+            // 
+            // contagem_
+            // 
+            this.contagem_.HeaderText = "Contagem";
+            this.contagem_.Name = "contagem_";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "valor_total";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Valor";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // TelaPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 316);
+            this.ClientSize = new System.Drawing.Size(508, 380);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.gBoxPerfil);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "TelaPerfil";
             this.Text = "CaringCoPilot";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -368,6 +394,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,7 +408,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gestãoDeRecursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reembolsoDeDespesasToolStripMenuItem;
-        private System.Windows.Forms.Button btEditarPerfil;
         private System.Windows.Forms.ToolStripMenuItem voluntáriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planoDeContasToolStripMenuItem1;
@@ -403,9 +429,12 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem1;
         private System.Windows.Forms.DataVisualization.Charting.Chart Chart1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_mov;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn saldo_acumulado;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mes_Ano;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contagem_;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesAno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contagem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor_total;
     }
 }

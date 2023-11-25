@@ -22,14 +22,14 @@ namespace Prototipov1
         }
 
 
-        public void InserirDados(Int32 ong_id, String data_mov, String descricao, Double valor, String nome,
+        public void InserirDados(Int32 ong_id, String data_mov, String descricao, Double valor,
                                    String descr_conta, String descr_ativo)
         {
             con = new MySqlConnection();
             db = new dbs();
             con.ConnectionString = db.getConnectionString();
-            String query = "INSERT INTO mov_financeira(ong_id, data_mov, descricao, valor, doador_id, conta_id, ativo_id) VALUES" +
-                   " (1, ?data_mov, ?descricao, ?valor, (SELECT id FROM doadores WHERE nome = ?nome), (SELECT id FROM contas WHERE descr_conta = ?descr_conta)," +
+            String query = "INSERT INTO mov_financeira(ong_id, data_mov, descricao, valor, conta_id, ativo_id) VALUES" +
+                   " (1, ?data_mov, ?descricao, ?valor, (SELECT id FROM contas WHERE descr_conta = ?descr_conta)," +
                    " (SELECT idAtivos FROM ativos WHERE descr_ativo = ?descr_ativo))";
             try
             {
@@ -41,7 +41,6 @@ namespace Prototipov1
                 cmd.Parameters.AddWithValue("?descr_conta", descr_conta);
                 cmd.Parameters.AddWithValue("?descr_ativo", descr_ativo);
                 cmd.Parameters.AddWithValue("?valor", valor);
-                cmd.Parameters.AddWithValue("?nome", nome);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
             }
@@ -51,15 +50,15 @@ namespace Prototipov1
             }
         }
         public void AtualizarDados(Int32 id, Int32 ong_id, String data_mov, String descricao, Int32 conta_id, String descr_conta, Int32 ativo_id,
-                                String descr_ativo, Double valor, Int32 doador_id, String nome)
+                                String descr_ativo, Double valor)
         {
             con = new MySqlConnection();
             db = new dbs();
             con.ConnectionString = db.getConnectionString();
             String query = "UPDATE mov_financeira SET data_mov = ?data_mov, descricao = ?descricao, " +
                 "valor = ?valor, ativo_id = (SELECT idAtivos FROM ativos WHERE descr_ativo = ?descr_ativo)," +
-                "conta_id = (SELECT id FROM contas WHERE descr_conta = ?descr_conta)," +
-                "doador_id = (SELECT id FROM doadores WHERE nome = ?nome) WHERE id = ?id";
+                "conta_id = (SELECT id FROM contas WHERE descr_conta = ?descr_conta)" +
+                "WHERE id = ?id";
             try
             {
                 con.Open();
@@ -73,8 +72,6 @@ namespace Prototipov1
                 cmd.Parameters.AddWithValue("?ativo_id", ativo_id);
                 cmd.Parameters.AddWithValue("?descr_ativo", descr_ativo);
                 cmd.Parameters.AddWithValue("?valor", valor);
-                cmd.Parameters.AddWithValue("?doador_id", doador_id);
-                cmd.Parameters.AddWithValue("?nome", nome);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
             }
@@ -84,7 +81,7 @@ namespace Prototipov1
             }
         }
         public void RemoverDados(Int32 id, Int32 ong_id, String data_mov, String descricao, Int32 conta_id, String descr_conta, Int32 ativo_id,
-                                String descr_ativo, Double valor, Int32 doador_id, String nome)
+                                String descr_ativo, Double valor)
         {
             con = new MySqlConnection();
             db = new dbs();
@@ -103,8 +100,6 @@ namespace Prototipov1
                 cmd.Parameters.AddWithValue("?ativo_id", ativo_id);
                 cmd.Parameters.AddWithValue("?descr_ativo", descr_ativo);
                 cmd.Parameters.AddWithValue("?valor", valor);
-                cmd.Parameters.AddWithValue("?doador_id", doador_id);
-                cmd.Parameters.AddWithValue("?nome", nome);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
             }

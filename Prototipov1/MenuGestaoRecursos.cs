@@ -26,64 +26,15 @@ namespace Prototipov1
         public MenuGestaoRecursos()
         {
             InitializeComponent();
-            ComboBoxDoadores();
             ComboBoxConta();
             ComboBoxAtivo();
-            comboBoxNomeDoador.Enabled = false;
+            
         }
 
         private void btMenuInicial_Click(object sender, EventArgs e)
         {
             TelaPerfil telaPerfil = new TelaPerfil();
             telaPerfil.ShowDialog();
-        }
-
-
-
-        private void PreencherComboBoxDoadores()
-        {
-            db = new dbs();
-            string connectionString = db.getConnectionString();
-
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-
-                try
-                {
-                    conn.Open();
-
-                    string query = "SELECT nome FROM doadores";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-
-                            comboBoxNomeDoador.Items.Clear();
-
-
-                            while (reader.Read())
-                            {
-                                comboBoxNomeDoador.Items.Add(reader["nome"].ToString());
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao preencher ComboBox Doadores: " + ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
-
-            }
-        }
-
-        private void ComboBoxDoadores()
-        {
-            PreencherComboBoxDoadores();
         }
 
 
@@ -186,16 +137,15 @@ namespace Prototipov1
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
-
+             
             string connectionString = db.getConnectionString();
             string query = "SELECT mov_financeira.id, mov_financeira.ong_id, mov_financeira.data_mov, mov_financeira.descricao," +
-                            " mov_financeira.valor, mov_financeira.doador_id, mov_financeira.conta_id, " +
-                            " mov_financeira.ativo_id, contas.descr_conta, ativos.descr_ativo, doadores.nome " +
+                            " mov_financeira.valor, mov_financeira.conta_id, " +
+                            " mov_financeira.ativo_id, contas.descr_conta, ativos.descr_ativo" +
                             " FROM mov_financeira " +
                             " JOIN ong ON mov_financeira.ong_id = ong.id " +
                             " JOIN contas ON mov_financeira.conta_id = contas.id " +
-                            " JOIN ativos ON mov_financeira.ativo_id = ativos.idAtivos " +
-                            " JOIN doadores ON mov_financeira.doador_id = doadores.id";
+                            " JOIN ativos ON mov_financeira.ativo_id = ativos.idAtivos ";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
@@ -215,9 +165,7 @@ namespace Prototipov1
                                 dataTable.Rows[i]["descr_conta"],
                                 dataTable.Rows[i]["ativo_id"],
                                 dataTable.Rows[i]["descr_ativo"],
-                                dataTable.Rows[i]["valor"],
-                                dataTable.Rows[i]["doador_id"],
-                                dataTable.Rows[i]["nome"]
+                                dataTable.Rows[i]["valor"]
                             );
                         }
 
@@ -234,7 +182,6 @@ namespace Prototipov1
         private void MenuGestaoRecursos_Load(object sender, EventArgs e)
         {
             carregaDadosFinanceiro();
-            ComboBoxDoadores();
             ComboBoxConta();
             ComboBoxAtivo();
         }
@@ -249,20 +196,17 @@ namespace Prototipov1
                 cruds.descr_conta = cBoxContaCadastroEntrada.Text;
                 cruds.descr_ativo = cBoxLocalCadastroEntrada.Text;
                 cruds.valor = Convert.ToDouble(txtValor.Text);
-                cruds.nome = comboBoxNomeDoador.Text;
                 cruds.InserirFinanceiro();
                 dataGridView1.Rows.Add(null, null,txtDataCadastroEntrada.Text, txtDescricao.Text, null, cBoxContaCadastroEntrada.Text, null,
-                    cBoxLocalCadastroEntrada.Text, txtValor.Text, null, comboBoxNomeDoador.Text);
+                    cBoxLocalCadastroEntrada.Text, txtValor.Text);
                 txtId.Clear();
                 txtDataCadastroEntrada.Clear();
                 txtDescricao.Clear();
                 cBoxContaCadastroEntrada.Items.Clear();
                 cBoxLocalCadastroEntrada.Items.Clear();
                 txtValor.Clear();
-                comboBoxNomeDoador.Items.Clear();
                 MessageBox.Show("Cadastro realizado com sucesso!");
                 btRefresh_Click(this, new EventArgs());
-                ComboBoxDoadores();
                 ComboBoxConta();
                 ComboBoxAtivo();
             }
@@ -286,8 +230,6 @@ namespace Prototipov1
                 cruds.ativo_id = Convert.ToInt32(txtIdAtivo.Text);
                 cruds.descr_ativo = cBoxLocalCadastroEntrada.Text;
                 cruds.valor = Convert.ToDouble(txtValor.Text);
-                cruds.doador_id = Convert.ToInt32(txtIdDoador.Text);
-                cruds.nome = comboBoxNomeDoador.Text;
                 cruds.AtualizarFinanceiro();
                 dataGridView1[0, catchRowIndex].Value = txtId.Text;
                 dataGridView1[1, catchRowIndex].Value = txtOngId.Text;
@@ -298,8 +240,6 @@ namespace Prototipov1
                 dataGridView1[6, catchRowIndex].Value = txtIdAtivo.Text;
                 dataGridView1[7, catchRowIndex].Value = cBoxLocalCadastroEntrada.Text;
                 dataGridView1[8, catchRowIndex].Value = txtValor.Text;
-                dataGridView1[9, catchRowIndex].Value = txtIdDoador.Text;
-                dataGridView1[10, catchRowIndex].Value = comboBoxNomeDoador.Text;
                 btAtualizar.Enabled = false;
                 btExcluir.Enabled = false;
                 txtId.Clear();
@@ -311,19 +251,20 @@ namespace Prototipov1
                 txtIdAtivo.Clear();
                 cBoxLocalCadastroEntrada.Items.Clear();
                 txtValor.Clear();
-                txtIdDoador.Clear();
-                comboBoxNomeDoador.Items.Clear();
                 MessageBox.Show("Atualização realizada com sucesso!");
                 btRefresh_Click(this, new EventArgs());
-                ComboBoxDoadores();
                 ComboBoxConta();
                 ComboBoxAtivo();
 
             }
-            catch (Exception)
+            finally
+            {
+
+            }
+            /*catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao realizar a operação", "Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
 
         private void btExcluir_Click(object sender, EventArgs e)
@@ -340,8 +281,6 @@ namespace Prototipov1
                 cruds.ativo_id = Convert.ToInt32(txtIdAtivo.Text);
                 cruds.descr_ativo = cBoxLocalCadastroEntrada.Text;
                 cruds.valor = Convert.ToDouble(txtValor.Text);
-                cruds.doador_id = Convert.ToInt32(txtIdDoador.Text);
-                cruds.nome = comboBoxNomeDoador.Text;
                 cruds.RemoverFinanceiro();
                 dataGridView1.Rows.RemoveAt(catchRowIndex);
                 btAtualizar.Enabled = false;
@@ -355,11 +294,8 @@ namespace Prototipov1
                 txtIdAtivo.Clear();
                 cBoxLocalCadastroEntrada.Items.Clear();
                 txtValor.Clear();
-                txtIdDoador.Clear();
-                comboBoxNomeDoador.Items.Clear();
                 MessageBox.Show("Atualização realizada com sucesso!");
                 btRefresh_Click(this, new EventArgs());
-                ComboBoxDoadores();
                 ComboBoxConta();
                 ComboBoxAtivo();
             }
@@ -383,8 +319,6 @@ namespace Prototipov1
                 txtIdAtivo.Text = Convert.ToString(row.Cells[6].Value);
                 cBoxLocalCadastroEntrada.Text = row.Cells[7].Value.ToString();
                 txtValor.Text = row.Cells[8].Value.ToString();
-                txtIdDoador.Text = Convert.ToString(row.Cells[9].Value);
-                comboBoxNomeDoador.Text = row.Cells[10].Value.ToString();
 
 
             }
@@ -404,9 +338,6 @@ namespace Prototipov1
             txtIdAtivo.Clear();
             cBoxLocalCadastroEntrada.Items.Clear();
             txtValor.Clear();
-            txtIdDoador.Clear();
-            comboBoxNomeDoador.Items.Clear();
-            ComboBoxDoadores();
             ComboBoxConta();
             ComboBoxAtivo();
             
@@ -414,14 +345,7 @@ namespace Prototipov1
 
         private void checkDoacao_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkDoacao.Checked)
-            {
-                comboBoxNomeDoador.Enabled = true;
-            }
-            else
-            {
-                comboBoxNomeDoador.Enabled = false;
-            }
+            
         }
 
         private void btRelatorio_Click(object sender, EventArgs e)
