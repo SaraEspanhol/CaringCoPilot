@@ -63,22 +63,19 @@ CREATE TABLE doadores (
 	
 );
 
-INSERT INTO doadores (tipo_doador, documento, nome) VALUES ('Pessoa Física', 0, 'Anonimo');
-INSERT INTO doadores (tipo_doador, documento, nome) VALUES ('Pessoa Jurídica', 1, 'Anonimo');
-
 # ****************************************
 # CRIACAO DAS CONTAS E MOV FIN
 # ****************************************
 
 CREATE TABLE contas (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    tipo_conta VARCHAR (20) NOT NULL,
-	descr_conta VARCHAR (20) NOT NULL UNIQUE
+    tipo_conta VARCHAR (50) NOT NULL,
+	descr_conta VARCHAR (50) NOT NULL UNIQUE
 );
 
 CREATE TABLE ativos (
 	idAtivos INT PRIMARY KEY AUTO_INCREMENT,
-    descr_ativo VARCHAR (20) NOT NULL UNIQUE
+    descr_ativo VARCHAR (50) NOT NULL UNIQUE
 );
 
 CREATE TABLE mov_financeira (
@@ -89,7 +86,7 @@ CREATE TABLE mov_financeira (
     conta_id INT NOT NULL,
     ativo_id INT NOT NULL,
     valor DOUBLE NOT NULL,
-    doador_id INT NOT NULL,
+    doador_id INT,
     FOREIGN KEY (conta_id) REFERENCES contas(id)
 		ON UPDATE CASCADE
         ON DELETE RESTRICT,
@@ -242,7 +239,7 @@ CREATE TABLE beneficiarios (
     orgao_emissor VARCHAR (20) NOT NULL,
     telefone VARCHAR (14),
     email VARCHAR (100),
-    data_nasc VARCHAR (14),
+    data_nasc VARCHAR (14)
 	
 );
 
