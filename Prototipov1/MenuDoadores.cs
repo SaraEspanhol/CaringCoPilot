@@ -56,9 +56,9 @@ namespace Prototipov1
                         {
                             dataGridView1.Rows.Add(
                                 dataTable.Rows[i]["id"],
+                                dataTable.Rows[i]["nome"],
                                 dataTable.Rows[i]["tipo_doador"],
                                 dataTable.Rows[i]["documento"],
-                                dataTable.Rows[i]["nome"],
                                 dataTable.Rows[i]["data_nasc"],
                                 dataTable.Rows[i]["email"],
                                 dataTable.Rows[i]["telefone"]); ;
@@ -86,13 +86,13 @@ namespace Prototipov1
             {
                 cruds = new CadastroDoadoresVO();
                 cruds.tipo_doador = cBoxPFPJ.Text;
-                cruds.documento = txtDocDoador.Text;
                 cruds.nome = txtNomeDoador.Text;
+                cruds.documento = txtDocDoador.Text;
                 cruds.data_nasc = txtDataNasc.Text;
                 cruds.email = txtEmail.Text;
                 cruds.telefone = txtTelefone.Text;
                 cruds.InserirDoadores();
-                dataGridView1.Rows.Add(null, cBoxPFPJ.Text, txtDocDoador.Text, txtNomeDoador.Text,
+                dataGridView1.Rows.Add(null, txtNomeDoador.Text, cBoxPFPJ.Text, txtDocDoador.Text,
                     txtDataNasc.Text, txtEmail.Text, txtTelefone.Text);
                 cBoxPFPJ.Items.Clear();
                 txtDocDoador.Clear();
@@ -119,17 +119,17 @@ namespace Prototipov1
             try
             {
                 cruds.id = Convert.ToInt32(txtCodDoador.Text);
+                cruds.nome = txtNomeDoador.Text;
                 cruds.tipo_doador = cBoxPFPJ.Text;
                 cruds.documento = txtDocDoador.Text;
-                cruds.nome = txtNomeDoador.Text;
                 cruds.data_nasc = txtDataNasc.Text;
                 cruds.email = txtEmail.Text;
                 cruds.telefone = txtTelefone.Text;
                 cruds.AtualizarDoadores();
                 dataGridView1[0, catchRowIndex].Value = txtCodDoador.Text;
-                dataGridView1[1, catchRowIndex].Value = cBoxPFPJ.Text;
-                dataGridView1[2, catchRowIndex].Value = txtDocDoador.Text;
-                dataGridView1[3, catchRowIndex].Value = txtNomeDoador.Text;
+                dataGridView1[1, catchRowIndex].Value = txtNomeDoador.Text;
+                dataGridView1[2, catchRowIndex].Value = cBoxPFPJ.Text;
+                dataGridView1[3, catchRowIndex].Value = txtDocDoador.Text; 
                 dataGridView1[4, catchRowIndex].Value = txtDataNasc.Text;
                 dataGridView1[5, catchRowIndex].Value = txtEmail.Text;
                 dataGridView1[6, catchRowIndex].Value = txtTelefone.Text;
@@ -162,9 +162,9 @@ namespace Prototipov1
             try
             {
                 cruds.id = Convert.ToInt32(txtCodDoador.Text);
+                cruds.nome = txtNomeDoador.Text;
                 cruds.tipo_doador = cBoxPFPJ.Text;
                 cruds.documento = txtDocDoador.Text;
-                cruds.nome = txtNomeDoador.Text;
                 cruds.data_nasc = txtDataNasc.Text;
                 cruds.email = txtEmail.Text;
                 cruds.telefone = txtTelefone.Text;
@@ -194,9 +194,9 @@ namespace Prototipov1
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 txtCodDoador.Text = Convert.ToString(row.Cells[0].Value);
-                cBoxPFPJ.Text = row.Cells[1].Value.ToString();
-                txtDocDoador.Text = row.Cells[2].Value.ToString();
-                txtNomeDoador.Text = row.Cells[3].Value.ToString();
+                txtNomeDoador.Text = row.Cells[1].Value.ToString();
+                cBoxPFPJ.Text = row.Cells[2].Value.ToString();
+                txtDocDoador.Text = row.Cells[3].Value.ToString();
                 // Converte diretamente para DateTime e formata
                 DateTime data = (DateTime)row.Cells[4].Value;
                 txtDataNasc.Text = data.ToString("dd/MM/yyyy");

@@ -97,17 +97,17 @@ namespace Prototipov1.VO
             }
 
                 cdao = new CadastroDoadores();
-            cdao.InserirDadosDoadores(tipo_doador,  documento,  nome, data_nasc, email, telefone);
+            cdao.InserirDadosDoadores(nome, tipo_doador,  documento, data_nasc, email, telefone);
         }
         public void AtualizarDoadores()
         {
             cdao = new CadastroDoadores();
-            cdao.AtualizarDadosDoadores(id, tipo_doador, documento, nome, data_nasc, email, telefone);
+            cdao.AtualizarDadosDoadores(id, nome, tipo_doador, documento, data_nasc, email, telefone);
         }
         public void RemoverDoadores()
         {
             cdao = new CadastroDoadores();
-            cdao.RemoverDadosDoadores(id, tipo_doador, documento, nome, data_nasc, email, telefone);
+            cdao.RemoverDadosDoadores(id, nome, tipo_doador, documento, data_nasc, email, telefone);
         }
 
     }

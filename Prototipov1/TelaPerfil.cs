@@ -32,14 +32,12 @@ namespace Prototipov1
 
         private void reembolsoDeDespesasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuReembolso menuReembolso = new MenuReembolso();
-            menuReembolso.ShowDialog();
+            
         }
 
         private void planoDeContasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MenuPlanoDeContasCadastrar menuPlanoDeContas = new MenuPlanoDeContasCadastrar();
-            menuPlanoDeContas.ShowDialog();
+            
         }
 
         private void gerarReciboToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -106,8 +104,7 @@ namespace Prototipov1
 
         private void cadastroDoadoresToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            MenuDoadores menuDoadores = new MenuDoadores();
-            menuDoadores.ShowDialog();
+            
         }
 
         private void doaçãoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,15 +139,12 @@ namespace Prototipov1
 
         private void gerarRebiboToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuReciboDoacao menuReciboDoacao = new MenuReciboDoacao();
-            menuReciboDoacao.ShowDialog();
+            
         }
 
         private void controleFinanceiroToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            MenuGestaoRecursos menuGestaoRecursos = new MenuGestaoRecursos();
-            menuGestaoRecursos.ShowDialog();
-        }
+        }    
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -172,8 +166,7 @@ namespace Prototipov1
 
         private void cadastroToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MenuBeneficiarios menuBeneficiarios = new MenuBeneficiarios();
-            menuBeneficiarios.ShowDialog();
+            
         }
 
         private void TelaPerfil_Load(object sender, EventArgs e)
@@ -183,11 +176,7 @@ namespace Prototipov1
             PreencherGrafico();
         }
 
-        private void btEditarPerfil_Click(object sender, EventArgs e)
-        {
-            MenuEditarPerfil menuEditarPerfil = new MenuEditarPerfil();
-            menuEditarPerfil.ShowDialog();
-        }
+       
 
         private void chart1_Click(object sender, EventArgs e)
         {
@@ -332,6 +321,43 @@ namespace Prototipov1
                 }
             } // end using
         }
-    }        
+
+        private void btControleFinanceiro_Click(object sender, EventArgs e)
+        {
+            MenuGestaoRecursos menuGestaoRecursos = new MenuGestaoRecursos();
+            menuGestaoRecursos.ShowDialog();
+        }
+
+        private void btPlanoDeContas_Click(object sender, EventArgs e)
+        {
+            MenuPlanoDeContasCadastrar menuPlanoDeContas = new MenuPlanoDeContasCadastrar();
+            menuPlanoDeContas.ShowDialog();
+        }
+
+        private void btReembolso_Click(object sender, EventArgs e)
+        {
+            MenuReembolso menuReembolso = new MenuReembolso();
+            menuReembolso.ShowDialog();
+        }
+
+        private void btDoadores_Click(object sender, EventArgs e)
+        {
+            MenuDoadores menuDoadores = new MenuDoadores();
+            menuDoadores.ShowDialog();
+        }
+
+        private void btRecibo_Click(object sender, EventArgs e)
+        {
+            MenuReciboDoacao menuReciboDoacao = new MenuReciboDoacao();
+            menuReciboDoacao.ShowDialog();
+        }
+
+        private void btBeneficiarios_Click(object sender, EventArgs e)
+        {
+            MenuBeneficiarios menuBeneficiarios = new MenuBeneficiarios();
+            menuBeneficiarios.ShowDialog();
+        }
+    }
+}        
     
-}
+

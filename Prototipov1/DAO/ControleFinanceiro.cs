@@ -23,7 +23,7 @@ namespace Prototipov1
 
 
         public void InserirDados(Int32 ong_id, String data_mov, String descricao, Double valor,
-                                   String descr_conta, String descr_ativo)
+                                    String descr_conta, String descr_ativo)
         {
             con = new MySqlConnection();
             db = new dbs();
@@ -49,8 +49,8 @@ namespace Prototipov1
                 con.Close();
             }
         }
-        public void AtualizarDados(Int32 id, Int32 ong_id, String data_mov, String descricao, Int32 conta_id, String descr_conta, Int32 ativo_id,
-                                String descr_ativo, Double valor)
+        public void AtualizarDados(Int32 id, Int32 ong_id, String data_mov, String descricao, Int32 conta_id,
+                                String descr_conta, Int32 ativo_id, String descr_ativo, Double valor)
         {
             con = new MySqlConnection();
             db = new dbs();
@@ -80,8 +80,8 @@ namespace Prototipov1
                 con.Close();
             }
         }
-        public void RemoverDados(Int32 id, Int32 ong_id, String data_mov, String descricao, Int32 conta_id, String descr_conta, Int32 ativo_id,
-                                String descr_ativo, Double valor)
+        public void RemoverDados(Int32 id, Int32 ong_id, String data_mov, String descricao, Int32 conta_id,
+                                String descr_conta, Int32 ativo_id, String descr_ativo, Double valor)
         {
             con = new MySqlConnection();
             db = new dbs();

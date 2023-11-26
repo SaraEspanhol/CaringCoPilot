@@ -11,7 +11,7 @@ namespace Prototipov1
     {
 
         private ControleFinanceiro cdao;
-        private String _data_mov, _descricao, _descr_conta, _descr_ativo;
+        private String _data_mov, _descricao, _descr_conta, _descr_ativo, _tipo_conta;
         private Double _valor;
         private Int32 _ong_id, _conta_id, _ativo_id, _id;
 
@@ -46,6 +46,12 @@ namespace Prototipov1
             get { return _conta_id; }
             set { _conta_id = value; }
         }
+        public String tipo_conta
+        {
+            get { return _tipo_conta; }
+            set { _tipo_conta = value; }
+        }
+
         public String descr_conta
         {
             get { return _descr_conta; }

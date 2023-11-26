@@ -19,6 +19,7 @@ namespace Prototipov1
 {
     public partial class MenuGestaoRecursos : Form
     {
+        private MySqlConnection con;
         private dbs db;
         private ControleFinanceiroVO cruds;
         private Int32 catchRowIndex;
@@ -28,7 +29,7 @@ namespace Prototipov1
             InitializeComponent();
             ComboBoxConta();
             ComboBoxAtivo();
-            
+
         }
 
         private void btMenuInicial_Click(object sender, EventArgs e)
@@ -137,11 +138,11 @@ namespace Prototipov1
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
-             
+
             string connectionString = db.getConnectionString();
             string query = "SELECT mov_financeira.id, mov_financeira.ong_id, mov_financeira.data_mov, mov_financeira.descricao," +
                             " mov_financeira.valor, mov_financeira.conta_id, " +
-                            " mov_financeira.ativo_id, contas.descr_conta, ativos.descr_ativo" +
+                            " mov_financeira.ativo_id, contas.descr_conta, ativos.descr_ativo, contas.tipo_conta" +
                             " FROM mov_financeira " +
                             " JOIN ong ON mov_financeira.ong_id = ong.id " +
                             " JOIN contas ON mov_financeira.conta_id = contas.id " +
@@ -162,6 +163,7 @@ namespace Prototipov1
                                 dataTable.Rows[i]["data_mov"],
                                 dataTable.Rows[i]["descricao"],
                                 dataTable.Rows[i]["conta_id"],
+                                dataTable.Rows[i]["tipo_conta"],
                                 dataTable.Rows[i]["descr_conta"],
                                 dataTable.Rows[i]["ativo_id"],
                                 dataTable.Rows[i]["descr_ativo"],
@@ -197,7 +199,7 @@ namespace Prototipov1
                 cruds.descr_ativo = cBoxLocalCadastroEntrada.Text;
                 cruds.valor = Convert.ToDouble(txtValor.Text);
                 cruds.InserirFinanceiro();
-                dataGridView1.Rows.Add(null, null,txtDataCadastroEntrada.Text, txtDescricao.Text, null, cBoxContaCadastroEntrada.Text, null,
+                dataGridView1.Rows.Add(null, null, txtDataCadastroEntrada.Text, txtDescricao.Text, null, cBoxContaCadastroEntrada.Text, null,
                     cBoxLocalCadastroEntrada.Text, txtValor.Text);
                 txtId.Clear();
                 txtDataCadastroEntrada.Clear();
@@ -210,15 +212,20 @@ namespace Prototipov1
                 ComboBoxConta();
                 ComboBoxAtivo();
             }
-            catch (Exception)
+            /*catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao realizar a operação", "Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
+            finally
+            {
+
             }
+
         }
 
         private void btAtualizar_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 cruds = new ControleFinanceiroVO();
@@ -236,10 +243,11 @@ namespace Prototipov1
                 dataGridView1[2, catchRowIndex].Value = txtDataCadastroEntrada.Text;
                 dataGridView1[3, catchRowIndex].Value = txtDescricao.Text;
                 dataGridView1[4, catchRowIndex].Value = txtIdConta.Text;
-                dataGridView1[5, catchRowIndex].Value = cBoxContaCadastroEntrada.Text;
-                dataGridView1[6, catchRowIndex].Value = txtIdAtivo.Text;
-                dataGridView1[7, catchRowIndex].Value = cBoxLocalCadastroEntrada.Text;
-                dataGridView1[8, catchRowIndex].Value = txtValor.Text;
+                dataGridView1[5, catchRowIndex].Value = txtTipoConta.Text;
+                dataGridView1[6, catchRowIndex].Value = cBoxContaCadastroEntrada.Text;
+                dataGridView1[7, catchRowIndex].Value = txtIdAtivo.Text;
+                dataGridView1[8, catchRowIndex].Value = cBoxLocalCadastroEntrada.Text;
+                dataGridView1[9, catchRowIndex].Value = txtValor.Text;
                 btAtualizar.Enabled = false;
                 btExcluir.Enabled = false;
                 txtId.Clear();
@@ -247,6 +255,7 @@ namespace Prototipov1
                 txtDataCadastroEntrada.Clear();
                 txtDescricao.Clear();
                 txtIdConta.Clear();
+                txtTipoConta.Clear();
                 cBoxContaCadastroEntrada.Items.Clear();
                 txtIdAtivo.Clear();
                 cBoxLocalCadastroEntrada.Items.Clear();
@@ -269,7 +278,7 @@ namespace Prototipov1
 
         private void btExcluir_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 cruds = new ControleFinanceiroVO();
@@ -290,6 +299,7 @@ namespace Prototipov1
                 txtDataCadastroEntrada.Clear();
                 txtDescricao.Clear();
                 txtIdConta.Clear();
+                txtTipoConta.Clear();
                 cBoxContaCadastroEntrada.Items.Clear();
                 txtIdAtivo.Clear();
                 cBoxLocalCadastroEntrada.Items.Clear();
@@ -318,10 +328,11 @@ namespace Prototipov1
                 txtDataCadastroEntrada.Text = data.ToString("dd/MM/yyyy");
                 txtDescricao.Text = row.Cells[3].Value.ToString();
                 txtIdConta.Text = Convert.ToString(row.Cells[4].Value);
-                cBoxContaCadastroEntrada.Text = row.Cells[5].Value.ToString();
-                txtIdAtivo.Text = Convert.ToString(row.Cells[6].Value);
-                cBoxLocalCadastroEntrada.Text = row.Cells[7].Value.ToString();
-                txtValor.Text = row.Cells[8].Value.ToString();
+                txtTipoConta.Text = row.Cells[5].Value.ToString();
+                cBoxContaCadastroEntrada.Text = row.Cells[6].Value.ToString();
+                txtIdAtivo.Text = Convert.ToString(row.Cells[7].Value);
+                cBoxLocalCadastroEntrada.Text = row.Cells[8].Value.ToString();
+                txtValor.Text = row.Cells[9].Value.ToString();
             }
             btAtualizar.Enabled = true;
             btExcluir.Enabled = true;
@@ -335,18 +346,19 @@ namespace Prototipov1
             txtDataCadastroEntrada.Clear();
             txtDescricao.Clear();
             txtIdConta.Clear();
+            txtTipoConta.Clear();
             cBoxContaCadastroEntrada.Items.Clear();
             txtIdAtivo.Clear();
             cBoxLocalCadastroEntrada.Items.Clear();
             txtValor.Clear();
             ComboBoxConta();
             ComboBoxAtivo();
-            
+
         }
 
         private void checkDoacao_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btRelatorio_Click(object sender, EventArgs e)
@@ -407,8 +419,52 @@ namespace Prototipov1
                     Marshal.ReleaseComObject(excelApp);
                 }
             }
-                ExportarParaExcel(dataGridView1);
+            ExportarParaExcel(dataGridView1);
         }
 
+        private void cBoxContaCadastroEntrada_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IdentificaTipoConta(cBoxContaCadastroEntrada.Text);
+        }
+
+        public void IdentificaTipoConta(String descr_conta)
+        {
+            db = new dbs();
+            string connectionString = db.getConnectionString();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = "SELECT tipo_conta FROM contas WHERE descr_conta = ?descr_conta";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("?descr_conta", descr_conta);
+
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            txtTipoConta.Text = result.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tipo de conta não encontrado.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao preencher TextBox Tipo Conta: " + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

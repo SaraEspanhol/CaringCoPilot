@@ -18,21 +18,21 @@ namespace Prototipov1.DAO
 
         }
 
-        public void InserirDadosDoadores(String tipo_doador, String documento, String nome,
+        public void InserirDadosDoadores(String nome, String tipo_doador, String documento,
             String data_nasc, String email, String telefone)
         {
             con = new MySqlConnection();
             db = new dbs();
             con.ConnectionString = db.getConnectionString();
-            String query = "INSERT INTO doadores (tipo_doador, documento, nome, data_nasc, email, telefone) VALUES";
-            query += "(?tipo_doador, ?documento, ?nome, ?data_nasc, ?email, ?telefone)";
+            String query = "INSERT INTO doadores (nome, tipo_doador, documento, data_nasc, email, telefone) VALUES";
+            query += "(?nome, ?tipo_doador, ?documento, ?data_nasc, ?email, ?telefone)";
             try
             {
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("?nome", nome);
                 cmd.Parameters.AddWithValue("?tipo_doador", tipo_doador);
                 cmd.Parameters.AddWithValue("?documento", documento);
-                cmd.Parameters.AddWithValue("?nome", nome);
                 cmd.Parameters.AddWithValue("?data_nasc", data_nasc);
                 cmd.Parameters.AddWithValue("?email", email);
                 cmd.Parameters.AddWithValue("?telefone", telefone);
@@ -49,23 +49,23 @@ namespace Prototipov1.DAO
                 con.Close();
             }
         }
-        public void AtualizarDadosDoadores(Int32 id, String tipo_doador, String documento, String nome,
+        public void AtualizarDadosDoadores(Int32 id, String nome, String tipo_doador, String documento,
             String data_nasc, String email, String telefone)
         {
             con = new MySqlConnection();
             db = new dbs();
             con.ConnectionString = db.getConnectionString();
-            String query = "UPDATE doadores SET id = ?id, tipo_doador = ?tipo_doador, documento = ?documento, " +
-                "nome = ?nome, data_nasc = ?data_nasc, email =  ?email, telefone = ?telefone";
+            String query = "UPDATE doadores SET id = ?id, nome = ?nome, tipo_doador = ?tipo_doador, documento = ?documento, " +
+                "data_nasc = ?data_nasc, email =  ?email, telefone = ?telefone";
             query += " WHERE id = ?id";
             try
             {
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 cmd.Parameters.AddWithValue("?id", id);
+                cmd.Parameters.AddWithValue("?nome", nome);
                 cmd.Parameters.AddWithValue("?tipo_doador", tipo_doador);
                 cmd.Parameters.AddWithValue("?documento", documento);
-                cmd.Parameters.AddWithValue("?nome", nome);
                 cmd.Parameters.AddWithValue("?data_nasc", data_nasc);
                 cmd.Parameters.AddWithValue("?email", email);
                 cmd.Parameters.AddWithValue("?telefone", telefone);
@@ -77,7 +77,7 @@ namespace Prototipov1.DAO
                 con.Close();
             }
         }
-        public void RemoverDadosDoadores(Int32 id, String tipo_doador, String documento, String nome,
+        public void RemoverDadosDoadores(Int32 id, String nome, String tipo_doador, String documento,
             String data_nasc, String telefone, String email)
         {
             con = new MySqlConnection();
@@ -90,9 +90,9 @@ namespace Prototipov1.DAO
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 cmd.Parameters.AddWithValue("?id", id);
+                cmd.Parameters.AddWithValue("?nome", nome);
                 cmd.Parameters.AddWithValue("?tipo_doador", tipo_doador);
                 cmd.Parameters.AddWithValue("?documento", documento);
-                cmd.Parameters.AddWithValue("?nome", nome);
                 cmd.Parameters.AddWithValue("?data_nasc", data_nasc);
                 cmd.Parameters.AddWithValue("?email", email);
                 cmd.Parameters.AddWithValue("?telefone", telefone);

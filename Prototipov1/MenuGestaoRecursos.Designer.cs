@@ -57,11 +57,13 @@
             this.lbOnde = new System.Windows.Forms.Label();
             this.lbDataCadastroEntrada = new System.Windows.Forms.Label();
             this.btMenuInicial = new System.Windows.Forms.Button();
+            this.txtTipoConta = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ong_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_mov = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.conta_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_conta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descr_conta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativo_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descr_ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +74,8 @@
             // 
             // gBoxControleFinanceiro
             // 
+            this.gBoxControleFinanceiro.Controls.Add(this.txtTipoConta);
+            this.gBoxControleFinanceiro.Controls.Add(this.dataGridView1);
             this.gBoxControleFinanceiro.Controls.Add(this.lbOngId);
             this.gBoxControleFinanceiro.Controls.Add(this.txtOngId);
             this.gBoxControleFinanceiro.Controls.Add(this.lbConta);
@@ -89,7 +93,6 @@
             this.gBoxControleFinanceiro.Controls.Add(this.lbDescricao);
             this.gBoxControleFinanceiro.Controls.Add(this.btRelatorio);
             this.gBoxControleFinanceiro.Controls.Add(this.btAtualizar);
-            this.gBoxControleFinanceiro.Controls.Add(this.dataGridView1);
             this.gBoxControleFinanceiro.Controls.Add(this.cBoxLocalCadastroEntrada);
             this.gBoxControleFinanceiro.Controls.Add(this.cBoxContaCadastroEntrada);
             this.gBoxControleFinanceiro.Controls.Add(this.txtDataCadastroEntrada);
@@ -268,6 +271,7 @@
             this.data_mov,
             this.descricao,
             this.conta_id,
+            this.tipo_conta,
             this.descr_conta,
             this.ativo_id,
             this.descr_ativo,
@@ -302,6 +306,7 @@
             this.cBoxContaCadastroEntrada.Name = "cBoxContaCadastroEntrada";
             this.cBoxContaCadastroEntrada.Size = new System.Drawing.Size(185, 22);
             this.cBoxContaCadastroEntrada.TabIndex = 10;
+            this.cBoxContaCadastroEntrada.SelectedIndexChanged += new System.EventHandler(this.cBoxContaCadastroEntrada_SelectedIndexChanged);
             // 
             // txtDataCadastroEntrada
             // 
@@ -348,6 +353,15 @@
             this.btMenuInicial.UseVisualStyleBackColor = true;
             this.btMenuInicial.Click += new System.EventHandler(this.btMenuInicial_Click);
             // 
+            // txtTipoConta
+            // 
+            this.txtTipoConta.Enabled = false;
+            this.txtTipoConta.Location = new System.Drawing.Point(469, 410);
+            this.txtTipoConta.Name = "txtTipoConta";
+            this.txtTipoConta.Size = new System.Drawing.Size(112, 25);
+            this.txtTipoConta.TabIndex = 44;
+            this.txtTipoConta.Visible = false;
+            // 
             // id
             // 
             this.id.HeaderText = "Item No";
@@ -380,6 +394,12 @@
             this.conta_id.HeaderText = "ID Conta";
             this.conta_id.Name = "conta_id";
             this.conta_id.Width = 50;
+            // 
+            // tipo_conta
+            // 
+            this.tipo_conta.HeaderText = "Tipo Conta";
+            this.tipo_conta.Name = "tipo_conta";
+            this.tipo_conta.Visible = false;
             // 
             // descr_conta
             // 
@@ -451,11 +471,13 @@
         private System.Windows.Forms.Label lbAtivo;
         private System.Windows.Forms.Label lbOngId;
         private System.Windows.Forms.TextBox txtOngId;
+        private System.Windows.Forms.TextBox txtTipoConta;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ong_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_mov;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn conta_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_conta;
         private System.Windows.Forms.DataGridViewTextBoxColumn descr_conta;
         private System.Windows.Forms.DataGridViewTextBoxColumn ativo_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn descr_ativo;
