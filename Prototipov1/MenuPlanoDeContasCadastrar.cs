@@ -82,10 +82,19 @@ namespace Prototipov1
                 txtNome.Clear();
                 MessageBox.Show("Cadastro realizado com sucesso!");
             }
+            catch (MySqlException )
+            {
+                MessageBox.Show("Essa conta já foi criada!!", "Erro!");
+            }
+            catch (ArgumentException erro)
+            {
+                MessageBox.Show(erro.Message, "Erro!");
+            }
             catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao realizar a operação", "Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         
@@ -111,6 +120,14 @@ namespace Prototipov1
                 comboBoxTipo.Items.Clear();
 
 
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show("Essa conta já foi criada!!", "Erro!");
+            }
+            catch (ArgumentException erro)
+            {
+                MessageBox.Show(erro.Message, "Erro!");
             }
             catch (Exception)
             {
@@ -211,6 +228,14 @@ namespace Prototipov1
                 txtNome.Clear();
                 MessageBox.Show("Cadastro realizado com sucesso!");
             }
+            catch (MySqlException )
+            {
+                MessageBox.Show("Esse ativo já foi criado!!", "Erro!");
+            }
+            catch (ArgumentException erro)
+            {
+                MessageBox.Show(erro.Message, "Erro!");
+            }
             catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao realizar a operação", "Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -234,8 +259,14 @@ namespace Prototipov1
                 txtIdAtivos.Clear();
                 txtNomeAtivos.Clear();
 
-
-
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show("Esse ativo já foi criado!!", "Erro!");
+            }
+            catch (ArgumentException erro)
+            {
+                MessageBox.Show(erro.Message, "Erro!");
             }
             catch (Exception)
             {

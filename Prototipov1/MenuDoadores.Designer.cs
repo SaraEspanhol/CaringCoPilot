@@ -47,11 +47,6 @@
             this.lbDataNascimento = new System.Windows.Forms.Label();
             this.txtDataNasc = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtNomeDoador = new System.Windows.Forms.TextBox();
-            this.lbDocumento = new System.Windows.Forms.Label();
-            this.lbNomeDoador = new System.Windows.Forms.Label();
-            this.btMenuInicial = new System.Windows.Forms.Button();
-            this.btCadastrar = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo_doador = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +54,11 @@
             this.data_nasc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNomeDoador = new System.Windows.Forms.TextBox();
+            this.lbDocumento = new System.Windows.Forms.Label();
+            this.lbNomeDoador = new System.Windows.Forms.Label();
+            this.btMenuInicial = new System.Windows.Forms.Button();
+            this.btCadastrar = new System.Windows.Forms.Button();
             this.gBoxDoacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -147,6 +147,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(127, 25);
             this.txtTelefone.TabIndex = 28;
+            this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
             // 
             // lbTelefone
             // 
@@ -247,6 +248,46 @@
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // id
+            // 
+            this.id.HeaderText = "Item No";
+            this.id.Name = "id";
+            this.id.Width = 50;
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.Width = 150;
+            // 
+            // tipo_doador
+            // 
+            this.tipo_doador.HeaderText = "Tipo";
+            this.tipo_doador.Name = "tipo_doador";
+            // 
+            // documento
+            // 
+            this.documento.HeaderText = "Documento";
+            this.documento.Name = "documento";
+            // 
+            // data_nasc
+            // 
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.data_nasc.DefaultCellStyle = dataGridViewCellStyle1;
+            this.data_nasc.HeaderText = "Data de Nascimento";
+            this.data_nasc.Name = "data_nasc";
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            // 
+            // telefone
+            // 
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
+            // 
             // txtNomeDoador
             // 
             this.txtNomeDoador.Location = new System.Drawing.Point(62, 334);
@@ -293,46 +334,6 @@
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
             this.btCadastrar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "Item No";
-            this.id.Name = "id";
-            this.id.Width = 50;
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.Width = 150;
-            // 
-            // tipo_doador
-            // 
-            this.tipo_doador.HeaderText = "Tipo";
-            this.tipo_doador.Name = "tipo_doador";
-            // 
-            // documento
-            // 
-            this.documento.HeaderText = "Documento";
-            this.documento.Name = "documento";
-            // 
-            // data_nasc
-            // 
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.data_nasc.DefaultCellStyle = dataGridViewCellStyle1;
-            this.data_nasc.HeaderText = "Data de Nascimento";
-            this.data_nasc.Name = "data_nasc";
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            // 
-            // telefone
-            // 
-            this.telefone.HeaderText = "Telefone";
-            this.telefone.Name = "telefone";
             // 
             // MenuDoadores
             // 

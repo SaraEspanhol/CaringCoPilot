@@ -73,7 +73,19 @@ namespace Prototipov1
 
         public Double valor
         {
-            get { return _valor; }
+            get 
+            { 
+                if (_valor <= 0)
+                {
+                    string textoErro = String.Format("Preencha um valor válido!");
+                    throw new ArgumentException(textoErro);
+                }
+                if (String.Compare(tipo_conta, "Saída", true) == 0)
+                {
+                    _valor = _valor * (-1);
+                }
+                return _valor; 
+            }
             set { _valor = value; }
         }
 

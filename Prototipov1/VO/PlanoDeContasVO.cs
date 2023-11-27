@@ -53,11 +53,21 @@ namespace Prototipov1
 
         public void Inserir()
         {
+            if (descr_conta == "" || tipo_conta == "")
+            {
+                string textoErro = String.Format("Preencha os campos obrigatórios!");
+                throw new ArgumentException(textoErro);
+            }
             cdao = new PlanoDeContas();
             cdao.InserirDados(tipo_conta, descr_conta);
         }
         public void Atualizar()
         {
+            if (descr_conta == "" || tipo_conta == "")
+            {
+                string textoErro = String.Format("Preencha os campos obrigatórios!");
+                throw new ArgumentException(textoErro);
+            }
             cdao = new PlanoDeContas();
             cdao.AtualizarDados(tipo_conta, descr_conta, id);
         }
@@ -69,11 +79,21 @@ namespace Prototipov1
 
         public void InserirAtivos()
         {
+            if (descr_ativo == "")
+            {
+                string textoErro = String.Format("Preencha os campos obrigatórios!");
+                throw new ArgumentException(textoErro);
+            }
             cdao = new PlanoDeContas();
             cdao.InserirDadosAtivos(descr_ativo);
         }
         public void AtualizarAtivos()
         {
+            if (descr_ativo == "")
+            {
+                string textoErro = String.Format("Preencha os campos obrigatórios!");
+                throw new ArgumentException(textoErro);
+            }
             cdao = new PlanoDeContas();
             cdao.AtualizarDadosAtivos (idAtivos, descr_ativo);
         }

@@ -192,6 +192,7 @@
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(120, 25);
             this.txtCelular.TabIndex = 20;
+            this.txtCelular.TextChanged += new System.EventHandler(this.txtCelular_TextChanged);
             // 
             // lbCelular
             // 
@@ -208,6 +209,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(113, 25);
             this.txtTelefone.TabIndex = 18;
+            this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
             // 
             // lbTelefone
             // 

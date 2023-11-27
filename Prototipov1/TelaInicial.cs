@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Prototipov1.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,23 +35,34 @@ namespace Prototipov1
         {
             usuario = txtLogin.Text;
             senha = txtSenha.Text;
+
+            // Recuperar a senha e o salt do banco de dados usando o usuário
+            string storedHashAndSalt = RecuperarHashAndSaltDoBancoDeDados(usuario);
+
             TelaInicial telaInicial = new TelaInicial();
-            if (telaInicial.VerificarCredenciais(usuario, senha))
+            if (!string.IsNullOrEmpty(storedHashAndSalt) && telaInicial.VerificarCredenciais(usuario, senha, storedHashAndSalt))
             {
-                 MessageBox.Show("Credenciais válidas!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Credenciais válidas!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 TelaPerfil telaPerfil = new TelaPerfil();
                 telaPerfil.ShowDialog();
             }
             else
             {
-                 MessageBox.Show("Credenciais inválidas!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Credenciais inválidas!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtLogin.Clear();
                 txtSenha.Clear();
             }
         }
 
-        public bool VerificarCredenciais(string usuario, string senha)
+        public bool VerificarCredenciais(string usuario, string senha, string storedHashAndSalt)
+        {
+            // Verificar a senha usando o método VerifyPassword
+            return HashandSalt.VerifyPassword(senha, storedHashAndSalt);
+
+        }
+
+        public string RecuperarHashAndSaltDoBancoDeDados(string usuario)
         {
             con = new MySqlConnection();
             db = new dbs();
@@ -60,35 +72,35 @@ namespace Prototipov1
             {
                 con.Open();
 
-                string query = "SELECT COUNT(*) FROM ong_responsavel WHERE usuario = @usuario AND senha = @senha";
+                string query = "SELECT senha FROM ong_responsavel WHERE usuario = @usuario";
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
-                cmd.Parameters.AddWithValue("@senha", senha); // Lembre-se de usar hash para comparar senhas
 
-                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                string storedHashAndSalt = cmd.ExecuteScalar() as string;
 
-                return resultado > 0;
+                return storedHashAndSalt;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao verificar credenciais: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                MessageBox.Show("Erro ao recuperar hash e salt do banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
             finally
             {
                 con.Close();
             }
-
         }
 
-        
+
         void btCadastrar_Click(object sender, EventArgs e)
         {
-                this.Hide();
-                TelaCadastroLogin cadastroLogin = new TelaCadastroLogin();
-                cadastroLogin.ShowDialog();
+            this.Hide();
+            TelaCadastroLogin cadastroLogin = new TelaCadastroLogin();
+            cadastroLogin.ShowDialog();
 
         }
+
+
 
         void pictureBox1_Click(object sender, EventArgs e)
         {

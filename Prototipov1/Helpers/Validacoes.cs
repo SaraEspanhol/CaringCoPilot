@@ -45,6 +45,11 @@ namespace Prototipov1.Helpers
 
         public static string ValidaData(string dataBrasileira)
         {
+            if (string.IsNullOrEmpty(dataBrasileira))
+            {
+                return null; 
+            }
+
             DateTime data;
             if (DateTime.TryParseExact(dataBrasileira, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out data))
             {

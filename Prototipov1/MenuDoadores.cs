@@ -275,6 +275,29 @@ namespace Prototipov1
             }
             ExportarParaExcel(dataGridView1);
         }
+
+        private void txtTelefone_TextChanged(object sender, EventArgs e)
+        {
+            string numerosApenas = new string(txtTelefone.Text.Where(char.IsDigit).ToArray());
+
+            if (numerosApenas.Length > 0)
+            {
+                if (numerosApenas.Length <= 2)
+                {
+                    txtTelefone.Text = $"({numerosApenas}";
+                }
+                else if (numerosApenas.Length <= 6)
+                {
+                    txtTelefone.Text = $"({numerosApenas.Substring(0, 2)}) {numerosApenas.Substring(2)}";
+                }
+                else
+                {
+                    txtTelefone.Text = $"({numerosApenas.Substring(0, 2)}) {numerosApenas.Substring(2, 4)}-{numerosApenas.Substring(6)}";
+                }
+            }
+
+            txtTelefone.SelectionStart = txtTelefone.Text.Length;
+        }
     }
 }
 

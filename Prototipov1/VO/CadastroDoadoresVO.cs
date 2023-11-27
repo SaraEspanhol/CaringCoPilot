@@ -90,7 +90,7 @@ namespace Prototipov1.VO
                 throw new ArgumentException(textoErro);
             }
 
-            if (tipo_doador != "Pessoa Física" || tipo_doador != "Pessoa Jurídica")
+            if (tipo_doador != "Pessoa Física" && tipo_doador != "Pessoa Jurídica")
             {
                 string textoErro = String.Format("Insira um Tipo de Doador Válido!");
                 throw new ArgumentException(textoErro);
@@ -101,6 +101,35 @@ namespace Prototipov1.VO
         }
         public void AtualizarDoadores()
         {
+            bool v;
+
+            v = Validacoes.IsValidEmail(email);
+            if (!(v))
+            {
+                string textoErro = String.Format("Insira um e-mail válido!");
+                throw new ArgumentException(textoErro);
+            }
+
+            v = Validacoes.IsValidTelefone(telefone);
+            if (!(v))
+            {
+                string textoErro = String.Format("Insira um telefone válido!");
+                throw new ArgumentException(textoErro);
+            }
+
+            if (nome == "" || documento == "")
+            {
+                string textoErro = String.Format("Preencha os campos obrigatórios!");
+                throw new ArgumentException(textoErro);
+            }
+
+            if (tipo_doador != "Pessoa Física" && tipo_doador != "Pessoa Jurídica")
+            {
+                string textoErro = String.Format("Insira um Tipo de Doador Válido!");
+                throw new ArgumentException(textoErro);
+            }
+
+
             cdao = new CadastroDoadores();
             cdao.AtualizarDadosDoadores(id, nome, tipo_doador, documento, data_nasc, email, telefone);
         }

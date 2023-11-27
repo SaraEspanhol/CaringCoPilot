@@ -38,8 +38,6 @@ namespace Prototipov1
             telaPerfil.ShowDialog();
         }
 
-
-
         private void PreencherComboBoxConta()
         {
             db = new dbs();
@@ -195,6 +193,7 @@ namespace Prototipov1
                 cruds = new ControleFinanceiroVO();
                 cruds.data_mov = txtDataCadastroEntrada.Text;
                 cruds.descricao = txtDescricao.Text;
+                cruds.tipo_conta = txtTipoConta.Text;
                 cruds.descr_conta = cBoxContaCadastroEntrada.Text;
                 cruds.descr_ativo = cBoxLocalCadastroEntrada.Text;
                 cruds.valor = Convert.ToDouble(txtValor.Text);
@@ -212,15 +211,14 @@ namespace Prototipov1
                 ComboBoxConta();
                 ComboBoxAtivo();
             }
-            /*catch (Exception)
+            catch (ArgumentException erro)
+            {
+                MessageBox.Show(erro.Message, "Erro!");
+            }
+            catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao realizar a operação", "Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
-            finally
-            {
-
             }
-
         }
 
         private void btAtualizar_Click(object sender, EventArgs e)
@@ -266,14 +264,14 @@ namespace Prototipov1
                 ComboBoxAtivo();
 
             }
-            finally
+            catch (ArgumentException erro)
             {
-
+                MessageBox.Show(erro.Message, "Erro!");
             }
-            /*catch (Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao realizar a operação", "Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+            }
         }
 
         private void btExcluir_Click(object sender, EventArgs e)
