@@ -15,7 +15,7 @@ CREATE TABLE ong_responsavel (
     email VARCHAR (100) NOT NULL,
     cpf CHAR (14) NOT NULL UNIQUE,
     usuario VARCHAR (30) NOT NULL UNIQUE,
-    senha VARCHAR (30) NOT NULL
+    senha VARCHAR (100) NOT NULL
 );
 
 CREATE TABLE ong (
@@ -24,11 +24,7 @@ CREATE TABLE ong (
     inscr_municipal CHAR (15) NOT NULL UNIQUE,
     telefone VARCHAR (14) NOT NULL,
     celular VARCHAR (14) NOT NULL,
-    email VARCHAR (100) NOT NULL,
-    responsavel_id INT NOT NULL,
-    FOREIGN KEY(responsavel_id) REFERENCES ong_responsavel(id)
-		ON UPDATE CASCADE
-		ON DELETE RESTRICT
+    email VARCHAR (100) NOT NULL
 );
 
 CREATE TABLE ong_endereco (
@@ -44,9 +40,6 @@ CREATE TABLE ong_endereco (
 		ON DELETE RESTRICT
 );
 
-
-
-
 # ****************************************
 # CRIACAO DOS DOADORES
 # ****************************************
@@ -58,7 +51,7 @@ CREATE TABLE doadores (
     documento CHAR (18) NOT NULL UNIQUE,
     nome VARCHAR (100) NOT NULL,
     data_nasc DATE,
-    telefone VARCHAR (14),
+    telefone VARCHAR (15),
     email VARCHAR (100)
 	
 );
@@ -86,14 +79,10 @@ CREATE TABLE mov_financeira (
     conta_id INT NOT NULL,
     ativo_id INT NOT NULL,
     valor DOUBLE NOT NULL,
-    doador_id INT,
     FOREIGN KEY (conta_id) REFERENCES contas(id)
 		ON UPDATE CASCADE
         ON DELETE RESTRICT,
     FOREIGN KEY (ativo_id) REFERENCES ativos(idAtivos)
-		ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-    FOREIGN KEY (doador_id) REFERENCES doadores(id)
 		ON UPDATE CASCADE
         ON DELETE RESTRICT,
 	FOREIGN KEY (ong_id) REFERENCES ong(id)
@@ -237,9 +226,9 @@ CREATE TABLE beneficiarios (
 	nome_beneficiario VARCHAR (100) NOT NULL,
 	rg VARCHAR (20) NOT NULL,
     orgao_emissor VARCHAR (20) NOT NULL,
-    telefone VARCHAR (14),
-    email VARCHAR (100),
-    data_nasc VARCHAR (14)
+    telefone VARCHAR (15) NOT NULL,
+    email VARCHAR (100) NOT NULL,
+    data_nasc DATE NOT NULL
 	
 );
 
