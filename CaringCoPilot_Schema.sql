@@ -10,8 +10,8 @@ USE caring_copilot;
 CREATE TABLE ong_responsavel (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR (100) NOT NULL,
-    telefone VARCHAR (14) NOT NULL,
-    celular VARCHAR (14) NOT NULL, 
+    telefone VARCHAR (15) NOT NULL,
+    celular VARCHAR (15) NOT NULL, 
     email VARCHAR (100) NOT NULL,
     cpf CHAR (14) NOT NULL UNIQUE,
     usuario VARCHAR (30) NOT NULL UNIQUE,
@@ -22,8 +22,8 @@ CREATE TABLE ong (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	cnpj CHAR (18) NOT NULL UNIQUE,
     inscr_municipal CHAR (15) NOT NULL UNIQUE,
-    telefone VARCHAR (14) NOT NULL,
-    celular VARCHAR (14) NOT NULL,
+    telefone VARCHAR (15) NOT NULL,
+    celular VARCHAR (15) NOT NULL,
     email VARCHAR (100) NOT NULL
 );
 
