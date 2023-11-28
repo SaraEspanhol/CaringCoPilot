@@ -473,7 +473,7 @@
             this.btRecibo.Name = "btRecibo";
             this.btRecibo.Size = new System.Drawing.Size(96, 59);
             this.btRecibo.TabIndex = 15;
-            this.btRecibo.Text = "Recibo";
+            this.btRecibo.Text = "Recibo Doação";
             this.btRecibo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btRecibo.UseVisualStyleBackColor = true;
             this.btRecibo.Click += new System.EventHandler(this.btRecibo_Click);
@@ -517,6 +517,7 @@
             this.Name = "TelaPerfil";
             this.Text = "CaringCoPilot";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaPerfil_FormClosing);
             this.Load += new System.EventHandler(this.TelaPerfil_Load);
             this.gBoxPerfil.ResumeLayout(false);
             this.gBoxPerfil.PerformLayout();

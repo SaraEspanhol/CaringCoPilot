@@ -247,6 +247,8 @@
             this.dataGridView1.Size = new System.Drawing.Size(743, 260);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // id
             // 
@@ -348,6 +350,7 @@
             this.Name = "MenuDoadores";
             this.Text = "CaringCoPilot";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuDoadores_FormClosing);
             this.Load += new System.EventHandler(this.MenuDoadores_Load);
             this.gBoxDoacoes.ResumeLayout(false);
             this.gBoxDoacoes.PerformLayout();

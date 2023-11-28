@@ -24,11 +24,20 @@ namespace Prototipov1
         {
             InitializeComponent();
             
+
         }
         private void TelaInicial_Load(object sender, EventArgs e)
         {
-
-
+            
+            bool check = CheckCadastro();
+            if (check == true)
+            {
+                btCadastrar.Enabled = true;
+            }
+            else
+            {
+                btCadastrar.Enabled = false;
+            }
         }
 
         private void btEntrar_Click(object sender, EventArgs e)
@@ -110,6 +119,48 @@ namespace Prototipov1
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void TelaInicial_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+                Application.Exit();
+            
+        }
+
+        public bool CheckCadastro()
+        {
+            con = new MySqlConnection();
+            db = new dbs();
+            con.ConnectionString = db.getConnectionString();
+
+            try
+            {
+                con.Open();
+
+                string query = "SELECT usuario FROM ong_responsavel";
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@usuario", usuario);
+
+                string checkUsuario = cmd.ExecuteScalar() as string;
+
+                if(checkUsuario == null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+
+                }
+
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao acessar o banco de dados:" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
         }
     }
 }

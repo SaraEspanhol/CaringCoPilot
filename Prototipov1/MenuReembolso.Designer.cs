@@ -349,6 +349,7 @@
             this.Name = "MenuReembolso";
             this.Text = "CaringCoPilot";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuReembolso_FormClosing);
             this.Load += new System.EventHandler(this.MenuReembolso_Load);
             this.gBoxGestaoRecursos.ResumeLayout(false);
             this.gBoxGestaoRecursos.PerformLayout();

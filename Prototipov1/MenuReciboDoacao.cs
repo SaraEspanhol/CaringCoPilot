@@ -21,10 +21,12 @@ namespace Prototipov1
         public MenuReciboDoacao()
         {
             InitializeComponent();
+            
         }
 
         private void btMenuInicial_Click(object sender, EventArgs e)
         {
+            this.Hide();
             TelaPerfil telaPerfil = new TelaPerfil();
             telaPerfil.ShowDialog();
         }
@@ -132,6 +134,13 @@ namespace Prototipov1
             Word.Range range = doc.Content;
             range.Find.ClearFormatting();
             range.Find.Execute(FindText: marcador, ReplaceWith: valor);
+        }
+
+        private void MenuReciboDoacao_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+                
+            
         }
     }
 }

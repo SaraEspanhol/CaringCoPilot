@@ -29,6 +29,7 @@ namespace Prototipov1
 
         private void btMenuInicial_Click(object sender, EventArgs e)
         {
+            this.Hide();
             TelaPerfil telaPerfil = new TelaPerfil();
             telaPerfil.ShowDialog();
         }
@@ -94,6 +95,7 @@ namespace Prototipov1
                 cruds.InserirDoadores();
                 dataGridView1.Rows.Add(null, txtNomeDoador.Text, cBoxPFPJ.Text, txtDocDoador.Text,
                     txtDataNasc.Text, txtEmail.Text, txtTelefone.Text);
+                txtCodDoador.Clear();
                 cBoxPFPJ.Items.Clear();
                 txtDocDoador.Clear();
                 txtNomeDoador.Clear();
@@ -101,7 +103,8 @@ namespace Prototipov1
                 txtTelefone.Clear();
                 txtEmail.Clear();
                 MessageBox.Show("Cadastro realizado com sucesso!");
-                
+                btRefresh_Click(this, new EventArgs());
+
             }
             catch (ArgumentException erro)
             {
@@ -142,7 +145,7 @@ namespace Prototipov1
                 txtDataNasc.Clear();
                 txtTelefone.Clear();
                 txtEmail.Clear();
-                
+                btRefresh_Click(this, new EventArgs());
 
             }
             catch (ArgumentException erro)
@@ -179,7 +182,7 @@ namespace Prototipov1
                 txtDataNasc.Clear();
                 txtTelefone.Clear();
                 txtEmail.Clear();
-                
+                btRefresh_Click(this, new EventArgs());
 
             }
             catch (Exception)
@@ -190,6 +193,7 @@ namespace Prototipov1
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             catchRowIndex = dataGridView1.SelectedCells[0].RowIndex;
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
@@ -197,21 +201,41 @@ namespace Prototipov1
                 txtNomeDoador.Text = row.Cells[1].Value.ToString();
                 cBoxPFPJ.Text = row.Cells[2].Value.ToString();
                 txtDocDoador.Text = row.Cells[3].Value.ToString();
-                // Converte diretamente para DateTime e formata
-                DateTime data = (DateTime)row.Cells[4].Value;
-                txtDataNasc.Text = data.ToString("dd/MM/yyyy");
+
+                // Verifica se a célula contém um valor não nulo antes de converter para DateTime
+                if (row.Cells[4].Value != null)
+                {
+                    // Tenta converter para DateTime
+                    if (DateTime.TryParse(row.Cells[4].Value.ToString(), out DateTime data))
+                    {
+                        // Se a conversão for bem-sucedida, formata e define o valor em txtDataNasc
+                        txtDataNasc.Text = data.ToString("dd/MM/yyyy");
+                    }
+                    else
+                    {
+                        // Se a conversão falhar, define o valor em txtDataNasc como vazio
+                        txtDataNasc.Text = string.Empty;
+                    }
+                }
+                else
+                {
+                    // Se a célula estiver vazia, define o valor em txtDataNasc como vazio
+                    txtDataNasc.Text = string.Empty;
+                }
+
                 txtEmail.Text = row.Cells[5].Value.ToString();
                 txtTelefone.Text = row.Cells[6].Value.ToString();
-                
             }
             btAtualizar.Enabled = true;
             btExcluir.Enabled = true;
+
+
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
             carregaDadosDoadores();
-           
+            
             this.Refresh();
         }
 
@@ -297,6 +321,21 @@ namespace Prototipov1
             }
 
             txtTelefone.SelectionStart = txtTelefone.Text.Length;
+        }
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+        }
+
+        private void MenuDoadores_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
         }
     }
 }

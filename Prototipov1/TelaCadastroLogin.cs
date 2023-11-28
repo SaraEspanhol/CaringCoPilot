@@ -37,9 +37,12 @@ namespace Prototipov1
         {
             InitializeComponent();
             
+
         }
 
-        private void CaringCoPilot_Load(object sender, EventArgs e) { }
+        private void CaringCoPilot_Load(object sender, EventArgs e) 
+        {
+        }
         
 
         private void btCadastrar_Click(object sender, EventArgs e)
@@ -81,7 +84,7 @@ namespace Prototipov1
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                this.Hide();
                 TelaInicial telaInicial = new TelaInicial();
                 telaInicial.ShowDialog();
             }
@@ -168,6 +171,13 @@ namespace Prototipov1
                 }
             }
             txtCelular.SelectionStart = txtCelular.Text.Length;
+        }
+
+        private void TelaCadastroLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+                
+            
         }
     }
 }

@@ -50,6 +50,7 @@ namespace Prototipov1
 
         private void btMenuInicial_Click(object sender, EventArgs e)
         {
+            this.Hide();
             TelaPerfil telaPerfil = new TelaPerfil();
             telaPerfil.ShowDialog();
         }
@@ -119,6 +120,13 @@ namespace Prototipov1
         private void gBoxGestaoRecursos_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void MenuReembolso_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+                
+            
         }
     }
 

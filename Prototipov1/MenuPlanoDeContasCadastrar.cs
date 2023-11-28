@@ -21,6 +21,7 @@ namespace Prototipov1
         public MenuPlanoDeContasCadastrar()
         {
             InitializeComponent();
+            
         }
 
         private void btMenuInicial_Click(object sender, EventArgs e)
@@ -314,6 +315,20 @@ namespace Prototipov1
             }
             btAtualizarAtivos.Enabled = true;
             btExcluirAtivos.Enabled = true;
+        }
+
+        private void btMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TelaPerfil telaPerfil = new TelaPerfil();
+            telaPerfil.ShowDialog();
+        }
+
+        private void MenuPlanoDeContasCadastrar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+                
+            
         }
     }
     

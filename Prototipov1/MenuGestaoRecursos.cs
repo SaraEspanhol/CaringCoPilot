@@ -29,11 +29,13 @@ namespace Prototipov1
             InitializeComponent();
             ComboBoxConta();
             ComboBoxAtivo();
+            
 
         }
 
         private void btMenuInicial_Click(object sender, EventArgs e)
         {
+            this.Hide();
             TelaPerfil telaPerfil = new TelaPerfil();
             telaPerfil.ShowDialog();
         }
@@ -463,6 +465,13 @@ namespace Prototipov1
                     conn.Close();
                 }
             }
+        }
+
+        private void MenuGestaoRecursos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+  
+               
+
         }
     }
 }

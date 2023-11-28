@@ -55,8 +55,8 @@
             this.descr_ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNomeAtivos = new System.Windows.Forms.TextBox();
             this.lbNomeAtivo = new System.Windows.Forms.Label();
-            this.btMenu = new System.Windows.Forms.Button();
             this.btCadastrarAtivos = new System.Windows.Forms.Button();
+            this.btMenu = new System.Windows.Forms.Button();
             this.gBoxGestaoRecursos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -315,16 +315,6 @@
             this.lbNomeAtivo.TabIndex = 3;
             this.lbNomeAtivo.Text = "Nome";
             // 
-            // btMenu
-            // 
-            this.btMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btMenu.Location = new System.Drawing.Point(377, 440);
-            this.btMenu.Name = "btMenu";
-            this.btMenu.Size = new System.Drawing.Size(95, 28);
-            this.btMenu.TabIndex = 1;
-            this.btMenu.Text = "Menu Inicial";
-            this.btMenu.UseVisualStyleBackColor = true;
-            // 
             // btCadastrarAtivos
             // 
             this.btCadastrarAtivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -335,6 +325,17 @@
             this.btCadastrarAtivos.Text = "Cadastrar";
             this.btCadastrarAtivos.UseVisualStyleBackColor = true;
             this.btCadastrarAtivos.Click += new System.EventHandler(this.btCadastrarAtivos_Click_1);
+            // 
+            // btMenu
+            // 
+            this.btMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btMenu.Location = new System.Drawing.Point(377, 440);
+            this.btMenu.Name = "btMenu";
+            this.btMenu.Size = new System.Drawing.Size(95, 28);
+            this.btMenu.TabIndex = 1;
+            this.btMenu.Text = "Menu Inicial";
+            this.btMenu.UseVisualStyleBackColor = true;
+            this.btMenu.Click += new System.EventHandler(this.btMenu_Click);
             // 
             // MenuPlanoDeContasCadastrar
             // 
@@ -351,6 +352,7 @@
             this.Name = "MenuPlanoDeContasCadastrar";
             this.Text = "CaringCoPilot";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPlanoDeContasCadastrar_FormClosing);
             this.Load += new System.EventHandler(this.MenuPlanoDeContasCadastrar_Load);
             this.gBoxGestaoRecursos.ResumeLayout(false);
             this.gBoxGestaoRecursos.PerformLayout();

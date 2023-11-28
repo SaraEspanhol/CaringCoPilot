@@ -65,7 +65,7 @@
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(349, 120);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(140, 27);
             this.txtLogin.TabIndex = 2;
@@ -73,7 +73,7 @@
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(349, 155);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(140, 27);
@@ -84,7 +84,7 @@
             this.btEntrar.BackColor = System.Drawing.SystemColors.Control;
             this.btEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btEntrar.Location = new System.Drawing.Point(368, 190);
-            this.btEntrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btEntrar.Margin = new System.Windows.Forms.Padding(4);
             this.btEntrar.Name = "btEntrar";
             this.btEntrar.Size = new System.Drawing.Size(105, 35);
             this.btEntrar.TabIndex = 4;
@@ -96,7 +96,7 @@
             // 
             this.btCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btCadastrar.Location = new System.Drawing.Point(349, 268);
-            this.btCadastrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(83, 24);
             this.btCadastrar.TabIndex = 6;
@@ -120,7 +120,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
             this.pictureBox2.Location = new System.Drawing.Point(-2, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(292, 300);
             this.pictureBox2.TabIndex = 9;
@@ -154,10 +154,11 @@
             this.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "TelaInicial";
             this.Text = "CaringCoPilot";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaInicial_FormClosing);
             this.Load += new System.EventHandler(this.TelaInicial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

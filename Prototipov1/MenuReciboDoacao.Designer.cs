@@ -214,6 +214,7 @@
             this.Name = "MenuReciboDoacao";
             this.Text = "CaringCoPilot";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuReciboDoacao_FormClosing);
             this.Load += new System.EventHandler(this.MenuReciboDoacao_Load);
             this.gBoxReciboDoacoes.ResumeLayout(false);
             this.gBoxReciboDoacoes.PerformLayout();

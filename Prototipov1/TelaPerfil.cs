@@ -21,6 +21,7 @@ namespace Prototipov1
         public TelaPerfil()
         {
             InitializeComponent();
+            
 
         }
 
@@ -356,6 +357,13 @@ namespace Prototipov1
         {
             MenuBeneficiarios menuBeneficiarios = new MenuBeneficiarios();
             menuBeneficiarios.ShowDialog();
+        }
+
+        private void TelaPerfil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+                Application.Exit();
+            
         }
     }
 }        

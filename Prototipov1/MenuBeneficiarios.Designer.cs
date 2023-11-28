@@ -357,6 +357,7 @@
             this.Name = "MenuBeneficiarios";
             this.Text = "CaringCoPilot";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuBeneficiarios_FormClosing);
             this.Load += new System.EventHandler(this.MenuBeneficiarios_Load);
             this.gBoxDoacoes.ResumeLayout(false);
             this.gBoxDoacoes.PerformLayout();
