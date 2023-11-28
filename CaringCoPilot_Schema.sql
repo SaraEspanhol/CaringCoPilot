@@ -119,7 +119,7 @@ CREATE TABLE responsavel (
 
 CREATE TABLE telefone (
 	pessoa_id INT PRIMARY KEY NOT NULL,
-	telefone VARCHAR (14) NOT NULL,
+	telefone VARCHAR (15) NOT NULL,
     FOREIGN KEY (pessoa_id) REFERENCES pessoa(id)
 		ON DELETE RESTRICT
         ON UPDATE CASCADE
