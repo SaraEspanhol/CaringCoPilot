@@ -38,6 +38,7 @@ INSERT INTO contas (tipo_conta, descr_conta)
 	VALUES ('Entrada', 'Ações Diversas');
 
 
+-- Janeiro
 INSERT INTO mov_financeira (ong_id, data_mov, descricao, conta_id, ativo_id, valor)
 VALUES
     (1, '2023-01-01', 'Pagamento de Salários', 1, 1, -5000.00),
@@ -61,20 +62,58 @@ VALUES
     (1, '2023-01-19', 'Ação de Natal', 10, 3, -50.00),
     (1, '2023-01-20', 'Ações Diversas', 3, 4, 200.00);
 
+-- Fevereiro
+INSERT INTO mov_financeira (ong_id, data_mov, descricao, conta_id, ativo_id, valor)
+VALUES
+    (1, '2023-02-01', 'Pagamento de Salários', 1, 1, -4800.00),
+    (1, '2023-02-02', 'Doação de Pessoa Física', 9, 2, 1500.00),
+    (1, '2023-02-03', 'Compra de Equipamentos', 5, 3, -2500.00),
+    (1, '2023-02-04', 'Receita com Cursos', 8, 4, 6000.00),
+    (1, '2023-02-05', 'Pagamento de Contas de Água', 6, 1, -150.00),
+    (1, '2023-02-06', 'Doação Individual', 9, 2, 700.00),
+    (1, '2023-02-07', 'Despesas Administrativas', 2, 1, -1200.00),
+    (1, '2023-02-08', 'Receita com Venda de Produtos', 8, 4, 3500.00),
+    (1, '2023-02-09', 'Doação de Empresa', 9, 2, 2000.00),
+    (1, '2023-02-10', 'Evento de Captação de Recursos', 3, 3, -800.00),
+    (1, '2023-02-11', 'Receita com Venda de Serviços', 8, 4, 1800.00),
+    (1, '2023-02-12', 'Despesas Operacionais', 4, 1, -300.00),
+    (1, '2023-02-13', 'Doação Anônima', 9, 2, 500.00),
+    (1, '2023-02-14', 'Ação de Voluntariado', 10, 3, -50.00);
+
+-- Março
+INSERT INTO mov_financeira (ong_id, data_mov, descricao, conta_id, ativo_id, valor)
+VALUES
+    (1, '2023-03-01', 'Pagamento de Salários', 1, 1, -5200.00),
+    (1, '2023-03-02', 'Doação de Pessoa Jurídica', 9, 2, 12000.00),
+    (1, '2023-03-03', 'Compra de Material de Escritório', 5, 3, -1500.00),
+    (1, '2023-03-04', 'Receita com Workshop', 8, 4, 5000.00),
+    (1, '2023-03-05', 'Pagamento de Contas de Internet', 6, 1, -180.00),
+    (1, '2023-03-06', 'Doação Individual', 9, 2, 800.00),
+    (1, '2023-03-07', 'Manutenção de Equipamentos', 7, 3, -2000.00),
+    (1, '2023-03-08', 'Receita com Venda de Produtos', 8, 4, 6000.00),
+    (1, '2023-03-09', 'Despesas Administrativas', 2, 1, -800.00),
+    (1, '2023-03-10', 'Doação de Parceiro', 9, 2, 2500.00),
+    (1, '2023-03-11', 'Palestra Educacional', 3, 3, -600.00),
+    (1, '2023-03-12', 'Receita com Venda de Produtos', 8, 4, 3000.00),
+    (1, '2023-03-13', 'Despesas Diversas', 1, 1, -400.00),
+    (1, '2023-03-14', 'Doação de Voluntário', 9, 2, 900.00),
+    (1, '2023-03-15', 'Compra de Livros', 5, 3, -300.00);
 
 -- Inserir doadores
+-- Inserir doadores com telefone no formato (DDD + telefone)
 INSERT INTO doadores (tipo_doador, documento, nome, data_nasc, telefone, email)
 VALUES
-    ('Pessoa Física', '111.222.333-44', 'Doador 1', '1990-01-01', '111111111', 'doador1@email.com'),
-    ('Pessoa Jurídica', '00.123.456/0001-99', 'Empresa 1', NULL, '222222222', 'empresa1@email.com'),
-    ('Pessoa Física', '555.666.777-88', 'Doador 2', '1985-05-05', '333333333', 'doador2@email.com'),
-    ('Pessoa Física', '999.888.777-66', 'Doador 3', '1978-10-15', '444444444', 'doador3@email.com'),
-    ('Pessoa Jurídica', '99.888.777/0002-66', 'Empresa 2', NULL, '555555555', 'empresa2@email.com'),
-    ('Pessoa Física', '444.555.666-77', 'Doador 4', '1992-03-20', '666666666', 'doador4@email.com'),
-    ('Pessoa Jurídica', '11.222.333/0002-44', 'Empresa 3', NULL, '777777777', 'empresa3@email.com'),
-    ('Pessoa Física', '777.888.999-00', 'Doador 5', '1980-12-25', '888888888', 'doador5@email.com'),
-    ('Pessoa Física', '123.456.789-09', 'Doador 6', '1987-06-30', '999999999', 'doador6@email.com'),
-    ('Pessoa Jurídica', '33.444.555/0001-11', 'Empresa 4', NULL, '000000000', 'empresa4@email.com');
+    ('Pessoa Física', '111.222.333-44', 'Doador 1', '1990-01-01', '(11) 1111-1111', 'doador1@email.com'),
+    ('Pessoa Jurídica', '00.123.456/0001-99', 'Empresa 1', NULL, '(22) 2222-2222', 'empresa1@email.com'),
+    ('Pessoa Física', '555.666.777-88', 'Doador 2', '1985-05-05', '(33) 3333-3333', 'doador2@email.com'),
+    ('Pessoa Física', '999.888.777-66', 'Doador 3', '1978-10-15', '(44) 4444-4444', 'doador3@email.com'),
+    ('Pessoa Jurídica', '99.888.777/0002-66', 'Empresa 2', NULL, '(55) 5555-5555', 'empresa2@email.com'),
+    ('Pessoa Física', '444.555.666-77', 'Doador 4', '1992-03-20', '(66) 6666-6666', 'doador4@email.com'),
+    ('Pessoa Jurídica', '11.222.333/0002-44', 'Empresa 3', NULL, '(77) 7777-7777', 'empresa3@email.com'),
+    ('Pessoa Física', '777.888.999-00', 'Doador 5', '1980-12-25', '(88) 8888-8888', 'doador5@email.com'),
+    ('Pessoa Física', '123.456.789-09', 'Doador 6', '1987-06-30', '(99) 9999-9999', 'doador6@email.com'),
+    ('Pessoa Jurídica', '33.444.555/0001-11', 'Empresa 4', NULL, '(00) 0000-0000', 'empresa4@email.com');
+
     
 -- Inserir beneficiários
 INSERT INTO beneficiarios (nome_beneficiario, rg, orgao_emissor, telefone, email, data_nasc)
