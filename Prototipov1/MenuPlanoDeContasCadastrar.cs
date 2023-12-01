@@ -319,9 +319,7 @@ namespace Prototipov1
 
         private void btMenu_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TelaPerfil telaPerfil = new TelaPerfil();
-            telaPerfil.ShowDialog();
+            this.Close();
         }
 
         private void MenuPlanoDeContasCadastrar_FormClosing(object sender, FormClosingEventArgs e)

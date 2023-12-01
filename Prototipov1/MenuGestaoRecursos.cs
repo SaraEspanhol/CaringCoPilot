@@ -35,9 +35,7 @@ namespace Prototipov1
 
         private void btMenuInicial_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TelaPerfil telaPerfil = new TelaPerfil();
-            telaPerfil.ShowDialog();
+            this.Close();
         }
 
         private void PreencherComboBoxConta()
