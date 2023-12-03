@@ -128,4 +128,3 @@ VALUES
     ('Pedro Almeida', '7890123', 'SSP', '(81) 98765-4321', 'pedro@email.com', '1982-08-12'),
     ('Isabel Pereira', '3210987', 'SSP', '(91) 98765-4321', 'isabel@email.com', '1978-06-05'),
     ('Felipe Costa', '6543210', 'SSP', '(01) 98765-4321', 'felipe@email.com', '1992-04-28');
-

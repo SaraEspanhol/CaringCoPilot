@@ -66,10 +66,14 @@ CREATE TABLE contas (
 	descr_conta VARCHAR (50) NOT NULL UNIQUE
 );
 
+CREATE INDEX contas_idx ON contas (descr_conta, tipo_conta);
+
 CREATE TABLE ativos (
 	idAtivos INT PRIMARY KEY AUTO_INCREMENT,
     descr_ativo VARCHAR (50) NOT NULL UNIQUE
 );
+
+CREATE INDEX ativos_idx ON ativos (descr_ativo);
 
 CREATE TABLE mov_financeira (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -89,6 +93,8 @@ CREATE TABLE mov_financeira (
 		ON UPDATE CASCADE
         ON DELETE RESTRICT
 );
+
+CREATE INDEX mov_financeira_idx ON mov_financeira (data_mov, valor);
 
 # ****************************************
 # CRIACAO DOS VOLUNTARIOS 
