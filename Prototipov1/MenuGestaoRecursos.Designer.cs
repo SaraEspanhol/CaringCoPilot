@@ -114,6 +114,7 @@
             this.txtTipoConta.Name = "txtTipoConta";
             this.txtTipoConta.Size = new System.Drawing.Size(112, 25);
             this.txtTipoConta.TabIndex = 44;
+            this.txtTipoConta.Visible = false;
             // 
             // dataGridView1
             // 
