@@ -230,6 +230,7 @@ namespace Prototipov1
                 cruds.id = Convert.ToInt32(txtId.Text);
                 cruds.data_mov = txtDataCadastroEntrada.Text;
                 cruds.descricao = txtDescricao.Text;
+                cruds.tipo_conta = txtTipoConta.Text;
                 cruds.conta_id = Convert.ToInt32(txtIdConta.Text);
                 cruds.descr_conta = cBoxContaCadastroEntrada.Text;
                 cruds.ativo_id = Convert.ToInt32(txtIdAtivo.Text);

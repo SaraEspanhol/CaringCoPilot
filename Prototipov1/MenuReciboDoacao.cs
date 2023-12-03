@@ -98,10 +98,10 @@ namespace Prototipov1
         {
 
             // Caminho para o modelo do documento Word (template)
-            string templatePath = @"C:\Users\jpesp\Downloads\recibo\recibo_base.docx";
+            string templatePath = @"C:\Users\jpesp\Desktop\Arquivos\Estudos\ADS - IFSP\2 SEMESTRE\PROJETO DE EXTENSAO 1\recibo_base.docx";
 
             // Caminho para o arquivo Word de saída
-            string outputPath = @"C:\Users\jpesp\Downloads\recibo\recibo.docx";
+            string outputPath = @"C:\Users\jpesp\Desktop\Arquivos\Estudos\ADS - IFSP\2 SEMESTRE\PROJETO DE EXTENSAO 1\recibo.docx";
 
             // Crie uma instância do Word e abra o modelo
             Word.Application wordApp = new Word.Application();
